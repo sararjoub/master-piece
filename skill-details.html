@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development - Skills Swap</title>
+    
+    <!-- الملفات المشتركة -->
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/details.css">
+</head>
+<body>
+
+   <!-- ===== Navbar (Authed - للمستخدم المسجل) ===== -->
+<nav class="navbar navbar-authed">
+    <div class="navbar-container">
+        
+        <!-- الشعار -->
+        <a href="home.html" class="navbar-logo">
+            ★ Skills <span>Swap</span>
+        </a>
+
+        <!-- روابط التنقل -->
+        <div class="navbar-links">
+            <a href="home.html" class="navbar-link">Home</a>
+            <a href="technology-category.html" class="navbar-link active">Categories</a>
+            <a href="career-path.html" class="navbar-link">Career Path</a>
+            <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+        </div>
+
+        <!-- الإجراءات: إشعارات + رسائل + Avatar -->
+        <div class="navbar-actions">
+            
+            <!-- أيقونة الإشعارات -->
+            <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                🔔
+                <span class="notification-badge">3</span>
+            </button>
+
+            <!-- أيقونة الرسائل -->
+            <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                💬
+                <span class="notification-badge">2</span>
+            </button>
+
+            <!-- Avatar مع Dropdown -->
+            <div class="navbar-user" id="userMenu">
+                <button class="navbar-avatar" id="avatarBtn">
+                    <span>AH</span>
+                </button>
+                
+                <!-- القائمة المنسدلة -->
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="dropdown-header">
+                        <div class="avatar avatar-md">
+                            <span>AH</span>
+                        </div>
+                        <div>
+                            <strong>Ahmad Hassan</strong>
+                            <span>ahmad@example.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-divider"></div>
+                    
+                    <a href="profile.html" class="dropdown-item">
+                        <span class="dropdown-icon">👤</span>
+                        My Profile
+                    </a>
+                    <a href="dashboard.html" class="dropdown-item">
+                        <span class="dropdown-icon">📊</span>
+                        Dashboard
+                    </a>
+                    <a href="my-skills.html" class="dropdown-item">
+                        <span class="dropdown-icon">🎯</span>
+                        My Skills
+                    </a>
+                    <a href="swap-requests.html" class="dropdown-item">
+                        <span class="dropdown-icon">🔄</span>
+                        Swap Requests
+                    </a>
+                    <a href="settings.html" class="dropdown-item">
+                        <span class="dropdown-icon">⚙️</span>
+                        Settings
+                    </a>
+                    
+                    <div class="dropdown-divider"></div>
+                    
+                    <button class="dropdown-item dropdown-logout" id="logoutBtn">
+                        <span class="dropdown-icon">🚪</span>
+                        Logout
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+    <!-- ===== Skill Details Section ===== -->
+    <section class="skill-details-section">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb animate-fade-rise">
+                <a href="home.html">Home</a>
+                <span class="separator">/</span>
+                <a href="technology-category.html">Categories</a>
+                <span class="separator">/</span>
+                <a href="technology-category.html">Technology</a>
+                <span class="separator">/</span>
+                <span class="current">Web Development</span>
+            </div>
+
+            <!-- ===== Main Grid ===== -->
+            <div class="skill-details-grid">
+
+                <!-- ===== الجانب الأيسر: التفاصيل ===== -->
+                <div class="skill-main animate-fade-rise-delay-1">
+
+                    <!-- Header -->
+                    <div class="skill-header">
+                        <h1 class="skill-title">Web Development</h1>
+                        <div class="skill-badges">
+                            <span class="badge badge-primary">Technology</span>
+                            <span class="badge badge-info">Beginner</span>
+                            <span class="badge badge-success">Free</span>
+                        </div>
+                        <p class="skill-intro">
+                            Learn the fundamentals of building responsive websites and start your journey into modern web development.
+                        </p>
+                    </div>
+
+                    <!-- About -->
+                    <div class="skill-section">
+                        <h2>About</h2>
+                        <p>
+                            Build a strong foundation in web development through practical learning and beginner-friendly concepts.
+                        </p>
+                    </div>
+
+                    <!-- What You'll Learn -->
+                    <div class="skill-section">
+                        <h2>What You'll Learn</h2>
+                        <div class="learn-grid">
+                            <div class="learn-item">
+                                <span class="learn-check">✓</span>
+                                <span>HTML Fundamentals</span>
+                            </div>
+                            <div class="learn-item">
+                                <span class="learn-check">✓</span>
+                                <span>CSS &amp; Responsive Design</span>
+                            </div>
+                            <div class="learn-item">
+                                <span class="learn-check">✓</span>
+                                <span>JavaScript Basics</span>
+                            </div>
+                            <div class="learn-item">
+                                <span class="learn-check">✓</span>
+                                <span>Web Development Basics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="skill-actions">
+                        <button class="btn btn-primary btn-large" id="startLearningBtn">
+                            Start Learning →
+                        </button>
+                        <button class="btn btn-outline btn-large" id="findPartnersBtn">
+                            Find Skill Partners
+                        </button>
+                    </div>
+
+                    <!-- Related Skills -->
+                    <div class="skill-section">
+                        <h2>Related Skills</h2>
+                        <div class="related-skills">
+                            <a href="#" class="related-skill-tag">UI/UX Design</a>
+                            <a href="#" class="related-skill-tag">JavaScript</a>
+                            <a href="#" class="related-skill-tag">Git &amp; GitHub</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== الجانب الأيمن: Sidebar ===== -->
+                <div class="skill-sidebar animate-slide-in-right">
+
+                    <!-- Illustration Image -->
+                    <div class="skill-illustration">
+                        <img 
+                            src="../assests/web development.png" 
+                            alt="Web Development"
+                        >
+                    </div>
+
+                    <!-- Learning Path Card -->
+                    <div class="learning-path-card">
+                        <h3>Learning Path</h3>
+
+                        <!-- Beginner -->
+                        <div class="path-level">
+                            <div class="path-header">
+                                <span class="path-level-name">Beginner</span>
+                                <span class="badge badge-success">Free</span>
+                            </div>
+                        </div>
+
+                        <!-- Advanced -->
+                        <div class="path-level">
+                            <div class="path-header">
+                                <span class="path-level-name">Advanced</span>
+                                <span class="badge badge-warning">Subscription</span>
+                            </div>
+                        </div>
+
+                        <!-- Requirements -->
+                        <div class="requirements">
+                            <h4>Requirements</h4>
+                            <ul class="requirements-list">
+                                <li>No previous programming required</li>
+                                <li>Basic computer skills</li>
+                                <li>Computer + Internet</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== JavaScript ===== -->
+    <script src="../js/animations.js"></script>
+    <script src="../js/details.js"></script>
+
+</body>
+</html>

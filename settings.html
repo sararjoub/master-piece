@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/settings.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="categories.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Settings Section ===== -->
+    <section class="settings-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="settings-header animate-fade-rise">
+                <h1>Settings</h1>
+                <p>Manage your account preferences and security.</p>
+            </div>
+
+            <!-- Layout -->
+            <div class="settings-layout">
+
+                <!-- ===== Sidebar Navigation ===== -->
+                <aside class="settings-sidebar animate-slide-in-left">
+                    <button class="settings-nav-item active" data-section="profile">
+                        <span class="settings-nav-icon">👤</span>
+                        <span>Profile</span>
+                    </button>
+                    <button class="settings-nav-item" data-section="account">
+                        <span class="settings-nav-icon">🔐</span>
+                        <span>Account & Security</span>
+                    </button>
+                    <button class="settings-nav-item" data-section="notifications">
+                        <span class="settings-nav-icon">🔔</span>
+                        <span>Notifications</span>
+                    </button>
+                    <button class="settings-nav-item" data-section="privacy">
+                        <span class="settings-nav-icon">🛡️</span>
+                        <span>Privacy</span>
+                    </button>
+                    <button class="settings-nav-item settings-nav-danger" data-section="danger">
+                        <span class="settings-nav-icon">⚠️</span>
+                        <span>Danger Zone</span>
+                    </button>
+                </aside>
+
+                <!-- ===== Settings Content ===== -->
+                <main class="settings-content animate-fade-rise-delay-1">
+
+                    <!-- ===== Section: Profile ===== -->
+                    <div class="settings-panel active" id="panel-profile">
+                        <div class="panel-header">
+                            <h2>Profile Information</h2>
+                            <p>Update your personal information and public profile.</p>
+                        </div>
+
+                        <div class="panel-body">
+                            <!-- Avatar -->
+                            <div class="avatar-upload">
+                                <div class="avatar-preview">
+                                    <span>AH</span>
+                                </div>
+                                <div class="avatar-upload-actions">
+                                    <button class="btn btn-outline btn-sm">📷 Change Photo</button>
+                                    <button class="btn btn-outline btn-sm">🗑️ Remove</button>
+                                    <p class="avatar-hint">JPG, PNG or GIF. Max 2MB.</p>
+                                </div>
+                            </div>
+
+                            <!-- Form -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-input" value="Ahmad Hassan">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-input" value="ahmad@example.com">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Bio</label>
+                                <textarea class="form-textarea" rows="4">I'm a passionate web developer and graphic designer with 5+ years of experience. I love teaching others and learning new skills through exchanges.</textarea>
+                                <span class="form-hint">Brief description for your profile. Max 300 characters.</span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Location</label>
+                                    <input type="text" class="form-input" value="Jordan">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Website</label>
+                                    <input type="url" class="form-input" value="https://ahmadhassan.dev">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-outline">Cancel</button>
+                                <button class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section: Account & Security ===== -->
+                    <div class="settings-panel" id="panel-account">
+                        <div class="panel-header">
+                            <h2>Account &amp; Security</h2>
+                            <p>Manage your password and account security.</p>
+                        </div>
+
+                        <div class="panel-body">
+                            <!-- Change Password -->
+                            <div class="settings-block">
+                                <h3>Change Password</h3>
+                                <p class="settings-block-desc">Update your password to keep your account secure.</p>
+
+                                <div class="form-group">
+                                    <label class="form-label">Current Password</label>
+                                    <input type="password" class="form-input" placeholder="Enter current password">
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">New Password</label>
+                                        <input type="password" class="form-input" placeholder="Enter new password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-input" placeholder="Confirm new password">
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="btn btn-primary">Update Password</button>
+                                </div>
+                            </div>
+
+                            <!-- Two-Factor Auth -->
+                            <div class="settings-block">
+                                <div class="settings-block-row">
+                                    <div>
+                                        <h3>Two-Factor Authentication</h3>
+                                        <p class="settings-block-desc">Add an extra layer of security to your account.</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="switch-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Connected Accounts -->
+                            <div class="settings-block">
+                                <h3>Connected Accounts</h3>
+                                <div class="connected-account">
+                                    <div class="connected-account-info">
+                                        <span class="connected-account-icon">🔵</span>
+                                        <div>
+                                            <strong>Google</strong>
+                                            <span>Not connected</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Connect</button>
+                                </div>
+                                <div class="connected-account">
+                                    <div class="connected-account-info">
+                                        <span class="connected-account-icon">⚫</span>
+                                        <div>
+                                            <strong>GitHub</strong>
+                                            <span>Not connected</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Connect</button>
+                                </div>
+                            </div>
+
+                            <!-- Sessions -->
+                            <div class="settings-block">
+                                <h3>Active Sessions</h3>
+                                <p class="settings-block-desc">Devices currently logged into your account.</p>
+
+                                <div class="session-item">
+                                    <span class="session-icon">💻</span>
+                                    <div class="session-info">
+                                        <strong>Windows · Chrome</strong>
+                                        <span>Amman, Jordan · Active now</span>
+                                    </div>
+                                    <span class="badge badge-success">Current</span>
+                                </div>
+
+                                <div class="session-item">
+                                    <span class="session-icon">📱</span>
+                                    <div class="session-info">
+                                        <strong>iPhone · Safari</strong>
+                                        <span>Amman, Jordan · 2 days ago</span>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Revoke</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section: Notifications ===== -->
+                    <div class="settings-panel" id="panel-notifications">
+                        <div class="panel-header">
+                            <h2>Notification Preferences</h2>
+                            <p>Choose what notifications you want to receive.</p>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Swap Requests</h3>
+                                    <p>When someone sends you a swap request.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Messages</h3>
+                                    <p>When you receive a new message.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Reviews</h3>
+                                    <p>When someone leaves you a review.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Recommendations</h3>
+                                    <p>Suggested partners and skills based on your interests.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Marketing Emails</h3>
+                                    <p>News, updates, and promotions from Skills Swap.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Save Preferences</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section: Privacy ===== -->
+                    <div class="settings-panel" id="panel-privacy">
+                        <div class="panel-header">
+                            <h2>Privacy Settings</h2>
+                            <p>Control who can see your profile and information.</p>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Public Profile</h3>
+                                    <p>Allow anyone to view your profile.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Show Email</h3>
+                                    <p>Display your email on your public profile.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Show Location</h3>
+                                    <p>Display your location on your public profile.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="notification-pref">
+                                <div class="notification-pref-info">
+                                    <h3>Allow Recommendations</h3>
+                                    <p>Let our system recommend you to other users.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Save Privacy Settings</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Section: Danger Zone ===== -->
+                    <div class="settings-panel" id="panel-danger">
+                        <div class="panel-header">
+                            <h2>Danger Zone</h2>
+                            <p>Irreversible actions. Please proceed with caution.</p>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="danger-block">
+                                <div class="danger-block-info">
+                                    <h3>Deactivate Account</h3>
+                                    <p>Temporarily disable your account. You can reactivate anytime.</p>
+                                </div>
+                                <button class="btn btn-outline btn-danger-outline" id="deactivateBtn">Deactivate</button>
+                            </div>
+
+                            <div class="danger-block">
+                                <div class="danger-block-info">
+                                    <h3>Delete Account</h3>
+                                    <p>Permanently delete your account and all associated data. This cannot be undone.</p>
+                                </div>
+                                <button class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Delete Confirmation Modal ===== -->
+    <div class="modal-overlay hidden" id="deleteModal">
+        <div class="modal">
+            <div class="modal-header modal-header-danger">
+                <h2>⚠️ Delete Account</h2>
+                <button class="modal-close" id="closeDeleteModal">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-warning">
+                    This action is <strong>permanent</strong> and cannot be undone. All your data including:
+                </p>
+                <ul class="modal-list">
+                    <li>Your profile and personal information</li>
+                    <li>All your skills and progress</li>
+                    <li>All swap requests and messages</li>
+                    <li>All reviews and ratings</li>
+                </ul>
+                <p class="modal-warning">will be permanently deleted.</p>
+
+                <div class="form-group">
+                    <label class="form-label">Type <strong>DELETE</strong> to confirm:</label>
+                    <input type="text" class="form-input" id="deleteConfirmInput" placeholder="DELETE">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelDelete">Cancel</button>
+                <button class="btn btn-danger" id="confirmDelete" disabled>Delete My Account</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/settings.js"></script>
+
+</body>
+</html>

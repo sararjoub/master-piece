@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/chat.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Chat Section ===== -->
+    <section class="chat-section">
+        <div class="chat-container">
+
+            <!-- ===== Sidebar: Conversations List ===== -->
+            <aside class="chat-sidebar animate-slide-in-left">
+
+                <!-- Sidebar Header -->
+                <div class="chat-sidebar-header">
+                    <h2>Messages</h2>
+                    <button class="chat-new-btn" id="newChatBtn" title="New Chat">
+                        +
+                    </button>
+                </div>
+
+                <!-- Search -->
+                <div class="chat-search">
+                    <input 
+                        type="text" 
+                        class="chat-search-input" 
+                        placeholder="Search conversations..."
+                        id="chatSearchInput"
+                    >
+                </div>
+
+                <!-- Conversations List -->
+                <div class="conversations-list" id="conversationsList">
+
+                    <!-- Conversation 1: Lana (Active) -->
+                    <div class="conversation-item active" data-chat="lana">
+                        <div class="conversation-avatar">
+                            <span>LK</span>
+                            <span class="online-dot"></span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-top">
+                                <strong>Lana Khalid</strong>
+                                <span class="conversation-time">2m ago</span>
+                            </div>
+                            <div class="conversation-bottom">
+                                <span class="conversation-preview">Great! Let's start tomorrow at 5 PM</span>
+                                <span class="unread-badge">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conversation 2: Omar -->
+                    <div class="conversation-item" data-chat="omar">
+                        <div class="conversation-avatar">
+                            <span>OS</span>
+                            <span class="online-dot"></span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-top">
+                                <strong>Omar Sami</strong>
+                                <span class="conversation-time">1h ago</span>
+                            </div>
+                            <div class="conversation-bottom">
+                                <span class="conversation-preview">Thanks for the session!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conversation 3: Sara -->
+                    <div class="conversation-item" data-chat="sara">
+                        <div class="conversation-avatar">
+                            <span>SM</span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-top">
+                                <strong>Sara Mahmoud</strong>
+                                <span class="conversation-time">1d ago</span>
+                            </div>
+                            <div class="conversation-bottom">
+                                <span class="conversation-preview">I'll send you the resources</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </aside>
+
+            <!-- ===== Chat Area ===== -->
+            <main class="chat-main animate-fade-rise">
+
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-header-user">
+                        <div class="chat-header-avatar">
+                            <span>LK</span>
+                            <span class="online-dot"></span>
+                        </div>
+                        <div class="chat-header-info">
+                            <strong>Lana Khalid</strong>
+                            <span class="chat-status">
+                                <span class="status-dot-inline"></span>
+                                Online
+                            </span>
+                        </div>
+                    </div>
+                    <div class="chat-header-actions">
+                        <button class="chat-icon-btn" title="Video Call">📹</button>
+                        <button class="chat-icon-btn" title="Voice Call">📞</button>
+                        <button class="chat-icon-btn" title="More">⋯</button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+
+                    <!-- Date Divider -->
+                    <div class="date-divider">
+                        <span>Today</span>
+                    </div>
+
+                    <!-- Received Message 1 -->
+                    <div class="message received animate-fade-rise">
+                        <div class="message-avatar">
+                            <span>LK</span>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                Hi Ahmad! I'm excited to start our skill exchange 😊
+                            </div>
+                            <span class="message-time">10:30 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Sent Message 1 -->
+                    <div class="message sent animate-fade-rise">
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                Hi Lana! Me too! Ready to learn photography from you 🎨
+                            </div>
+                            <span class="message-time">10:32 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Received Message 2 -->
+                    <div class="message received animate-fade-rise">
+                        <div class="message-avatar">
+                            <span>LK</span>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                Perfect! When are you available for our first session?
+                            </div>
+                            <span class="message-time">10:35 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Sent Message 2 -->
+                    <div class="message sent animate-fade-rise">
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                I'm free on weekdays after 5 PM. How about tomorrow at 5?
+                            </div>
+                            <span class="message-time">10:37 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Received Message 3 -->
+                    <div class="message received animate-fade-rise">
+                        <div class="message-avatar">
+                            <span>LK</span>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                Great! Let's start tomorrow at 5 PM
+                            </div>
+                            <span class="message-time">10:40 AM</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator hidden" id="typingIndicator">
+                    <div class="message-avatar">
+                        <span>LK</span>
+                    </div>
+                    <div class="typing-bubble">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-wrapper">
+                    <button class="chat-input-icon" title="Attach File">📎</button>
+                    <button class="chat-input-icon" title="Emoji">😊</button>
+                    <input 
+                        type="text" 
+                        class="chat-input" 
+                        placeholder="Type a message..."
+                        id="messageInput"
+                    >
+                    <button class="chat-send-btn" id="sendBtn" title="Send">
+                        ➤
+                    </button>
+                </div>
+
+            </main>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/chat.js"></script>
+
+</body>
+</html>

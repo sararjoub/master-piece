@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Skills Swap</title>
+    
+    <!-- الملفات المشتركة -->
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (مشترك) ===== -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="../home.html" class="navbar-link">Home</a>
+                <a href="categories.html" class="navbar-link">Categories</a>
+                <a href="index.html#how-it-works" class="navbar-link">How It Works</a>
+                <a href="index.html#about" class="navbar-link">About</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-login" onclick="window.location.href='login.html'">Login</button>
+                <button class="navbar-signup" onclick="window.location.href='signup.html'">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Login Section ===== -->
+    <section class="auth-section">
+        <div class="auth-container">
+
+            <!-- ===== الجانب الأيسر: الرسم التوضيحي ===== -->
+            <div class="auth-illustration animate-slide-in-left">
+                <div class="illustration-content">
+                    <h2>Welcome Back!</h2>
+                    <p>Login to continue your skill exchange journey and connect with your learning partners.</p>
+
+                    <!-- الصورة التوضيحية -->
+                    <img 
+                        src="../assests/login.png" 
+                        alt="Welcome back"
+                        class="illustration-image"
+                    >
+
+                    <!-- الميزات -->
+                    <ul class="illustration-features">
+                        <li>
+                            <span class="feature-check">✓</span>
+                            <span>Continue your learning path</span>
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            <span>Chat with your skill partners</span>
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            <span>Track your progress</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== الجانب الأيمن: النموذج ===== -->
+            <div class="auth-form-wrapper animate-scale-in">
+
+                <!-- الشعار في الأعلى -->
+                <div class="auth-logo">
+                    <span class="auth-logo-icon">★</span>
+                    <h1>Login to Your Account</h1>
+                    <p>Enter your credentials to access your account.</p>
+                </div>
+
+                <!-- النموذج -->
+                <form class="auth-form" id="loginForm">
+
+                    <!-- البريد الإلكتروني -->
+                    <div class="form-group animate-fade-rise-delay-1">
+                        <label class="form-label" for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">✉️</span>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="form-input" 
+                                placeholder="you@example.com"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- كلمة المرور -->
+                    <div class="form-group animate-fade-rise-delay-2">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">🔒</span>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                class="form-input" 
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me + Forgot Password -->
+                    <div class="form-options animate-fade-rise-delay-2">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="forgot-password.html" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <!-- زر تسجيل الدخول -->
+                    <button type="submit" class="btn btn-primary btn-large btn-full animate-fade-rise-delay-3">
+                        Login →
+                    </button>
+
+                    <!-- فاصل -->
+                    <div class="divider animate-fade-rise-delay-3">
+                        <span>or continue with</span>
+                    </div>
+
+                    <!-- أزرار التواصل الاجتماعي -->
+                    <div class="social-login animate-fade-rise-delay-3">
+                        <button type="button" class="social-btn">
+                            <span class="social-icon">🔵</span>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn">
+                            <span class="social-icon">⚫</span>
+                            GitHub
+                        </button>
+                    </div>
+
+                    <!-- رابط التسجيل -->
+                    <p class="auth-switch animate-fade-rise-delay-3">
+                        Don't have an account? <a href="signup.html">Sign Up</a>
+                    </p>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== JavaScript ===== -->
+    <script src="../js/animations.js"></script>
+    <script src="../js/login.js"></script>
+
+</body>
+</html>

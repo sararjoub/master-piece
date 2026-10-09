@@ -1,0 +1,371 @@
+/* ============================================
+   ===== NOTIFICATIONS PAGE =====
+   ============================================ */
+
+.notifications-section {
+    padding: 40px 0 80px;
+    background-color: var(--bg-page);
+    min-height: calc(100vh - 76px);
+}
+
+/* ============================================
+   ===== Header =====
+   ============================================ */
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.notifications-header h1 {
+    font-size: 32px;
+    font-family: var(--font-display);
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.notifications-header p {
+    font-size: 15px;
+    color: var(--text-medium);
+}
+
+/* ============================================
+   ===== Tabs =====
+   ============================================ */
+.notif-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0;
+}
+
+.notif-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    position: relative;
+    transition: color var(--transition-fast);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.notif-tab:hover {
+    color: var(--primary);
+    background-color: var(--primary-bg-light);
+}
+
+.notif-tab.active {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.notif-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: var(--radius-full) var(--radius-full) 0 0;
+}
+
+.tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background-color: var(--primary-bg);
+    color: var(--primary-dark);
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.notif-tab.active .tab-count {
+    background-color: var(--primary);
+    color: var(--text-white);
+}
+
+/* ============================================
+   ===== Notifications List =====
+   ============================================ */
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ============================================
+   ===== Notification Item =====
+   ============================================ */
+.notification-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    position: relative;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.notification-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+    border-color: var(--primary-lighter);
+}
+
+.notification-item.unread {
+    background: linear-gradient(135deg, #ffffff 0%, var(--primary-bg-light) 100%);
+    border-left: 3px solid var(--primary);
+}
+
+/* ===== Notification Icon ===== */
+.notif-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+}
+
+.notification-item:hover .notif-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.notif-icon-request {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-lighter) 100%);
+    color: var(--primary-dark);
+}
+
+.notif-icon-message {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1e40af;
+}
+
+.notif-icon-success {
+    background: linear-gradient(135deg, var(--success-bg) 0%, #a7f3d0 100%);
+    color: var(--success);
+}
+
+.notif-icon-review {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #b45309;
+}
+
+.notif-icon-achievement {
+    background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+    color: #be185d;
+}
+
+.notif-icon-declined {
+    background: linear-gradient(135deg, var(--danger-bg) 0%, #fecaca 100%);
+    color: var(--danger);
+}
+
+.notif-icon-partner {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    color: #4338ca;
+}
+
+.notif-icon-system {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    color: var(--text-medium);
+}
+
+/* ===== Notification Content ===== */
+.notif-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.notif-header strong {
+    font-size: 15px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.notif-time {
+    font-size: 12px;
+    color: var(--text-lighter);
+}
+
+.notif-text {
+    font-size: 14px;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.notif-text strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* ===== Notification Actions ===== */
+.notif-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.notif-link {
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.notif-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(2px);
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: var(--text-white);
+}
+
+.btn-success:hover {
+    background-color: #0d9668;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+    color: var(--text-white);
+}
+
+/* ===== Unread Dot ===== */
+.notif-dot {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-bg);
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 4px var(--primary-bg);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(139, 124, 246, 0.1);
+        transform: scale(1.1);
+    }
+}
+
+/* ============================================
+   ===== Empty State =====
+   ============================================ */
+.empty-state {
+    text-align: center;
+    padding: 80px 24px;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--border-medium);
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* ============================================
+   ===== RESPONSIVE =====
+   ============================================ */
+@media (max-width: 768px) {
+    .notifications-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .notifications-header h1 {
+        font-size: 26px;
+    }
+
+    .notif-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+    }
+
+    .notif-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .notif-tab {
+        padding: 10px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .notification-item {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .notif-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .notif-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .notif-actions .btn {
+        width: 100%;
+    }
+}

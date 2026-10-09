@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Sent - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/request-sent.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="home.html" class="navbar-link">Home</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link active">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Request Sent Section ===== -->
+    <section class="sent-section">
+        <div class="container-narrow">
+
+            <!-- Card -->
+            <div class="sent-card animate-scale-in">
+
+                <!-- Success Icon -->
+                <div class="success-icon-wrapper">
+                    <div class="success-icon">
+                        <span class="checkmark">✓</span>
+                    </div>
+                    <div class="success-pulse"></div>
+                    <div class="success-pulse delay"></div>
+                </div>
+
+                <!-- Title -->
+                <h1 class="sent-title animate-fade-rise-delay-1">
+                    Request Sent Successfully!
+                </h1>
+
+                <!-- Description -->
+                <p class="sent-description animate-fade-rise-delay-2">
+                    Your exchange request has been sent to <strong>Ahmad Hassan</strong>.
+                </p>
+
+                <!-- ===== Timeline ===== -->
+                <div class="timeline animate-fade-rise-delay-3">
+
+                    <!-- Step 1: Request Sent (Active) -->
+                    <div class="timeline-step active">
+                        <div class="timeline-dot">
+                            <span class="timeline-check">✓</span>
+                        </div>
+                        <span class="timeline-label">Request Sent</span>
+                    </div>
+
+                    <!-- Line -->
+                    <div class="timeline-line"></div>
+
+                    <!-- Step 2: Waiting for Response -->
+                    <div class="timeline-step">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-label">Waiting for Response</span>
+                    </div>
+
+                    <!-- Line -->
+                    <div class="timeline-line"></div>
+
+                    <!-- Step 3: Exchange Started -->
+                    <div class="timeline-step">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-label">Exchange Started</span>
+                    </div>
+
+                </div>
+
+                <!-- ===== Summary ===== -->
+                <div class="sent-summary animate-fade-rise-delay-3">
+
+                    <div class="summary-row">
+                        <span class="summary-label">Your Offer</span>
+                        <span class="summary-value">Graphic Design</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span class="summary-label">You Want</span>
+                        <span class="summary-value">Web Development</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span class="summary-label">Partner</span>
+                        <span class="summary-value">Ahmad Hassan</span>
+                    </div>
+
+                </div>
+
+                <!-- ===== Actions ===== -->
+                <div class="sent-actions animate-fade-rise-delay-3">
+                    <button class="btn btn-primary btn-large" id="viewRequestsBtn">
+                        View My Requests
+                    </button>
+                    <button class="btn btn-outline btn-large" id="backHomeBtn">
+                        Back to Home
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/request-sent.js"></script>
+
+</body>
+</html>

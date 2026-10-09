@@ -1,0 +1,565 @@
+/* ============================================
+   ===== EXCHANGE REQUEST PAGE =====
+   ============================================ */
+
+.exchange-section {
+    padding: 40px 0 80px;
+    background-color: var(--bg-page);
+    min-height: calc(100vh - 76px);
+}
+
+/* ===== Header ===== */
+.exchange-header {
+    margin-bottom: 32px;
+}
+
+.exchange-header h1 {
+    font-size: 36px;
+    font-family: var(--font-display);
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.exchange-header p {
+    font-size: 16px;
+    color: var(--text-medium);
+}
+
+/* ===== Main Grid ===== */
+.exchange-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* ============================================
+   ===== PARTNER SUMMARY CARD - ENHANCED =====
+   ===== Shadow + Border بلون بنفسجي فاتح =====
+   ============================================ */
+
+.partner-summary-card {
+    position: relative;
+    overflow: hidden;
+    
+    /* ===== الخلفية ===== */
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #faf9ff 100%
+    );
+    
+    /* ===== Border بنفسجي فاتح ===== */
+    border: 2px solid var(--primary-lighter);
+    
+    /* ===== Shadow بنفسجي فاتح (متعدد الطبقات) ===== */
+    box-shadow: 
+        0 1px 2px rgba(139, 124, 246, 0.08),
+        0 4px 12px rgba(139, 124, 246, 0.12),
+        0 12px 32px rgba(139, 124, 246, 0.15),
+        0 24px 60px rgba(139, 124, 246, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    
+    /* ===== الحواف ===== */
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    
+    /* ===== الأنيميشن ===== */
+    animation: cardFloat 5s ease-in-out infinite;
+    transition: 
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    will-change: transform;
+}
+
+/* ===== عند Hover: Shadow أقوى + Border أغمق ===== */
+.partner-summary-card:hover {
+    border-color: var(--primary-light);
+    box-shadow: 
+        0 2px 4px rgba(139, 124, 246, 0.12),
+        0 8px 24px rgba(139, 124, 246, 0.2),
+        0 20px 48px rgba(139, 124, 246, 0.25),
+        0 32px 80px rgba(139, 124, 246, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+/* ===== Inner Glow (توهج داخلي) ===== */
+.partner-summary-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        ellipse at top left,
+        rgba(167, 139, 250, 0.08) 0%,
+        transparent 50%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* التأكد من أن المحتوى فوق التوهج */
+.partner-summary-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Avatar Section ===== */
+.summary-avatar-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.summary-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-lighter) 100%);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    margin: 0 auto 12px;
+    box-shadow: 0 6px 18px rgba(139, 124, 246, 0.2);
+}
+
+.summary-name {
+    font-size: 20px;
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.summary-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-medium);
+}
+
+.rating-star { color: #fbbf24; font-size: 15px; }
+.rating-value { font-weight: 700; color: var(--text-dark); }
+.rating-reviews { color: var(--text-light); }
+
+/* ===== Divider ===== */
+.summary-divider {
+    height: 1px;
+    background-color: var(--border-light);
+    margin: 20px 0;
+}
+
+/* ===== Summary Block ===== */
+.summary-block {
+    margin-bottom: 18px;
+}
+
+.summary-block:last-child {
+    margin-bottom: 0;
+}
+
+.summary-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.summary-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.summary-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: var(--primary-bg);
+    color: var(--primary-dark);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.summary-tag-want {
+    background-color: var(--bg-light);
+    color: var(--text-medium);
+    border: 1px solid var(--border-light);
+}
+
+/* ============================================
+   ===== Exchange Form =====
+   ============================================ */
+.exchange-form-wrapper {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-xl);
+    padding: 36px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
+}
+
+.exchange-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ===== Form Block ===== */
+.form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-block-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+}
+
+/* ===== Choice Chips ===== */
+.choice-chips,
+.time-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    padding: 10px 20px;
+    background-color: var(--bg-white);
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chip:hover {
+    border-color: var(--primary-lighter);
+    color: var(--primary);
+    background-color: var(--primary-bg-light);
+    transform: translateY(-2px);
+}
+
+.chip.selected {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-white);
+    box-shadow: 0 4px 12px rgba(139, 124, 246, 0.25);
+}
+
+/* ===== Textarea ===== */
+.form-textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.6;
+    transition: all var(--transition-fast);
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.form-textarea::placeholder {
+    color: var(--text-lighter);
+}
+
+/* ===== Form Actions ===== */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+/* ============================================
+   ===== RESPONSIVE =====
+   ============================================ */
+@media (max-width: 992px) {
+    .exchange-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partner-summary {
+        position: static;
+    }
+
+    .partner-summary-card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .summary-avatar-section {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .summary-avatar {
+        margin: 0;
+        width: 64px;
+        height: 64px;
+        font-size: 22px;
+    }
+
+    .summary-rating {
+        justify-content: flex-start;
+    }
+
+    .summary-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .exchange-header h1 {
+        font-size: 28px;
+    }
+
+    .exchange-form-wrapper {
+        padding: 24px 20px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .chip {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* ============================================
+   ===== PARTNER CARD - ADVANCED ANIMATIONS =====
+   ============================================ */
+
+/* ===== 1. Glow Border Animation (إطار متوهج يدور) ===== */
+.partner-summary-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-summary-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 270deg,
+        var(--primary) 330deg,
+        var(--primary-light) 360deg
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotateBorder 4s linear infinite;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+@keyframes rotateBorder {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== 2. Avatar Breathing (نبض ناعم) ===== */
+.summary-avatar {
+    position: relative;
+    animation: avatarBreath 3s ease-in-out infinite;
+}
+
+.summary-avatar::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(139, 124, 246, 0.25) 0%,
+        transparent 70%
+    );
+    animation: avatarGlow 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes avatarBreath {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 18px rgba(139, 124, 246, 0.2);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 10px 26px rgba(139, 124, 246, 0.35);
+    }
+}
+
+@keyframes avatarGlow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* ===== 3. Floating Animation (البطاقة تطفو) ===== */
+.partner-summary-card {
+    animation: cardFloat 5s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* ===== 4. Shine Sweep (لمعان يمر دورياً) ===== */
+.partner-summary-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(139, 124, 246, 0.12) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    animation: shineSweep 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes shineSweep {
+    0% {
+        left: -150%;
+    }
+    50%, 100% {
+        left: 150%;
+    }
+}
+
+/* ===== 5. Magnetic Hover (تأثير انجذاب بسيط) ===== */
+.partner-summary-card {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.partner-summary-card:hover {
+    box-shadow: 0 20px 40px rgba(139, 124, 246, 0.25);
+}
+
+/* ===== 6. Rating Star Twinkle ===== */
+.summary-rating .rating-star {
+    display: inline-block;
+    animation: starPulse 2s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.2) rotate(8deg);
+        filter: brightness(1.4);
+    }
+}
+
+/* ===== 7. Skill Tag Hover ===== */
+.summary-tag {
+    transition: all var(--transition-fast);
+    cursor: default;
+}
+
+.summary-tag:hover {
+    background-color: var(--primary);
+    color: var(--text-white);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(139, 124, 246, 0.3);
+}
+
+/* ===== 8. Name Glow ===== */
+.summary-name {
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        var(--text-dark) 0%,
+        var(--primary-dark) 50%,
+        var(--text-dark) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: nameGradient 4s ease infinite;
+}
+
+@keyframes nameGradient {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+@keyframes avatarRipple {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}

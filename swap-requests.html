@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Requests - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/swap-requests.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Swap Requests Section ===== -->
+    <section class="requests-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="requests-header animate-fade-rise">
+                <div>
+                    <h1>Swap Requests</h1>
+                    <p>Manage all your skill exchange requests in one place.</p>
+                </div>
+                <button class="btn btn-primary" id="findPartnersBtn">
+                    + New Request
+                </button>
+            </div>
+
+            <!-- ===== Tabs ===== -->
+            <div class="tabs animate-fade-rise-delay-1">
+                <button class="tab active" data-tab="incoming">
+                    Incoming
+                    <span class="tab-badge">3</span>
+                </button>
+                <button class="tab" data-tab="outgoing">
+                    Outgoing
+                    <span class="tab-badge">2</span>
+                </button>
+                <button class="tab" data-tab="completed">
+                    Completed
+                    <span class="tab-badge">5</span>
+                </button>
+            </div>
+
+            <!-- ===== Filters ===== -->
+            <div class="filters-bar animate-fade-rise-delay-1">
+                <div class="filter-group">
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="pending">Pending</button>
+                    <button class="filter-chip" data-filter="accepted">Accepted</button>
+                    <button class="filter-chip" data-filter="rejected">Rejected</button>
+                </div>
+                <div class="search-bar-small">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Search by name..."
+                        id="searchInput"
+                    >
+                </div>
+            </div>
+
+            <!-- ===== Tab Content: Incoming ===== -->
+            <div class="tab-content active" id="incoming-content">
+                <div class="requests-grid stagger-children">
+
+                    <!-- Request 1: Lana Khalid -->
+                    <div class="request-card" data-status="pending">
+                        <div class="request-header">
+                            <div class="request-user">
+                                <div class="request-avatar"><span>LK</span></div>
+                                <div class="request-user-info">
+                                    <strong>Lana Khalid</strong>
+                                    <span class="request-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <span class="badge badge-warning">Pending</span>
+                        </div>
+
+                        <div class="request-body">
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">She offers:</span>
+                                <span class="skill-chip">Photography</span>
+                            </div>
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">She wants:</span>
+                                <span class="skill-chip skill-chip-want">Web Development</span>
+                            </div>
+                        </div>
+
+                        <div class="request-message">
+                            "Hi Ahmad! I'd love to learn web development from you. I can teach you photography in return."
+                        </div>
+
+                        <div class="request-actions">
+                            <button class="btn btn-success btn-sm accept-btn">
+                                ✓ Accept
+                            </button>
+                            <button class="btn btn-outline btn-sm reject-btn">
+                                ✕ Decline
+                            </button>
+                            <button class="btn btn-outline btn-sm message-btn">
+                                💬 Message
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Request 2: Sara Mahmoud -->
+                    <div class="request-card" data-status="pending">
+                        <div class="request-header">
+                            <div class="request-user">
+                                <div class="request-avatar"><span>SM</span></div>
+                                <div class="request-user-info">
+                                    <strong>Sara Mahmoud</strong>
+                                    <span class="request-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <span class="badge badge-warning">Pending</span>
+                        </div>
+
+                        <div class="request-body">
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">She offers:</span>
+                                <span class="skill-chip">React</span>
+                            </div>
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">She wants:</span>
+                                <span class="skill-chip skill-chip-want">Graphic Design</span>
+                            </div>
+                        </div>
+
+                        <div class="request-message">
+                            "Hello! I noticed you teach Graphic Design. I'm a React developer and would love to exchange skills."
+                        </div>
+
+                        <div class="request-actions">
+                            <button class="btn btn-success btn-sm accept-btn">
+                                ✓ Accept
+                            </button>
+                            <button class="btn btn-outline btn-sm reject-btn">
+                                ✕ Decline
+                            </button>
+                            <button class="btn btn-outline btn-sm message-btn">
+                                💬 Message
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Request 3: Omar Sami (Accepted) -->
+                    <div class="request-card" data-status="accepted">
+                        <div class="request-header">
+                            <div class="request-user">
+                                <div class="request-avatar"><span>OS</span></div>
+                                <div class="request-user-info">
+                                    <strong>Omar Sami</strong>
+                                    <span class="request-time">1 day ago</span>
+                                </div>
+                            </div>
+                            <span class="badge badge-success">Accepted</span>
+                        </div>
+
+                        <div class="request-body">
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">He offers:</span>
+                                <span class="skill-chip">Graphic Design</span>
+                            </div>
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">He wants:</span>
+                                <span class="skill-chip skill-chip-want">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <div class="request-message">
+                            "Looking forward to our exchange! Let's start next week."
+                        </div>
+
+                        <div class="request-actions">
+                            <button class="btn btn-primary btn-sm message-btn">
+                                💬 Open Chat
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ===== Tab Content: Outgoing ===== -->
+            <div class="tab-content" id="outgoing-content">
+                <div class="requests-grid stagger-children">
+
+                    <!-- Request 1: To Ahmad -->
+                    <div class="request-card" data-status="pending">
+                        <div class="request-header">
+                            <div class="request-user">
+                                <div class="request-avatar"><span>AH</span></div>
+                                <div class="request-user-info">
+                                    <strong>To: Ahmad Hassan</strong>
+                                    <span class="request-time">3 hours ago</span>
+                                </div>
+                            </div>
+                            <span class="badge badge-warning">Pending</span>
+                        </div>
+
+                        <div class="request-body">
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">You offer:</span>
+                                <span class="skill-chip">Graphic Design</span>
+                            </div>
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">You want:</span>
+                                <span class="skill-chip skill-chip-want">Web Development</span>
+                            </div>
+                        </div>
+
+                        <div class="request-actions">
+                            <button class="btn btn-outline btn-sm cancel-request-btn">
+                                ✕ Cancel Request
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Request 2: To Noor -->
+                    <div class="request-card" data-status="pending">
+                        <div class="request-header">
+                            <div class="request-user">
+                                <div class="request-avatar"><span>NK</span></div>
+                                <div class="request-user-info">
+                                    <strong>To: Noor Khaled</strong>
+                                    <span class="request-time">1 day ago</span>
+                                </div>
+                            </div>
+                            <span class="badge badge-warning">Pending</span>
+                        </div>
+
+                        <div class="request-body">
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">You offer:</span>
+                                <span class="skill-chip">JavaScript</span>
+                            </div>
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">You want:</span>
+                                <span class="skill-chip skill-chip-want">UI/UX Design</span>
+                            </div>
+                        </div>
+
+                        <div class="request-actions">
+                            <button class="btn btn-outline btn-sm cancel-request-btn">
+                                ✕ Cancel Request
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ===== Tab Content: Completed ===== -->
+            <div class="tab-content" id="completed-content">
+                <div class="requests-grid stagger-children">
+
+                    <div class="request-card completed" data-status="completed">
+                        <div class="request-header">
+                            <div class="request-user">
+                                <div class="request-avatar"><span>MH</span></div>
+                                <div class="request-user-info">
+                                    <strong>Mahmoud Hamdan</strong>
+                                    <span class="request-time">2 weeks ago</span>
+                                </div>
+                            </div>
+                            <span class="badge badge-info">Completed</span>
+                        </div>
+
+                        <div class="request-body">
+                            <div class="request-skill-row">
+                                <span class="skill-label-small">You learned:</span>
+                                <span class="skill-chip skill-chip-want">Mobile Development</span>
+                            </div>
+                        </div>
+
+                        <div class="review-prompt">
+                            <span class="review-prompt-icon">⭐</span>
+                            <span>Rate your experience</span>
+                            <div class="review-stars-input">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+
+                        <div class="request-actions">
+                            <button class="btn btn-primary btn-sm message-btn">
+                                💬 View Chat
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyState">
+                <div class="empty-icon">📭</div>
+                <h3>No requests found</h3>
+                <p>Try adjusting your filters or search.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/swap-requests.js"></script>
+
+</body>
+</html>

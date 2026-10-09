@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/my-skills.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="categories.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== My Skills Section ===== -->
+    <section class="my-skills-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="my-skills-header animate-fade-rise">
+                <div>
+                    <h1>My Skills</h1>
+                    <p>Manage the skills you teach and want to learn.</p>
+                </div>
+                <button class="btn btn-primary btn-large" id="addSkillBtn">
+                    + Add New Skill
+                </button>
+            </div>
+
+            <!-- ===== Tabs ===== -->
+            <div class="skills-tabs animate-fade-rise-delay-1">
+                <button class="skills-tab active" data-tab="teach">
+                    <span class="tab-icon">🎓</span>
+                    <span class="tab-text">Can Teach</span>
+                    <span class="tab-count" id="teachCount">5</span>
+                </button>
+                <button class="skills-tab" data-tab="learn">
+                    <span class="tab-icon">📚</span>
+                    <span class="tab-text">Wants to Learn</span>
+                    <span class="tab-count" id="learnCount">3</span>
+                </button>
+            </div>
+
+            <!-- ===== Tab Content: Can Teach ===== -->
+            <div class="tab-content active" id="teach-content">
+
+                <div class="skills-grid stagger-children" id="teachGrid">
+
+                    <!-- Skill 1 -->
+                    <div class="my-skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-technology">💻</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn edit-btn" title="Edit">✏️</button>
+                                <button class="skill-action-btn delete-btn" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">Web Development</h3>
+                        <p class="skill-card-category">Technology</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-warning">Advanced</span>
+                            <span class="skill-experience">5+ years</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="my-skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-technology">⚛️</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn edit-btn" title="Edit">✏️</button>
+                                <button class="skill-action-btn delete-btn" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">React</h3>
+                        <p class="skill-card-category">Technology</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-info">Intermediate</span>
+                            <span class="skill-experience">2 years</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="my-skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-technology">📜</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn edit-btn" title="Edit">✏️</button>
+                                <button class="skill-action-btn delete-btn" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">JavaScript</h3>
+                        <p class="skill-card-category">Technology</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-info">Intermediate</span>
+                            <span class="skill-experience">3 years</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="my-skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-handmade">🎨</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn edit-btn" title="Edit">✏️</button>
+                                <button class="skill-action-btn delete-btn" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">Graphic Design</h3>
+                        <p class="skill-card-category">Handmade</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-warning">Advanced</span>
+                            <span class="skill-experience">4 years</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="my-skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-handmade">🖌️</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn edit-btn" title="Edit">✏️</button>
+                                <button class="skill-action-btn delete-btn" title="Delete">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">Photoshop</h3>
+                        <p class="skill-card-category">Handmade</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-warning">Advanced</span>
+                            <span class="skill-experience">6 years</span>
+                        </div>
+                    </div>
+
+                    <!-- Add Skill Card -->
+                    <button class="add-skill-card" id="addTeachSkill">
+                        <span class="add-skill-icon">+</span>
+                        <span class="add-skill-text">Add Skill</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ===== Tab Content: Wants to Learn ===== -->
+            <div class="tab-content" id="learn-content">
+
+                <div class="skills-grid stagger-children" id="learnGrid">
+
+                    <!-- Skill 1 -->
+                    <div class="my-skill-card learn-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-business">🎯</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn delete-btn" title="Remove">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">UI/UX Design</h3>
+                        <p class="skill-card-category">Technology</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-primary">Beginner</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="my-skill-card learn-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-business">🎨</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn delete-btn" title="Remove">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">Figma</h3>
+                        <p class="skill-card-category">Technology</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-primary">Beginner</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="my-skill-card learn-card">
+                        <div class="skill-card-header">
+                            <div class="skill-card-icon skill-icon-technology">📱</div>
+                            <div class="skill-card-actions">
+                                <button class="skill-action-btn delete-btn" title="Remove">🗑️</button>
+                            </div>
+                        </div>
+                        <h3 class="skill-card-title">Mobile Development</h3>
+                        <p class="skill-card-category">Technology</p>
+                        <div class="skill-card-footer">
+                            <span class="badge badge-primary">Beginner</span>
+                        </div>
+                    </div>
+
+                    <!-- Add Skill Card -->
+                    <button class="add-skill-card" id="addLearnSkill">
+                        <span class="add-skill-icon">+</span>
+                        <span class="add-skill-text">Add Skill</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Add Skill Modal ===== -->
+    <div class="modal-overlay hidden" id="addSkillModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add New Skill</h2>
+                <button class="modal-close" id="closeModal">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-input" id="modalCategory">
+                        <option value="">Select category...</option>
+                        <option value="technology">💻 Technology</option>
+                        <option value="education">🎓 Education</option>
+                        <option value="handmade">🎨 Handmade</option>
+                        <option value="entertainment">🎬 Entertainment</option>
+                        <option value="business">💼 Business</option>
+                        <option value="health">❤️ Health &amp; Fitness</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Skill Name</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        id="modalSkillName"
+                        placeholder="e.g. Python, Guitar, Cooking..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Level</label>
+                    <select class="form-input" id="modalLevel">
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Experience (optional)</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        id="modalExperience"
+                        placeholder="e.g. 2 years"
+                    >
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelAdd">Cancel</button>
+                <button class="btn btn-primary" id="confirmAdd">Add Skill</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/my-skills.js"></script>
+
+</body>
+</html>

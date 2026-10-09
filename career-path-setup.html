@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Your Career Path - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/career-path-setup.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="categories.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link active">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Setup Section ===== -->
+    <section class="setup-section">
+        <div class="container-narrow">
+
+            <!-- ===== Progress Steps ===== -->
+            <div class="setup-progress animate-fade-rise">
+                <div class="progress-step active" data-step="1">
+                    <div class="progress-step-number">1</div>
+                    <span class="progress-step-label">Choose Goal</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="progress-step-number">2</div>
+                    <span class="progress-step-label">Your Level</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="progress-step-number">3</div>
+                    <span class="progress-step-label">Preferences</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">
+                    <div class="progress-step-number">4</div>
+                    <span class="progress-step-label">Generate</span>
+                </div>
+            </div>
+
+            <!-- ===== Setup Card ===== -->
+            <div class="setup-card animate-fade-rise-delay-1">
+
+                <!-- ===== Step 1: Choose Goal ===== -->
+                <div class="setup-step active" id="step-1">
+                    <div class="step-header">
+                        <span class="step-tag">STEP 1 OF 3</span>
+                        <h1>What's Your Career Goal?</h1>
+                        <p>Choose the path you want to pursue. We'll build a personalized learning journey for you.</p>
+                    </div>
+
+                    <div class="goals-grid stagger-children">
+
+                        <div class="goal-option" data-goal="full-stack">
+                            <div class="goal-option-icon">💻</div>
+                            <h3>Full Stack Web Developer</h3>
+                            <p>Master frontend & backend to build complete web apps.</p>
+                            <span class="goal-duration">~6 months</span>
+                        </div>
+
+                        <div class="goal-option" data-goal="ui-ux">
+                            <div class="goal-option-icon">🎨</div>
+                            <h3>UI/UX Designer</h3>
+                            <p>Design beautiful, user-centered digital experiences.</p>
+                            <span class="goal-duration">~4 months</span>
+                        </div>
+
+                        <div class="goal-option" data-goal="mobile">
+                            <div class="goal-option-icon">📱</div>
+                            <h3>Mobile App Developer</h3>
+                            <p>Build native and cross-platform mobile applications.</p>
+                            <span class="goal-duration">~5 months</span>
+                        </div>
+
+                        <div class="goal-option" data-goal="data">
+                            <div class="goal-option-icon">📊</div>
+                            <h3>Data Scientist</h3>
+                            <p>Analyze data and build machine learning models.</p>
+                            <span class="goal-duration">~8 months</span>
+                        </div>
+
+                        <div class="goal-option" data-goal="devops">
+                            <div class="goal-option-icon">⚙️</div>
+                            <h3>DevOps Engineer</h3>
+                            <p>Automate deployments and manage cloud infrastructure.</p>
+                            <span class="goal-duration">~7 months</span>
+                        </div>
+
+                        <div class="goal-option" data-goal="graphic">
+                            <div class="goal-option-icon">🖌️</div>
+                            <h3>Graphic Designer</h3>
+                            <p>Create stunning visual content for brands and media.</p>
+                            <span class="goal-duration">~3 months</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ===== Step 2: Your Level ===== -->
+                <div class="setup-step" id="step-2">
+                    <div class="step-header">
+                        <span class="step-tag">STEP 2 OF 3</span>
+                        <h1>What's Your Current Level?</h1>
+                        <p>This helps us tailor the path to your experience.</p>
+                    </div>
+
+                    <div class="level-options">
+
+                        <label class="level-option">
+                            <input type="radio" name="level" value="beginner" checked>
+                            <div class="level-card">
+                                <div class="level-icon">🌱</div>
+                                <div class="level-content">
+                                    <h3>Complete Beginner</h3>
+                                    <p>I'm new to this field and starting from scratch.</p>
+                                </div>
+                                <div class="level-check">✓</div>
+                            </div>
+                        </label>
+
+                        <label class="level-option">
+                            <input type="radio" name="level" value="intermediate">
+                            <div class="level-card">
+                                <div class="level-icon">🌿</div>
+                                <div class="level-content">
+                                    <h3>Some Experience</h3>
+                                    <p>I know the basics and want to level up my skills.</p>
+                                </div>
+                                <div class="level-check">✓</div>
+                            </div>
+                        </label>
+
+                        <label class="level-option">
+                            <input type="radio" name="level" value="advanced">
+                            <div class="level-card">
+                                <div class="level-icon">🌳</div>
+                                <div class="level-content">
+                                    <h3>Experienced</h3>
+                                    <p>I have solid experience and want to master advanced topics.</p>
+                                </div>
+                                <div class="level-check">✓</div>
+                            </div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- ===== Step 3: Preferences ===== -->
+                <div class="setup-step" id="step-3">
+                    <div class="step-header">
+                        <span class="step-tag">STEP 3 OF 3</span>
+                        <h1>Your Learning Preferences</h1>
+                        <p>Tell us how much time you can invest so we can pace the path accordingly.</p>
+                    </div>
+
+                    <!-- Weekly Time -->
+                    <div class="preference-block">
+                        <label class="preference-label">Weekly Time Commitment</label>
+                        <div class="time-options">
+                            <label class="time-option">
+                                <input type="radio" name="time" value="light">
+                                <div class="time-card">
+                                    <strong>Light</strong>
+                                    <span>1-5 hrs/week</span>
+                                </div>
+                            </label>
+                            <label class="time-option">
+                                <input type="radio" name="time" value="moderate" checked>
+                                <div class="time-card">
+                                    <strong>Moderate</strong>
+                                    <span>5-15 hrs/week</span>
+                                </div>
+                            </label>
+                            <label class="time-option">
+                                <input type="radio" name="time" value="intense">
+                                <div class="time-card">
+                                    <strong>Intense</strong>
+                                    <span>15+ hrs/week</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Learning Style -->
+                    <div class="preference-block">
+                        <label class="preference-label">Preferred Learning Style</label>
+                        <div class="style-options">
+                            <label class="style-option">
+                                <input type="checkbox" name="style" value="videos">
+                                <div class="style-card">
+                                    <span class="style-icon">🎥</span>
+                                    <span>Videos</span>
+                                </div>
+                            </label>
+                            <label class="style-option">
+                                <input type="checkbox" name="style" value="reading" checked>
+                                <div class="style-card">
+                                    <span class="style-icon">📚</span>
+                                    <span>Reading</span>
+                                </div>
+                            </label>
+                            <label class="style-option">
+                                <input type="checkbox" name="style" value="practice" checked>
+                                <div class="style-card">
+                                    <span class="style-icon">🛠️</span>
+                                    <span>Practice</span>
+                                </div>
+                            </label>
+                            <label class="style-option">
+                                <input type="checkbox" name="style" value="mentorship">
+                                <div class="style-card">
+                                    <span class="style-icon">👥</span>
+                                    <span>Mentorship</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Current Skills (Optional) -->
+                    <div class="preference-block">
+                        <label class="preference-label">Skills You Already Have (Optional)</label>
+                        <p class="preference-hint">We'll skip these in your path.</p>
+                        <div class="skills-checkboxes">
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="html">
+                                <span class="skill-checkbox-box">HTML</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="css">
+                                <span class="skill-checkbox-box">CSS</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="javascript">
+                                <span class="skill-checkbox-box">JavaScript</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="git">
+                                <span class="skill-checkbox-box">Git</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="react">
+                                <span class="skill-checkbox-box">React</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="node">
+                                <span class="skill-checkbox-box">Node.js</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="sql">
+                                <span class="skill-checkbox-box">SQL</span>
+                            </label>
+                            <label class="skill-checkbox">
+                                <input type="checkbox" value="figma">
+                                <span class="skill-checkbox-box">Figma</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Setup Actions ===== -->
+                <div class="setup-actions">
+                    <button class="btn btn-outline btn-large hidden" id="backBtn">
+                        ← Back
+                    </button>
+                    <div class="setup-actions-spacer"></div>
+                    <button class="btn btn-primary btn-large" id="nextBtn">
+                        Next Step →
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/career-path-setup.js"></script>
+
+</body>
+</html>

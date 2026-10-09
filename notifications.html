@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/notifications.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="categories.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge" id="navBadge">5</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Notifications Section ===== -->
+    <section class="notifications-section">
+        <div class="container-narrow">
+
+            <!-- Header -->
+            <div class="notifications-header animate-fade-rise">
+                <div>
+                    <h1>Notifications</h1>
+                    <p>Stay updated with your skill exchanges and connections.</p>
+                </div>
+                <button class="btn btn-outline btn-sm" id="markAllBtn">
+                    ✓ Mark all as read
+                </button>
+            </div>
+
+            <!-- ===== Tabs ===== -->
+            <div class="notif-tabs animate-fade-rise-delay-1">
+                <button class="notif-tab active" data-tab="all">
+                    All <span class="tab-count" id="countAll">8</span>
+                </button>
+                <button class="notif-tab" data-tab="unread">
+                    Unread <span class="tab-count" id="countUnread">5</span>
+                </button>
+                <button class="notif-tab" data-tab="requests">
+                    Requests <span class="tab-count" id="countRequests">3</span>
+                </button>
+                <button class="notif-tab" data-tab="messages">
+                    Messages <span class="tab-count" id="countMessages">2</span>
+                </button>
+            </div>
+
+            <!-- ===== Notifications List ===== -->
+            <div class="notifications-list stagger-children" id="notificationsList">
+
+                <!-- Notification 1: New Swap Request (Unread) -->
+                <div class="notification-item unread" data-type="requests" data-unread="true">
+                    <div class="notif-icon notif-icon-request">🔄</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>New Swap Request</strong>
+                            <span class="notif-time">2 minutes ago</span>
+                        </div>
+                        <p class="notif-text">
+                            <strong>Sara Mahmoud</strong> wants to learn <span class="text-primary">Graphic Design</span> and offers <span class="text-primary">React</span> in return.
+                        </p>
+                        <div class="notif-actions">
+                            <button class="btn btn-success btn-sm notif-accept-btn">
+                                ✓ Accept
+                            </button>
+                            <button class="btn btn-outline btn-sm notif-decline-btn">
+                                ✕ Decline
+                            </button>
+                            <a href="partner-profile.html?partner=sara" class="notif-link">
+                                View Profile →
+                            </a>
+                        </div>
+                    </div>
+                    <span class="notif-dot"></span>
+                </div>
+
+                <!-- Notification 2: New Message (Unread) -->
+                <div class="notification-item unread" data-type="messages" data-unread="true">
+                    <div class="notif-icon notif-icon-message">💬</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>New Message</strong>
+                            <span class="notif-time">15 minutes ago</span>
+                        </div>
+                        <p class="notif-text">
+                            <strong>Lana Khalid</strong> sent you a message: "Great! Let's start tomorrow at 5 PM"
+                        </p>
+                        <div class="notif-actions">
+                            <a href="chat.html" class="btn btn-primary btn-sm">
+                                💬 Open Chat
+                            </a>
+                        </div>
+                    </div>
+                    <span class="notif-dot"></span>
+                </div>
+
+                <!-- Notification 3: Request Accepted (Unread) -->
+                <div class="notification-item unread" data-type="requests" data-unread="true">
+                    <div class="notif-icon notif-icon-success">✓</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>Request Accepted</strong>
+                            <span class="notif-time">1 hour ago</span>
+                        </div>
+                        <p class="notif-text">
+                            <strong>Omar Sami</strong> accepted your swap request! You can now start exchanging skills.
+                        </p>
+                        <div class="notif-actions">
+                            <a href="chat.html" class="btn btn-primary btn-sm">
+                                💬 Start Chat
+                            </a>
+                        </div>
+                    </div>
+                    <span class="notif-dot"></span>
+                </div>
+
+                <!-- Notification 4: New Review (Unread) -->
+                <div class="notification-item unread" data-type="other" data-unread="true">
+                    <div class="notif-icon notif-icon-review">⭐</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>New Review</strong>
+                            <span class="notif-time">3 hours ago</span>
+                        </div>
+                        <p class="notif-text">
+                            <strong>Yousef Sami</strong> left you a 5-star review: "Ahmad is an amazing teacher!"
+                        </p>
+                        <div class="notif-actions">
+                            <a href="profile.html" class="btn btn-outline btn-sm">
+                                View Review
+                            </a>
+                        </div>
+                    </div>
+                    <span class="notif-dot"></span>
+                </div>
+
+                <!-- Notification 5: Achievement (Unread) -->
+                <div class="notification-item unread" data-type="other" data-unread="true">
+                    <div class="notif-icon notif-icon-achievement">🏆</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>Achievement Unlocked!</strong>
+                            <span class="notif-time">5 hours ago</span>
+                        </div>
+                        <p class="notif-text">
+                            Congratulations! You've completed <strong>5 successful swaps</strong>. Keep it up!
+                        </p>
+                    </div>
+                    <span class="notif-dot"></span>
+                </div>
+
+                <!-- Notification 6: Request Declined (Read) -->
+                <div class="notification-item" data-type="requests" data-unread="false">
+                    <div class="notif-icon notif-icon-declined">✕</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>Request Declined</strong>
+                            <span class="notif-time">1 day ago</span>
+                        </div>
+                        <p class="notif-text">
+                            Unfortunately, <strong>Mohammed Ali</strong> declined your swap request.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Notification 7: New Partner Recommendation (Read) -->
+                <div class="notification-item" data-type="other" data-unread="false">
+                    <div class="notif-icon notif-icon-partner">👥</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>New Partner Recommendation</strong>
+                            <span class="notif-time">2 days ago</span>
+                        </div>
+                        <p class="notif-text">
+                            Based on your skills, we recommend <strong>Noor Khaled</strong> (UI/UX Designer) as a potential partner.
+                        </p>
+                        <div class="notif-actions">
+                            <a href="partner-profile.html?partner=noor" class="btn btn-outline btn-sm">
+                                View Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 8: System Update (Read) -->
+                <div class="notification-item" data-type="other" data-unread="false">
+                    <div class="notif-icon notif-icon-system">📢</div>
+                    <div class="notif-content">
+                        <div class="notif-header">
+                            <strong>System Update</strong>
+                            <span class="notif-time">3 days ago</span>
+                        </div>
+                        <p class="notif-text">
+                            We've added a new <strong>Career Path</strong> feature! Check it out to plan your learning journey.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyState">
+                <div class="empty-icon">🔔</div>
+                <h3>No notifications here</h3>
+                <p>You're all caught up!</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/notifications.js"></script>
+
+</body>
+</html>

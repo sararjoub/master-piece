@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/categories.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="categories.html" class="navbar-link active">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Categories Section ===== -->
+    <section class="categories-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="categories-header animate-fade-rise">
+                <span class="categories-tag">EXPLORE SKILLS</span>
+                <h1>Browse All Categories</h1>
+                <p>Discover skills and connect with people who can teach and learn with you.</p>
+            </div>
+
+            <!-- Search -->
+            <div class="categories-search animate-fade-rise-delay-1">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Search categories..."
+                    id="searchInput"
+                >
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="categories-grid stagger-children" id="categoriesGrid">
+
+                <!-- Education -->
+                <a href="technology-category.html" class="category-card" data-name="education">
+                    <div class="category-icon category-icon-education">🎓</div>
+                    <h3 class="category-name">Education</h3>
+                    <p class="category-desc">Learn academic and teaching skills</p>
+                    <span class="category-count">12 Skills</span>
+                    <div class="category-arrow">→</div>
+                </a>
+
+                <!-- Technology -->
+                <a href="technology-category.html" class="category-card" data-name="technology">
+                    <div class="category-icon category-icon-technology">💻</div>
+                    <h3 class="category-name">Technology</h3>
+                    <p class="category-desc">Programming, design, and IT</p>
+                    <span class="category-count">20 Skills</span>
+                    <div class="category-arrow">→</div>
+                </a>
+
+                <!-- Handmade -->
+                <a href="#" class="category-card" data-name="handmade">
+                    <div class="category-icon category-icon-handmade">🎨</div>
+                    <h3 class="category-name">Handmade</h3>
+                    <p class="category-desc">Crafts, arts, and DIY projects</p>
+                    <span class="category-count">15 Skills</span>
+                    <div class="category-arrow">→</div>
+                </a>
+
+                <!-- Entertainment -->
+                <a href="#" class="category-card" data-name="entertainment">
+                    <div class="category-icon category-icon-entertainment">🎬</div>
+                    <h3 class="category-name">Entertainment</h3>
+                    <p class="category-desc">Music, video, and performance</p>
+                    <span class="category-count">10 Skills</span>
+                    <div class="category-arrow">→</div>
+                </a>
+
+                <!-- Business -->
+                <a href="#" class="category-card" data-name="business">
+                    <div class="category-icon category-icon-business">💼</div>
+                    <h3 class="category-name">Business</h3>
+                    <p class="category-desc">Marketing, management, and sales</p>
+                    <span class="category-count">14 Skills</span>
+                    <div class="category-arrow">→</div>
+                </a>
+
+                <!-- Health & Fitness -->
+                <a href="#" class="category-card" data-name="health">
+                    <div class="category-icon category-icon-health">❤️</div>
+                    <h3 class="category-name">Health &amp; Fitness</h3>
+                    <p class="category-desc">Sports, nutrition, and wellness</p>
+                    <span class="category-count">8 Skills</span>
+                    <div class="category-arrow">→</div>
+                </a>
+
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyState">
+                <div class="empty-icon">🔍</div>
+                <h3>No categories found</h3>
+                <p>Try a different search term.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/categories.js"></script>
+
+</body>
+</html>

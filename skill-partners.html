@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Skill Partners - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/partners.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="home.html" class="navbar-link">Home</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link active">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn">
+                        <span>AH</span>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Partners Section ===== -->
+    <section class="partners-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="partners-header animate-fade-rise">
+                <h1>Find Your Skill Partner</h1>
+                <p>People who can teach what you want to learn and learn what you can share.</p>
+            </div>
+
+            <!-- Search & Filters -->
+            <div class="search-filters animate-fade-rise-delay-1">
+                <div class="search-bar">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Search partners..."
+                        id="searchInput"
+                    >
+                    <button class="btn btn-primary" id="searchBtn">Search</button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="available">Availability</button>
+                    <button class="filter-btn" data-filter="rating">Rating</button>
+                </div>
+            </div>
+
+            <!-- Partners Count -->
+            <p class="partners-count animate-fade-rise-delay-1">
+                <span id="partnersCount">12</span> partners found
+            </p>
+
+            <!-- Partners List -->
+            <div class="partners-list stagger-children" id="partnersList">
+
+                <!-- Partner 1: Ahmad Hassan -->
+                <div class="partner-card" data-rating="4.8" data-available="true">
+                    <div class="partner-avatar">
+                        <span>AH</span>
+                    </div>
+
+                    <div class="partner-info">
+                        <div class="partner-name-row">
+                            <h3 class="partner-name">Ahmad Hassan</h3>
+                            <div class="partner-rating">
+                                <span class="rating-star">★</span>
+                                <span class="rating-value">4.8</span>
+                                <span class="rating-reviews">· 12 reviews</span>
+                            </div>
+                        </div>
+
+                        <div class="partner-skills">
+                            <div class="skill-column">
+                                <span class="skill-label">Can Teach</span>
+                                <span class="skill-tag">Web Development</span>
+                            </div>
+                            <div class="skill-column">
+                                <span class="skill-label">Wants to Learn</span>
+                                <span class="skill-tag">UI/UX Design</span>
+                            </div>
+                            <div class="skill-column">
+                                <span class="skill-label">Availability</span>
+                                <span class="availability">Weekdays 5–8 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-actions">
+                        <button class="btn btn-primary btn-sm view-profile-btn" data-partner="ahmad-hassan">
+                            View Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Partner 2: Lana Khalid -->
+                <div class="partner-card" data-rating="4.6" data-available="true">
+                    <div class="partner-avatar">
+                        <span>LK</span>
+                    </div>
+
+                    <div class="partner-info">
+                        <div class="partner-name-row">
+                            <h3 class="partner-name">Lana Khalid</h3>
+                            <div class="partner-rating">
+                                <span class="rating-star">★</span>
+                                <span class="rating-value">4.6</span>
+                                <span class="rating-reviews">· 9 reviews</span>
+                            </div>
+                        </div>
+
+                        <div class="partner-skills">
+                            <div class="skill-column">
+                                <span class="skill-label">Can Teach</span>
+                                <span class="skill-tag">Web Development</span>
+                            </div>
+                            <div class="skill-column">
+                                <span class="skill-label">Wants to Learn</span>
+                                <span class="skill-tag">Photography</span>
+                            </div>
+                            <div class="skill-column">
+                                <span class="skill-label">Availability</span>
+                                <span class="availability">Weekends</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-actions">
+                        <button class="btn btn-primary btn-sm view-profile-btn" data-partner="lana-khalid">
+                            View Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Partner 3: Omar Sami -->
+                <div class="partner-card" data-rating="4.7" data-available="true">
+                    <div class="partner-avatar">
+                        <span>OS</span>
+                    </div>
+
+                    <div class="partner-info">
+                        <div class="partner-name-row">
+                            <h3 class="partner-name">Omar Sami</h3>
+                            <div class="partner-rating">
+                                <span class="rating-star">★</span>
+                                <span class="rating-value">4.7</span>
+                                <span class="rating-reviews">· 15 reviews</span>
+                            </div>
+                        </div>
+
+                        <div class="partner-skills">
+                            <div class="skill-column">
+                                <span class="skill-label">Can Teach</span>
+                                <span class="skill-tag">Web Development</span>
+                            </div>
+                            <div class="skill-column">
+                                <span class="skill-label">Wants to Learn</span>
+                                <span class="skill-tag">Graphic Design</span>
+                            </div>
+                            <div class="skill-column">
+                                <span class="skill-label">Availability</span>
+                                <span class="availability">Flexible</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-actions">
+                        <button class="btn btn-primary btn-sm view-profile-btn" data-partner="omar-sami">
+                            View Profile
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyState">
+                <div class="empty-icon">🔍</div>
+                <h3>No partners found</h3>
+                <p>Try adjusting your search or filters.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/partners.js"></script>
+
+</body>
+</html>

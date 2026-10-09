@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Exchange Request - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/exchange-request.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="home.html" class="navbar-link">Home</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link active">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Exchange Request Section ===== -->
+    <section class="exchange-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="exchange-header animate-fade-rise">
+                <h1>Send Exchange Request</h1>
+                <p>Create a simple request to start your skill exchange with Ahmad.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="exchange-grid">
+
+                <!-- ===== الجانب الأيسر: بطاقة الشريك ===== -->
+                <aside class="partner-summary animate-slide-in-left">
+
+                    <div class="partner-summary-card">
+
+                        <!-- Avatar + Name -->
+                        <div class="summary-avatar-section">
+                            <div class="summary-avatar">
+                                <span>AH</span>
+                            </div>
+                            <h2 class="summary-name">Ahmad Hassan</h2>
+                            <div class="summary-rating">
+                                <span class="rating-star">★</span>
+                                <span class="rating-value">4.8</span>
+                                <span class="rating-reviews">· 12 reviews</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <!-- Can Teach -->
+                        <div class="summary-block">
+                            <span class="summary-label">Can Teach</span>
+                            <div class="summary-tags">
+                                <span class="summary-tag">Web Development</span>
+                            </div>
+                        </div>
+
+                        <!-- Wants to Learn -->
+                        <div class="summary-block">
+                            <span class="summary-label">Wants to Learn</span>
+                            <div class="summary-tags">
+                                <span class="summary-tag summary-tag-want">UI/UX Design</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+                <!-- ===== الجانب الأيمن: النموذج ===== -->
+                <main class="exchange-form-wrapper animate-fade-rise-delay-1">
+
+                    <form class="exchange-form" id="exchangeForm">
+
+                        <!-- What can you teach -->
+                        <div class="form-block">
+                            <label class="form-block-label">What can you teach Ahmad?</label>
+                            <div class="choice-chips" data-name="teach">
+                                <button type="button" class="chip" data-value="Graphic Design">Graphic Design</button>
+                                <button type="button" class="chip" data-value="UI/UX Design">UI/UX Design</button>
+                                <button type="button" class="chip" data-value="Photography">Photography</button>
+                                <button type="button" class="chip" data-value="Video Editing">Video Editing</button>
+                            </div>
+                        </div>
+
+                        <!-- What do you want to learn -->
+                        <div class="form-block">
+                            <label class="form-block-label">What do you want to learn?</label>
+                            <div class="choice-chips" data-name="learn">
+                                <button type="button" class="chip" data-value="Web Development">Web Development</button>
+                                <button type="button" class="chip" data-value="JavaScript">JavaScript</button>
+                                <button type="button" class="chip" data-value="React">React</button>
+                                <button type="button" class="chip" data-value="Mobile Development">Mobile Development</button>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-block">
+                            <label class="form-block-label" for="message">Message</label>
+                            <textarea 
+                                id="message" 
+                                class="form-textarea"
+                                placeholder="Write a short message to Ahmad..."
+                                rows="5"
+                            >Hi Ahmad! I'd like to learn Web Development and exchange my Graphic Design skills with you.</textarea>
+                        </div>
+
+                        <!-- Preferred time -->
+                        <div class="form-block">
+                            <label class="form-block-label">Preferred time</label>
+                            <div class="time-chips" data-name="time">
+                                <button type="button" class="chip" data-value="Weekdays 5–8 PM">Weekdays 5–8 PM</button>
+                                <button type="button" class="chip" data-value="Weekends">Weekends</button>
+                                <button type="button" class="chip" data-value="Flexible">Flexible</button>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline btn-large" id="cancelBtn">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                                Send Exchange Request →
+                            </button>
+                        </div>
+
+                    </form>
+
+                </main>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/exchange-request.js"></script>
+
+</body>
+</html>

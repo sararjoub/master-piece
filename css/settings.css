@@ -1,0 +1,1033 @@
+/* ============================================
+   ===== SETTINGS PAGE =====
+   ============================================ */
+
+.settings-section {
+    padding: 40px 0 80px;
+    background-color: var(--bg-page);
+    min-height: calc(100vh - 76px);
+}
+
+/* ============================================
+   ===== Header =====
+   ============================================ */
+.settings-header {
+    margin-bottom: 32px;
+}
+
+.settings-header h1 {
+    font-size: 32px;
+    font-family: var(--font-display);
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.settings-header p {
+    font-size: 15px;
+    color: var(--text-medium);
+}
+
+/* ============================================
+   ===== Layout =====
+   ============================================ */
+.settings-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ============================================
+   ===== Sidebar =====
+   ============================================ */
+.settings-sidebar {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-xl);
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.settings-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-medium);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+    width: 100%;
+    position: relative;
+}
+
+.settings-nav-item:hover {
+    background-color: var(--primary-bg-light);
+    color: var(--primary-dark);
+    transform: translateX(4px);
+}
+
+.settings-nav-item.active {
+    background: linear-gradient(135deg, var(--primary-bg-light) 0%, var(--primary-bg) 100%);
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.settings-nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    bottom: 20%;
+    width: 3px;
+    background-color: var(--primary);
+    border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+.settings-nav-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+.settings-nav-danger {
+    color: var(--danger);
+}
+
+.settings-nav-danger:hover {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+}
+
+.settings-nav-danger.active {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+}
+
+.settings-nav-danger.active::before {
+    background-color: var(--danger);
+}
+
+/* ============================================
+   ===== Content =====
+   ============================================ */
+.settings-content {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    padding: 32px;
+    min-height: 600px;
+}
+
+.settings-panel {
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+    animation: fade-rise 0.5s ease-out;
+}
+
+.panel-header {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.panel-header h2 {
+    font-size: 22px;
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.panel-header p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ============================================
+   ===== Avatar Upload =====
+   ============================================ */
+.avatar-upload {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+}
+
+.avatar-preview {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    box-shadow: 0 6px 18px rgba(139, 124, 246, 0.3);
+    flex-shrink: 0;
+}
+
+.avatar-upload-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.avatar-hint {
+    width: 100%;
+    font-size: 12px;
+    color: var(--text-lighter);
+    margin-top: 4px;
+}
+
+/* ============================================
+   ===== Form Row =====
+   ============================================ */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-hint {
+    display: block;
+    font-size: 12px;
+    color: var(--text-lighter);
+    margin-top: 6px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   ===== Settings Block =====
+   ============================================ */
+.settings-block {
+    padding: 24px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.settings-block h3 {
+    font-size: 16px;
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.settings-block-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.settings-block-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.settings-block-row > div {
+    flex: 1;
+}
+
+.settings-block-row h3 {
+    margin-bottom: 4px;
+}
+
+.settings-block-row .settings-block-desc {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   ===== Switch Toggle =====
+   ============================================ */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-medium);
+    transition: all var(--transition-base);
+    border-radius: var(--radius-full);
+}
+
+.switch-slider::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--bg-white);
+    transition: all var(--transition-base);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.switch input:checked + .switch-slider {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.switch input:checked + .switch-slider::before {
+    transform: translateX(22px);
+}
+
+/* ============================================
+   ===== Connected Account =====
+   ============================================ */
+.connected-account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-light);
+    gap: 12px;
+}
+
+.connected-account:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.connected-account-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.connected-account-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.connected-account-info strong {
+    display: block;
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.connected-account-info span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* ============================================
+   ===== Session Item =====
+   ============================================ */
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.session-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.session-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.session-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.session-info strong {
+    display: block;
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.session-info span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* ============================================
+   ===== Notification Preferences =====
+   ============================================ */
+.notification-pref {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 20px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-fast);
+}
+
+.notification-pref:hover {
+    border-color: var(--primary-lighter);
+    background-color: var(--primary-bg-light);
+}
+
+.notification-pref-info h3 {
+    font-size: 15px;
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.notification-pref-info p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* ============================================
+   ===== Danger Zone =====
+   ============================================ */
+.danger-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff5f5;
+    border: 1px solid #fecaca;
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+}
+
+.danger-block-info h3 {
+    font-size: 16px;
+    font-family: var(--font-body);
+    color: var(--danger);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.danger-block-info p {
+    font-size: 13px;
+    color: var(--text-medium);
+    line-height: 1.5;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: var(--text-white);
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-fast);
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+    color: var(--text-white);
+}
+
+.btn-danger-outline {
+    color: var(--danger);
+    border-color: var(--danger);
+    background-color: transparent;
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-danger-outline:hover {
+    background-color: var(--danger);
+    color: var(--text-white);
+    border-color: var(--danger);
+}
+
+/* ============================================
+   ===== Modal =====
+   ============================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(30, 27, 75, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 480px;
+    box-shadow: var(--shadow-xl);
+    animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.modal-header-danger {
+    background-color: #fff5f5;
+    border-bottom-color: #fecaca;
+}
+
+.modal-header-danger h2 {
+    color: var(--danger);
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-medium);
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    background-color: var(--primary-bg);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.modal-warning {
+    font-size: 14px;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.modal-warning strong {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.modal-list {
+    list-style: none;
+    padding: 12px 16px;
+    background-color: var(--bg-light);
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+}
+
+.modal-list li {
+    font-size: 13px;
+    color: var(--text-medium);
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.modal-list li::before {
+    content: '•';
+    position: absolute;
+    left: 6px;
+    color: var(--danger);
+    font-weight: 700;
+    font-size: 16px;
+    top: 2px;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid var(--border-light);
+    justify-content: flex-end;
+}
+
+.modal-footer .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   ===== RESPONSIVE =====
+   ============================================ */
+@media (max-width: 992px) {
+    .settings-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-sidebar {
+        position: static;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 8px;
+        scrollbar-width: none;
+    }
+
+    .settings-sidebar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .settings-nav-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .settings-nav-item.active::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .settings-content {
+        padding: 20px;
+    }
+
+    .settings-header h1 {
+        font-size: 26px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .danger-block {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .danger-block .btn {
+        width: 100%;
+    }
+
+ .avatar-upload {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avatar-upload-actions {
+        justify-content: center;
+    }
+
+    .modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+    }
+
+    .notification-pref {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* ============================================
+   ===== SETTINGS SIDEBAR - PREMIUM ANIMATIONS =====
+   ===== أنيميشن احترافي للـ Sidebar =====
+   ============================================ */
+
+/* ============================================
+   ===== 1. Slide In + Bounce (دخول البطاقة) =====
+   ============================================ */
+.settings-sidebar {
+    animation: sidebarSlideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes sidebarSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px) scale(0.95);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(8px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* ============================================
+   ===== 2. Glow خلفي ينبض على البطاقة =====
+   ============================================ */
+.settings-sidebar::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(
+        circle,
+        rgba(139, 124, 246, 0.15) 0%,
+        transparent 60%
+    );
+    animation: sidebarGlow 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes sidebarGlow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.15) rotate(180deg);
+    }
+}
+
+/* التأكد من أن المحتوى فوق الـ Glow */
+.settings-sidebar > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   ===== 3. Icon Wave (تأثير الموجة) =====
+   ============================================ */
+.settings-nav-item .settings-nav-icon {
+    display: inline-block;
+    animation: iconWave 0.6s ease-out both;
+}
+
+.settings-nav-item:nth-child(1) .settings-nav-icon {
+    animation-delay: 0.3s;
+}
+.settings-nav-item:nth-child(2) .settings-nav-icon {
+    animation-delay: 0.4s;
+}
+.settings-nav-item:nth-child(3) .settings-nav-icon {
+    animation-delay: 0.5s;
+}
+.settings-nav-item:nth-child(4) .settings-nav-icon {
+    animation-delay: 0.6s;
+}
+.settings-nav-item:nth-child(5) .settings-nav-icon {
+    animation-delay: 0.7s;
+}
+
+@keyframes iconWave {
+    0% {
+        opacity: 0;
+        transform: translateY(15px) scale(0.5) rotate(-20deg);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.15) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+/* ============================================
+   ===== 4. Active Indicator Slide (مؤشر منزلق) =====
+   ============================================ */
+.settings-nav-item {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* شريط بنفسجي منزلق */
+.settings-nav-item::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(139, 124, 246, 0.1) 50%,
+        transparent 100%
+    );
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.settings-nav-item:hover::after {
+    left: 100%;
+}
+
+/* ============================================
+   ===== 5. Active State Glow Pulse =====
+   ============================================ */
+.settings-nav-item.active {
+    animation: activeGlowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes activeGlowPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(139, 124, 246, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 4px rgba(139, 124, 246, 0.08),
+            0 0 20px rgba(139, 124, 246, 0.15);
+    }
+}
+
+/* المؤشر الجانبي مع أنيميشن دخول */
+.settings-nav-item.active::before {
+    animation: indicatorSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes indicatorSlideIn {
+    0% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scaleY(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   ===== 6. Hover: Lift + Scale =====
+   ============================================ */
+.settings-nav-item:hover {
+    transform: translateX(6px) scale(1.02);
+    box-shadow: 
+        0 4px 12px rgba(139, 124, 246, 0.12),
+        0 8px 24px rgba(139, 124, 246, 0.08);
+}
+
+/* ============================================
+   ===== 7. Ripple عند النقر =====
+   ============================================ */
+.settings-nav-item .ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(139, 124, 246, 0.4) 0%,
+        transparent 70%
+    );
+    transform: scale(0);
+    animation: rippleAnimation 0.7s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ===== 8. Floating Card (البطاقة تطفو) =====
+   ============================================ */
+.settings-sidebar {
+    animation: 
+        sidebarSlideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+        sidebarFloat 6s ease-in-out 1s infinite;
+}
+
+@keyframes sidebarFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* ============================================
+   ===== 9. Icon Rotate on Hover =====
+   ============================================ */
+.settings-nav-item:hover .settings-nav-icon {
+    animation: iconRotate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes iconRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    40% {
+        transform: scale(1.3) rotate(-15deg);
+    }
+    70% {
+        transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+        transform: scale(1.15) rotate(0deg);
+    }
+}
+
+/* ============================================
+   ===== 10. Active Item Icon Bounce =====
+   ============================================ */
+.settings-nav-item.active .settings-nav-icon {
+    animation: activeIconBounce 2s ease-in-out infinite;
+}
+
+@keyframes activeIconBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-3px) scale(1.1);
+    }
+}
+
+/* ============================================
+   ===== 11. Danger Item Shake on Hover =====
+   ============================================ */
+.settings-nav-danger:hover {
+    animation: dangerShake 0.5s ease-in-out;
+}
+
+@keyframes dangerShake {
+    0%, 100% { transform: translateX(6px) scale(1.02); }
+    25% { transform: translateX(4px) scale(1.02); }
+    50% { transform: translateX(8px) scale(1.02); }
+    75% { transform: translateX(5px) scale(1.02); }
+}
+
+/* ============================================
+   ===== 12. Menu Items Stagger on Load =====
+   ============================================ */
+.settings-nav-item {
+    animation: menuItemSlide 0.5s ease-out both;
+}
+
+.settings-nav-item:nth-child(1) { animation-delay: 0.3s; }
+.settings-nav-item:nth-child(2) { animation-delay: 0.4s; }
+.settings-nav-item:nth-child(3) { animation-delay: 0.5s; }
+.settings-nav-item:nth-child(4) { animation-delay: 0.6s; }
+.settings-nav-item:nth-child(5) { animation-delay: 0.7s; }
+
+@keyframes menuItemSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,233 @@
+/* ============================================
+   ===== CATEGORY PAGE - خاص بصفحات التصنيفات =====
+   ============================================ */
+
+/* ===== الحاوية الرئيسية ===== */
+.category-section {
+    padding: 40px 0 80px;
+    background-color: var(--bg-page);
+    min-height: calc(100vh - 76px);
+}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: var(--text-light);
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb .separator {
+    color: var(--text-lighter);
+}
+
+.breadcrumb .current {
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+/* ===== Header ===== */
+.category-header {
+    margin-bottom: 32px;
+}
+
+.category-header h1 {
+    font-size: 36px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+}
+
+.category-header p {
+    font-size: 16px;
+    color: var(--text-medium);
+}
+
+/* ===== Search & Filters ===== */
+.search-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.search-filters .search-bar {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background-color: var(--bg-white);
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-lighter);
+    color: var(--primary);
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-white);
+}
+
+/* ===== Skills Count ===== */
+.skills-count {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.skills-count span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ===== Skills Grid ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ===== Skill Card ===== */
+.skill-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: var(--primary-lighter);
+}
+
+/* ===== Badges ===== */
+.skill-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ===== Skill Title ===== */
+.skill-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.3;
+}
+
+/* ===== Skill Description ===== */
+.skill-description {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* ===== Skill Button ===== */
+.skill-btn {
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    text-align: center;
+    padding: 80px 24px;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--border-medium);
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* ============================================
+   ===== RESPONSIVE =====
+   ============================================ */
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-filters .search-bar {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-header h1 {
+        font-size: 28px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+}

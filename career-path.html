@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Path - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/career-path.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link active">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Career Path Section ===== -->
+    <section class="career-section">
+        <div class="container">
+
+            <!-- ===== Header ===== -->
+            <div class="career-header animate-fade-rise">
+                <div>
+                    <span class="career-tag">PERSONALIZED CAREER PATH</span>
+                    <h1>Your Learning Journey</h1>
+                    <p>Follow your personalized path to become a <strong>Full Stack Web Developer</strong>.</p>
+                </div>
+                <button class="btn btn-outline" id="changeGoalBtn">
+                    🎯 Change Goal
+                </button>
+            </div>
+
+            <!-- ===== Progress Overview ===== -->
+            <div class="progress-overview animate-fade-rise-delay-1">
+
+                <div class="progress-header">
+                    <div>
+                        <span class="progress-label">Overall Progress</span>
+                        <span class="progress-value">35% Complete</span>
+                    </div>
+                    <span class="progress-count">3 of 8 milestones</span>
+                </div>
+
+                <div class="progress-bar-large">
+                    <div class="progress-fill-large" id="progressFill" style="width: 0%;"></div>
+                </div>
+
+                <div class="progress-stats">
+                    <div class="progress-stat">
+                        <span class="progress-stat-value">3</span>
+                        <span class="progress-stat-label">Completed</span>
+                    </div>
+                    <div class="progress-stat">
+                        <span class="progress-stat-value">1</span>
+                        <span class="progress-stat-label">In Progress</span>
+                    </div>
+                    <div class="progress-stat">
+                        <span class="progress-stat-value">4</span>
+                        <span class="progress-stat-label">Locked</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== Main Grid ===== -->
+            <div class="career-grid">
+
+                <!-- ===== الجانب الأيسر: Timeline ===== -->
+                <div class="career-main animate-fade-rise-delay-2">
+
+                    <!-- Milestone 1: Completed -->
+                    <div class="milestone completed" data-status="completed">
+                        <div class="milestone-marker">
+                            <span class="milestone-check">✓</span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>HTML Fundamentals</h3>
+                                <span class="badge badge-success">Completed</span>
+                            </div>
+                            <p class="milestone-description">
+                                Learn the building blocks of web pages: tags, elements, and structure.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 2 weeks</span>
+                                <span class="milestone-meta-item">🎓 Beginner</span>
+                                <span class="milestone-meta-item">✅ Completed on Sep 15</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2: Completed -->
+                    <div class="milestone completed" data-status="completed">
+                        <div class="milestone-marker">
+                            <span class="milestone-check">✓</span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>CSS &amp; Responsive Design</h3>
+                                <span class="badge badge-success">Completed</span>
+                            </div>
+                            <p class="milestone-description">
+                                Style web pages with CSS and make them responsive on all devices.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 3 weeks</span>
+                                <span class="milestone-meta-item">🎓 Beginner</span>
+                                <span class="milestone-meta-item">✅ Completed on Oct 1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3: Completed -->
+                    <div class="milestone completed" data-status="completed">
+                        <div class="milestone-marker">
+                            <span class="milestone-check">✓</span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>JavaScript Basics</h3>
+                                <span class="badge badge-success">Completed</span>
+                            </div>
+                            <p class="milestone-description">
+                                Add interactivity to web pages with JavaScript fundamentals.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 4 weeks</span>
+                                <span class="milestone-meta-item">🎓 Beginner</span>
+                                <span class="milestone-meta-item">✅ Completed on Oct 20</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4: In Progress -->
+                    <div class="milestone in-progress" data-status="in-progress">
+                        <div class="milestone-marker">
+                            <span class="milestone-pulse"></span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>Git &amp; GitHub</h3>
+                                <span class="badge badge-warning">In Progress</span>
+                            </div>
+                            <p class="milestone-description">
+                                Master version control and collaboration with Git and GitHub.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 2 weeks</span>
+                                <span class="milestone-meta-item">🎓 Beginner</span>
+                                <span class="milestone-meta-item">📊 60% complete</span>
+                            </div>
+                            <div class="milestone-progress">
+                                <div class="milestone-progress-fill" style="width: 60%;"></div>
+                            </div>
+                            <div class="milestone-actions">
+                                <button class="btn btn-primary btn-sm continue-btn" data-skill="git-github">
+                                    Continue Learning →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5: Locked -->
+                    <div class="milestone locked" data-status="locked">
+                        <div class="milestone-marker">
+                            <span class="milestone-lock">🔒</span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>Frontend Framework (React)</h3>
+                                <span class="badge badge-gray">Locked</span>
+                            </div>
+                            <p class="milestone-description">
+                                Build modern, component-based user interfaces with React.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 6 weeks</span>
+                                <span class="milestone-meta-item">🎓 Intermediate</span>
+                            </div>
+                            <div class="milestone-locked-message">
+                                🔒 Complete <strong>Git &amp; GitHub</strong> to unlock
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 6: Locked -->
+                    <div class="milestone locked" data-status="locked">
+                        <div class="milestone-marker">
+                            <span class="milestone-lock">🔒</span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>Backend Development</h3>
+                                <span class="badge badge-gray">Locked</span>
+                            </div>
+                            <p class="milestone-description">
+                                Build server-side applications with Node.js and Express.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 8 weeks</span>
+                                <span class="milestone-meta-item">🎓 Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 7: Locked -->
+                    <div class="milestone locked" data-status="locked">
+                        <div class="milestone-marker">
+                            <span class="milestone-lock">🔒</span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>Database &amp; APIs</h3>
+                                <span class="badge badge-gray">Locked</span>
+                            </div>
+                            <p class="milestone-description">
+                                Work with databases (SQL/MongoDB) and build REST APIs.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 6 weeks</span>
+                                <span class="milestone-meta-item">🎓 Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 8: Locked -->
+                    <div class="milestone locked" data-status="locked">
+                        <div class="milestone-marker">
+                            <span class="milestone-lock">🔒</span>
+                        </div>
+                        <div class="milestone-content">
+                            <div class="milestone-header">
+                                <h3>Full Stack Project</h3>
+                                <span class="badge badge-gray">Locked</span>
+                            </div>
+                            <p class="milestone-description">
+                                Build a complete full-stack application from scratch.
+                            </p>
+                            <div class="milestone-meta">
+                                <span class="milestone-meta-item">⏱️ 4 weeks</span>
+                                <span class="milestone-meta-item">🎓 Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== الجانب الأيمن: Sidebar ===== -->
+                <aside class="career-side animate-slide-in-right">
+
+                    <!-- Current Goal -->
+                    <div class="career-block">
+                        <h3>Current Goal</h3>
+                        <div class="goal-card">
+                            <span class="goal-icon">🎯</span>
+                            <div>
+                                <strong>Full Stack Web Developer</strong>
+                                <span>Started 2 months ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next Step -->
+                    <div class="career-block">
+                        <h3>Recommended Next Step</h3>
+                        <div class="next-step-card">
+                            <span class="next-step-icon">📚</span>
+                            <div>
+                                <strong>Complete Git &amp; GitHub</strong>
+                                <p>You're 60% done. Finish it to unlock React!</p>
+                                <button class="btn btn-primary btn-sm continue-btn" data-skill="git-github">
+                                    Continue →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills You'll Master -->
+                    <div class="career-block">
+                        <h3>Skills You'll Master</h3>
+                        <div class="skills-preview">
+                            <span class="skill-preview-chip">HTML</span>
+                            <span class="skill-preview-chip">CSS</span>
+                            <span class="skill-preview-chip">JavaScript</span>
+                            <span class="skill-preview-chip">Git</span>
+                            <span class="skill-preview-chip locked-chip">React 🔒</span>
+                            <span class="skill-preview-chip locked-chip">Node.js 🔒</span>
+                            <span class="skill-preview-chip locked-chip">MongoDB 🔒</span>
+                        </div>
+                    </div>
+
+                    <!-- Estimated Time -->
+                    <div class="career-block">
+                        <h3>Estimated Time</h3>
+                        <div class="estimated-time">
+                            <span class="time-value">~4 months</span>
+                            <span class="time-label">remaining</span>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/career-path.js"></script>
+
+</body>
+</html>

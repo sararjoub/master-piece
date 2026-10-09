@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Hassan - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/partners-profile.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="home.html" class="navbar-link">Home</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link active">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Partner Profile Section ===== -->
+    <section class="profile-section">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb animate-fade-rise">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="skill-partners.html">Skill Partners</a>
+                <span class="separator">/</span>
+                <span class="current">Ahmad Hassan</span>
+            </div>
+
+            <!-- ===== Profile Header Card ===== -->
+            <div class="profile-header-card animate-fade-rise-delay-1">
+
+                <!-- Avatar -->
+                <div class="profile-avatar">
+                    <span>AH</span>
+                </div>
+
+                <!-- Info -->
+                <div class="profile-info">
+                    <h1 class="profile-name">Ahmad Hassan</h1>
+                    <p class="profile-role">Web Development Mentor</p>
+
+                    <!-- Rating -->
+                    <div class="profile-rating">
+                        <span class="rating-star">★</span>
+                        <span class="rating-value">4.8</span>
+                        <span class="rating-reviews">· 12 reviews</span>
+                    </div>
+
+                    <!-- Location & Status -->
+                    <div class="profile-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Jordan · Available for Skill Exchange</span>
+                    </div>
+                </div>
+
+                <!-- Illustration -->
+                <div class="profile-illustration">
+                    <img 
+                        src="../assests/profile-ahmad.png" 
+                        alt="Skill Exchange"
+                    >
+                </div>
+
+            </div>
+
+            <!-- ===== Main Grid ===== -->
+            <div class="profile-grid">
+
+                <!-- ===== الجانب الأيسر: About + Skills ===== -->
+                <div class="profile-main animate-fade-rise-delay-2">
+
+                    <!-- About -->
+                    <div class="profile-block">
+                        <h2>About</h2>
+                        <p>
+                            I enjoy helping others learn web development and exchanging skills
+                            with people who are interested in design and technology.
+                        </p>
+                    </div>
+
+                    <!-- Can Teach -->
+                    <div class="profile-block">
+                        <h2>Can Teach</h2>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                        </div>
+                    </div>
+
+                    <!-- Wants to Learn -->
+                    <div class="profile-block">
+                        <h2>Wants to Learn</h2>
+                        <div class="skill-tags">
+                            <span class="skill-tag skill-tag-want">UI/UX Design</span>
+                            <span class="skill-tag skill-tag-want">Graphic Design</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== الجانب الأيمن: Experience + Availability ===== -->
+                <div class="profile-side animate-slide-in-right">
+
+                    <!-- Experience -->
+                    <div class="profile-block">
+                        <h2>Experience</h2>
+                        <div class="experience-list">
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <span class="experience-title">Web Development</span>
+                                    <span class="badge badge-warning">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <span class="experience-title">JavaScript</span>
+                                    <span class="badge badge-info">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <span class="experience-title">React</span>
+                                    <span class="badge badge-info">Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="profile-block">
+                        <h2>Availability</h2>
+                        <p class="availability-text">
+                            Mon–Fri · 5–8 PM · Online
+                        </p>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button class="btn btn-primary btn-large btn-full" id="sendRequestBtn">
+                        Send Exchange Request →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/partner-profile.js"></script>
+
+</body>
+</html>

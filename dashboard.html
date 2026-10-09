@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Skills Swap</title>
+
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link active">Dashboard</a>
+                <a href="technology-category.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Dashboard Section ===== -->
+    <section class="dashboard-section">
+        <div class="container">
+
+            <!-- ===== Welcome Header ===== -->
+            <div class="welcome-header animate-fade-rise">
+                <div>
+                    <h1>Welcome back, <span class="text-primary">Ahmad</span>! 👋</h1>
+                    <p>Here's what's happening with your skill exchanges today.</p>
+                </div>
+                <button class="btn btn-primary btn-large" id="findPartnersBtn">
+                    + Find New Partners
+                </button>
+            </div>
+
+            <!-- ===== Stats Cards ===== -->
+            <div class="stats-grid stagger-children">
+
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-primary">🔄</div>
+                    <div class="stat-content">
+                        <span class="stat-value" data-count="12">0</span>
+                        <span class="stat-label">Swap Requests</span>
+                    </div>
+                    <span class="stat-trend positive">+3 this week</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-success">✓</div>
+                    <div class="stat-content">
+                        <span class="stat-value" data-count="4">0</span>
+                        <span class="stat-label">Active Swaps</span>
+                    </div>
+                    <span class="stat-trend positive">+1 this week</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-info">🎓</div>
+                    <div class="stat-content">
+                        <span class="stat-value" data-count="8">0</span>
+                        <span class="stat-label">Skills Learned</span>
+                    </div>
+                    <span class="stat-trend positive">+2 this month</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-warning">👥</div>
+                    <div class="stat-content">
+                        <span class="stat-value" data-count="15">0</span>
+                        <span class="stat-label">Connections</span>
+                    </div>
+                    <span class="stat-trend positive">+5 this month</span>
+                </div>
+
+            </div>
+
+            <!-- ===== Main Grid ===== -->
+            <div class="dashboard-grid">
+
+                <!-- ===== الجانب الأيسر ===== -->
+                <div class="dashboard-main">
+
+                    <!-- Recent Requests -->
+                    <div class="dashboard-block animate-fade-rise-delay-1">
+                        <div class="block-header">
+                            <h2>Recent Requests</h2>
+                            <a href="swap-requests.html" class="block-link">View All →</a>
+                        </div>
+
+                        <div class="requests-list">
+
+                            <!-- Request 1 -->
+                            <div class="request-item">
+                                <div class="request-avatar"><span>LK</span></div>
+                                <div class="request-info">
+                                    <strong>Lana Khalid</strong>
+                                    <span class="request-skills">
+                                        Wants: <span class="text-primary">Web Development</span> · Offers: <span class="text-primary">Photography</span>
+                                    </span>
+                                </div>
+                                <span class="badge badge-warning">Pending</span>
+                            </div>
+
+                            <!-- Request 2 -->
+                            <div class="request-item">
+                                <div class="request-avatar"><span>OS</span></div>
+                                <div class="request-info">
+                                    <strong>Omar Sami</strong>
+                                    <span class="request-skills">
+                                        Wants: <span class="text-primary">JavaScript</span> · Offers: <span class="text-primary">Graphic Design</span>
+                                    </span>
+                                </div>
+                                <span class="badge badge-success">Accepted</span>
+                            </div>
+
+                            <!-- Request 3 -->
+                            <div class="request-item">
+                                <div class="request-avatar"><span>SM</span></div>
+                                <div class="request-info">
+                                    <strong>Sara Mahmoud</strong>
+                                    <span class="request-skills">
+                                        Wants: <span class="text-primary">UI/UX Design</span> · Offers: <span class="text-primary">React</span>
+                                    </span>
+                                </div>
+                                <span class="badge badge-info">New</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Recommended Partners -->
+                    <div class="dashboard-block animate-fade-rise-delay-2">
+                        <div class="block-header">
+                            <h2>Recommended Partners</h2>
+                            <a href="skill-partners.html" class="block-link">View All →</a>
+                        </div>
+
+                        <div class="recommended-grid">
+
+                            <div class="recommended-card">
+                                <div class="recommended-avatar"><span>AH</span></div>
+                                <h3>Ahmad Hassan</h3>
+                                <p class="recommended-skill">Web Development</p>
+                                <div class="recommended-rating">
+                                    <span class="rating-star">★</span>
+                                    <span>4.8</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm view-partner-btn" data-partner="ahmad-hassan">
+                                    View Profile
+                                </button>
+                            </div>
+
+                            <div class="recommended-card">
+                                <div class="recommended-avatar"><span>NK</span></div>
+                                <h3>Noor Khaled</h3>
+                                <p class="recommended-skill">UI/UX Design</p>
+                                <div class="recommended-rating">
+                                    <span class="rating-star">★</span>
+                                    <span>4.9</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm view-partner-btn" data-partner="noor-khaled">
+                                    View Profile
+                                </button>
+                            </div>
+
+                            <div class="recommended-card">
+                                <div class="recommended-avatar"><span>YS</span></div>
+                                <h3>Yousef Sami</h3>
+                                <p class="recommended-skill">JavaScript</p>
+                                <div class="recommended-rating">
+                                    <span class="rating-star">★</span>
+                                    <span>4.7</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm view-partner-btn" data-partner="yousef-sami">
+                                    View Profile
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== الجانب الأيمن ===== -->
+                <aside class="dashboard-side animate-slide-in-right">
+
+                    <!-- My Skills -->
+                    <div class="dashboard-block">
+                        <div class="block-header">
+                            <h2>My Skills</h2>
+                            <a href="my-skills.html" class="block-link">Edit</a>
+                        </div>
+
+                        <div class="my-skills-section">
+                            <span class="skills-subtitle">Can Teach</span>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Graphic Design</span>
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Illustrator</span>
+                            </div>
+                        </div>
+
+                        <div class="my-skills-section">
+                            <span class="skills-subtitle">Wants to Learn</span>
+                            <div class="skill-tags">
+                                <span class="skill-tag skill-tag-want">Web Development</span>
+                                <span class="skill-tag skill-tag-want">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-block">
+                        <div class="block-header">
+                            <h2>Recent Activity</h2>
+                        </div>
+
+                        <div class="activity-list">
+
+                            <div class="activity-item">
+                                <div class="activity-dot activity-dot-primary"></div>
+                                <div class="activity-content">
+                                    <p>You sent a request to <strong>Ahmad Hassan</strong></p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-dot activity-dot-success"></div>
+                                <div class="activity-content">
+                                    <p><strong>Omar Sami</strong> accepted your request</p>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-dot activity-dot-info"></div>
+                                <div class="activity-content">
+                                    <p>You completed <strong>HTML Basics</strong> lesson</p>
+                                    <span class="activity-time">3 days ago</span>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-dot activity-dot-warning"></div>
+                                <div class="activity-content">
+                                    <p>New message from <strong>Lana Khalid</strong></p>
+                                    <span class="activity-time">5 days ago</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../js/animations.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>
