@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings - Skills Swap</title>
 
-    <link rel="stylesheet" href="../css/shared.css">
-    <link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="../master-piece/css/shared.css">
+    <link rel="stylesheet" href="../master-piece/css/settings.css">
 </head>
 <body>
 
     <!-- ===== Navbar (Authed) ===== -->
     <nav class="navbar navbar-authed">
         <div class="navbar-container">
-            <a href="home.html" class="navbar-logo">
+            <a href="../master-piece/home.html" class="navbar-logo">
                 ★ Skills <span>Swap</span>
             </a>
             <div class="navbar-links">
-                <a href="dashboard.html" class="navbar-link">Dashboard</a>
-                <a href="categories.html" class="navbar-link">Categories</a>
-                <a href="career-path.html" class="navbar-link">Career Path</a>
-                <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+                <a href="../master-piece/dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="../master-piece/categories.html" class="navbar-link">Categories</a>
+                <a href="../master-piece/career-path.html" class="navbar-link">Career Path</a>
+                <a href="../master-piece/skill-partners.html" class="navbar-link">Find Partners</a>
             </div>
             <div class="navbar-actions">
                 <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
@@ -42,11 +42,14 @@
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
-                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
-                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
-                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
-                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
-                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <a href="../master-piece/profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="../master-piece/dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="../master-piece/my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="../master-piece/swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="../master-piece/pricing.html" class="dropdown-item dropdown-premium-item">
+                          <span class="dropdown-icon">⭐</span> Upgrade to Plus
+                            </a>
+                        <a href="../master-piece/settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
                         <div class="dropdown-divider"></div>
                         <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
                     </div>
@@ -159,6 +162,39 @@
                         </div>
 
                         <div class="panel-body">
+                            <div class="panel-body">
+
+    <!-- ===== Subscription Section (أضيفي هذا أولاً) ===== -->
+    <div class="settings-block subscription-block">
+        <div class="settings-block-row">
+            <div>
+                <h3>Current Subscription</h3>
+                <p class="settings-block-desc">Manage your subscription plan.</p>
+            </div>
+            <span class="badge badge-gray">Free Plan</span>
+        </div>
+
+        <div class="current-plan-display">
+            <div class="current-plan-icon">🎓</div>
+            <div class="current-plan-info">
+                <strong>Free Plan</strong>
+                <span>Access to Basic skills · Unlimited swap requests</span>
+            </div>
+        </div>
+
+        <div class="subscription-upgrade">
+            <div class="upgrade-info">
+                <span class="upgrade-icon">⭐</span>
+                <div>
+                    <strong>Upgrade to Plus</strong>
+                    <span>Unlock Advanced skills and premium features</span>
+                </div>
+            </div>
+            <a href="../master-piece/pricing.html" class="btn btn-primary btn-sm">
+                Upgrade →
+            </a>
+        </div>
+    </div>
                             <!-- Change Password -->
                             <div class="settings-block">
                                 <h3>Change Password</h3>
@@ -443,8 +479,8 @@
         </div>
     </div>
 
-    <script src="../js/animations.js"></script>
-    <script src="../js/settings.js"></script>
+    <script src="../master-piece/js/animations.js"></script>
+    <script src="../master-piece/js/settings.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Skills Swap</title>
+
+    <link rel="stylesheet" href="../master-piece/css/shared.css">
+    <link rel="stylesheet" href="../master-piece/css/pricing.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (Authed) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="../master-piece/home.html" class="navbar-logo">
+                ★ Skills <span>Swap</span>
+            </a>
+            <div class="navbar-links">
+                <a href="../master-piece/dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="../master-piece/categories.html" class="navbar-link">Categories</a>
+                <a href="../master-piece/career-path.html" class="navbar-link">Career Path</a>
+                <a href="../master-piece/skill-partners.html" class="navbar-link">Find Partners</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="../master-piece/profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="../master-piece/dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="../master-piece/my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="../master-piece/swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="../master-piece/pricing.html" class="dropdown-item dropdown-premium-item">
+                            <span class="dropdown-icon">⭐</span> Upgrade to Plus
+                        </a>
+                        <a href="../master-piece/settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Pricing Section ===== -->
+    <section class="pricing-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="pricing-header animate-fade-rise">
+                <span class="pricing-tag">PRICING PLANS</span>
+                <h1>Choose Your Learning Plan</h1>
+                <p>Start free, upgrade when you're ready. Unlock advanced skills and premium features.</p>
+
+                <!-- Toggle Monthly/Yearly -->
+                <div class="billing-toggle animate-fade-rise-delay-1">
+                    <button class="billing-btn active" data-billing="monthly">Monthly</button>
+                    <button class="billing-btn" data-billing="yearly">
+                        Yearly
+                        <span class="save-badge">Save 20%</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ===== Pricing Grid ===== -->
+            <div class="pricing-grid stagger-children">
+
+                <!-- ===== Plan 1: Free ===== -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <div class="plan-icon plan-icon-free">🎓</div>
+                        <h2 class="plan-name">Free</h2>
+                        <p class="plan-desc">Perfect for getting started with skill exchange.</p>
+                    </div>
+
+                    <div class="plan-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount" data-monthly="0" data-yearly="0">0</span>
+                        <span class="price-period">/month</span>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li class="feature-included">✓ Access to Basic skills</li>
+                        <li class="feature-included">✓ Unlimited swap requests</li>
+                        <li class="feature-included">✓ Chat with partners</li>
+                        <li class="feature-included">✓ Basic profile</li>
+                        <li class="feature-included">✓ Reviews & ratings</li>
+                        <li class="feature-excluded">✕ Advanced skills</li>
+                        <li class="feature-excluded">✕ Priority matching</li>
+                        <li class="feature-excluded">✕ 1-on-1 mentorship</li>
+                    </ul>
+
+                    <button class="btn btn-outline btn-large plan-btn" data-plan="free" disabled>
+                        Current Plan
+                    </button>
+                </div>
+
+                <!-- ===== Plan 2: Plus (Most Popular) ===== -->
+                <div class="pricing-card popular-card">
+                    <div class="popular-badge">⭐ Most Popular</div>
+                    <div class="plan-header">
+                        <div class="plan-icon plan-icon-plus">⭐</div>
+                        <h2 class="plan-name">Plus</h2>
+                        <p class="plan-desc">For serious learners who want to master skills.</p>
+                    </div>
+
+                    <div class="plan-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount" data-monthly="9" data-yearly="7">9</span>
+                        <span class="price-period">/month</span>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li class="feature-included">✓ <strong>Everything in Free</strong></li>
+                        <li class="feature-included">✓ Access to <strong>Advanced skills</strong></li>
+                        <li class="feature-included">✓ <strong>Priority</strong> partner matching</li>
+                        <li class="feature-included">✓ Unlimited chat history</li>
+                        <li class="feature-included">✓ Career Path generator</li>
+                        <li class="feature-included">✓ Advanced analytics</li>
+                        <li class="feature-included">✓ Priority support</li>
+                        <li class="feature-excluded">✕ 1-on-1 mentorship</li>
+                    </ul>
+
+                    <button class="btn btn-primary btn-large plan-btn" data-plan="plus">
+                        Upgrade to Plus →
+                    </button>
+                </div>
+
+                <!-- ===== Plan 3: Pro ===== -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <div class="plan-icon plan-icon-pro">👑</div>
+                        <h2 class="plan-name">Pro</h2>
+                        <p class="plan-desc">For professionals seeking 1-on-1 mentorship.</p>
+                    </div>
+
+                    <div class="plan-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount" data-monthly="19" data-yearly="15">19</span>
+                        <span class="price-period">/month</span>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li class="feature-included">✓ <strong>Everything in Plus</strong></li>
+                        <li class="feature-included">✓ <strong>1-on-1 mentorship</strong></li>
+                        <li class="feature-included">✓ Weekly progress reports</li>
+                        <li class="feature-included">✓ Custom career roadmap</li>
+                        <li class="feature-included">✓ Exclusive workshops</li>
+                        <li class="feature-included">✓ Certificate of completion</li>
+                        <li class="feature-included">✓ API access</li>
+                        <li class="feature-included">✓ 24/7 support</li>
+                    </ul>
+
+                    <button class="btn btn-outline btn-large plan-btn" data-plan="pro">
+                        Upgrade to Pro →
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- ===== Comparison Table ===== -->
+            <div class="comparison-section animate-fade-rise-delay-2">
+                <h2>Compare Plans in Detail</h2>
+
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Free</th>
+                                <th class="popular-col">Plus ⭐</th>
+                                <th>Pro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Basic Skills</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Skills</td>
+                                <td>✕</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Swap Requests</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Matching</td>
+                                <td>✕</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Career Path Generator</td>
+                                <td>✕</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>1-on-1 Mentorship</td>
+                                <td>✕</td>
+                                <td>✕</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Certificate</td>
+                                <td>✕</td>
+                                <td>✕</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Support</td>
+                                <td>Standard</td>
+                                <td>Priority</td>
+                                <td>24/7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ===== FAQ ===== -->
+            <div class="faq-section animate-fade-rise-delay-3">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Can I cancel my subscription anytime?</summary>
+                        <p>Yes! You can cancel your subscription at any time. Your access will continue until the end of your billing period.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What payment methods do you accept?</summary>
+                        <p>We accept Visa, Mastercard, American Express, and PayPal. More payment methods coming soon.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Is there a free trial for Plus or Pro?</summary>
+                        <p>Yes! We offer a 7-day free trial for both Plus and Pro plans. No credit card required.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I switch plans later?</summary>
+                        <p>Absolutely. You can upgrade or downgrade your plan at any time from your settings.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you offer student discounts?</summary>
+                        <p>Yes, we offer a 50% discount for students with a valid student ID. Contact support to apply.</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- ===== CTA ===== -->
+            <div class="pricing-cta animate-fade-rise-delay-3">
+                <h2>Ready to Level Up Your Skills?</h2>
+                <p>Join thousands of learners already mastering new skills with Plus.</p>
+                <button class="btn btn-primary btn-large" id="startTrialBtn">
+                    Start 7-Day Free Trial →
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== Upgrade Confirmation Modal ===== -->
+    <div class="modal-overlay hidden" id="upgradeModal">
+        <div class="modal">
+            <div class="modal-header premium-modal-header">
+                <div class="modal-header-icon">⭐</div>
+                <h2>Confirm Upgrade</h2>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-text">You're about to upgrade to <strong id="selectedPlanName">Plus</strong>.</p>
+
+                <div class="upgrade-summary">
+                    <div class="upgrade-row">
+                        <span>Plan</span>
+                        <strong id="summaryPlan">Plus</strong>
+                    </div>
+                    <div class="upgrade-row">
+                        <span>Billing</span>
+                        <strong id="summaryBilling">Monthly</strong>
+                    </div>
+                    <div class="upgrade-row upgrade-total">
+                        <span>Total</span>
+                        <strong id="summaryTotal">$9/month</strong>
+                    </div>
+                </div>
+
+                <div class="upgrade-note">
+                    <span class="note-icon">ℹ️</span>
+                    <p>This is a demo. Payment integration will be added with backend.</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelUpgrade">Cancel</button>
+                <button class="btn btn-primary" id="confirmUpgrade">Confirm Upgrade →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../master-piece/js/animations.js"></script>
+    <script src="../master-piece/js/pricing.js"></script>
+
+</body>
+</html>

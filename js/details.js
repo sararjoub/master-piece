@@ -2,6 +2,21 @@
    ===== SKILL DETAILS PAGE - JavaScript =====
    ============================================ */
 
+const premiumLockBanner = document.getElementById('premiumLockBanner');
+const startLearningBtn = document.getElementById('startLearningBtn');
+
+// افترض أن هذه مهارة Premium (لاحقاً ستأتي من الـ API)
+const isPremiumSkill = false; // ← غيّريها إلى true لتجربة البانر
+
+if (isPremiumSkill && premiumLockBanner) {
+    premiumLockBanner.classList.remove('hidden');
+    if (startLearningBtn) {
+        startLearningBtn.disabled = true;
+        startLearningBtn.style.opacity = '0.5';
+        startLearningBtn.innerHTML = '🔒 Premium Skill';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // ============================================

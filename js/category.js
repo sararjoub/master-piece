@@ -124,11 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     const skillButtons = document.querySelectorAll('.skill-btn');
     skillButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const skill = btn.dataset.skill;
-            navigateToSkill(skill);
-        });
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = btn.closest('.skill-card');
+        const isPremium = card.dataset.premium === 'true';
+
+        if (isPremium) {
+            // عرض Modal "Upgrade"
+            if (confirm('This is a Premium skill. Upgrade to Plus to access it?\n\nGo to pricing page?')) {
+                window.location.href = 'pricing.html';
+            }
+            return;
+        }
+
+        const skill = btn.dataset.skill;
+        navigateToSkill(skill);
+    });
     });
 
     // ============================================

@@ -6,8 +6,8 @@
     <title>Web Development - Skills Swap</title>
     
     <!-- الملفات المشتركة -->
-    <link rel="stylesheet" href="../css/shared.css">
-    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../master-piece/css/shared.css">
+    <link rel="stylesheet" href="../master-piece/css/details.css">
 </head>
 <body>
 
@@ -16,16 +16,16 @@
     <div class="navbar-container">
         
         <!-- الشعار -->
-        <a href="home.html" class="navbar-logo">
+        <a href="../master-piece/home.html" class="navbar-logo">
             ★ Skills <span>Swap</span>
         </a>
 
         <!-- روابط التنقل -->
         <div class="navbar-links">
-            <a href="home.html" class="navbar-link">Home</a>
-            <a href="technology-category.html" class="navbar-link active">Categories</a>
-            <a href="career-path.html" class="navbar-link">Career Path</a>
-            <a href="skill-partners.html" class="navbar-link">Find Partners</a>
+            <a href="../master-piece/home.html" class="navbar-link">Home</a>
+            <a href="../master-piece/technology-category.html" class="navbar-link active">Categories</a>
+            <a href="../master-piece/career-path.html" class="navbar-link">Career Path</a>
+            <a href="../master-piece/skill-partners.html" class="navbar-link">Find Partners</a>
         </div>
 
         <!-- الإجراءات: إشعارات + رسائل + Avatar -->
@@ -63,23 +63,23 @@
                     
                     <div class="dropdown-divider"></div>
                     
-                    <a href="profile.html" class="dropdown-item">
+                    <a href="../master-piece/profile.html" class="dropdown-item">
                         <span class="dropdown-icon">👤</span>
                         My Profile
                     </a>
-                    <a href="dashboard.html" class="dropdown-item">
+                    <a href="../master-piece/dashboard.html" class="dropdown-item">
                         <span class="dropdown-icon">📊</span>
                         Dashboard
                     </a>
-                    <a href="my-skills.html" class="dropdown-item">
+                    <a href="../master-piece/my-skills.html" class="dropdown-item">
                         <span class="dropdown-icon">🎯</span>
                         My Skills
                     </a>
-                    <a href="swap-requests.html" class="dropdown-item">
+                    <a href="../master-piece/swap-requests.html" class="dropdown-item">
                         <span class="dropdown-icon">🔄</span>
                         Swap Requests
                     </a>
-                    <a href="settings.html" class="dropdown-item">
+                    <a href="../master-piece/settings.html" class="dropdown-item">
                         <span class="dropdown-icon">⚙️</span>
                         Settings
                     </a>
@@ -103,11 +103,11 @@
 
             <!-- Breadcrumb -->
             <div class="breadcrumb animate-fade-rise">
-                <a href="home.html">Home</a>
+                <a href="../master-piece/home.html">Home</a>
                 <span class="separator">/</span>
-                <a href="technology-category.html">Categories</a>
+                <a href="../master-piece/categories.html">Categories</a>
                 <span class="separator">/</span>
-                <a href="technology-category.html">Technology</a>
+                <a href="../master-piece/technology-category.html">Technology</a>
                 <span class="separator">/</span>
                 <span class="current">Web Development</span>
             </div>
@@ -161,7 +161,18 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- ===== Premium Lock (للمهارات المميزة فقط) ===== -->
+                <!-- استخدمي هذا الكود فقط إذا كانت المهارة Premium -->
+             <div class="premium-lock-banner hidden" id="premiumLockBanner">
+              <div class="premium-lock-icon">🔒</div>
+             <div class="premium-lock-content">
+                   <h3>Premium Skill</h3>
+                 <p>This advanced skill requires a Plus subscription.</p>
+                  </div>
+                <a href="../master-piece/pricing.html" class="btn btn-primary">
+                      Upgrade to Plus →
+                               </a>
+                   </div>
                     <!-- Action Buttons -->
                     <div class="skill-actions">
                         <button class="btn btn-primary btn-large" id="startLearningBtn">
@@ -190,7 +201,7 @@
                     <!-- Illustration Image -->
                     <div class="skill-illustration">
                         <img 
-                            src="../assests/web development.png" 
+                            src="../master-piece/assests/web development.png" 
                             alt="Web Development"
                         >
                     </div>
@@ -234,8 +245,8 @@
     </section>
 
     <!-- ===== JavaScript ===== -->
-    <script src="../js/animations.js"></script>
-    <script src="../js/details.js"></script>
+    <script src="../master-piece/js/animations.js"></script>
+    <script src="../master-piece/js/details.js"></script>
 
 </body>
 </html>
