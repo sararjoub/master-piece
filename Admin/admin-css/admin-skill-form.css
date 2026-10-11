@@ -1,0 +1,245 @@
+/* ============================================
+   ===== ADD/EDIT SKILL FORM PAGE =====
+   ============================================ */
+
+/* ===== Skill Form ===== */
+.skill-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ===== Form Row (2 columns) ===== */
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* ===== Form Group ===== */
+.skill-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-form .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+}
+
+.skill-form .required {
+    color: var(--danger);
+    margin-left: 2px;
+}
+
+.skill-form .form-input,
+.skill-form .form-textarea {
+    padding: 12px 16px;
+    border: 1.5px solid var(--border-light);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    transition: all var(--transition-fast);
+    width: 100%;
+}
+
+.skill-form .form-input:focus,
+.skill-form .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-bg);
+}
+
+.skill-form .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+.skill-form .form-hint {
+    font-size: 12px;
+    color: var(--text-light);
+    font-family: var(--font-body);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ============================================
+   ===== LEARN ITEMS LIST =====
+   ============================================ */
+.learn-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.learn-item-row {
+    display: grid;
+    grid-template-columns: 24px 1fr 36px;
+    gap: 8px;
+    align-items: center;
+    animation: formItemFadeIn 0.4s ease-out;
+}
+
+@keyframes formItemFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.learn-item-handle {
+    color: var(--text-lighter);
+    font-size: 16px;
+    cursor: grab;
+    text-align: center;
+    user-select: none;
+    transition: color var(--transition-fast);
+}
+
+.learn-item-handle:hover {
+    color: var(--primary);
+}
+
+.learn-item-input {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+}
+
+.learn-item-remove {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background-color: var(--danger-bg);
+    border: 1px solid #fecaca;
+    color: var(--danger);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all var(--transition-fast);
+}
+
+.learn-item-remove:hover {
+    background-color: var(--danger);
+    color: var(--text-white);
+    transform: scale(1.05);
+}
+
+.add-learn-item-btn {
+    align-self: flex-start;
+}
+
+/* ============================================
+   ===== SKILL PREVIEW =====
+   ============================================ */
+.skill-preview-section {
+    padding: 20px;
+    background-color: var(--primary-bg-light);
+    border: 1.5px dashed var(--primary-lighter);
+    border-radius: var(--radius-lg);
+    margin-top: 8px;
+}
+
+.skill-preview-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.skill-preview-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.skill-preview-header {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.skill-preview-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-lighter) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.skill-preview-title {
+    font-size: 16px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.skill-preview-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ============================================
+   ===== FORM ACTIONS =====
+   ============================================ */
+.skill-form .form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+    margin-top: 8px;
+}
+
+/* ============================================
+   ===== RESPONSIVE =====
+   ============================================ */
+@media (max-width: 768px) {
+    .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .skill-form .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .skill-form .form-actions .admin-btn {
+        width: 100%;
+    }
+
+    .learn-item-row {
+        grid-template-columns: 20px 1fr 32px;
+    }
+
+    .learn-item-remove {
+        width: 32px;
+        height: 32px;
+    }
+}

@@ -14,9 +14,22 @@
     <!-- Navbar -->
     <header class="navbar">
         <div class="container nav-container">
-            <div class="logo">
+          <!--  <div class="logo">
                 <span class="logo-icon">★</span> Skills Swap
-            </div>
+            </div>-->
+           <a href="home.html" class="navbar-logo">
+    <span class="logo-icon-wrapper">
+        <svg class="logo-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
+    <span class="logo-text">Skills <span class="logo-accent">Swap</span></span>
+</a>
+           
+           
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
@@ -161,6 +174,22 @@
 
     <!-- About Section -->
     <section class="about" id="about">
+
+        <!-- الفيديو الخلفي -->
+    <video 
+        class="about-bg-video"
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        preload="auto"
+        poster=""
+        src="../master-piece/assests/about.mp4"
+    ></video>
+
+    <!-- طبقة تعتيم -->
+    <div class="about-overlay"></div>
+
         <div class="container about-container">
             <div class="about-content">
                 <span class="about-tag">About Skills Swap</span>
@@ -170,7 +199,8 @@
             </div>
             <div class="about-image">
                 <!-- صورة بديلة للشخصين -->
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community sharing knowledge">
+                <!--<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community sharing knowledge">-->
+         <img src="../master-piece/assests/Idea Sharing.svg" alt="People sharing skills" class="about-illustration">
                
             </div>
         </div>

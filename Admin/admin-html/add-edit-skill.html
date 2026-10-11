@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add / Edit Skill - Skills Swap Admin</title>
+
+    <!-- الملفات المشتركة -->
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-skill-form.css">
+</head>
+<body>
+
+    <!-- ============================================
+         ADMIN LAYOUT
+         ============================================ -->
+    <div class="admin-layout">
+
+        <!-- ===== Sidebar Overlay (Mobile) ===== -->
+        <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+
+        <!-- ============================================
+             SIDEBAR
+             ============================================ -->
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <!-- Logo -->
+            <a href="dashboard.html" class="admin-sidebar-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-main">Skills <span class="logo-swap">Swap</span></span>
+                    <span class="logo-subtitle">Admin Panel</span>
+                </div>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="admin-sidebar-nav">
+
+                <span class="admin-sidebar-label">Main</span>
+
+                <a href="dashboard.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Dashboard</span>
+                </a>
+
+                <a href="manage-users.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Users</span>
+                    <span class="admin-sidebar-badge">250</span>
+                </a>
+
+                <a href="manage-skills.html" class="admin-sidebar-link active">
+                    <span class="admin-sidebar-text">Skills</span>
+                </a>
+
+                <a href="manage-categories.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Categories</span>
+                </a>
+
+                <span class="admin-sidebar-label">Content</span>
+
+                <a href="manage-courses.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Courses</span>
+                </a>
+
+                <a href="manage-career-paths.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Career Paths</span>
+                </a>
+
+                <a href="manage-reviews.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reviews</span>
+                </a>
+
+                <a href="manage-requests.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Requests</span>
+                </a>
+
+                <span class="admin-sidebar-label">System</span>
+
+                <a href="reports.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reports</span>
+                </a>
+
+                <a href="settings.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Settings</span>
+                </a>
+
+            </nav>
+
+            <!-- Logout -->
+            <div class="admin-sidebar-divider"></div>
+            <button class="admin-sidebar-logout" id="adminLogout">
+                <span class="admin-sidebar-text">Logout</span>
+            </button>
+
+        </aside>
+
+        <!-- ============================================
+             MAIN AREA
+             ============================================ -->
+        <main class="admin-main">
+
+            <!-- ===== Topbar ===== -->
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
+                    <a href="manage-skills.html" class="admin-back-btn">←</a>
+                    <h1 class="admin-page-title">Add / Edit Skill</h1>
+                </div>
+
+                <div class="admin-topbar-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search skills...">
+                </div>
+
+                <div class="admin-topbar-right">
+
+                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
+                        🔔
+                        <span class="admin-notification-badge">5</span>
+                    </button>
+
+                    <div class="admin-user-menu" id="adminUserMenu">
+                        <button class="admin-user-btn" id="adminUserBtn">
+                            <span class="admin-user-avatar">A</span>
+                            <span class="admin-user-name">Admin</span>
+                            <span class="admin-user-arrow">▼</span>
+                        </button>
+
+                        <div class="admin-dropdown" id="adminDropdown">
+                            <div class="admin-dropdown-header">
+                                <span class="admin-user-avatar">A</span>
+                                <div>
+                                    <strong>Admin User</strong>
+                                    <span>admin@skills.com</span>
+                                </div>
+                            </div>
+
+                            <div class="admin-dropdown-divider"></div>
+
+                            <a href="settings.html" class="admin-dropdown-item">
+                                <span class="admin-dropdown-icon">⚙️</span>
+                                Settings
+                            </a>
+
+                            <div class="admin-dropdown-divider"></div>
+
+                            <button class="admin-dropdown-item admin-dropdown-logout">
+                                <span class="admin-dropdown-icon">🚪</span>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- ===== Content ===== -->
+            <div class="admin-content">
+
+                <!-- ===== Page Header ===== -->
+                <div class="admin-page-header admin-fade-rise">
+                    <div class="admin-page-header-left">
+                        <h1>Add / Edit Skill</h1>
+                        <p>Fill in the details below to add a new skill or update an existing one.</p>
+                    </div>
+                </div>
+
+                <!-- ===== Form Card ===== -->
+                <div class="admin-card admin-fade-rise-1">
+                    <div class="admin-card-body">
+                        <form class="skill-form" id="skillForm">
+
+                            <!-- Row 1: Skill Name + Category -->
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label class="form-label" for="skillName">
+                                        Skill Name <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="skillName" 
+                                        class="form-input" 
+                                        placeholder="e.g. Python Programming"
+                                        value="Python Programming"
+                                        required
+                                    >
+                                    <span class="form-hint">Choose a clear, descriptive name.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="skillCategory">
+                                        Category <span class="required">*</span>
+                                    </label>
+                                    <select id="skillCategory" class="form-input" required>
+                                        <option value="">Select category...</option>
+                                        <option value="technology" selected>💻 Technology</option>
+                                        <option value="education">🎓 Education</option>
+                                        <option value="handmade">🎨 Handmade</option>
+                                        <option value="entertainment">🎬 Entertainment</option>
+                                        <option value="business">💼 Business</option>
+                                        <option value="health">❤️ Health & Fitness</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Row 2: Level + Type -->
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label class="form-label" for="skillLevel">
+                                        Level <span class="required">*</span>
+                                    </label>
+                                    <select id="skillLevel" class="form-input" required>
+                                        <option value="beginner" selected>Beginner</option>
+                                        <option value="intermediate">Intermediate</option>
+                                        <option value="advanced">Advanced</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="skillType">
+                                        Learning Type <span class="required">*</span>
+                                    </label>
+                                    <select id="skillType" class="form-input" required>
+                                        <option value="free" selected>Free</option>
+                                        <option value="premium">Premium ⭐</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="form-group">
+                                <label class="form-label" for="skillDescription">
+                                    Description <span class="required">*</span>
+                                </label>
+                                <textarea 
+                                    id="skillDescription" 
+                                    class="form-textarea" 
+                                    rows="5"
+                                    placeholder="Describe what the learner will gain from this skill..."
+                                    required
+                                >Learn Python programming from scratch, covering basic syntax, data types, and control flow.</textarea>
+                                <span class="form-hint">
+                                    <span id="charCount">108</span> / 500 characters
+                                </span>
+                            </div>
+
+                            <!-- Row 3: Icon + Duration -->
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label class="form-label" for="skillIcon">Icon (Emoji)</label>
+                                    <input 
+                                        type="text" 
+                                        id="skillIcon" 
+                                        class="form-input" 
+                                        placeholder="🐍"
+                                        value="🐍"
+                                        maxlength="2"
+                                    >
+                                    <span class="form-hint">Use a single emoji.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="skillDuration">Estimated Duration</label>
+                                    <select id="skillDuration" class="form-input">
+                                        <option value="1-2">1-2 weeks</option>
+                                        <option value="2-4" selected>2-4 weeks</option>
+                                        <option value="4-8">4-8 weeks</option>
+                                        <option value="8-12">8-12 weeks</option>
+                                        <option value="12+">12+ weeks</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Requirements -->
+                            <div class="form-group">
+                                <label class="form-label" for="skillRequirements">Requirements</label>
+                                <textarea 
+                                    id="skillRequirements" 
+                                    class="form-textarea" 
+                                    rows="3"
+                                    placeholder="What should learners know before starting?"
+                                >No previous programming required. Basic computer skills needed.</textarea>
+                            </div>
+
+                            <!-- What You'll Learn -->
+                            <div class="form-group">
+                                <label class="form-label">What You'll Learn</label>
+                                <div class="learn-items-list" id="learnItemsList">
+                                    <div class="learn-item-row">
+                                        <span class="learn-item-handle">⋮⋮</span>
+                                        <input type="text" class="form-input learn-item-input" value="Python syntax and basics" placeholder="Learning outcome...">
+                                        <button type="button" class="learn-item-remove" title="Remove">✕</button>
+                                    </div>
+                                    <div class="learn-item-row">
+                                        <span class="learn-item-handle">⋮⋮</span>
+                                        <input type="text" class="form-input learn-item-input" value="Data types and variables" placeholder="Learning outcome...">
+                                        <button type="button" class="learn-item-remove" title="Remove">✕</button>
+                                    </div>
+                                    <div class="learn-item-row">
+                                        <span class="learn-item-handle">⋮⋮</span>
+                                        <input type="text" class="form-input learn-item-input" value="Control flow (if, loops)" placeholder="Learning outcome...">
+                                        <button type="button" class="learn-item-remove" title="Remove">✕</button>
+                                    </div>
+                                    <div class="learn-item-row">
+                                        <span class="learn-item-handle">⋮⋮</span>
+                                        <input type="text" class="form-input learn-item-input" value="Functions and modules" placeholder="Learning outcome...">
+                                        <button type="button" class="learn-item-remove" title="Remove">✕</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="admin-btn admin-btn-outline admin-btn-sm add-learn-item-btn" id="addLearnItemBtn">
+                                    + Add Learning Outcome
+                                </button>
+                            </div>
+
+                            <!-- Preview Section -->
+                            <div class="form-group skill-preview-section">
+                                <label class="form-label">Live Preview</label>
+                                <div class="skill-preview-card">
+                                    <div class="skill-preview-badges">
+                                        <span class="admin-badge admin-badge-primary" id="previewCategory">Technology</span>
+                                        <span class="admin-badge admin-badge-info" id="previewLevel">Beginner</span>
+                                        <span class="admin-badge admin-badge-success" id="previewType">Free</span>
+                                    </div>
+                                    <div class="skill-preview-header">
+                                        <div class="skill-preview-icon" id="previewIcon">🐍</div>
+                                        <div>
+                                            <h4 class="skill-preview-title" id="previewName">Python Programming</h4>
+                                            <p class="skill-preview-desc" id="previewDescription">Learn Python programming from scratch...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="admin-btn admin-btn-outline admin-btn-lg" id="cancelBtn">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="admin-btn admin-btn-primary admin-btn-lg" id="saveBtn">
+                                    Save Skill
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- ===== Scripts ===== -->
+    <script src="../admin-js/admin-shared.js"></script>
+    <script src="../admin-js/admin-skill-form.js"></script>
+
+</body>
+</html>

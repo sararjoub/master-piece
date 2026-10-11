@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Requests - Skills Swap Admin</title>
+
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-shared.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+
+        <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+
+        <aside class="admin-sidebar" id="adminSidebar">
+            <a href="dashboard.html" class="admin-sidebar-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-main">Skills <span class="logo-swap">Swap</span></span>
+                    <span class="logo-subtitle">Admin Panel</span>
+                </div>
+            </a>
+
+            <nav class="admin-sidebar-nav">
+                <span class="admin-sidebar-label">Main</span>
+                <a href="dashboard.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Dashboard</span>
+                </a>
+                <a href="manage-users.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Users</span>
+                    <span class="admin-sidebar-badge">250</span>
+                </a>
+                <a href="manage-skills.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Skills</span>
+                </a>
+                <a href="manage-categories.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Categories</span>
+                </a>
+                <span class="admin-sidebar-label">Content</span>
+                <a href="manage-courses.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Courses</span>
+                </a>
+                <a href="manage-career-paths.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Career Paths</span>
+                </a>
+                <a href="manage-reviews.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reviews</span>
+                </a>
+                <a href="manage-requests.html" class="admin-sidebar-link active">
+                    <span class="admin-sidebar-text">Requests</span>
+                </a>
+                <span class="admin-sidebar-label">System</span>
+                <a href="reports.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reports</span>
+                </a>
+                <a href="settings.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Settings</span>
+                </a>
+            </nav>
+
+            <div class="admin-sidebar-divider"></div>
+            <button class="admin-sidebar-logout" id="adminLogout">
+                <span class="admin-sidebar-text">Logout</span>
+            </button>
+        </aside>
+
+        <main class="admin-main">
+
+            <header class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
+                    <h1 class="admin-page-title">Manage Requests</h1>
+                </div>
+                <div class="admin-topbar-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search requests...">
+                </div>
+                <div class="admin-topbar-right">
+                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
+                        🔔
+                        <span class="admin-notification-badge">5</span>
+                    </button>
+                    <div class="admin-user-menu" id="adminUserMenu">
+                        <button class="admin-user-btn" id="adminUserBtn">
+                            <span class="admin-user-avatar">A</span>
+                            <span class="admin-user-name">Admin</span>
+                            <span class="admin-user-arrow">▼</span>
+                        </button>
+                        <div class="admin-dropdown" id="adminDropdown">
+                            <div class="admin-dropdown-header">
+                                <span class="admin-user-avatar">A</span>
+                                <div>
+                                    <strong>Admin User</strong>
+                                    <span>admin@skills.com</span>
+                                </div>
+                            </div>
+                            <div class="admin-dropdown-divider"></div>
+                            <a href="settings.html" class="admin-dropdown-item">
+                                <span class="admin-dropdown-icon">⚙️</span>
+                                Settings
+                            </a>
+                            <div class="admin-dropdown-divider"></div>
+                            <button class="admin-dropdown-item admin-dropdown-logout">
+                                <span class="admin-dropdown-icon">🚪</span>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+
+                <div class="admin-page-header admin-fade-rise">
+                    <div class="admin-page-header-left">
+                        <h1>Manage Requests</h1>
+                        <p>Monitor and manage all swap requests on the platform.</p>
+                    </div>
+                    <div class="admin-page-header-actions">
+                        <button class="admin-btn admin-btn-outline" id="exportRequestsBtn">
+                            ⬇️ Export CSV
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== Stat Cards ===== -->
+                <div class="admin-stats-grid admin-stagger">
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-primary">🔄</div>
+                            <span class="admin-stat-trend positive">↑ 12%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="486">0</div>
+                            <div class="admin-stat-label">Total Requests</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-warning">⏳</div>
+                            <span class="admin-stat-trend neutral">→ 0%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="120">0</div>
+                            <div class="admin-stat-label">Pending</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-success">✅</div>
+                            <span class="admin-stat-trend positive">↑ 18%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="310">0</div>
+                            <div class="admin-stat-label">Accepted</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-danger">❌</div>
+                            <span class="admin-stat-trend negative">↓ 3%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="56">0</div>
+                            <div class="admin-stat-label">Declined</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== Requests Table Card ===== -->
+                <div class="admin-card admin-fade-rise-2">
+
+                    <div class="admin-card-header admin-card-header-filters">
+                        <div class="admin-filters">
+                            <button class="admin-filter-btn active" data-filter="all">All</button>
+                            <button class="admin-filter-btn" data-filter="pending">Pending</button>
+                            <button class="admin-filter-btn" data-filter="accepted">Accepted</button>
+                            <button class="admin-filter-btn" data-filter="declined">Declined</button>
+                            <button class="admin-filter-btn" data-filter="flagged">Flagged</button>
+                        </div>
+                        <div class="admin-search-bar">
+                            <div class="admin-search-input-wrapper">
+                                <span class="search-icon">🔍</span>
+                                <input 
+                                    type="text" 
+                                    class="admin-search-input"
+                                    placeholder="Search by user or skill..."
+                                    id="requestsSearchInput"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card-body admin-card-body-flush">
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table" id="requestsTable">
+                                <thead>
+                                    <tr>
+                                        <th class="admin-checkbox-col">
+                                            <input type="checkbox" id="selectAllRequests">
+                                        </th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Skills Exchange</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th class="admin-actions-col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="requestsTableBody">
+
+                                    <tr data-status="pending" data-search="ahmad ali lana khalid web development photography">
+                                        <td><input type="checkbox" class="request-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">AA</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Ahmad Ali</div>
+                                                    <div class="admin-table-user-email">ahmad@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">LK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Lana Khalid</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="request-skills-cell">
+                                                <span class="request-skill-tag">Web Dev</span>
+                                                <span class="request-skill-arrow">⇄</span>
+                                                <span class="request-skill-tag request-skill-want">Photography</span>
+                                            </div>
+                                        </td>
+                                        <td>2 hours ago</td>
+                                        <td><span class="admin-badge admin-badge-warning">● Pending</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this request?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-status="accepted" data-search="omar sami ahmad hassan javascript graphic design">
+                                        <td><input type="checkbox" class="request-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">OS</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Omar Sami</div>
+                                                    <div class="admin-table-user-email">omar@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">AH</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Ahmad Hassan</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="request-skills-cell">
+                                                <span class="request-skill-tag">JavaScript</span>
+                                                <span class="request-skill-arrow">⇄</span>
+                                                <span class="request-skill-tag request-skill-want">Graphic Design</span>
+                                            </div>
+                                        </td>
+                                        <td>1 day ago</td>
+                                        <td><span class="admin-badge admin-badge-success">● Accepted</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this request?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-status="pending" data-search="sara mahmoud jana khaled react ui ux">
+                                        <td><input type="checkbox" class="request-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">SM</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Sara Mahmoud</div>
+                                                    <div class="admin-table-user-email">sara@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">JK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Jana Khaled</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="request-skills-cell">
+                                                <span class="request-skill-tag">React</span>
+                                                <span class="request-skill-arrow">⇄</span>
+                                                <span class="request-skill-tag request-skill-want">UI/UX</span>
+                                            </div>
+                                        </td>
+                                        <td>2 days ago</td>
+                                        <td><span class="admin-badge admin-badge-warning">● Pending</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this request?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-status="flagged" data-flagged="true" data-search="anonymous yousef sami suspicious">
+                                        <td><input type="checkbox" class="request-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">AN</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Anonymous</div>
+                                                    <div class="admin-table-user-email">Hidden</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">YS</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Yousef Sami</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="request-skills-cell">
+                                                <span class="request-skill-tag">Unknown</span>
+                                                <span class="request-skill-arrow">⇄</span>
+                                                <span class="request-skill-tag request-skill-want">Unknown</span>
+                                            </div>
+                                        </td>
+                                        <td>3 days ago</td>
+                                        <td><span class="admin-badge admin-badge-danger">⚠️ Flagged</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="Review">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this flagged request?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-status="declined" data-search="noor ali lana khalid mobile development">
+                                        <td><input type="checkbox" class="request-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">NA</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Noor Ali</div>
+                                                    <div class="admin-table-user-email">noor@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">LK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Lana Khalid</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="request-skills-cell">
+                                                <span class="request-skill-tag">Mobile Dev</span>
+                                                <span class="request-skill-arrow">⇄</span>
+                                                <span class="request-skill-tag request-skill-want">Web Dev</span>
+                                            </div>
+                                        </td>
+                                        <td>5 days ago</td>
+                                        <td><span class="admin-badge admin-badge-danger">● Declined</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this request?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-status="accepted" data-search="jana khaled noor ali illustrator photoshop">
+                                        <td><input type="checkbox" class="request-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">JK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Jana Khaled</div>
+                                                    <div class="admin-table-user-email">jana@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">NA</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Noor Ali</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="request-skills-cell">
+                                                <span class="request-skill-tag">Illustrator</span>
+                                                <span class="request-skill-arrow">⇄</span>
+                                                <span class="request-skill-tag request-skill-want">Photoshop</span>
+                                            </div>
+                                        </td>
+                                        <td>1 week ago</td>
+                                        <td><span class="admin-badge admin-badge-success">● Accepted</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this request?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="admin-empty-state hidden" id="requestsEmptyState">
+                            <div class="admin-empty-icon">🔍</div>
+                            <h3>No requests found</h3>
+                            <p>Try adjusting your filters or search.</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-card-footer">
+                        <div class="admin-table-info">
+                            Showing <strong>1</strong>–<strong>6</strong> of <strong>486</strong> requests
+                        </div>
+                        <div class="admin-pagination">
+                            <button class="admin-page-btn" disabled>←</button>
+                            <button class="admin-page-btn active">1</button>
+                            <button class="admin-page-btn">2</button>
+                            <button class="admin-page-btn">3</button>
+                            <span class="admin-page-dots">...</span>
+                            <button class="admin-page-btn">81</button>
+                            <button class="admin-page-btn">→</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- ===== Bulk Actions Bar ===== -->
+    <div class="admin-bulk-bar hidden" id="bulkActionsBar">
+        <div class="admin-bulk-info">
+            <strong id="selectedCount">0</strong> requests selected
+        </div>
+        <div class="admin-bulk-actions">
+            <button class="admin-btn admin-btn-success admin-btn-sm" id="bulkApprove">
+                ✅ Approve
+            </button>
+            <button class="admin-btn admin-btn-danger admin-btn-sm" id="bulkDelete">
+                🗑️ Delete
+            </button>
+            <button class="admin-btn admin-btn-outline admin-btn-sm" id="bulkCancel">
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <script src="../admin-js/admin-shared.js"></script>
+    <script src="../admin-js/admin-requests.js"></script>
+
+</body>
+</html>

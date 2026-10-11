@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Reviews - Skills Swap Admin</title>
+
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-shared.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+
+        <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+
+        <aside class="admin-sidebar" id="adminSidebar">
+            <a href="dashboard.html" class="admin-sidebar-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-main">Skills <span class="logo-swap">Swap</span></span>
+                    <span class="logo-subtitle">Admin Panel</span>
+                </div>
+            </a>
+
+            <nav class="admin-sidebar-nav">
+                <span class="admin-sidebar-label">Main</span>
+                <a href="dashboard.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Dashboard</span>
+                </a>
+                <a href="manage-users.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Users</span>
+                    <span class="admin-sidebar-badge">250</span>
+                </a>
+                <a href="manage-skills.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Skills</span>
+                </a>
+                <a href="manage-categories.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Categories</span>
+                </a>
+                <span class="admin-sidebar-label">Content</span>
+                <a href="manage-courses.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Courses</span>
+                </a>
+                <a href="manage-career-paths.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Career Paths</span>
+                </a>
+                <a href="manage-reviews.html" class="admin-sidebar-link active">
+                    <span class="admin-sidebar-text">Reviews</span>
+                </a>
+                <a href="manage-requests.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Requests</span>
+                </a>
+                <span class="admin-sidebar-label">System</span>
+                <a href="reports.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reports</span>
+                </a>
+                <a href="settings.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Settings</span>
+                </a>
+            </nav>
+
+            <div class="admin-sidebar-divider"></div>
+            <button class="admin-sidebar-logout" id="adminLogout">
+                <span class="admin-sidebar-text">Logout</span>
+            </button>
+        </aside>
+
+        <main class="admin-main">
+
+            <header class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
+                    <h1 class="admin-page-title">Manage Reviews</h1>
+                </div>
+                <div class="admin-topbar-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search reviews...">
+                </div>
+                <div class="admin-topbar-right">
+                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
+                        🔔
+                        <span class="admin-notification-badge">5</span>
+                    </button>
+                    <div class="admin-user-menu" id="adminUserMenu">
+                        <button class="admin-user-btn" id="adminUserBtn">
+                            <span class="admin-user-avatar">A</span>
+                            <span class="admin-user-name">Admin</span>
+                            <span class="admin-user-arrow">▼</span>
+                        </button>
+                        <div class="admin-dropdown" id="adminDropdown">
+                            <div class="admin-dropdown-header">
+                                <span class="admin-user-avatar">A</span>
+                                <div>
+                                    <strong>Admin User</strong>
+                                    <span>admin@skills.com</span>
+                                </div>
+                            </div>
+                            <div class="admin-dropdown-divider"></div>
+                            <a href="settings.html" class="admin-dropdown-item">
+                                <span class="admin-dropdown-icon">⚙️</span>
+                                Settings
+                            </a>
+                            <div class="admin-dropdown-divider"></div>
+                            <button class="admin-dropdown-item admin-dropdown-logout">
+                                <span class="admin-dropdown-icon">🚪</span>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+
+                <div class="admin-page-header admin-fade-rise">
+                    <div class="admin-page-header-left">
+                        <h1>Manage Reviews</h1>
+                        <p>View, moderate, and manage user reviews.</p>
+                    </div>
+                    <div class="admin-page-header-actions">
+                        <button class="admin-btn admin-btn-outline" id="exportReviewsBtn">
+                            ⬇️ Export CSV
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== Stat Cards ===== -->
+                <div class="admin-stats-grid admin-stagger">
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-primary">⭐</div>
+                            <span class="admin-stat-trend positive">↑ 18%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="342">0</div>
+                            <div class="admin-stat-label">Total Reviews</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-success">😊</div>
+                            <span class="admin-stat-trend positive">↑ 12%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="298">0</div>
+                            <div class="admin-stat-label">Positive (4-5⭐)</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-warning">😐</div>
+                            <span class="admin-stat-trend neutral">→ 0%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="32">0</div>
+                            <div class="admin-stat-label">Neutral (3⭐)</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-danger">😞</div>
+                            <span class="admin-stat-trend negative">↓ 5%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="12">0</div>
+                            <div class="admin-stat-label">Reported</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== Reviews Table Card ===== -->
+                <div class="admin-card admin-fade-rise-2">
+
+                    <div class="admin-card-header admin-card-header-filters">
+                        <div class="admin-filters">
+                            <button class="admin-filter-btn active" data-filter="all">All</button>
+                            <button class="admin-filter-btn" data-filter="5star">5 Stars</button>
+                            <button class="admin-filter-btn" data-filter="4star">4 Stars</button>
+                            <button class="admin-filter-btn" data-filter="low">Low (1-3⭐)</button>
+                            <button class="admin-filter-btn" data-filter="reported">Reported</button>
+                        </div>
+                        <div class="admin-search-bar">
+                            <div class="admin-search-input-wrapper">
+                                <span class="search-icon">🔍</span>
+                                <input 
+                                    type="text" 
+                                    class="admin-search-input"
+                                    placeholder="Search reviews..."
+                                    id="reviewsSearchInput"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card-body admin-card-body-flush">
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table" id="reviewsTable">
+                                <thead>
+                                    <tr>
+                                        <th class="admin-checkbox-col">
+                                            <input type="checkbox" id="selectAllReviews">
+                                        </th>
+                                        <th>Reviewer</th>
+                                        <th>Reviewed User</th>
+                                        <th>Rating</th>
+                                        <th>Comment</th>
+                                        <th>Date</th>
+                                        <th class="admin-actions-col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reviewsTableBody">
+
+                                    <tr data-rating="5star" data-search="ahmad hassan lana khalid great teacher patient">
+                                        <td><input type="checkbox" class="review-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">AA</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Ahmad Ali</div>
+                                                    <div class="admin-table-user-email">ahmad@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">LK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Lana Khalid</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-stars-display">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-comment-cell">
+                                                "Great teacher, very patient and knowledgeable!"
+                                            </div>
+                                        </td>
+                                        <td>2 hours ago</td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this review?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-rating="5star" data-search="omar sami ahmad hassan excellent swap">
+                                        <td><input type="checkbox" class="review-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">OS</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Omar Sami</div>
+                                                    <div class="admin-table-user-email">omar@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">AH</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Ahmad Hassan</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-stars-display">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-comment-cell">
+                                                "Excellent swap experience. Highly recommended!"
+                                            </div>
+                                        </td>
+                                        <td>1 day ago</td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this review?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-rating="4star" data-search="sara mahmoud lana khalid helpful session">
+                                        <td><input type="checkbox" class="review-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">SM</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Sara Mahmoud</div>
+                                                    <div class="admin-table-user-email">sara@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">LK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Lana Khalid</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-stars-display">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span class="empty">★</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-comment-cell">
+                                                "Very helpful session, learned a lot!"
+                                            </div>
+                                        </td>
+                                        <td>2 days ago</td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this review?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Reported Review -->
+                                    <tr data-rating="low" data-reported="true" data-search="anonymous yousef sami bad inappropriate">
+                                        <td><input type="checkbox" class="review-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">AN</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Anonymous</div>
+                                                    <div class="admin-table-user-email">Hidden</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">YS</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Yousef Sami</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-stars-display">
+                                                <span>★</span><span class="empty">★</span><span class="empty">★</span><span class="empty">★</span><span class="empty">★</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-comment-cell reported">
+                                                ⚠️ <strong>Reported:</strong> "Inappropriate content..."
+                                            </div>
+                                        </td>
+                                        <td>3 days ago</td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="Approve">✅</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this reported review?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-rating="4star" data-search="noor ali jana khaled good experience">
+                                        <td><input type="checkbox" class="review-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">NA</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Noor Ali</div>
+                                                    <div class="admin-table-user-email">noor@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">JK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Jana Khaled</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-stars-display">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span class="empty">★</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-comment-cell">
+                                                "Good experience overall, would swap again."
+                                            </div>
+                                        </td>
+                                        <td>5 days ago</td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this review?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr data-rating="5star" data-search="jana khaled noor ali amazing mentor">
+                                        <td><input type="checkbox" class="review-checkbox"></td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">JK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Jana Khaled</div>
+                                                    <div class="admin-table-user-email">jana@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar" style="width: 32px; height: 32px; font-size: 11px;">NA</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name" style="font-size: 13px;">Noor Ali</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-stars-display">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="review-comment-cell">
+                                                "Amazing mentor! Very clear explanations."
+                                            </div>
+                                        </td>
+                                        <td>1 week ago</td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Delete" data-confirm-danger="Delete this review?">🗑️</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="admin-empty-state hidden" id="reviewsEmptyState">
+                            <div class="admin-empty-icon">🔍</div>
+                            <h3>No reviews found</h3>
+                            <p>Try adjusting your filters or search.</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-card-footer">
+                        <div class="admin-table-info">
+                            Showing <strong>1</strong>–<strong>6</strong> of <strong>342</strong> reviews
+                        </div>
+                        <div class="admin-pagination">
+                            <button class="admin-page-btn" disabled>←</button>
+                            <button class="admin-page-btn active">1</button>
+                            <button class="admin-page-btn">2</button>
+                            <button class="admin-page-btn">3</button>
+                            <span class="admin-page-dots">...</span>
+                            <button class="admin-page-btn">57</button>
+                            <button class="admin-page-btn">→</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- ===== Bulk Actions Bar ===== -->
+    <div class="admin-bulk-bar hidden" id="bulkActionsBar">
+        <div class="admin-bulk-info">
+            <strong id="selectedCount">0</strong> reviews selected
+        </div>
+        <div class="admin-bulk-actions">
+            <button class="admin-btn admin-btn-success admin-btn-sm" id="bulkApprove">
+                ✅ Approve
+            </button>
+            <button class="admin-btn admin-btn-danger admin-btn-sm" id="bulkDelete">
+                🗑️ Delete
+            </button>
+            <button class="admin-btn admin-btn-outline admin-btn-sm" id="bulkCancel">
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <script src="../admin-js/admin-shared.js"></script>
+    <script src="../admin-js/admin-reviews.js"></script>
+
+</body>
+</html>

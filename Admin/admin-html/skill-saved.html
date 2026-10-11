@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Saved - Skills Swap Admin</title>
+
+    <!-- الملفات المشتركة -->
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-skill-saved.css">
+</head>
+<body>
+
+    <!-- ============================================
+         ADMIN LAYOUT
+         ============================================ -->
+    <div class="admin-layout">
+
+        <!-- ===== Sidebar Overlay (Mobile) ===== -->
+        <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+
+        <!-- ============================================
+             SIDEBAR
+             ============================================ -->
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <!-- Logo -->
+            <a href="dashboard.html" class="admin-sidebar-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-main">Skills <span class="logo-swap">Swap</span></span>
+                    <span class="logo-subtitle">Admin Panel</span>
+                </div>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="admin-sidebar-nav">
+
+                <span class="admin-sidebar-label">Main</span>
+
+                <a href="dashboard.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Dashboard</span>
+                </a>
+
+                <a href="manage-users.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Users</span>
+                    <span class="admin-sidebar-badge">250</span>
+                </a>
+
+                <a href="manage-skills.html" class="admin-sidebar-link active">
+                    <span class="admin-sidebar-text">Skills</span>
+                </a>
+
+                <a href="manage-categories.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Categories</span>
+                </a>
+
+                <span class="admin-sidebar-label">Content</span>
+
+                <a href="manage-courses.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Courses</span>
+                </a>
+
+                <a href="manage-career-paths.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Career Paths</span>
+                </a>
+
+                <a href="manage-reviews.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reviews</span>
+                </a>
+
+                <a href="manage-requests.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Requests</span>
+                </a>
+
+                <span class="admin-sidebar-label">System</span>
+
+                <a href="reports.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reports</span>
+                </a>
+
+                <a href="settings.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Settings</span>
+                </a>
+
+            </nav>
+
+            <!-- Logout -->
+            <div class="admin-sidebar-divider"></div>
+            <button class="admin-sidebar-logout" id="adminLogout">
+                <span class="admin-sidebar-text">Logout</span>
+            </button>
+
+        </aside>
+
+        <!-- ============================================
+             MAIN AREA
+             ============================================ -->
+        <main class="admin-main">
+
+            <!-- ===== Topbar ===== -->
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
+                    <h1 class="admin-page-title">Skill Saved</h1>
+                </div>
+
+                <div class="admin-topbar-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search skills...">
+                </div>
+
+                <div class="admin-topbar-right">
+
+                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
+                        🔔
+                        <span class="admin-notification-badge">5</span>
+                    </button>
+
+                    <div class="admin-user-menu" id="adminUserMenu">
+                        <button class="admin-user-btn" id="adminUserBtn">
+                            <span class="admin-user-avatar">A</span>
+                            <span class="admin-user-name">Admin</span>
+                            <span class="admin-user-arrow">▼</span>
+                        </button>
+
+                        <div class="admin-dropdown" id="adminDropdown">
+                            <div class="admin-dropdown-header">
+                                <span class="admin-user-avatar">A</span>
+                                <div>
+                                    <strong>Admin User</strong>
+                                    <span>admin@skills.com</span>
+                                </div>
+                            </div>
+
+                            <div class="admin-dropdown-divider"></div>
+
+                            <a href="settings.html" class="admin-dropdown-item">
+                                <span class="admin-dropdown-icon">⚙️</span>
+                                Settings
+                            </a>
+
+                            <div class="admin-dropdown-divider"></div>
+
+                            <button class="admin-dropdown-item admin-dropdown-logout">
+                                <span class="admin-dropdown-icon">🚪</span>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- ===== Content ===== -->
+            <div class="admin-content">
+
+                <!-- ===== Success Card ===== -->
+                <div class="success-card admin-scale-in">
+
+                    <!-- Success Icon -->
+                    <div class="success-icon-wrapper">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="success-pulse"></div>
+                        <div class="success-pulse delay"></div>
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="success-title admin-fade-rise-1">
+                        Skill Saved Successfully!
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="success-subtitle admin-fade-rise-2">
+                        Your changes have been saved.
+                    </p>
+
+                    <!-- Skill Preview Card -->
+                    <div class="saved-skill-preview admin-fade-rise-3">
+                        <div class="saved-skill-icon">🐍</div>
+                        <div class="saved-skill-info">
+                            <h3 class="saved-skill-name">Python Programming</h3>
+                            <div class="saved-skill-tags">
+                                <span class="admin-badge admin-badge-primary">Technology</span>
+                                <span class="admin-badge admin-badge-info">Beginner</span>
+                                <span class="admin-badge admin-badge-success">Free</span>
+                            </div>
+                        </div>
+                        <div class="saved-skill-check">
+                            <span class="saved-skill-check-icon">✓</span>
+                            <span class="saved-skill-check-label">Published</span>
+                        </div>
+                    </div>
+
+                    <!-- Info Text -->
+                    <p class="success-info admin-fade-rise-3">
+                        The skill is now live and available for users to discover and learn.
+                    </p>
+
+                    <!-- Actions -->
+                    <div class="success-actions admin-fade-rise-4">
+                        <a href="dashboard.html" class="admin-btn admin-btn-primary admin-btn-lg">
+                            Back to Dashboard
+                        </a>
+                        <a href="manage-skills.html" class="admin-btn admin-btn-outline admin-btn-lg">
+                            View All Skills
+                        </a>
+                    </div>
+
+                    <!-- Additional Actions -->
+                    <div class="success-secondary-actions admin-fade-rise-4">
+                        <a href="add-edit-skill.html" class="success-link">
+                            + Add Another Skill
+                        </a>
+                        <span class="success-separator">·</span>
+                        <a href="manage-skills.html" class="success-link">
+                            Edit This Skill
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- ===== Scripts ===== -->
+    <script src="../admin-js/admin-shared.js"></script>
+    
+
+</body>
+</html>

@@ -19,10 +19,13 @@
     --radius: 16px;
 }
 
+
 body {
-    background-color: var(--bg-light);
+background: linear-gradient(135deg, var(--bg-page) 0%, var(--primary-bg-light) 100%);
+    /*background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
+     background-color: #f5f3ff; */
 }
 
 .container {
@@ -53,7 +56,7 @@ ul {
 }
 
 .btn-primary {
-    background-color: var(--primary);
+    background-color:#976fe1;
     color: var(--white);
 }
 
@@ -79,8 +82,9 @@ ul {
 }
 
 .btn-white {
-    background-color: var(--white);
-    color: var(--primary);
+    background-color: #976fe1;
+    
+    color: white;
     padding: 14px 32px;
     font-size: 16px;
 }
@@ -90,7 +94,7 @@ ul {
     transform: translateY(-2px);
 }
 
-/* --- Navbar --- */
+/* --- Navbar --- 
 .navbar {
     background-color: var(--white);
     padding: 15px 0;
@@ -98,6 +102,34 @@ ul {
     position: sticky;
     top: 0;
     z-index: 100;
+}*/
+/* ============================================
+   ===== NAVBAR - GLASSMORPHISM =====
+   ===== تصميم زجاجي احترافي =====
+   ============================================ */
+
+.navbar {
+    /* ===== الخلفية الزجاجية ===== */
+    background: rgba(255, 255, 255, 0.75);
+    
+    /* ===== Blur (الضباب) ===== */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    
+    /* ===== الحدود السفلية ===== */
+    border-bottom: 1px solid rgba(139, 124, 246, 0.15);
+    
+    /* ===== الظل ===== */
+    box-shadow: 
+        0 4px 24px rgba(139, 124, 246, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    
+    /* ===== التثبيت ===== */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 16px 0;
+    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -105,17 +137,19 @@ ul {
     justify-content: space-between;
     align-items: center;
 }
-
 .logo {
     font-size: 22px;
+    
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
+.logo-svg-icon {
+    color: #4a3ce0 ;      /* ← هذا هو لون السهمين */
+}
 .logo-icon {
-    color: var(--primary);
+   /* color: var(--primary);*/
     font-size: 24px;
 }
 
@@ -139,6 +173,8 @@ ul {
     display: flex;
     gap: 15px;
 }
+
+
 
 /* ============================================
    ===== HERO SECTION WITH VIDEO BACKGROUND =====
@@ -172,9 +208,9 @@ ul {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(10, 25, 41, 0.75) 0%,
-        rgba(10, 25, 41, 0.55) 50%,
-        rgba(10, 25, 41, 0.85) 100%
+       rgba(10, 25, 41, 0.45) 0%,
+    rgba(10, 25, 41, 0.25) 50%,
+    rgba(10, 25, 41, 0.55) 100%
     );
     z-index: 1;
     pointer-events: none;
@@ -236,7 +272,7 @@ ul {
 
 /* الأزرار */
 .hero .btn-primary {
-    background-color: #5b4dff;
+    background-color: #976fe1;
     color: #ffffff;
     padding: 14px 32px;
     border-radius: 50px;
@@ -474,7 +510,7 @@ ul {
     font-weight: bold;
 }
 
-/* --- About Section --- */
+/* --- About Section --- 
 .about {
     padding: 80px 0;
     background-color: var(--white);
@@ -533,7 +569,198 @@ ul {
     color: var(--primary);
     font-size: 14px;
 }
+*/
 
+/* ============================================
+   ===== ABOUT SECTION WITH VIDEO BACKGROUND =====
+   ============================================ */
+
+.about {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background-color: #0a1929; /* لون احتياطي */
+}
+
+/* ===== الفيديو الخلفي ===== */
+.about-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+/* ===== طبقة التعتيم ===== */
+.about-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 27, 75, 0.85) 0%,
+        rgba(30, 27, 75, 0.75) 50%,
+        rgba(30, 27, 75, 0.85) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== الحاوية فوق الفيديو ===== */
+.about .container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* ===== Content ===== */
+.about-content {
+    flex: 1;
+}
+
+.about-tag {
+    font-size: 14px;
+    font-weight: 600;
+    color: #a78bfa;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #ffffff;
+    font-family: 'Instrument Serif', 'Poppins', serif;
+}
+
+.about-content p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+/* ===== زر Learn More (بلون أبيض على الفيديو) ===== */
+.about .btn-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.about .btn-outline:hover {
+    background-color: #ffffff;
+    color: var(--primary);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Image (Illustration) ===== */
+.about-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-illustration {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    animation: aboutFloat 6s ease-in-out infinite;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes aboutFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* ============================================
+   ===== RESPONSIVE =====
+   ============================================ */
+@media (max-width: 992px) {
+    .about {
+        padding: 80px 0;
+        min-height: auto;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-content p {
+        margin: 0 auto 30px;
+    }
+
+    .about-illustration {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+    .about-illustration {
+        max-width: 300px;
+    }
+
+    /* تعتيم أقوى على الجوال */
+   .about-overlay {
+    position: absolute;
+    inset: 0;
+   background: linear-gradient(
+    135deg,
+        rgba(30, 27, 75, 0.2) 0%,
+        rgba(30, 27, 75, 0.1) 50%,
+        rgba(30, 27, 75, 0.3) 100%
+
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+}
 /* --- Career Path --- */
 .career-path {
     padding: 80px 0;
@@ -583,7 +810,7 @@ ul {
 }
 
 .path-step.active-path {
-    background-color: var(--primary);
+    background-color: #976fe1;
     color: var(--white);
 }
 
@@ -594,7 +821,7 @@ ul {
 
 /* --- CTA Banner --- */
 .cta-banner {
-    background: linear-gradient(135deg, #5b4dff 0%, #4a3ce0 100%);
+    background-color: var(--white);
     padding: 80px 0;
     text-align: center;
     color: var(--white);
@@ -613,7 +840,8 @@ ul {
 
 /* --- Footer --- */
 footer {
-    background-color: var(--white);
+    background: linear-gradient(135deg,#976fe1);
+    
     padding: 60px 0 20px;
 }
 
@@ -676,6 +904,7 @@ footer {
 .footer-bottom {
     text-align: center;
     border-top: 1px solid #eee;
+    
     padding-top: 20px;
     color: var(--text-light);
     font-size: 13px;

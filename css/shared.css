@@ -217,12 +217,25 @@ a:hover {
    ===== 8. NAVBAR (مشترك في كل الصفحات) =====
    ============================================ */
 .navbar {
-    background-color: var(--primary-light);
+    /*background-color: var(--primary-light);
+    background-color: whitesmoke;
     padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(139, 124, 246, 0.15);
+    box-shadow: 0 2px 10px rgba(139, 124, 246, 0.15);*/
+      background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 4px 24px rgba(139, 124, 246, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+     padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+   
 }
 
 .navbar-container {
@@ -234,7 +247,7 @@ a:hover {
     align-items: center;
     gap: 20px;
 }
-
+/*
 .navbar-logo {
     font-family: var(--font-display);
     font-size: 26px;
@@ -249,6 +262,286 @@ a:hover {
 .navbar-logo span {
     color: var(--primary-dark);
 }
+*/
+
+/* ============================================
+   ===== NAVBAR LOGO - BRAND PULSE =====
+   ===== تصميم: أبيض مع توهج بنفسجي =====
+   ============================================ 
+
+.navbar-logo {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-base);
+    position: relative;
+    padding: 4px 8px;
+    border-radius: var(--radius-md);
+}
+
+.navbar-logo span {
+    color: #ffffff;
+    position: relative;
+}
+
+/* هالة بنفسجية خلف الشعار 
+.navbar-logo::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: var(--radius-md);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(139, 124, 246, 0.4) 0%,
+        transparent 70%
+    );
+    z-index: -1;
+    animation: logoPulse 3s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* توهج دائم بنفسجي 
+.navbar-logo {
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.6),
+        0 0 16px rgba(139, 124, 246, 0.4);
+}
+
+/* النجمة تتميز 
+.navbar-logo::first-letter {
+    color: #ffffff;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
+    animation: starPulse 2s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
+    }
+    50% {
+        filter: drop-shadow(0 0 16px rgba(255, 255, 255, 1))
+                drop-shadow(0 0 24px rgba(139, 124, 246, 0.8));
+    }
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+    text-shadow: 
+        0 0 12px rgba(255, 255, 255, 0.8),
+        0 0 24px rgba(139, 124, 246, 0.6),
+        0 0 32px rgba(139, 124, 246, 0.4);
+}
+
+.navbar-logo:hover::before {
+    opacity: 1;
+}
+*/
+
+/* ============================================
+   ===== NAVBAR LOGO - PREMIUM DESIGN =====
+   ============================================ */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 700;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+/* ===== Icon Wrapper ===== 
+.logo-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.4) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.logo-svg-icon {
+    width: 22px;
+    height: 22px;
+    color: #4a3ce0;
+    position: relative;
+    z-index: 1;
+    transition: transform var(--transition-base);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+    */
+    .logo-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    
+    /* ===== الخلفية: بنفسجي فاتح شفاف ===== */
+    background: rgba(139, 124, 246, 0.15);
+    
+    /* ===== الحدود: بنفسجي فاتح ===== */
+    border: 1.5px solid rgba(139, 124, 246, 0.4);
+    
+    /* ===== التوهج (Glow) ===== */
+    box-shadow: 
+        0 0 0 4px rgba(139, 124, 246, 0.08),
+        0 4px 16px rgba(139, 124, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    
+    /* ===== Blur ===== */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    
+    /* ===== نبض التوهج ===== */
+    animation: logoIconPulse 3s ease-in-out infinite;
+}
+
+/* ===== نبض التوهج ===== */
+@keyframes logoIconPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 4px rgba(139, 124, 246, 0.08),
+            0 4px 16px rgba(139, 124, 246, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 8px rgba(139, 124, 246, 0.05),
+            0 6px 24px rgba(139, 124, 246, 0.35),
+            0 0 32px rgba(139, 124, 246, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+}
+
+
+/* ===== Text ===== */
+.logo-text {
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        #4a3ce0 25%,
+        #7c3aed 75%,
+        #4a3ce0 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: logoGradientShift 3s ease infinite;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    letter-spacing: -0.02em;
+}
+
+.logo-accent {
+     background: linear-gradient(
+        135deg,
+        #4a3ce0 0%,
+        #7c3aed 25%,
+        #4a3ce0 90%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Animations ===== */
+@keyframes logoGradientShift {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+/* ===== Hover Effects ===== */
+.navbar-logo:hover .logo-icon-wrapper {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: rotate(180deg);
+    box-shadow: 
+        0 0 16px rgba(255, 255, 255, 0.5),
+        0 0 32px rgba(255, 255, 255, 0.2);
+}
+/*
+.navbar-logo:hover .logo-svg-icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+*/
+
+.navbar-logo:hover .logo-svg-icon {
+    transform: scale(1.1);
+    color: #3a2ec4 20%;
+    filter: drop-shadow(0 0 8px rgba(74, 60, 224, 0.6));
+}
+.navbar-logo:hover .logo-text {
+    text-shadow: 
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 32px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Icon Pulse (توهج دائم) ===== */
+.logo-icon-wrapper {
+    animation: logoIconPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoIconPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 4px rgba(255, 255, 255, 0.1),
+            0 0 16px rgba(255, 255, 255, 0.2);
+    }
+}
 
 .navbar-links {
     display: flex;
@@ -259,7 +552,8 @@ a:hover {
 .navbar-link {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-dark);
+   /* color: white; */
+     color: var(--text-light);
     text-decoration: none;
     transition: color var(--transition-fast);
     position: relative;
@@ -267,7 +561,9 @@ a:hover {
 
 .navbar-link:hover,
 .navbar-link.active {
-    color: var(--primary-dark);
+   /* color: var(--primary-dark);
+       color: #e8e5ff; */
+       color: #7c3aed 8%,
 }
 
 .navbar-link.active::after {
@@ -290,7 +586,8 @@ a:hover {
 .navbar-login {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-dark);
+  /* color: white;*/
+      color: var(--text-light);
     background: none;
     border: none;
     cursor: pointer;
@@ -299,7 +596,8 @@ a:hover {
 }
 
 .navbar-login:hover {
-    color: var(--primary-dark);
+   /* color: var(--primary-dark);*/
+    color: #e8e5ff; 
 }
 
 .navbar-signup {

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Skills Swap Admin</title>
+
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-settings.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+
+        <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+
+        <aside class="admin-sidebar" id="adminSidebar">
+            <a href="dashboard.html" class="admin-sidebar-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-main">Skills <span class="logo-swap">Swap</span></span>
+                    <span class="logo-subtitle">Admin Panel</span>
+                </div>
+            </a>
+
+            <nav class="admin-sidebar-nav">
+                <span class="admin-sidebar-label">Main</span>
+                <a href="dashboard.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Dashboard</span>
+                </a>
+                <a href="manage-users.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Users</span>
+                    <span class="admin-sidebar-badge">250</span>
+                </a>
+                <a href="manage-skills.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Skills</span>
+                </a>
+                <a href="manage-categories.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Categories</span>
+                </a>
+                <span class="admin-sidebar-label">Content</span>
+                <a href="manage-courses.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Courses</span>
+                </a>
+                <a href="manage-career-paths.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Career Paths</span>
+                </a>
+                <a href="manage-reviews.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reviews</span>
+                </a>
+                <a href="manage-requests.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Requests</span>
+                </a>
+                <span class="admin-sidebar-label">System</span>
+                <a href="reports.html" class="admin-sidebar-link">
+                    <span class="admin-sidebar-text">Reports</span>
+                </a>
+                <a href="settings.html" class="admin-sidebar-link active">
+                    <span class="admin-sidebar-text">Settings</span>
+                </a>
+            </nav>
+
+            <div class="admin-sidebar-divider"></div>
+            <button class="admin-sidebar-logout" id="adminLogout">
+                <span class="admin-sidebar-text">Logout</span>
+            </button>
+        </aside>
+
+        <main class="admin-main">
+
+            <header class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
+                    <h1 class="admin-page-title">Settings</h1>
+                </div>
+                <div class="admin-topbar-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search settings...">
+                </div>
+                <div class="admin-topbar-right">
+                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
+                        🔔
+                        <span class="admin-notification-badge">5</span>
+                    </button>
+                    <div class="admin-user-menu" id="adminUserMenu">
+                        <button class="admin-user-btn" id="adminUserBtn">
+                            <span class="admin-user-avatar">A</span>
+                            <span class="admin-user-name">Admin</span>
+                            <span class="admin-user-arrow">▼</span>
+                        </button>
+                        <div class="admin-dropdown" id="adminDropdown">
+                            <div class="admin-dropdown-header">
+                                <span class="admin-user-avatar">A</span>
+                                <div>
+                                    <strong>Admin User</strong>
+                                    <span>admin@skills.com</span>
+                                </div>
+                            </div>
+                            <div class="admin-dropdown-divider"></div>
+                            <a href="settings.html" class="admin-dropdown-item">
+                                <span class="admin-dropdown-icon">⚙️</span>
+                                Settings
+                            </a>
+                            <div class="admin-dropdown-divider"></div>
+                            <button class="admin-dropdown-item admin-dropdown-logout">
+                                <span class="admin-dropdown-icon">🚪</span>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+
+                <div class="admin-page-header admin-fade-rise">
+                    <div class="admin-page-header-left">
+                        <h1>System Settings</h1>
+                        <p>Manage platform configuration and preferences.</p>
+                    </div>
+                </div>
+
+                <div class="settings-layout">
+
+                    <!-- ===== Sidebar Navigation ===== -->
+                    <aside class="settings-nav admin-slide-in-right">
+                        <button class="settings-nav-item active" data-section="general">
+                            <span class="settings-nav-icon">⚙️</span>
+                            <span>General</span>
+                        </button>
+                        <button class="settings-nav-item" data-section="appearance">
+                            <span class="settings-nav-icon">🎨</span>
+                            <span>Appearance</span>
+                        </button>
+                        <button class="settings-nav-item" data-section="email">
+                            <span class="settings-nav-icon">✉️</span>
+                            <span>Email</span>
+                        </button>
+                        <button class="settings-nav-item" data-section="security">
+                            <span class="settings-nav-icon">🔐</span>
+                            <span>Security</span>
+                        </button>
+                        <button class="settings-nav-item" data-section="integrations">
+                            <span class="settings-nav-icon">🔌</span>
+                            <span>Integrations</span>
+                        </button>
+                        <button class="settings-nav-item settings-nav-danger" data-section="danger">
+                            <span class="settings-nav-icon">⚠️</span>
+                            <span>Danger Zone</span>
+                        </button>
+                    </aside>
+
+                    <!-- ===== Content ===== -->
+                    <main class="settings-content admin-fade-rise-1">
+
+                        <!-- ===== General Section ===== -->
+                        <div class="settings-panel active" id="panel-general">
+                            <div class="panel-header">
+                                <h2>General Settings</h2>
+                                <p>Basic platform information and configuration.</p>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="settings-block">
+                                    <h3>Platform Information</h3>
+                                    <p class="settings-block-desc">Basic details about your platform.</p>
+
+                                    <div class="form-row-2">
+                                        <div class="form-group">
+                                            <label class="form-label">Platform Name</label>
+                                            <input type="text" class="form-input" value="Skills Swap">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Tagline</label>
+                                            <input type="text" class="form-input" value="Exchange Skills. Learn Together.">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Platform Description</label>
+                                        <textarea class="form-textarea" rows="3">A community where knowledge is shared, not sold. Connect with people who can teach and learn with you.</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="settings-block">
+                                    <h3>Localization</h3>
+                                    <p class="settings-block-desc">Language and timezone preferences.</p>
+
+                                    <div class="form-row-2">
+                                        <div class="form-group">
+                                            <label class="form-label">Default Language</label>
+                                            <select class="form-input">
+                                                <option>English</option>
+                                                <option>العربية</option>
+                                                <option>Français</option>
+                                                <option>Español</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Timezone</label>
+                                            <select class="form-input">
+                                                <option>UTC+03:00 (Amman)</option>
+                                                <option>UTC+00:00 (London)</option>
+                                                <option>UTC-05:00 (New York)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="admin-btn admin-btn-primary">Save Changes</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- ===== Appearance Section ===== -->
+                        <div class="settings-panel" id="panel-appearance">
+                            <div class="panel-header">
+                                <h2>Appearance</h2>
+                                <p>Customize the look and feel of your platform.</p>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="settings-block">
+                                    <h3>Brand Colors</h3>
+                                    <p class="settings-block-desc">Choose the primary colors for your platform.</p>
+
+                                    <div class="color-picker-row">
+                                        <div class="color-picker-item">
+                                            <label class="color-picker-label">Primary</label>
+                                            <div class="color-picker-wrapper">
+                                                <input type="color" value="#8b7cf6" class="color-picker-input">
+                                                <input type="text" class="form-input color-picker-text" value="#8b7cf6">
+                                            </div>
+                                        </div>
+                                        <div class="color-picker-item">
+                                            <label class="color-picker-label">Secondary</label>
+                                            <div class="color-picker-wrapper">
+                                                <input type="color" value="#a78bfa" class="color-picker-input">
+                                                <input type="text" class="form-input color-picker-text" value="#a78bfa">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="settings-block">
+                                    <div class="settings-block-row">
+                                        <div>
+                                            <h3>Dark Mode</h3>
+                                            <p class="settings-block-desc">Enable dark mode as default for new users.</p>
+                                        </div>
+                                        <label class="admin-switch">
+                                            <input type="checkbox" data-label="Dark Mode">
+                                            <span class="admin-switch-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="settings-block">
+                                    <h3>Logo & Favicon</h3>
+                                    <p class="settings-block-desc">Upload your platform logo and favicon.</p>
+
+                                    <div class="upload-row">
+                                        <div class="upload-item">
+                                            <div class="upload-preview">★</div>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Change Logo</button>
+                                        </div>
+                                        <div class="upload-item">
+                                            <div class="upload-preview">🖼️</div>
+                                            <button class="admin-btn admin-btn-outline admin-btn-sm">Change Favicon</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="admin-btn admin-btn-primary">Save Changes</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- ===== Email Section ===== -->
+                        <div class="settings-panel" id="panel-email">
+                            <div class="panel-header">
+                                <h2>Email Settings</h2>
+                                <p>Configure SMTP and email notifications.</p>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="settings-block">
+                                    <h3>SMTP Configuration</h3>
+                                    <p class="settings-block-desc">Server details for sending emails.</p>
+
+                                    <div class="form-row-2">
+                                        <div class="form-group">
+                                            <label class="form-label">SMTP Host</label>
+                                            <input type="text" class="form-input" placeholder="smtp.example.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">SMTP Port</label>
+                                            <input type="text" class="form-input" placeholder="587">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row-2">
+                                        <div class="form-group">
+                                            <label class="form-label">From Email</label>
+                                            <input type="email" class="form-input" placeholder="noreply@skills.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">From Name</label>
+                                            <input type="text" class="form-input" placeholder="Skills Swap">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="settings-block">
+                                    <h3>Email Notifications</h3>
+                                    <p class="settings-block-desc">Choose which emails to send automatically.</p>
+
+                                    <div class="notification-pref">
+                                        <div class="notification-pref-info">
+                                            <h4>Welcome Email</h4>
+                                            <p>Sent when a new user registers.</p>
+                                        </div>
+                                        <label class="admin-switch">
+                                            <input type="checkbox" checked data-label="Welcome Email">
+                                            <span class="admin-switch-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-pref">
+                                        <div class="notification-pref-info">
+                                            <h4>Password Reset</h4>
+                                            <p>Sent when a user requests password reset.</p>
+                                        </div>
+                                        <label class="admin-switch">
+                                            <input type="checkbox" checked data-label="Password Reset">
+                                            <span class="admin-switch-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notification-pref">
+                                        <div class="notification-pref-info">
+                                            <h4>Weekly Digest</h4>
+                                            <p>Weekly summary of activity.</p>
+                                        </div>
+                                        <label class="admin-switch">
+                                            <input type="checkbox" data-label="Weekly Digest">
+                                            <span class="admin-switch-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="admin-btn admin-btn-outline">Test Email</button>
+                                    <button class="admin-btn admin-btn-primary">Save Changes</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- ===== Security Section ===== -->
+                        <div class="settings-panel" id="panel-security">
+                            <div class="panel-header">
+                                <h2>Security</h2>
+                                <p>Protect your platform with advanced security settings.</p>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="settings-block">
+                                    <div class="settings-block-row">
+                                        <div>
+                                            <h3>Two-Factor Authentication</h3>
+                                            <p class="settings-block-desc">Require 2FA for all admin accounts.</p>
+                                        </div>
+                                        <label class="admin-switch">
+                                            <input type="checkbox" checked data-label="2FA">
+                                            <span class="admin-switch-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="settings-block">
+                                    <div class="settings-block-row">
+                                        <div>
+                                            <h3>Strong Password Policy</h3>
+                                            <p class="settings-block-desc">Require complex passwords for all users.</p>
+                                        </div>
+                                        <label class="admin-switch">
+                                            <input type="checkbox" checked data-label="Strong Password">
+                                            <span class="admin-switch-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="settings-block">
+                                    <h3>Session Settings</h3>
+                                    <p class="settings-block-desc">Configure user session timeout.</p>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Session Timeout</label>
+                                        <select class="form-input">
+                                            <option>30 minutes</option>
+                                            <option selected>1 hour</option>
+                                            <option>4 hours</option>
+                                            <option>24 hours</option>
+                                            <option>Never</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="settings-block">
+                                    <h3>Rate Limiting</h3>
+                                    <p class="settings-block-desc">Prevent abuse by limiting requests.</p>
+
+                                    <div class="form-row-2">
+                                        <div class="form-group">
+                                            <label class="form-label">Max Requests per Minute</label>
+                                            <input type="number" class="form-input" value="60">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Block Duration (minutes)</label>
+                                            <input type="number" class="form-input" value="15">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="admin-btn admin-btn-primary">Save Changes</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- ===== Integrations Section ===== -->
+                        <div class="settings-panel" id="panel-integrations">
+                            <div class="panel-header">
+                                <h2>Integrations</h2>
+                                <p>Connect third-party services to your platform.</p>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="integration-card">
+                                    <div class="integration-icon" style="background: linear-gradient(135deg, #4285f4 0%, #34a853 100%); color: white;">G</div>
+                                    <div class="integration-info">
+                                        <h4>Google OAuth</h4>
+                                        <p>Allow users to sign in with Google.</p>
+                                    </div>
+                                    <div class="integration-status">
+                                        <span class="admin-badge admin-badge-success">Connected</span>
+                                        <button class="admin-btn admin-btn-outline admin-btn-sm">Manage</button>
+                                    </div>
+                                </div>
+
+                                <div class="integration-card">
+                                    <div class="integration-icon" style="background: linear-gradient(135deg, #333 0%, #000 100%); color: white;">⚫</div>
+                                    <div class="integration-info">
+                                        <h4>GitHub OAuth</h4>
+                                        <p>Allow users to sign in with GitHub.</p>
+                                    </div>
+                                    <div class="integration-status">
+                                        <span class="admin-badge admin-badge-gray">Not Connected</span>
+                                        <button class="admin-btn admin-btn-primary admin-btn-sm">Connect</button>
+                                    </div>
+                                </div>
+
+                                <div class="integration-card">
+                                    <div class="integration-icon" style="background: linear-gradient(135deg, #635bff 0%, #4f46e5 100%); color: white;">💳</div>
+                                    <div class="integration-info">
+                                        <h4>Stripe Payments</h4>
+                                        <p>Accept payments for premium subscriptions.</p>
+                                    </div>
+                                    <div class="integration-status">
+                                        <span class="admin-badge admin-badge-gray">Not Connected</span>
+                                        <button class="admin-btn admin-btn-primary admin-btn-sm">Connect</button>
+                                    </div>
+                                </div>
+
+                                <div class="integration-card">
+                                    <div class="integration-icon" style="background: linear-gradient(135deg, #2d8cff 0%, #1976d2 100%); color: white;">📹</div>
+                                    <div class="integration-info">
+                                        <h4>Zoom Meetings</h4>
+                                        <p>Enable video calls between users.</p>
+                                    </div>
+                                    <div class="integration-status">
+                                        <span class="admin-badge admin-badge-gray">Not Connected</span>
+                                        <button class="admin-btn admin-btn-primary admin-btn-sm">Connect</button>
+                                    </div>
+                                </div>
+
+                                <div class="integration-card">
+                                    <div class="integration-icon" style="background: linear-gradient(135deg, #10a37f 0%, #0d8a6a 100%); color: white;">🤖</div>
+                                    <div class="integration-info">
+                                        <h4>AI Recommendations</h4>
+                                        <p>Smart partner matching with AI.</p>
+                                    </div>
+                                    <div class="integration-status">
+                                        <span class="admin-badge admin-badge-success">Connected</span>
+                                        <button class="admin-btn admin-btn-outline admin-btn-sm">Manage</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- ===== Danger Zone Section ===== -->
+                        <div class="settings-panel" id="panel-danger">
+                            <div class="panel-header">
+                                <h2 class="danger-title">Danger Zone</h2>
+                                <p>Irreversible actions. Proceed with caution.</p>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="danger-block">
+                                    <div class="danger-block-info">
+                                        <h3>Clear Cache</h3>
+                                        <p>Remove all cached data. Users may experience slower loading temporarily.</p>
+                                    </div>
+                                    <button class="admin-btn admin-btn-warning" id="clearCacheBtn">Clear Cache</button>
+                                </div>
+
+                                <div class="danger-block">
+                                    <div class="danger-block-info">
+                                        <h3>Export All Data</h3>
+                                        <p>Download a complete backup of all platform data.</p>
+                                    </div>
+                                    <button class="admin-btn admin-btn-outline" id="exportDataBtn">Export Data</button>
+                                </div>
+
+                                <div class="danger-block">
+                                    <div class="danger-block-info">
+                                        <h3>Maintenance Mode</h3>
+                                        <p>Put the platform in maintenance mode. Only admins can access it.</p>
+                                    </div>
+                                    <label class="admin-switch">
+                                        <input type="checkbox" data-label="Maintenance Mode">
+                                        <span class="admin-switch-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="danger-block">
+                                    <div class="danger-block-info">
+                                        <h3>Reset Platform</h3>
+                                        <p>Delete all data and reset the platform to factory settings. This cannot be undone.</p>
+                                    </div>
+                                    <button class="admin-btn admin-btn-danger" id="resetPlatformBtn">Reset Platform</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- ===== Confirm Modal ===== -->
+    <div class="modal-overlay hidden" id="confirmModal">
+        <div class="modal">
+            <div class="modal-header danger" id="confirmModalHeader">
+                <h2 id="confirmModalTitle">Confirm Action</h2>
+                <button class="modal-close" id="confirmModalClose">✕</button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmModalMessage">Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="admin-btn admin-btn-outline" id="confirmModalCancel">Cancel</button>
+                <button class="admin-btn admin-btn-danger" id="confirmModalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../admin-js/admin-shared.js"></script>
+    <script src="../admin-js/admin-settings.js"></script>
+
+</body>
+</html>
