@@ -856,7 +856,7 @@ a:hover {
 
 /* ============================================
    ===== 15. FOOTER =====
-   ============================================ */
+   ============================================ 
 .footer {
     background-color: var(--bg-white);
     padding: 60px 0 24px;
@@ -919,6 +919,293 @@ a:hover {
     color: var(--text-light);
     font-size: 13px;
 }
+*/
+/* ============================================
+   ===== FOOTER - COMPACT DESIGN =====
+   ===== لون: #c0abe7 - حجم صغير ومرتب =====
+   ============================================ */
+
+footer {
+    background-color: #c0abe7;
+     padding: 28px 0 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at top right,
+        rgba(255, 255, 255, 0.12) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+/* ===== الحاوية ===== */
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+   
+}
+
+/* ============================================
+   ===== FOOTER BRAND =====
+   ============================================ */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ===== Logo الجديد ===== */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: 'Instrument Serif', 'Poppins', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    transition: all var(--transition-fast);
+}
+
+.footer-logo .logo-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(74, 60, 224, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(74, 60, 224, 0.35);
+    box-shadow: 
+        0 0 0 3px rgba(74, 60, 224, 0.06),
+        0 3px 10px rgba(74, 60, 224, 0.12);
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+}
+
+.footer-logo .logo-svg-icon {
+    width: 16px;
+    height: 16px;
+    color: #4a3ce0;
+    transition: transform var(--transition-base);
+}
+
+.footer-logo .logo-text {
+    color: #4a3ce0;
+    letter-spacing: -0.02em;
+}
+
+.footer-logo .logo-accent {
+    color: #4a3ce0;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.footer-logo:hover .logo-icon-wrapper {
+    background: rgba(74, 60, 224, 0.25);
+    border-color: rgba(74, 60, 224, 0.6);
+    transform: rotate(180deg);
+}
+
+.footer-logo:hover .logo-svg-icon {
+    transform: scale(1.1);
+}
+
+/* ===== Tagline ===== */
+.footer-brand p {
+    color: rgba(74, 60, 224, 0.8);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 240px;
+}
+
+/* ============================================
+   ===== FOOTER LINKS =====
+   ============================================ */
+.footer-links h4 {
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #4a3ce0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-links ul li a {
+    color: rgba(74, 60, 224, 0.85);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    display: inline-block;
+    position: relative;
+}
+
+.footer-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: #4a3ce0;
+    transition: width var(--transition-fast);
+}
+
+.footer-links ul li a:hover {
+    color: #4a3ce0;
+    transform: translateX(4px);
+}
+
+.footer-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   ===== FOOTER SOCIAL =====
+   ============================================ */
+.footer-social {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(74, 60, 224, 0.1);
+    border: 1.5px solid rgba(74, 60, 224, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a3ce0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all var(--transition-base);
+}
+
+.footer-social a:hover {
+    background-color: #4a3ce0;
+    color: #ffffff;
+    border-color: #4a3ce0;
+    transform: translateY(-3px) rotate(-8deg);
+    box-shadow: 
+        0 6px 16px rgba(74, 60, 224, 0.3),
+        0 0 20px rgba(74, 60, 224, 0.15);
+}
+
+/* ============================================
+   ===== FOOTER BOTTOM =====
+   ============================================ */
+.footer-bottom {
+    max-width: 100%;          /* ← عرض كامل */
+    margin: 20px auto 0;
+    padding: 16px 24px 0;
+    border-top: 1px solid rgba(74, 60, 224, 0.15);
+    text-align: center;       /* ← توسيط النص */
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(74, 60, 224, 0.75);
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;       /* ← توسيط النص (إضافي) */
+    display: block;
+    width: 100%;
+}
+
+/* ============================================
+   ===== RESPONSIVE =====
+   ============================================ */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 32px 0 16px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .footer-links h4 {
+        margin-bottom: 12px;
+    }
+
+    .footer-links ul {
+        align-items: center;
+    }
+
+    .footer-links ul li a:hover {
+        transform: translateY(-2px);
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 12px;
+    }
+
+    .footer-logo {
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        padding: 14px 24px 0;
+    }
+}
+
 
 
 /* ============================================
