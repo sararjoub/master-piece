@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Meeting - Skills Swap</title>
+
+    <link rel="stylesheet" href="../master-piece/css/shared.css">
+    <link rel="stylesheet" href="../master-piece/css/zoom-meeting.css">
+</head>
+<body>
+
+    <!-- ===== Navbar (نفس تصميم المستخدم) ===== -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                <span class="logo-icon-wrapper">
+                    <svg class="logo-svg-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text">Skills <span class="logo-accent">Swap</span></span>
+            </a>
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="categories.html" class="navbar-link">Categories</a>
+                <a href="chat.html" class="navbar-link">Messages</a>
+                <a href="zoom-meeting.html" class="navbar-link active">Meeting</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">🔔<span class="notification-badge">3</span></button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Zoom Meeting Section ===== -->
+    <section class="zoom-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="zoom-header animate-fade-rise">
+                <div class="zoom-header-left">
+                    <span class="zoom-tag">LIVE SESSION</span>
+                    <h1>Skill Exchange Meeting</h1>
+                    <p>Join the Zoom meeting to start your skill exchange with your partner.</p>
+                </div>
+                <div class="zoom-header-right">
+                    <span class="zoom-status-badge" id="meetingStatusBadge">
+                        <span class="status-dot"></span>
+                        Ready to Join
+                    </span>
+                </div>
+            </div>
+
+            <!-- Partner Info Card -->
+            <div class="zoom-partner-card admin-fade-rise-1">
+                <div class="zoom-partner-avatar"><span>LK</span></div>
+                <div class="zoom-partner-info">
+                    <h3>Meeting with <strong>Lana Khalid</strong></h3>
+                    <p>Web Development ⇄ UI/UX Design</p>
+                </div>
+                <div class="zoom-partner-details">
+                    <span class="zoom-detail-item">📅 Today, 5:00 PM</span>
+                    <span class="zoom-detail-item">⏱️ 45 minutes</span>
+                </div>
+            </div>
+
+            <!-- Meeting Container (Zoom SDK will render here later) -->
+            <div class="zoom-meeting-container admin-fade-rise-2" id="zoomMeetingContainer">
+                <!-- Placeholder (يظهر مؤقتاً حتى يتم الربط بـ Zoom API) -->
+                <div class="zoom-placeholder" id="zoomPlaceholder">
+                    <div class="zoom-placeholder-icon">📹</div>
+                    <h3>Zoom Meeting</h3>
+                    <p>Click "Start Meeting" to join the video call.</p>
+                    <button class="btn btn-primary btn-large" id="startZoomBtn">
+                        <span>🎥</span> Start Meeting
+                    </button>
+                    <span class="zoom-placeholder-note">Powered by Zoom</span>
+                </div>
+            </div>
+
+            <!-- Meeting Controls -->
+            <div class="zoom-controls admin-fade-rise-3">
+                <button class="zoom-control-btn" id="toggleMicBtn" title="Toggle Microphone">
+                    <span class="control-icon">🎤</span>
+                    <span class="control-label">Microphone</span>
+                </button>
+                <button class="zoom-control-btn" id="toggleCamBtn" title="Toggle Camera">
+                    <span class="control-icon">📷</span>
+                    <span class="control-label">Camera</span>
+                </button>
+                <button class="zoom-control-btn" id="toggleShareBtn" title="Share Screen">
+                    <span class="control-icon">🖥️</span>
+                    <span class="control-label">Share</span>
+                </button>
+                <button class="zoom-control-btn zoom-control-danger" id="leaveMeetingBtn" title="Leave Meeting">
+                    <span class="control-icon">📞</span>
+                    <span class="control-label">Leave</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../master-piece/js/animations.js"></script>
+    <script src="../master-piece/js/zoom-meeting.js"></script>
+
+</body>
+</html>
