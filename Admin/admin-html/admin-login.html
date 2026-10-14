@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Skills Swap</title>
+
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-login.css">
+</head>
+<body>
+
+    <!-- ============================================
+         ADMIN LOGIN SECTION
+         ============================================ -->
+    <section class="admin-auth-section">
+        <div class="admin-auth-container">
+
+            <!-- ===== الجانب الأيسر: الرسم التوضيحي ===== -->
+            <div class="admin-auth-illustration animate-slide-in-left">
+                <div class="admin-illustration-content">
+
+                    <h2>Welcome Back, Admin!</h2>
+                    <p>Access the admin panel to manage users, skills, courses, and monitor platform activity.</p>
+
+                    <!-- الرسم التوضيحي (شخص يجلس أمام لابتوب + رسم بياني) -->
+                    <div class="admin-illustration-image-wrapper">
+                        <img 
+                            src="../../assests/login-admin.svg" 
+                            alt="Admin Dashboard"
+                            class="admin-illustration-image"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+                        <!-- Placeholder (يظهر إذا لم توجد الصورة) -->
+                        <div class="admin-illustration-placeholder" style="display: none;">
+                            <div class="placeholder-icon">🛡️</div>
+                            <div class="placeholder-text">Admin Panel</div>
+                        </div>
+                    </div>
+
+                    <!-- الميزات -->
+                    <ul class="admin-illustration-features">
+                        <li>
+                            <span class="feature-check">✓</span>
+                            <span>Manage 2,450+ users</span>
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            <span>Monitor real-time analytics</span>
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            <span>Full control over content</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- ===== الجانب الأيمن: النموذج ===== -->
+            <div class="admin-auth-form-wrapper animate-scale-in">
+
+                <!-- الشعار (نجمة داخل دائرة بنفسجية) -->
+                <div class="admin-auth-logo">
+                    <div class="admin-auth-logo-circle">
+                        <span class="admin-auth-logo-icon">★</span>
+                    </div>
+                </div>
+
+                <!-- العنوان -->
+                <div class="admin-auth-header">
+                    <h1>Admin Login</h1>
+                    <p>Enter your credentials to access the admin panel.</p>
+                </div>
+
+                <!-- النموذج -->
+                <form class="admin-auth-form" id="adminLoginForm">
+
+                    <!-- Email -->
+                    <div class="admin-form-group">
+                        <label class="admin-form-label" for="adminEmail">Email Address</label>
+                        <div class="admin-input-with-icon">
+                            <span class="admin-input-icon">✉️</span>
+                            <input 
+                                type="email" 
+                                id="adminEmail" 
+                                class="admin-form-input" 
+                                placeholder="admin@skills.com"
+                                value="sarajoub31@gmail.com"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="admin-form-group">
+                        <label class="admin-form-label" for="adminPassword">Password</label>
+                        <div class="admin-input-with-icon">
+                            <span class="admin-input-icon">🔒</span>
+                            <input 
+                                type="password" 
+                                id="adminPassword" 
+                                class="admin-form-input" 
+                                placeholder="Enter your password"
+                                value="admin123"
+                                required
+                            >
+                            <button type="button" class="admin-toggle-password" id="toggleAdminPassword">👁️</button>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me + Forgot Password -->
+                    <div class="admin-form-options">
+                        <label class="admin-checkbox-label">
+                            <input type="checkbox" id="rememberAdmin">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="admin-forgot-link">Forgot password?</a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="admin-submit-btn" id="adminLoginBtn">
+                        <span>Login</span>
+                        <span class="admin-btn-arrow">→</span>
+                    </button>
+
+                </form>
+
+                <!-- Divider -->
+                <div class="admin-divider">
+                    <span>Administrator Access Only</span>
+                </div>
+
+                <!-- Back to User Login -->
+                <div class="admin-back-link">
+                    <a href="../../login.html">
+                        ← Back to User Login
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../../js/animations.js"></script>
+    <script src="../admin-js/admin-login.js"></script>
+
+</body>
+</html>

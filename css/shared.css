@@ -362,7 +362,7 @@ a:hover {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    font-family: var(--font-display);
+   font-family: var(--font-display);
     font-size: 30px;
     font-weight: 700;
     transition: all var(--transition-base);
@@ -640,15 +640,21 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: var(--primary);
-    color: var(--text-white);
+  /*  background-color: var(--primary);
+    color: var(--text-white);*/
+     background: linear-gradient(135deg, #C0ABE7 0%, #A991D4 100%);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
+    /*background-color: var(--primary);
     background-color: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    color: var(--text-white);
+    color: var(--text-white);*/
+     background: linear-gradient(135deg, #A991D4 0%, #8B7CF6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(192, 171, 231, 0.4);
 }
 
 .btn-outline {
@@ -926,10 +932,12 @@ a:hover {
    ============================================ */
 
 footer {
-    background-color: #c0abe7;
+    background-color: #35294d;
      padding: 28px 0 14px;
     position: relative;
     overflow: hidden;
+
+
 }
 
 footer::before {
@@ -990,13 +998,13 @@ footer::before {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(74, 60, 224, 0.15);
+    background: rgba(234, 234, 239, 0.15);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    border: 1.5px solid rgba(74, 60, 224, 0.35);
+    border: 1.5px solid rgba(234, 233, 243, 0.35);
     box-shadow: 
         0 0 0 3px rgba(74, 60, 224, 0.06),
-        0 3px 10px rgba(74, 60, 224, 0.12);
+        0 3px 10px rgba(239, 239, 242, 0.12);
     transition: all var(--transition-base);
     flex-shrink: 0;
 }
@@ -1004,17 +1012,17 @@ footer::before {
 .footer-logo .logo-svg-icon {
     width: 16px;
     height: 16px;
-    color: #4a3ce0;
+    color: #d9d9e2;
     transition: transform var(--transition-base);
 }
 
 .footer-logo .logo-text {
-    color: #4a3ce0;
+    color: #d5d4df;
     letter-spacing: -0.02em;
 }
 
 .footer-logo .logo-accent {
-    color: #4a3ce0;
+    color: #dcdaeb;
     font-style: italic;
     font-weight: 700;
 }
@@ -1031,7 +1039,7 @@ footer::before {
 
 /* ===== Tagline ===== */
 .footer-brand p {
-    color: rgba(74, 60, 224, 0.8);
+    color: rgba(241, 240, 253, 0.75);
     font-size: 13px;
     font-weight: 500;
     line-height: 1.5;
@@ -1045,7 +1053,7 @@ footer::before {
     font-size: 13px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #4a3ce0;
+    color: rgba(241, 240, 253, 0.75);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1059,7 +1067,7 @@ footer::before {
 }
 
 .footer-links ul li a {
-    color: rgba(74, 60, 224, 0.85);
+    color: rgba(240, 239, 245, 0.85);
     font-size: 13px;
     font-weight: 500;
     text-decoration: none;
@@ -1075,12 +1083,12 @@ footer::before {
     left: 0;
     width: 0;
     height: 1.5px;
-    background-color: #4a3ce0;
+    background-color: #e5e4ee;
     transition: width var(--transition-fast);
 }
 
 .footer-links ul li a:hover {
-    color: #4a3ce0;
+    color: #6c61e5;
     transform: translateX(4px);
 }
 
@@ -1107,7 +1115,7 @@ footer::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #4a3ce0;
+    color: #d0d0d4;
     text-decoration: none;
     font-size: 13px;
     font-weight: 700;
@@ -1115,7 +1123,7 @@ footer::before {
 }
 
 .footer-social a:hover {
-    background-color: #4a3ce0;
+    background-color: #aca7e6;
     color: #ffffff;
     border-color: #4a3ce0;
     transform: translateY(-3px) rotate(-8deg);
@@ -1140,7 +1148,7 @@ footer::before {
 
 .footer-bottom p {
     margin: 0;
-    color: rgba(74, 60, 224, 0.75);
+    color: rgba(241, 240, 253, 0.75);
     font-size: 12px;
     font-weight: 500;
     text-align: center;       /* ← توسيط النص (إضافي) */

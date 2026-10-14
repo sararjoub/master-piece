@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Skills Swap</title>
+
+    <link rel="stylesheet" href="../master-piece/css/shared.css">
+    <link rel="stylesheet" href="../master-piece/css/AI.css">
+</head>
+<body>
+
+    <!-- ============================================
+         NAVBAR (Authed)
+         ============================================ -->
+    <nav class="navbar navbar-authed">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                <span class="logo-icon-wrapper">
+                    <svg class="logo-svg-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text">Skills <span class="logo-accent">Swap</span></span>
+            </a>
+
+            <div class="navbar-links">
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="categories.html" class="navbar-link">Categories</a>
+                <a href="career-path.html" class="navbar-link">Career Path</a>
+                <a href="AI.html" class="navbar-link active">AI Assistant</a>
+            </div>
+
+            <div class="navbar-actions">
+                <button class="navbar-icon-btn" id="notificationsBtn" title="Notifications">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="navbar-icon-btn" id="messagesBtn" title="Messages">
+                    💬
+                    <span class="notification-badge">2</span>
+                </button>
+                <div class="navbar-user" id="userMenu">
+                    <button class="navbar-avatar" id="avatarBtn"><span>AH</span></button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <div class="avatar avatar-md"><span>AH</span></div>
+                            <div>
+                                <strong>Ahmad Hassan</strong>
+                                <span>ahmad@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="profile.html" class="dropdown-item"><span class="dropdown-icon">👤</span> My Profile</a>
+                        <a href="dashboard.html" class="dropdown-item"><span class="dropdown-icon">📊</span> Dashboard</a>
+                        <a href="my-skills.html" class="dropdown-item"><span class="dropdown-icon">🎯</span> My Skills</a>
+                        <a href="swap-requests.html" class="dropdown-item"><span class="dropdown-icon">🔄</span> Swap Requests</a>
+                        <a href="pricing.html" class="dropdown-item dropdown-premium-item">
+                            <span class="dropdown-icon">⭐</span> Upgrade to Plus
+                        </a>
+                        <a href="settings.html" class="dropdown-item"><span class="dropdown-icon">⚙️</span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item dropdown-logout" id="logoutBtn"><span class="dropdown-icon">🚪</span> Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         AI HERO SECTION
+         ============================================ -->
+    <section class="ai-hero">
+        <div class="container">
+
+            <div class="ai-hero-content animate-fade-rise">
+                <span class="ai-hero-tag">
+                    <span class="ai-pulse-dot"></span>
+                    AI-POWERED LEARNING
+                </span>
+                <h1>
+                    Meet Your <span class="ai-gradient-text">AI Learning</span> Assistant
+                </h1>
+                <p>
+                    Let our intelligent assistant help you discover the perfect career path, 
+                    find ideal skill partners, and accelerate your learning journey.
+                </p>
+
+                <div class="ai-hero-actions">
+                    <button class="btn btn-primary btn-large" id="startChatBtn">
+                        <span class="btn-icon">✨</span>
+                        Start Chatting
+                    </button>
+                    <button class="btn btn-outline btn-large" id="learnMoreAIBtn">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+
+            <!-- AI Visual -->
+            <div class="ai-hero-visual animate-slide-in-right">
+                <div class="ai-orb">
+                    <div class="ai-orb-inner">
+                        <div class="ai-orb-glow"></div>
+                        <div class="ai-orb-icon">✨</div>
+                    </div>
+                    <div class="ai-orb-ring ai-orb-ring-1"></div>
+                    <div class="ai-orb-ring ai-orb-ring-2"></div>
+                    <div class="ai-orb-ring ai-orb-ring-3"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         QUICK ACTIONS SECTION
+         ============================================ -->
+    <section class="ai-quick-actions">
+        <div class="container">
+
+            <div class="ai-section-header">
+                <span class="ai-section-tag">QUICK ACTIONS</span>
+                <h2>What Can AI Do For You?</h2>
+                <p>Choose an action to get started with your personalized AI assistant.</p>
+            </div>
+
+            <div class="ai-actions-grid stagger-children">
+
+                <div class="ai-action-card" data-action="career">
+                    <div class="ai-action-icon" style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); color: #4338ca;">
+                        🎯
+                    </div>
+                    <h3>Find My Career Path</h3>
+                    <p>AI analyzes your skills and goals to suggest the perfect learning journey.</p>
+                    <span class="ai-action-btn">
+                        Get Started →
+                    </span>
+                </div>
+
+                <div class="ai-action-card" data-action="partner">
+                    <div class="ai-action-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); color: #047857;">
+                        👥
+                    </div>
+                    <h3>Match Me With Partners</h3>
+                    <p>Find the most compatible skill partners based on AI matching algorithms.</p>
+                    <span class="ai-action-btn">
+                        Find Partners →
+                    </span>
+                </div>
+
+                <div class="ai-action-card" data-action="skills">
+                    <div class="ai-action-icon" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #b45309;">
+                        📚
+                    </div>
+                    <h3>Recommend Skills</h3>
+                    <p>Discover new skills tailored to your interests and career aspirations.</p>
+                    <span class="ai-action-btn">
+                        Get Recommendations →
+                    </span>
+                </div>
+
+                <div class="ai-action-card" data-action="progress">
+                    <div class="ai-action-icon" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); color: #be185d;">
+                        📊
+                    </div>
+                    <h3>Analyze My Progress</h3>
+                    <p>Get insights about your learning journey and areas for improvement.</p>
+                    <span class="ai-action-btn">
+                        View Insights →
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         AI CHAT INTERFACE SECTION
+         ============================================ -->
+    <section class="ai-chat-section" id="ai-chat">
+        <div class="container">
+
+            <div class="ai-section-header">
+                <span class="ai-section-tag">AI CHAT</span>
+                <h2>Chat With Your AI Assistant</h2>
+                <p>Ask anything about your learning journey, skills, or career path.</p>
+            </div>
+
+            <div class="ai-chat-container">
+
+                <!-- Chat Messages -->
+                <div class="ai-chat-messages" id="aiChatMessages">
+
+                    <!-- Welcome Message -->
+                    <div class="ai-message ai-message-received">
+                        <div class="ai-message-avatar">
+                            <span>✨</span>
+                        </div>
+                        <div class="ai-message-content">
+                            <div class="ai-message-bubble">
+                                <p>Hi <strong>Ahmad</strong>! 👋 I'm your AI Learning Assistant.</p>
+                                <p>I can help you:</p>
+                                <ul class="ai-message-list">
+                                    <li>Find the perfect career path</li>
+                                    <li>Match with ideal skill partners</li>
+                                    <li>Recommend new skills to learn</li>
+                                    <li>Track and analyze your progress</li>
+                                </ul>
+                                <p>What would you like to do today?</p>
+                            </div>
+                            <span class="ai-message-time">Just now</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="ai-typing hidden" id="aiTyping">
+                    <div class="ai-message-avatar">
+                        <span>✨</span>
+                    </div>
+                    <div class="ai-typing-bubble">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- Quick Suggestions -->
+                <div class="ai-quick-suggestions" id="aiQuickSuggestions">
+                    <button class="ai-suggestion-chip" data-suggestion="Show me the best career path for a web developer">
+                        🎯 Best career path for web developer
+                    </button>
+                    <button class="ai-suggestion-chip" data-suggestion="Find partners who want to learn graphic design">
+                        👥 Partners for graphic design
+                    </button>
+                    <button class="ai-suggestion-chip" data-suggestion="What skills should I learn next?">
+                        📚 What should I learn next?
+                    </button>
+                    <button class="ai-suggestion-chip" data-suggestion="Analyze my learning progress">
+                        📊 Analyze my progress
+                    </button>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="ai-chat-input-wrapper">
+                    <button class="ai-input-icon" title="Attach File">📎</button>
+                    <input 
+                        type="text" 
+                        class="ai-chat-input" 
+                        placeholder="Ask me anything about your learning journey..."
+                        id="aiChatInput"
+                    >
+                    <button class="ai-send-btn" id="aiSendBtn" title="Send">
+                        <span>➤</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         AI INSIGHTS SECTION
+         ============================================ -->
+    <section class="ai-insights-section">
+        <div class="container">
+
+            <div class="ai-section-header">
+                <span class="ai-section-tag">AI INSIGHTS</span>
+                <h2>Your Personalized Insights</h2>
+                <p>Smart analytics based on your activity and learning patterns.</p>
+            </div>
+
+            <div class="ai-insights-grid">
+
+                <!-- Insight 1 -->
+                <div class="ai-insight-card">
+                    <div class="ai-insight-header">
+                        <div class="ai-insight-icon" style="background: linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-lighter) 100%); color: var(--primary-dark);">
+                            🎓
+                        </div>
+                        <span class="ai-insight-badge positive">↑ 15%</span>
+                    </div>
+                    <h3 class="ai-insight-title">Learning Velocity</h3>
+                    <p class="ai-insight-desc">You're learning 15% faster than last month. Keep it up!</p>
+                    <div class="ai-insight-bar">
+                        <div class="ai-insight-fill" data-width="78%"></div>
+                    </div>
+                    <span class="ai-insight-value">78% efficiency</span>
+                </div>
+
+                <!-- Insight 2 -->
+                <div class="ai-insight-card">
+                    <div class="ai-insight-header">
+                        <div class="ai-insight-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); color: #047857;">
+                            🎯
+                        </div>
+                        <span class="ai-insight-badge positive">Excellent</span>
+                    </div>
+                    <h3 class="ai-insight-title">Goal Progress</h3>
+                    <p class="ai-insight-desc">You're 3 skills away from completing your career path.</p>
+                    <div class="ai-insight-bar">
+                        <div class="ai-insight-fill" data-width="65%"></div>
+                    </div>
+                    <span class="ai-insight-value">65% complete</span>
+                </div>
+
+                <!-- Insight 3 -->
+                <div class="ai-insight-card">
+                    <div class="ai-insight-header">
+                        <div class="ai-insight-icon" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #b45309;">
+                            ⚡
+                        </div>
+                        <span class="ai-insight-badge warning">Attention</span>
+                    </div>
+                    <h3 class="ai-insight-title">Activity Pattern</h3>
+                    <p class="ai-insight-desc">You're most active on weekends. Try adding weekday sessions.</p>
+                    <div class="ai-insight-bar">
+                        <div class="ai-insight-fill" data-width="45%"></div>
+                    </div>
+                    <span class="ai-insight-value">45% weekdays</span>
+                </div>
+
+                <!-- Insight 4 -->
+                <div class="ai-insight-card">
+                    <div class="ai-insight-header">
+                        <div class="ai-insight-icon" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); color: #be185d;">
+                            ⭐
+                        </div>
+                        <span class="ai-insight-badge positive">↑ 22%</span>
+                    </div>
+                    <h3 class="ai-insight-title">Skill Mastery</h3>
+                    <p class="ai-insight-desc">Your JavaScript skills improved significantly this month!</p>
+                    <div class="ai-insight-bar">
+                        <div class="ai-insight-fill" data-width="85%"></div>
+                    </div>
+                    <span class="ai-insight-value">85% mastery</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         RECENT AI SUGGESTIONS SECTION
+         ============================================ -->
+    <section class="ai-suggestions-section">
+        <div class="container">
+
+            <div class="ai-section-header">
+                <span class="ai-section-tag">RECENT SUGGESTIONS</span>
+                <h2>AI Recommendations For You</h2>
+                <p>Personalized suggestions based on your profile and activity.</p>
+            </div>
+
+            <div class="ai-suggestions-list">
+
+                <div class="ai-suggestion-item">
+                    <div class="ai-suggestion-icon">👥</div>
+                    <div class="ai-suggestion-content">
+                        <h4>Partner Match Found</h4>
+                        <p>We found <strong>Lana Khalid</strong> — 95% match based on your skills and interests.</p>
+                    </div>
+                    <a href="partner-profile.html" class="btn btn-primary btn-sm">View</a>
+                </div>
+
+                <div class="ai-suggestion-item">
+                    <div class="ai-suggestion-icon">📚</div>
+                    <div class="ai-suggestion-content">
+                        <h4>Skill Recommendation</h4>
+                        <p>Based on your Web Dev path, we recommend learning <strong>TypeScript</strong> next.</p>
+                    </div>
+                    <a href="skill-details.html" class="btn btn-primary btn-sm">Explore</a>
+                </div>
+
+                <div class="ai-suggestion-item">
+                    <div class="ai-suggestion-icon">🎯</div>
+                    <div class="ai-suggestion-content">
+                        <h4>Career Path Update</h4>
+                        <p>You're ready to move to <strong>React Advanced</strong>. Complete 2 more lessons.</p>
+                    </div>
+                    <a href="career-path.html" class="btn btn-primary btn-sm">Continue</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         PREMIUM CTA SECTION
+         ============================================ -->
+    <section class="ai-premium-cta">
+        <div class="container">
+            <div class="ai-premium-card">
+                <div class="ai-premium-icon">⭐</div>
+                <h2>Unlock Advanced AI Features</h2>
+                <p>Get access to premium AI capabilities including advanced matching, personalized coaching, and priority support.</p>
+                <a href="pricing.html" class="btn btn-white btn-large">
+                    Upgrade to Plus →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="home.html" class="footer-logo">
+                    <span class="logo-icon-wrapper">
+                        <svg class="logo-svg-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Skills <span class="logo-accent">Swap</span></span>
+                </a>
+                <p>Learn · Share · Grow Together</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="skill-partners.html">Find Partners</a></li>
+                    <li><a href="career-path.html">Career Path</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="ai-assistant.html">AI Assistant</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="chat.html">Messages</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="X (Twitter)">X</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Skills Swap. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../master-piece/js/animations.js"></script>
+    <script src="js/ai-assistant.js"></script>
+
+</body>
+</html>
