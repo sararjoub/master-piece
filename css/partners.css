@@ -1,6 +1,4 @@
-/* ============================================
-   ===== PARTNERS PAGE - خاص بصفحة الشركاء =====
-   ============================================ */
+
 
 .partners-section {
     padding: 40px 0 80px;
@@ -8,7 +6,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ===== Header ===== */
+/*  Header  */
 .partners-header {
     margin-bottom: 32px;
 }
@@ -26,7 +24,7 @@
     color: var(--text-medium);
 }
 
-/* ===== Search & Filters ===== */
+/* Search & Filters */
 .search-filters {
     display: flex;
     justify-content: space-between;
@@ -72,7 +70,7 @@
     color: var(--text-white);
 }
 
-/* ===== Count ===== */
+/*  Count */
 .partners-count {
     font-size: 14px;
     color: var(--text-light);
@@ -84,14 +82,14 @@
     font-weight: 600;
 }
 
-/* ===== Partners List ===== */
+/*  Partners List */
 .partners-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-/* ===== Partner Card ===== */
+/* Partner Card  */
 .partner-card {
     background-color: var(--bg-white);
     border: 1px solid var(--border-light);
@@ -110,7 +108,7 @@
     border-color: var(--primary-lighter);
 }
 
-/* ===== Avatar ===== */
+/*  Avatar */
 .partner-avatar {
     width: 72px;
     height: 72px;
@@ -126,8 +124,7 @@
     font-family: var(--font-body);
     box-shadow: 0 4px 12px rgba(139, 124, 246, 0.15);
 }
-
-/* ===== Partner Info ===== */
+/*  Partner Info */
 .partner-info {
     flex: 1;
     min-width: 0;
@@ -171,7 +168,7 @@
     color: var(--text-light);
 }
 
-/* ===== Partner Skills ===== */
+/* Partner Skills  */
 .partner-skills {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -213,12 +210,12 @@
     padding: 6px 0;
 }
 
-/* ===== Partner Actions ===== */
+/* Partner Actions  */
 .partner-actions {
     flex-shrink: 0;
 }
 
-/* ===== Empty State ===== */
+/* Empty State  */
 .empty-state {
     text-align: center;
     padding: 80px 24px;
@@ -244,9 +241,7 @@
     color: var(--text-light);
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/* RESPONSIVE  */
 @media (max-width: 992px) {
     .partner-card {
         grid-template-columns: auto 1fr;
@@ -306,11 +301,9 @@
 }
 
 
-/* ============================================
-   ===== ADVANCED ANIMATIONS - أنيميشن متقدم =====
-   ============================================ */
+/*  ADVANCED ANIMATIONS  */
 
-/* ===== 1. Animated Search Bar (نبض عند التركيز) ===== */
+/*. Animated Search Bar (نبض عند التركيز) */
 .search-input {
     position: relative;
     transition: all var(--transition-base);
@@ -332,7 +325,7 @@
     }
 }
 
-/* ===== 2. Avatar Pulse (نبض خفيف) ===== */
+/*  Avatar Pulse (نبض خفيف)  */
 .partner-avatar {
     position: relative;
     animation: avatarFloat 4s ease-in-out infinite;
@@ -364,7 +357,7 @@
     }
 }
 
-/* ===== 3. Card Shine Effect (لمعان يمر) ===== */
+/*  Card Shine Effect (لمعان يمر) */
 .partner-card {
     position: relative;
     overflow: hidden;
@@ -391,7 +384,7 @@
     left: 100%;
 }
 
-/* ===== 4. Rating Stars Animate (نجوم تظهر تدريجياً) ===== */
+/* Rating Stars Animate (نجوم تظهر تدريجياً)  */
 .partner-rating {
     animation: ratingFadeIn 0.6s ease-out 0.3s both;
 }
@@ -423,7 +416,7 @@
     }
 }
 
-/* ===== 5. Filter Buttons Ripple (موجة عند النقر) ===== */
+/*  Filter Buttons Ripple (موجة عند النقر) */
 .filter-btn {
     position: relative;
     overflow: hidden;
@@ -451,7 +444,7 @@
     transition: 0s;
 }
 
-/* ===== 6. Skill Tag Hover (تفاعل مع الوسوم) ===== */
+/*  Skill Tag Hover (تفاعل مع الوسوم) */
 .skill-tag {
     transition: all var(--transition-fast);
     cursor: default;
@@ -464,7 +457,7 @@
     box-shadow: 0 4px 12px rgba(139, 124, 246, 0.3);
 }
 
-/* ===== 7. View Profile Button (تأثير احترافي) ===== */
+/*  View Profile Button  */
 .view-profile-btn {
     position: relative;
     overflow: hidden;
@@ -494,7 +487,7 @@
     box-shadow: 0 8px 20px rgba(139, 124, 246, 0.35);
 }
 
-/* ===== 8. Empty State Bounce (نطنطة الأيقونة) ===== */
+/*   (نطنطة الأيقونة) */
 .empty-state .empty-icon {
     display: inline-block;
     animation: emptyBounce 2s ease-in-out infinite;
@@ -512,7 +505,7 @@
     }
 }
 
-/* ===== 9. Partners Count Highlight ===== */
+/*  Partners Count Highlight  */
 .partners-count span {
     display: inline-block;
     transition: all var(--transition-base);
@@ -528,7 +521,7 @@
     100% { transform: scale(1); }
 }
 
-/* ===== 10. Entrance Animation للبطاقات (محسّن) ===== */
+/* Entrance Animation */
 .partner-card {
     opacity: 0;
     transform: translateY(30px);

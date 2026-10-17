@@ -22,10 +22,6 @@
 
 body {
 background: linear-gradient(135deg, var(--bg-page) 0%, var(--primary-bg-light) 100%);
-    /*background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-     background-color: #f5f3ff; */
 }
 
 .container {
@@ -43,7 +39,7 @@ ul {
     list-style: none;
 }
 
-/* --- الأزرار --- */
+/*  الأزرار  */
 .btn {
     display: inline-block;
     padding: 10px 24px;
@@ -94,37 +90,24 @@ ul {
     transform: translateY(-2px);
 }
 
-/* --- Navbar --- 
-.navbar {
-    background-color: var(--white);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}*/
-/* ============================================
-   ===== NAVBAR - GLASSMORPHISM =====
-   ===== تصميم زجاجي احترافي =====
-   ============================================ */
 
 .navbar {
-    /* ===== الخلفية الزجاجية ===== */
+    /*  الخلفية الزجاجية  */
     background: rgba(255, 255, 255, 0.75);
     
-    /* ===== Blur (الضباب) ===== */
+    /*  Blur (الضباب)  */
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     
-    /* ===== الحدود السفلية ===== */
+    /* الحدود السفلية */
     border-bottom: 1px solid rgba(139, 124, 246, 0.15);
     
-    /* ===== الظل ===== */
+    /* الظل  */
     box-shadow: 
         0 4px 24px rgba(139, 124, 246, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
     
-    /* ===== التثبيت ===== */
+    /* التثبيت  */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -145,10 +128,10 @@ ul {
     gap: 8px;
 }
 .logo-svg-icon {
-    color: #4a3ce0 ;      /* ← هذا هو لون السهمين */
+    color: #4a3ce0 ;      /* لون السهمين */
 }
 .logo-icon {
-   /* color: var(--primary);*/
+   
     font-size: 24px;
 }
 
@@ -175,9 +158,7 @@ ul {
 
 
 
-/* ============================================
-   ===== HERO SECTION WITH VIDEO BACKGROUND =====
-   ============================================ */
+/*  HERO SECTION */
 
 .hero {
     position: relative;
@@ -186,7 +167,7 @@ ul {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: #0a1929; /* لون احتياطي في حال تأخر تحميل الفيديو */
+    background-color: #0a1929; 
     padding: 80px 0;
 }
 
@@ -200,8 +181,7 @@ ul {
     object-position: center;
     z-index: 0;
 }
-
-/* طبقة تعتيم فوق الفيديو لضمان وضوح النص */
+/*طبقة تعتيم فوق الفيديو*/
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -215,7 +195,7 @@ ul {
     pointer-events: none;
 }
 
-/* الحاوية الرئيسية - فوق الفيديو */
+/* - فوق الفيديو */
 .hero .container {
     position: relative;
     z-index: 2;
@@ -328,9 +308,7 @@ ul {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE */
 @media (max-width: 768px) {
     .hero {
         padding: 60px 0;
@@ -391,8 +369,8 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 أعمدة */
     gap: 20px;
-    max-width: 1100px; /* اختياري: لضبط عرض الشبكة */
-    margin: 0 auto;    /* لتوسيط الشبكة */
+    max-width: 1100px; /*عرض البطاقه*/
+    margin: 0 auto;    /* لتوسيط البطاقات grid */
 }
 
 /* على الشاشات المتوسطة (تابلت): 2 في الصف */
@@ -509,70 +487,8 @@ ul {
     font-weight: bold;
 }
 
-/* --- About Section --- 
-.about {
-    padding: 80px 0;
-    background-color: var(--white);
-}
 
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.about-content {
-    flex: 1;
-}
-
-.about-tag {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--primary);
-    display: block;
-    margin-bottom: 10px;
-}
-
-.about-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-
-.about-content p {
-    color: var(--text-light);
-    margin-bottom: 30px;
-    font-size: 16px;
-}
-
-.about-image {
-    flex: 1;
-    position: relative;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-.about-badge {
-    position: absolute;
-    bottom: 20px;
-    left: -20px;
-    background-color: var(--white);
-    padding: 15px 25px;
-    border-radius: 50px;
-    box-shadow: var(--shadow);
-    font-weight: 600;
-    color: var(--primary);
-    font-size: 14px;
-}
-*/
-
-/* ============================================
-   ===== ABOUT SECTION WITH VIDEO BACKGROUND =====
-   ============================================ */
+/*  ABOUT SECTION  */
 
 .about {
     position: relative;
@@ -581,10 +497,10 @@ ul {
     min-height: 600px;
     display: flex;
     align-items: center;
-    background-color: #0a1929; /* لون احتياطي */
+    background-color: #0a1929; 
 }
 
-/* ===== الفيديو الخلفي ===== */
+/*  الفيديو الخلفي */
 .about-bg-video {
     position: absolute;
     inset: 0;
@@ -595,7 +511,7 @@ ul {
     z-index: 0;
 }
 
-/* ===== طبقة التعتيم ===== */
+/* طبقة التعتيم  */
 .about-overlay {
     position: absolute;
     inset: 0;
@@ -610,7 +526,6 @@ ul {
     pointer-events: none;
 }
 
-/* ===== الحاوية فوق الفيديو ===== */
 .about .container {
     position: relative;
     z-index: 2;
@@ -622,7 +537,7 @@ ul {
     gap: 60px;
 }
 
-/* ===== Content ===== */
+/*  Content  */
 .about-content {
     flex: 1;
 }
@@ -653,7 +568,7 @@ ul {
     max-width: 500px;
 }
 
-/* ===== زر Learn More (بلون أبيض على الفيديو) ===== */
+/*  زر Learn More (يلي لونه أبيض على الفيديو)  */
 .about .btn-outline {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1.5px solid rgba(255, 255, 255, 0.5);
@@ -678,7 +593,7 @@ ul {
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
 
-/* ===== Image (Illustration) ===== */
+/*  Image (Illustration)  */
 .about-image {
     flex: 1;
     position: relative;
@@ -705,9 +620,7 @@ ul {
     }
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 992px) {
     .about {
         padding: 80px 0;
@@ -838,79 +751,6 @@ ul {
     margin-bottom: 30px;
     opacity: 0.9;
 }
-
-/* --- Footer --- 
-footer {
-    background: linear-gradient(135deg,#c0abe7);
-    
-    padding: 60px 0 20px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-brand {
-    flex: 2;
-}
-
-.footer-brand .logo {
-    margin-bottom: 15px;
-}
-
-.footer-brand p {
-    color: var(--text-light);
-    font-size: 14px;
-}
-
-.footer-links {
-    flex: 1;
-}
-
-.footer-links h4 {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: var(--text-dark);
-}
-
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-    color: var(--text-light);
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.footer-links ul li a:hover {
-    color: var(--primary);
-}
-
-.footer-social {
-    display: flex;
-    gap: 15px;
-    font-size: 20px;
-    color: var(--text-light);
-}
-
-.footer-social a:hover {
-    color: var(--primary);
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #eee;
-    
-    padding-top: 20px;
-    color: var(--text-light);
-    font-size: 13px;
-}
-    */
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {

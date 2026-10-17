@@ -1,28 +1,24 @@
-/* ============================================
-   ===== CATEGORIES PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const searchInput = document.getElementById('searchInput');
-    const categoryCards = document.querySelectorAll('.category-card');
-    const categoriesGrid = document.getElementById('categoriesGrid');
-    const emptyState = document.getElementById('emptyState');
+    let searchInput = document.getElementById('searchInput');
+    let categoryCards = document.querySelectorAll('.category-card');
+    let categoriesGrid = document.getElementById('categoriesGrid');
+    let emptyState = document.getElementById('emptyState');
 
-    // ============================================
     // 1. البحث الفوري
-    // ============================================
     if (searchInput) {
         searchInput.addEventListener('input', () => {
-            const query = searchInput.value.trim().toLowerCase();
+            let query = searchInput.value.trim().toLowerCase();
             let visibleCount = 0;
 
             categoryCards.forEach(card => {
-                const name = card.dataset.name.toLowerCase();
-                const title = card.querySelector('.category-name').textContent.toLowerCase();
-                const desc = card.querySelector('.category-desc').textContent.toLowerCase();
+                let name = card.dataset.name.toLowerCase();
+                let title = card.querySelector('.category-name').textContent.toLowerCase();
+                let desc = card.querySelector('.category-desc').textContent.toLowerCase();
 
-                const matches = !query || 
+                let matches = !query || 
                     name.includes(query) || 
                     title.includes(query) || 
                     desc.includes(query);
@@ -48,20 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 2. تأثير 3D على البطاقة (Magnetic Effect)
-    // ============================================
     if (window.innerWidth > 992) {
         categoryCards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
+                let rect = card.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+                let centerX = rect.width / 2;
+                let centerY = rect.height / 2;
                 
-                const rotateX = ((y - centerY) / centerY) * -3;
-                const rotateY = ((x - centerX) / centerX) * 3;
+                let rotateX = ((y - centerY) / centerY) * -3;
+                let rotateY = ((x - centerX) / centerX) * 3;
 
                 card.style.transform = `translateY(-6px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
@@ -72,12 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 3. تأثير عند النقر على البطاقة
-    // ============================================
     categoryCards.forEach(card => {
         card.addEventListener('click', (e) => {
-            const categoryName = card.querySelector('.category-name').textContent;
+            let categoryName = card.querySelector('.category-name').textContent;
 
             // إذا كان الرابط `#` فقط، نعرض تنبيهاً
             if (card.getAttribute('href') === '#') {
@@ -93,14 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 4. دالة التنبيهات
-    // ============================================
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">

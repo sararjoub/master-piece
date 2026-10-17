@@ -1,16 +1,13 @@
-/* ============================================
-   ===== EXCHANGE REQUEST PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
+
     // 1. اختيار الـ Chips (Teach, Learn, Time)
-    // ============================================
-    const allChipGroups = document.querySelectorAll('.choice-chips, .time-chips');
+    let allChipGroups = document.querySelectorAll('.choice-chips, .time-chips');
 
     allChipGroups.forEach(group => {
-        const chips = group.querySelectorAll('.chip');
+        let chips = group.querySelectorAll('.chip');
 
         chips.forEach(chip => {
             chip.addEventListener('click', () => {
@@ -22,34 +19,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 2. اختيار افتراضي مسبقاً (من الـ Mockup)
-    // ============================================
+
     // تحديد "Graphic Design" كافتراضي في "What can you teach"
-    const teachGroup = document.querySelector('[data-name="teach"]');
+    let teachGroup = document.querySelector('[data-name="teach"]');
     if (teachGroup) {
-        const defaultTeach = teachGroup.querySelector('[data-value="Graphic Design"]');
+        let defaultTeach = teachGroup.querySelector('[data-value="Graphic Design"]');
         if (defaultTeach) defaultTeach.classList.add('selected');
     }
 
     // تحديد "Web Development" كافتراضي في "What do you want to learn"
-    const learnGroup = document.querySelector('[data-name="learn"]');
+    let learnGroup = document.querySelector('[data-name="learn"]');
     if (learnGroup) {
-        const defaultLearn = learnGroup.querySelector('[data-value="Web Development"]');
+        let defaultLearn = learnGroup.querySelector('[data-value="Web Development"]');
         if (defaultLearn) defaultLearn.classList.add('selected');
     }
 
     // تحديد "Weekdays 5–8 PM" كافتراضي في "Preferred time"
-    const timeGroup = document.querySelector('[data-name="time"]');
+    let timeGroup = document.querySelector('[data-name="time"]');
     if (timeGroup) {
-        const defaultTime = timeGroup.querySelector('[data-value="Weekdays 5–8 PM"]');
+        let defaultTime = timeGroup.querySelector('[data-value="Weekdays 5–8 PM"]');
         if (defaultTime) defaultTime.classList.add('selected');
     }
 
-    // ============================================
+    
     // 3. زر "Cancel"
-    // ============================================
-    const cancelBtn = document.getElementById('cancelBtn');
+    let cancelBtn = document.getElementById('cancelBtn');
 
     if (cancelBtn) {
         cancelBtn.addEventListener('click', () => {
@@ -59,21 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
-    // 4. إرسال النموذج
-    // ============================================
-    const exchangeForm = document.getElementById('exchangeForm');
-    const submitBtn = document.getElementById('submitBtn');
+
+    let exchangeForm = document.getElementById('exchangeForm');
+    let submitBtn = document.getElementById('submitBtn');
 
     if (exchangeForm) {
         exchangeForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
             // جلب القيم المختارة
-            const teachChip = document.querySelector('[data-name="teach"] .chip.selected');
-            const learnChip = document.querySelector('[data-name="learn"] .chip.selected');
-            const timeChip = document.querySelector('[data-name="time"] .chip.selected');
-            const message = document.getElementById('message').value.trim();
+            let teachChip = document.querySelector('[data-name="teach"] .chip.selected');
+            let learnChip = document.querySelector('[data-name="learn"] .chip.selected');
+            let timeChip = document.querySelector('[data-name="time"] .chip.selected');
+            let message = document.getElementById('message').value.trim();
 
             // التحقق من الحقول
             if (!teachChip) {
@@ -112,14 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 5. دالة التنبيهات
-    // ============================================
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -136,24 +127,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2200);
     }
 
-});
 
-    // ============================================
+
     // 6. Magnetic Hover Effect (انجذاب البطاقة للماوس)
-    // ============================================
-    const partnerCard = document.querySelector('.partner-summary-card');
+    let partnerCard = document.querySelector('.partner-summary-card');
     
     if (partnerCard && window.innerWidth > 992) {
         partnerCard.addEventListener('mousemove', (e) => {
-            const rect = partnerCard.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            let rect = partnerCard.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
             
             // حساب الإزاحة (بحد أقصى 8px)
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const moveX = ((x - centerX) / centerX) * 6;
-            const moveY = ((y - centerY) / centerY) * 6;
+            let centerX = rect.width / 2;
+            let centerY = rect.height / 2;
+            let moveX = ((x - centerX) / centerX) * 6;
+            let moveY = ((y - centerY) / centerY) * 6;
             
             partnerCard.style.transform = `translate(${moveX}px, ${moveY - 6}px)`;
         });
@@ -163,10 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 7. Avatar Click Effect (تأثير عند النقر)
-    // ============================================
-    const summaryAvatar = document.querySelector('.summary-avatar');
+    
+    let summaryAvatar = document.querySelector('.summary-avatar');
     
     if (summaryAvatar) {
         summaryAvatar.style.cursor = 'pointer';
@@ -176,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             summaryAvatar.style.animation = '';
             
             // تأثير موجة
-            const ripple = document.createElement('span');
+            let ripple = document.createElement('span');
             ripple.style.cssText = `
                 position: absolute;
                 inset: 0;
@@ -193,10 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 8. Pulse on Rating Click
-    // ============================================
-    const summaryRating = document.querySelector('.summary-rating');
+    let summaryRating = document.querySelector('.summary-rating');
     
     if (summaryRating) {
         summaryRating.style.cursor = 'pointer';
@@ -204,3 +190,4 @@ document.addEventListener('DOMContentLoaded', () => {
             showNotification('Loading reviews...', 'info');
         });
     }
+     });

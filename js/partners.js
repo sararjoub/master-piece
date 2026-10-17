@@ -1,23 +1,19 @@
-/* ============================================
-   ===== PARTNERS PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const partnerCards = document.querySelectorAll('.partner-card');
-    const partnersCount = document.getElementById('partnersCount');
-    const emptyState = document.getElementById('emptyState');
-    const partnersList = document.getElementById('partnersList');
+    let searchInput = document.getElementById('searchInput');
+    let searchBtn = document.getElementById('searchBtn');
+    let filterButtons = document.querySelectorAll('.filter-btn');
+    let partnerCards = document.querySelectorAll('.partner-card');
+    let partnersCount = document.getElementById('partnersCount');
+    let emptyState = document.getElementById('emptyState');
+    let partnersList = document.getElementById('partnersList');
 
     let currentFilter = 'all';
     let currentSearch = '';
 
-    // ============================================
     // 1. الفلاتر
-    // ============================================
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             filterButtons.forEach(b => b.classList.remove('active'));
@@ -27,9 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 2. البحث
-    // ============================================
     if (searchBtn) {
         searchBtn.addEventListener('click', () => {
             currentSearch = searchInput.value.trim().toLowerCase();
@@ -51,9 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 3. تطبيق الفلاتر
-    // ============================================
     function applyFilters() {
         let visibleCount = 0;
         let cards = Array.from(partnerCards);
@@ -74,12 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         cards.forEach(card => {
-            const name = card.querySelector('.partner-name').textContent.toLowerCase();
-            const skillTags = Array.from(card.querySelectorAll('.skill-tag'))
+            let name = card.querySelector('.partner-name').textContent.toLowerCase();
+            let skillTags = Array.from(card.querySelectorAll('.skill-tag'))
                 .map(tag => tag.textContent.toLowerCase())
                 .join(' ');
 
-            const matchesSearch = !currentSearch || 
+            let matchesSearch = !currentSearch || 
                 name.includes(currentSearch) || 
                 skillTags.includes(currentSearch);
 
@@ -104,14 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
     // 4. زر View Profile
-    // ============================================
-    const viewProfileButtons = document.querySelectorAll('.view-profile-btn');
+    let viewProfileButtons = document.querySelectorAll('.view-profile-btn');
     viewProfileButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const partnerSlug = btn.dataset.partner;
+            let partnerSlug = btn.dataset.partner;
             showNotification(`Loading profile...`, 'info');
 
             setTimeout(() => {
@@ -120,25 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 5. النقر على البطاقة
-    // ============================================
     partnerCards.forEach(card => {
         card.addEventListener('click', (e) => {
             if (e.target.classList.contains('view-profile-btn')) return;
-            const btn = card.querySelector('.view-profile-btn');
+            let btn = card.querySelector('.view-profile-btn');
             if (btn) btn.click();
         });
     });
 
-    // ============================================
-    // 6. التنبيهات
-    // ============================================
+    
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -155,20 +141,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1800);
     }
 
-});
 
 
-    // ============================================
+
     // 7. Count-up Animation للعدد
-    // ============================================
     function animateCount(element, target, duration = 800) {
-        const start = 0;
-        const startTime = performance.now();
+        let start = 0;
+        let startTime = performance.now();
 
-        const animate = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const current = Math.floor(start + (target - start) * progress);
+        let animate = (currentTime) => {
+            let elapsed = currentTime - startTime;
+            let progress = Math.min(elapsed / duration, 1);
+            let current = Math.floor(start + (target - start) * progress);
             element.textContent = current;
 
             if (progress < 1) {
@@ -185,15 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // تفعيل Count-up عند تحميل الصفحة
     if (partnersCount) {
-        const initialCount = parseInt(partnersCount.textContent) || 12;
+        let initialCount = parseInt(partnersCount.textContent) || 12;
         partnersCount.textContent = '0';
         setTimeout(() => animateCount(partnersCount, initialCount), 300);
     }
 
-    // ============================================
     // 8. تحسين applyFilters لاستخدام Count-up
-    // ============================================
-    const originalApplyFilters = applyFilters;
+    let originalApplyFilters = applyFilters;
     applyFilters = function() {
         let visibleCount = 0;
         let cards = Array.from(partnerCards);
@@ -210,12 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         cards.forEach(card => {
-            const name = card.querySelector('.partner-name').textContent.toLowerCase();
-            const skillTags = Array.from(card.querySelectorAll('.skill-tag'))
+            let name = card.querySelector('.partner-name').textContent.toLowerCase();
+            let skillTags = Array.from(card.querySelectorAll('.skill-tag'))
                 .map(tag => tag.textContent.toLowerCase())
                 .join(' ');
 
-            const matchesSearch = !currentSearch || 
+            let matchesSearch = !currentSearch || 
                 name.includes(currentSearch) || 
                 skillTags.includes(currentSearch);
 
@@ -243,15 +225,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // ============================================
     // 9. تأثير النقر على الـ Filter (Ripple)
-    // ============================================
     filterButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
             // إنشاء عنصر الموجة
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
+            let ripple = document.createElement('span');
+            let rect = this.getBoundingClientRect();
+            let size = Math.max(rect.width, rect.height);
             
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
@@ -269,13 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 10. Hover على البطاقة - تأثير إضافي
-    // ============================================
     partnerCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             // تأثير على Avatar
-            const avatar = this.querySelector('.partner-avatar');
+            let avatar = this.querySelector('.partner-avatar');
             if (avatar) {
                 avatar.style.transform = 'scale(1.1) translateY(-3px)';
                 avatar.style.boxShadow = '0 8px 24px rgba(139, 124, 246, 0.35)';
@@ -283,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         card.addEventListener('mouseleave', function() {
-            const avatar = this.querySelector('.partner-avatar');
+            let avatar = this.querySelector('.partner-avatar');
             if (avatar) {
                 avatar.style.transform = '';
                 avatar.style.boxShadow = '';
@@ -291,9 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+
     // 11. Keyboard Navigation
-    // ============================================
     document.addEventListener('keydown', (e) => {
         // الضغط على "/" لتفعيل البحث
         if (e.key === '/' && document.activeElement !== searchInput) {
@@ -308,3 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
             applyFilters();
         }
     });
+
+    });
+    

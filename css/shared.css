@@ -1,19 +1,12 @@
-/* ============================================
-   ===== SKILLS SWAP - SHARED STYLES =====
-   ===== كل الأنماط المشتركة بين كل الصفحات =====
-   ============================================ */
 
-/* ============================================
-   ===== 1. الخطوط (Fonts) =====
-   ============================================ */
+
+/* الخطوط */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap');
 
 
-/* ============================================
-   ===== 2. المتغيرات (Variables) =====
-   ============================================ */
+/*. المتغيرات  */
 :root {
-    /* ===== الألوان الأساسية ===== */
+    /* الألوان الأساسية */
     --primary: #8b7cf6;
     --primary-dark: #7c6ce8;
     --primary-light: #a78bfa;
@@ -21,7 +14,7 @@
     --primary-bg: #ede9fe;
     --primary-bg-light: #f5f3ff;
     
-    /* ===== ألوان الحالة ===== */
+    /*  ألوان الحالة  */
     --success: #10b981;
     --success-bg: #d1fae5;
     --warning: #f59e0b;
@@ -31,14 +24,14 @@
     --info: #3b82f6;
     --info-bg: #dbeafe;
     
-    /* ===== النصوص ===== */
+    /* النصوص  */
     --text-dark: #1e1b4b;
     --text-medium: #4c4a6b;
     --text-light: #6b7280;
     --text-lighter: #9ca3af;
     --text-white: #ffffff;
     
-    /* ===== الخلفيات ===== */
+    /*  الخلفيات  */
     --bg-white: #ffffff;
     --bg-light: #f8f7ff;
     --bg-page: #f5f3ff;
@@ -49,24 +42,24 @@
     --border-medium: #d1d5db;
     --border-primary: #c4b5fd;
     
-    /* ===== الظلال ===== */
+    
     --shadow-sm: 0 1px 3px rgba(139, 124, 246, 0.08);
     --shadow-md: 0 4px 12px rgba(139, 124, 246, 0.1);
     --shadow-lg: 0 10px 30px rgba(139, 124, 246, 0.15);
     --shadow-xl: 0 20px 50px rgba(139, 124, 246, 0.2);
     
-    /* ===== الحواف ===== */
+    /*  الحواف */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     --radius-full: 9999px;
     
-    /* ===== الخطوط ===== */
+    /* الخطوط */
     --font-display: 'Instrument Serif', serif;
     --font-body: 'Poppins', system-ui, sans-serif;
     
-    /* ===== المسافات ===== */
+    /*  المسافات */
     --space-xs: 4px;
     --space-sm: 8px;
     --space-md: 16px;
@@ -75,16 +68,14 @@
     --space-2xl: 48px;
     --space-3xl: 64px;
     
-    /* ===== الحركات ===== */
+    /*الحركات  */
     --transition-fast: 0.2s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
 
-/* ============================================
-   ===== 3. إعادة الضبط (Reset) =====
-   ============================================ */
+/*  إعادة الضبط (Reset) */
 * {
     margin: 0;
     padding: 0;
@@ -106,9 +97,7 @@ body {
 }
 
 
-/* ============================================
-   ===== 4. Typography =====
-   ============================================ */
+/*  Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
@@ -138,9 +127,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 5. Container =====
-   ============================================ */
+/*  Container  */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -163,9 +150,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 6. Utilities =====
-   ============================================ */
+/*  Utilities  */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -187,9 +172,7 @@ a:hover {
 .hidden { display: none; }
 
 
-/* ============================================
-   ===== 7. Scrollbar =====
-   ============================================ */
+/*  Scrollbar  */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -213,17 +196,9 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 8. NAVBAR (مشترك في كل الصفحات) =====
-   ============================================ */
+/*  NAVBAR (مشترك في كل الصفحات) */
 .navbar {
-    /*background-color: var(--primary-light);
-    background-color: whitesmoke;
-    padding: 16px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(139, 124, 246, 0.15);*/
+    
       background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -247,115 +222,8 @@ a:hover {
     align-items: center;
     gap: 20px;
 }
-/*
-.navbar-logo {
-    font-family: var(--font-display);
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--text-dark);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
 
-.navbar-logo span {
-    color: var(--primary-dark);
-}
-*/
-
-/* ============================================
-   ===== NAVBAR LOGO - BRAND PULSE =====
-   ===== تصميم: أبيض مع توهج بنفسجي =====
-   ============================================ 
-
-.navbar-logo {
-    font-family: var(--font-display);
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all var(--transition-base);
-    position: relative;
-    padding: 4px 8px;
-    border-radius: var(--radius-md);
-}
-
-.navbar-logo span {
-    color: #ffffff;
-    position: relative;
-}
-
-/* هالة بنفسجية خلف الشعار 
-.navbar-logo::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: var(--radius-md);
-    background: radial-gradient(
-        ellipse at center,
-        rgba(139, 124, 246, 0.4) 0%,
-        transparent 70%
-    );
-    z-index: -1;
-    animation: logoPulse 3s ease-in-out infinite;
-    opacity: 0;
-}
-
-@keyframes logoPulse {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-/* توهج دائم بنفسجي 
-.navbar-logo {
-    text-shadow: 
-        0 0 8px rgba(255, 255, 255, 0.6),
-        0 0 16px rgba(139, 124, 246, 0.4);
-}
-
-/* النجمة تتميز 
-.navbar-logo::first-letter {
-    color: #ffffff;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
-    animation: starPulse 2s ease-in-out infinite;
-}
-
-@keyframes starPulse {
-    0%, 100% {
-        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
-    }
-    50% {
-        filter: drop-shadow(0 0 16px rgba(255, 255, 255, 1))
-                drop-shadow(0 0 24px rgba(139, 124, 246, 0.8));
-    }
-}
-
-.navbar-logo:hover {
-    transform: scale(1.05);
-    text-shadow: 
-        0 0 12px rgba(255, 255, 255, 0.8),
-        0 0 24px rgba(139, 124, 246, 0.6),
-        0 0 32px rgba(139, 124, 246, 0.4);
-}
-
-.navbar-logo:hover::before {
-    opacity: 1;
-}
-*/
-
-/* ============================================
-   ===== NAVBAR LOGO - PREMIUM DESIGN =====
-   ============================================ */
+/*  NAVBAR LOGO - PREMIUM DESIGN  */
 
 .navbar-logo {
     display: flex;
@@ -369,46 +237,7 @@ a:hover {
     position: relative;
 }
 
-/* ===== Icon Wrapper ===== 
-.logo-icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(4px);
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    transition: all var(--transition-base);
-    position: relative;
-    overflow: hidden;
-}
 
-.logo-icon-wrapper::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.4) 0%,
-        transparent 70%
-    );
-    opacity: 0;
-    transition: opacity var(--transition-base);
-}
-
-.logo-svg-icon {
-    width: 22px;
-    height: 22px;
-    color: #4a3ce0;
-    position: relative;
-    z-index: 1;
-    transition: transform var(--transition-base);
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
-}
-    */
     .logo-icon-wrapper {
     display: flex;
     align-items: center;
@@ -417,19 +246,19 @@ a:hover {
     height: 42px;
     border-radius: 50%;
     
-    /* ===== الخلفية: بنفسجي فاتح شفاف ===== */
+    /*  الخلفية: بنفسجي فاتح شفاف  */
     background: rgba(139, 124, 246, 0.15);
     
-    /* ===== الحدود: بنفسجي فاتح ===== */
+    /*  الحدود: بنفسجي فاتح */
     border: 1.5px solid rgba(139, 124, 246, 0.4);
     
-    /* ===== التوهج (Glow) ===== */
+    /* التوهج (Glow)  */
     box-shadow: 
         0 0 0 4px rgba(139, 124, 246, 0.08),
         0 4px 16px rgba(139, 124, 246, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.5);
     
-    /* ===== Blur ===== */
+    /* Blur */
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     
@@ -438,11 +267,11 @@ a:hover {
     overflow: hidden;
     flex-shrink: 0;
     
-    /* ===== نبض التوهج ===== */
+    /* نبض التوهج  */
     animation: logoIconPulse 3s ease-in-out infinite;
 }
 
-/* ===== نبض التوهج ===== */
+/* نبض التوهج  */
 @keyframes logoIconPulse {
     0%, 100% {
         box-shadow: 
@@ -460,7 +289,7 @@ a:hover {
 }
 
 
-/* ===== Text ===== */
+/* Text */
 .logo-text {
     color: #ffffff;
     background: linear-gradient(
@@ -500,7 +329,7 @@ a:hover {
     }
 }
 
-/* ===== Hover Effects ===== */
+/* Hover Effects  */
 .navbar-logo:hover .logo-icon-wrapper {
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.5);
@@ -509,12 +338,7 @@ a:hover {
         0 0 16px rgba(255, 255, 255, 0.5),
         0 0 32px rgba(255, 255, 255, 0.2);
 }
-/*
-.navbar-logo:hover .logo-svg-icon {
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-}
-*/
+
 
 .navbar-logo:hover .logo-svg-icon {
     transform: scale(1.1);
@@ -527,7 +351,7 @@ a:hover {
         0 0 32px rgba(255, 255, 255, 0.3);
 }
 
-/* ===== Icon Pulse (توهج دائم) ===== */
+/* Icon Pulse (توهج دائم) */
 .logo-icon-wrapper {
     animation: logoIconPulse 3s ease-in-out infinite;
 }
@@ -620,9 +444,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 9. BUTTONS =====
-   ============================================ */
+/*  BUTTONS  */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -640,18 +462,13 @@ a:hover {
 }
 
 .btn-primary {
-  /*  background-color: var(--primary);
-    color: var(--text-white);*/
+  
      background: linear-gradient(135deg, #C0ABE7 0%, #A991D4 100%);
     color: #ffffff;
 }
 
 .btn-primary:hover {
-    /*background-color: var(--primary);
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    color: var(--text-white);*/
+   
      background: linear-gradient(135deg, #A991D4 0%, #8B7CF6 100%);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(192, 171, 231, 0.4);
@@ -690,9 +507,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 10. CARDS =====
-   ============================================ */
+/*  CARds*/
 .card {
     background-color: var(--bg-white);
     border-radius: var(--radius-lg);
@@ -715,9 +530,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 11. BADGES =====
-   ============================================ */
+/*  BADGES  */
 .badge {
     display: inline-flex;
     align-items: center;
@@ -755,9 +568,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 12. AVATAR =====
-   ============================================ */
+/*  AVATAR  */
 .avatar {
     width: 48px;
     height: 48px;
@@ -785,9 +596,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 13. FORMS =====
-   ============================================ */
+/*  FORMS  */
 .form-group {
     margin-bottom: 20px;
 }
@@ -833,9 +642,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 14. SEARCH BAR =====
-   ============================================ */
+/* SEARCH BAR */
 .search-bar {
     display: flex;
     gap: 12px;
@@ -860,76 +667,7 @@ a:hover {
 }
 
 
-/* ============================================
-   ===== 15. FOOTER =====
-   ============================================ 
-.footer {
-    background-color: var(--bg-white);
-    padding: 60px 0 24px;
-    margin-top: 80px;
-    border-top: 1px solid var(--border-light);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-}
-
-.footer-brand h3 {
-    font-family: var(--font-display);
-    font-size: 24px;
-    color: var(--primary-dark);
-    margin-bottom: 8px;
-}
-
-.footer-brand p {
-    color: var(--text-light);
-    font-size: 14px;
-}
-
-.footer-column h4 {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 16px;
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
-}
-
-.footer-column ul li a {
-    color: var(--text-light);
-    font-size: 14px;
-    transition: color var(--transition-fast);
-}
-
-.footer-column ul li a:hover {
-    color: var(--primary);
-}
-
-.footer-bottom {
-    max-width: 1200px;
-    margin: 40px auto 0;
-    padding: 24px 24px 0;
-    border-top: 1px solid var(--border-light);
-    text-align: center;
-    color: var(--text-light);
-    font-size: 13px;
-}
-*/
-/* ============================================
-   ===== FOOTER - COMPACT DESIGN =====
-   ===== لون: #c0abe7 - حجم صغير ومرتب =====
-   ============================================ */
+/*  FOOTER  */
 
 footer {
     background-color: #35294d;
@@ -955,7 +693,7 @@ footer::before {
     pointer-events: none;
 }
 
-/* ===== الحاوية ===== */
+
 .footer-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -969,16 +707,14 @@ footer::before {
    
 }
 
-/* ============================================
-   ===== FOOTER BRAND =====
-   ============================================ */
+/*  FOOTER BRAND  */
 .footer-brand {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-/* ===== Logo الجديد ===== */
+/*  Logo */
 .footer-logo {
     display: flex;
     align-items: center;
@@ -1037,7 +773,7 @@ footer::before {
     transform: scale(1.1);
 }
 
-/* ===== Tagline ===== */
+/* Tagline  */
 .footer-brand p {
     color: rgba(241, 240, 253, 0.75);
     font-size: 13px;
@@ -1046,9 +782,7 @@ footer::before {
     max-width: 240px;
 }
 
-/* ============================================
-   ===== FOOTER LINKS =====
-   ============================================ */
+/* FOOTER LINKS  */
 .footer-links h4 {
     font-size: 13px;
     font-family: 'Poppins', sans-serif;
@@ -1096,9 +830,7 @@ footer::before {
     width: 100%;
 }
 
-/* ============================================
-   ===== FOOTER SOCIAL =====
-   ============================================ */
+/* FOOTER SOCIAL */
 .footer-social {
     display: flex;
     gap: 8px;
@@ -1132,9 +864,7 @@ footer::before {
         0 0 20px rgba(74, 60, 224, 0.15);
 }
 
-/* ============================================
-   ===== FOOTER BOTTOM =====
-   ============================================ */
+/*  FOOTER BOTTOM */
 .footer-bottom {
     max-width: 100%;          /* ← عرض كامل */
     margin: 20px auto 0;
@@ -1156,9 +886,7 @@ footer::before {
     width: 100%;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 992px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;
@@ -1216,9 +944,7 @@ footer::before {
 
 
 
-/* ============================================
-   ===== 16. ANIMATIONS =====
-   ============================================ */
+/*  ANIMATIONS  */
 
 /* Fade Rise */
 @keyframes fade-rise {
@@ -1353,7 +1079,7 @@ footer::before {
 /* Scroll Reveal */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
     transition: all 0.8s ease-out;
 }
 
@@ -1381,9 +1107,7 @@ footer::before {
 }
 
 
-/* ============================================
-   ===== 17. RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE */
 @media (max-width: 992px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;
@@ -1413,15 +1137,13 @@ footer::before {
     }
 }
 
-/* ============================================
-   ===== NAVBAR AUTHED (للمستخدم المسجل) =====
-   ============================================ */
+/*  NAVBAR AUTHED (للمستخدم المسجل)  */
 
 .navbar-authed .navbar-links {
     /* نفس التنسيق، لا تغيير */
 }
 
-/* ===== أيقونات الإجراءات ===== */
+/* أيقونات الإجراءات*/
 .navbar-icon-btn {
     position: relative;
     width: 42px;
@@ -1468,7 +1190,7 @@ footer::before {
     50% { transform: scale(1.1); }
 }
 
-/* ===== Avatar & Dropdown ===== */
+/* Avatar & Dropdown  */
 .navbar-user {
     position: relative;
 }
@@ -1496,7 +1218,7 @@ footer::before {
     box-shadow: var(--shadow-md);
 }
 
-/* ===== القائمة المنسدلة ===== */
+/*  القائمة المنسدلة */
 .user-dropdown {
     position: absolute;
     top: calc(100% + 12px);
@@ -1520,7 +1242,7 @@ footer::before {
     transform: translateY(0);
 }
 
-/* ===== Dropdown Header ===== */
+/*  Dropdown Header  */
 .dropdown-header {
     display: flex;
     align-items: center;
@@ -1550,14 +1272,14 @@ footer::before {
     color: var(--text-light);
 }
 
-/* ===== Dropdown Divider ===== */
+/*  Dropdown Divider  */
 .dropdown-divider {
     height: 1px;
     background-color: var(--border-light);
     margin: 6px 0;
 }
 
-/* ===== Dropdown Item ===== */
+/*  Dropdown Item  */
 .dropdown-item {
     display: flex;
     align-items: center;
@@ -1597,9 +1319,7 @@ footer::before {
     color: var(--danger);
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE */
 @media (max-width: 768px) {
     .navbar-icon-btn {
         width: 38px;
@@ -1618,3 +1338,5 @@ footer::before {
         min-width: 260px;
     }
 }
+
+

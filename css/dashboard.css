@@ -1,6 +1,4 @@
-/* ============================================
-   ===== DASHBOARD PAGE =====
-   ============================================ */
+
 
 .dashboard-section {
     padding: 40px 0 80px;
@@ -8,9 +6,6 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ============================================
-   ===== Welcome Header =====
-   ============================================ */
 .welcome-header {
     display: flex;
     justify-content: space-between;
@@ -33,9 +28,7 @@
     color: var(--text-medium);
 }
 
-/* ============================================
-   ===== Stats Grid =====
-   ============================================ */
+/*  Stats Grid  */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -112,9 +105,7 @@
     color: var(--success);
 }
 
-/* ============================================
-   ===== Main Grid =====
-   ============================================ */
+/*  Main Grid */
 .dashboard-grid {
     display: grid;
     grid-template-columns: 1.7fr 1fr;
@@ -134,9 +125,7 @@
     gap: 24px;
 }
 
-/* ============================================
-   ===== Dashboard Block =====
-   ============================================ */
+/* Dashboard Block  */
 .dashboard-block {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -176,9 +165,7 @@
     transform: translateX(2px);
 }
 
-/* ============================================
-   ===== Requests List =====
-   ============================================ */
+/* Requests List  */
 .requests-list {
     display: flex;
     flex-direction: column;
@@ -235,9 +222,7 @@
     line-height: 1.4;
 }
 
-/* ============================================
-   ===== Recommended Grid =====
-   ============================================ */
+/*  Recommended Grid  */
 .recommended-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -317,9 +302,7 @@
     width: 100%;
 }
 
-/* ============================================
-   ===== My Skills =====
-   ============================================ */
+/*  My Skills  */
 .my-skills-section {
     margin-bottom: 16px;
 }
@@ -372,9 +355,7 @@
     color: var(--text-white);
 }
 
-/* ============================================
-   ===== Activity List =====
-   ============================================ */
+/*  Activity List */
 .activity-list {
     display: flex;
     flex-direction: column;
@@ -429,9 +410,7 @@
     color: var(--text-lighter);
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/* RESPONSIVE  */
 @media (max-width: 992px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);

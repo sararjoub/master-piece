@@ -1,6 +1,3 @@
-/* ============================================
-   ===== PROFILE PAGE =====
-   ============================================ */
 
 .profile-section {
     padding: 40px 0 80px;
@@ -8,9 +5,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ============================================
-   ===== Profile Header Card =====
-   ============================================ */
+/* Profile Header Card  */
 .profile-header-card {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -36,7 +31,7 @@
     background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 50%, var(--primary) 100%);
 }
 
-/* ===== Avatar ===== */
+/*  Avatar = */
 .profile-avatar {
     width: 120px;
     height: 120px;
@@ -69,7 +64,7 @@
     100% { transform: scale(1.15); opacity: 0; }
 }
 
-/* ===== Info ===== */
+/*  Info  */
 .profile-info {
     min-width: 0;
 }
@@ -123,9 +118,7 @@
     flex-shrink: 0;
 }
 
-/* ============================================
-   ===== Profile Stats =====
-   ============================================ */
+/* Profile Stats  */
 .profile-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -165,9 +158,7 @@
     font-weight: 500;
 }
 
-/* ============================================
-   ===== Main Grid =====
-   ============================================ */
+/* Main Grid  */
 .profile-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -189,9 +180,7 @@
     top: 100px;
 }
 
-/* ============================================
-   ===== Profile Block =====
-   ============================================ */
+/* Profile Block */
 .profile-block {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -255,9 +244,7 @@
     line-height: 1.7;
 }
 
-/* ============================================
-   ===== Skill Tags =====
-   ============================================ */
+/*  Skill Tags  */
 .skill-tags {
     display: flex;
     gap: 8px;
@@ -293,9 +280,7 @@
     color: var(--text-white);
 }
 
-/* ============================================
-   ===== Reviews =====
-   ============================================ */
+/*  Reviews */
 .reviews-list {
     display: flex;
     flex-direction: column;
@@ -369,9 +354,7 @@
     color: var(--text-lighter);
 }
 
-/* ============================================
-   ===== Experience =====
-   ============================================ */
+/*  Experience  */
 .experience-list {
     display: flex;
     flex-direction: column;
@@ -403,9 +386,7 @@
     color: var(--text-dark);
 }
 
-/* ============================================
-   ===== Availability =====
-   ============================================ */
+/*  Availability  */
 .availability-text {
     font-size: 14px;
     color: var(--text-medium);
@@ -415,9 +396,7 @@
     border-left: 3px solid var(--primary);
 }
 
-/* ============================================
-   ===== Links =====
-   ============================================ */
+/*  Links */
 .links-list {
     display: flex;
     flex-direction: column;
@@ -447,9 +426,7 @@
     flex-shrink: 0;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 992px) {
     .profile-header-card {
         grid-template-columns: auto 1fr;

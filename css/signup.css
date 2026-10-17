@@ -1,8 +1,6 @@
-/* ============================================
-   ===== SIGN UP PAGE - خاص بصفحة التسجيل =====
-   ============================================ */
 
-/* ===== الحاوية الرئيسية ===== */
+
+/* الكونتينر الرئيسي */
 .auth-section {
     min-height: calc(100vh - 76px);
     display: flex;
@@ -21,7 +19,7 @@
     align-items: center;
 }
 
-/* ===== الجانب الأيسر: النموذج ===== */
+/* الجهة اليسار الفورم */
 .auth-form-wrapper {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -61,7 +59,7 @@
     color: var(--text-light);
 }
 
-/* ===== النموذج ===== */
+/* الفورم */
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -103,7 +101,7 @@
     background-color: var(--primary-bg);
 }
 
-/* ===== مؤشر قوة كلمة المرور ===== */
+/* مؤشر قوة الباسورد */
 .password-strength {
     margin-top: 10px;
     display: flex;
@@ -134,12 +132,12 @@
     min-width: 100px;
 }
 
-/* حالات قوة كلمة المرور */
+/* حالات قوة الباسورد*/
 .strength-fill.weak { width: 33%; background-color: var(--danger); }
 .strength-fill.medium { width: 66%; background-color: var(--warning); }
 .strength-fill.strong { width: 100%; background-color: var(--success); }
 
-/* ===== اختيار نوع الحساب ===== */
+/* اختيار نوع الحساب  */
 .role-selector {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -222,14 +220,14 @@
     text-decoration: underline;
 }
 
-/* ===== زر التسجيل ===== */
+/*  زر التسجيل */
 .btn-full {
     width: 100%;
     margin-top: 8px;
     margin-bottom: 16px;
 }
 
-/* ===== رابط تسجيل الدخول ===== */
+/*  رابط تسجيل الدخول  */
 .auth-switch {
     text-align: center;
     font-size: 14px;
@@ -246,9 +244,7 @@
     text-decoration: underline;
 }
 
-/* ============================================
-   ===== الجانب الأيمن: الرسم التوضيحي =====
-   ============================================ */
+/* الجانب اليمين الصوره  */
 .auth-illustration {
     padding: 40px;
     display: flex;
@@ -318,9 +314,7 @@
     flex-shrink: 0;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE */
 @media (max-width: 992px) {
     .auth-container {
         grid-template-columns: 1fr;

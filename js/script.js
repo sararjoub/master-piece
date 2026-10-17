@@ -1,26 +1,24 @@
-/* ============================================
-   ===== HERO VIDEO FADE LOOP (اختياري) =====
-   ============================================ */
+/* HERO VIDEO FADE LOOP (اختياري)  */
 document.addEventListener('DOMContentLoaded', () => {
-    const video = document.querySelector('.hero-bg-video');
+    let video = document.querySelector('.hero-bg-video');
     if (!video) return;
 
     let rafId = null;
     let isFadingOut = false;
 
     /**
-     * دالة التلاشي باستخدام requestAnimationFrame
-     */
-    const fadeTo = (targetOpacity, duration = 600) => {
+    / * دالة التلاشي باستخدام requestAnimationFrame*/
+     
+    let fadeTo = (targetOpacity, duration = 600) => {
         if (rafId) cancelAnimationFrame(rafId);
 
-        const startOpacity = parseFloat(video.style.opacity || '1');
-        const startTime = performance.now();
+        let startOpacity = parseFloat(video.style.opacity || '1');
+        let startTime = performance.now();
 
-        const animate = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const currentOpacity = startOpacity + (targetOpacity - startOpacity) * progress;
+        let animate = (currentTime) => {
+            let elapsed = currentTime - startTime;
+            let progress = Math.min(elapsed / duration, 1);
+            let currentOpacity = startOpacity + (targetOpacity - startOpacity) * progress;
             
             video.style.opacity = currentOpacity.toString();
 
@@ -60,3 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
         video.style.opacity = '1';
     }
 });
+

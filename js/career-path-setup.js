@@ -1,12 +1,8 @@
-/* ============================================
-   ===== CAREER PATH SETUP - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. عناصر الصفحة
-    // ============================================
     const steps = document.querySelectorAll('.setup-step');
     const progressSteps = document.querySelectorAll('.progress-step');
     const progressLines = document.querySelectorAll('.progress-line');
@@ -17,9 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentStep = 1;
     const totalSteps = 3;
 
-    // ============================================
     // 2. اختيار الهدف (Step 1)
-    // ============================================
     goalOptions.forEach(option => {
         option.addEventListener('click', () => {
             goalOptions.forEach(o => o.classList.remove('selected'));
@@ -47,9 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         goalObserver.observe(option, { attributes: true, attributeFilter: ['class'] });
     });
 
-    // ============================================
     // 3. التنقل بين الخطوات
-    // ============================================
     nextBtn.addEventListener('click', () => {
         // التحقق من اختيار الهدف في الخطوة 1
         if (currentStep === 1) {
@@ -76,9 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ============================================
     // 4. تحديث الواجهة حسب الخطوة
-    // ============================================
     function updateStep() {
         // إخفاء كل الخطوات
         steps.forEach(step => step.classList.remove('active'));
@@ -131,9 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // ============================================
     // 5. توليد المسار (الخطوة النهائية)
-    // ============================================
     function generateCareerPath() {
         const selectedGoal = document.querySelector('.goal-option.selected');
         const selectedLevel = document.querySelector('input[name="level"]:checked');
@@ -171,9 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    // ============================================
-    // 6. دالة التنبيهات
-    // ============================================
     function showNotification(message, type = 'info') {
         const oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();

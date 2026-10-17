@@ -1,15 +1,11 @@
-/* ============================================
-   ===== SKILL DETAILS PAGE - خاص بصفحة تفاصيل المهارة =====
-   ============================================ */
 
-/* ===== الحاوية الرئيسية ===== */
 .skill-details-section {
     padding: 40px 0 80px;
     background-color: var(--bg-page);
     min-height: calc(100vh - 76px);
 }
 
-/* ===== Breadcrumb ===== */
+/*  Breadcrumb */
 .breadcrumb {
     display: flex;
     align-items: center;
@@ -38,7 +34,7 @@
     font-weight: 500;
 }
 
-/* ===== Main Grid ===== */
+/*  Main Grid  */
 .skill-details-grid {
     display: grid;
     grid-template-columns: 1.8fr 1fr;
@@ -46,9 +42,7 @@
     align-items: start;
 }
 
-/* ============================================
-   ===== الجانب الأيسر: التفاصيل =====
-   ============================================ */
+/*  الجانب الأيسر: التفاصيل  */
 .skill-main {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -57,7 +51,7 @@
     box-shadow: var(--shadow-sm);
 }
 
-/* ===== Header ===== */
+/*  Header  */
 .skill-header {
     margin-bottom: 32px;
     padding-bottom: 32px;
@@ -85,7 +79,7 @@
     line-height: 1.6;
 }
 
-/* ===== Skill Section ===== */
+/* Skill Section */
 .skill-section {
     margin-bottom: 32px;
 }
@@ -104,7 +98,7 @@
     line-height: 1.7;
 }
 
-/* ===== What You'll Learn ===== */
+/*  What You'll Learn  */
 .learn-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -144,7 +138,7 @@
     flex-shrink: 0;
 }
 
-/* ===== Action Buttons ===== */
+/*  Action Buttons */
 .skill-actions {
     display: flex;
     gap: 12px;
@@ -154,7 +148,7 @@
     border-top: 1px solid var(--border-light);
 }
 
-/* ===== Related Skills ===== */
+/*  Related Skills */
 .related-skills {
     display: flex;
     gap: 10px;
@@ -178,9 +172,7 @@
     transform: translateY(-2px);
 }
 
-/* ============================================
-   ===== الجانب الأيمن: Sidebar =====
-   ============================================ */
+/* الجانب الأيمن: Sidebar */
 .skill-sidebar {
     display: flex;
     flex-direction: column;
@@ -189,7 +181,7 @@
     top: 100px;
 }
 
-/* ===== Illustration Image ===== */
+/*  Illustration Image  */
 .skill-illustration {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -214,7 +206,7 @@
     50% { transform: translateY(-8px); }
 }
 
-/* ===== Learning Path Card ===== */
+/*  Learning Path Card  */
 .learning-path-card {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -233,7 +225,7 @@
     border-bottom: 1px solid var(--border-light);
 }
 
-/* ===== Path Level ===== */
+/* Path Level  */
 .path-level {
     margin-bottom: 16px;
 }
@@ -251,7 +243,7 @@
     color: var(--text-dark);
 }
 
-/* ===== Requirements ===== */
+/* Requirements  */
 .requirements {
     margin-top: 24px;
     padding-top: 20px;
@@ -290,9 +282,7 @@
     top: -2px;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 992px) {
     .skill-details-grid {
         grid-template-columns: 1fr;
@@ -335,9 +325,7 @@
 }
 
 
-/* ============================================
-   ===== PREMIUM LOCK BANNER =====
-   ============================================ */
+/* PREMIUM LOCK BANNER  */
 .premium-lock-banner {
     display: flex;
     align-items: center;

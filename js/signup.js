@@ -1,33 +1,27 @@
-/* ============================================
-   ===== SIGN UP PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. إظهار/إخفاء كلمة المرور
-    // ============================================
-    const togglePassword = document.getElementById('togglePassword');
-    const passwordInput = document.getElementById('password');
+  
+    let togglePassword = document.getElementById('togglePassword');
+    let passwordInput = document.getElementById('password');
 
     if (togglePassword && passwordInput) {
         togglePassword.addEventListener('click', () => {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
             togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
         });
     }
-
-    // ============================================
     // 2. مؤشر قوة كلمة المرور
-    // ============================================
-    const strengthFill = document.getElementById('strengthFill');
-    const strengthText = document.getElementById('strengthText');
+    let strengthFill = document.getElementById('strengthFill');
+    let strengthText = document.getElementById('strengthText');
 
     if (passwordInput && strengthFill && strengthText) {
         passwordInput.addEventListener('input', () => {
-            const value = passwordInput.value;
-            const strength = calculateStrength(value);
+            let value = passwordInput.value;
+            let strength = calculateStrength(value);
 
             // إزالة الأصناف القديمة
             strengthFill.classList.remove('weak', 'medium', 'strong');
@@ -52,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /**
-     * حساب قوة كلمة المرور
+    /*
+      حساب قوة كلمة المرور
      */
     function calculateStrength(password) {
         let score = 0;
@@ -68,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return 'strong';
     }
 
-    // ============================================
+    
     // 3. التحقق من تطابق كلمتي المرور
-    // ============================================
-    const confirmPassword = document.getElementById('confirmPassword');
+   
+    let confirmPassword = document.getElementById('confirmPassword');
 
     if (confirmPassword && passwordInput) {
         confirmPassword.addEventListener('input', () => {
@@ -83,20 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
-    // 4. إرسال النموذج
-    // ============================================
-    const signupForm = document.getElementById('signupForm');
+    
+    // 4. إرسال الفورم
+
+    let signupForm = document.getElementById('signupForm');
 
     if (signupForm) {
         signupForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const fullName = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const password = passwordInput.value;
-            const confirm = confirmPassword.value;
-            const terms = document.getElementById('terms').checked;
+            let fullName = document.getElementById('fullName').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = passwordInput.value;
+            let confirm = confirmPassword.value;
+            let terms = document.getElementById('terms').checked;
 
             // التحقق من الحقول
             if (!fullName || !email || !password || !confirm) {
@@ -122,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // ✅ هنا لاحقاً سيتم إرسال البيانات إلى الـ Backend
             // حالياً: نعرض رسالة نجاح وننتقل للصفحة التالية
 
-            const submitBtn = signupForm.querySelector('button[type="submit"]');
+            let submitBtn = signupForm.querySelector('button[type="submit"]');
             submitBtn.textContent = 'Creating account...';
             submitBtn.disabled = true;
 
@@ -136,12 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
-    // 5. دالة عرض التنبيهات
-    // ============================================
+    
     function showNotification(message, type = 'info') {
         // إنشاء عنصر التنبيه
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -162,10 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // ============================================
     // 6. تأثير عند التركيز على الحقول (اختياري)
-    // ============================================
-    const allInputs = document.querySelectorAll('.form-input');
+    let allInputs = document.querySelectorAll('.form-input');
     allInputs.forEach(input => {
         input.addEventListener('focus', () => {
             input.parentElement.style.transform = 'scale(1.01)';

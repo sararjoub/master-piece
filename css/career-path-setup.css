@@ -1,6 +1,4 @@
-/* ============================================
-   ===== CAREER PATH SETUP PAGE =====
-   ============================================ */
+
 
 .setup-section {
     padding: 40px 0 80px;
@@ -8,9 +6,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ============================================
-   ===== Progress Steps =====
-   ============================================ */
+/*  Progress Steps  */
 .setup-progress {
     display: flex;
     align-items: center;
@@ -77,9 +73,7 @@
     transition: background-color var(--transition-base);
 }
 
-/* ============================================
-   ===== Setup Card =====
-   ============================================ */
+/*  Setup Card  */
 .setup-card {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -91,9 +85,7 @@
     flex-direction: column;
 }
 
-/* ============================================
-   ===== Setup Step =====
-   ============================================ */
+/*  Setup Step  */
 .setup-step {
     display: none;
     flex: 1;
@@ -137,9 +129,7 @@
     margin: 0 auto;
 }
 
-/* ============================================
-   ===== Step 1: Goals Grid =====
-   ============================================ */
+/* Step 1: Goals Grid */
 .goals-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -250,9 +240,7 @@
     font-weight: 600;
 }
 
-/* ============================================
-   ===== Step 2: Level Options =====
-   ============================================ */
+/*  Step 2: Level Option */
 .level-options {
     display: flex;
     flex-direction: column;
@@ -334,9 +322,7 @@
     animation: checkPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ============================================
-   ===== Step 3: Preferences =====
-   ============================================ */
+/* Step 3: Preferences  */
 .preference-block {
     margin-bottom: 28px;
 }
@@ -360,7 +346,7 @@
     margin-bottom: 12px;
 }
 
-/* ===== Time Options ===== */
+/* Time Options */
 .time-options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -414,7 +400,7 @@
     color: var(--primary-dark);
 }
 
-/* ===== Style Options ===== */
+/* Style Options  */
 .style-options {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -460,7 +446,7 @@
     font-weight: 600;
 }
 
-/* ===== Skills Checkboxes ===== */
+/*  Skills Checkboxes  */
 .skills-checkboxes {
     display: flex;
     flex-wrap: wrap;
@@ -498,9 +484,7 @@
     box-shadow: 0 4px 12px rgba(139, 124, 246, 0.25);
 }
 
-/* ============================================
-   ===== Setup Actions =====
-   ============================================ */
+/* Setup Actions */
 .setup-actions {
     display: flex;
     align-items: center;
@@ -514,9 +498,7 @@
     flex: 1;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 768px) {
     .setup-card {
         padding: 24px 20px;

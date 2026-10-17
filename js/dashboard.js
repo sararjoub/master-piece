@@ -1,25 +1,21 @@
-/* ============================================
-   ===== DASHBOARD PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // ============================================
     // 1. Count-up Animation للأرقام
-    // ============================================
-    const statValues = document.querySelectorAll('.stat-value');
+   
+    let statValues = document.querySelectorAll('.stat-value');
 
-    const animateCountUp = (element) => {
-        const target = parseInt(element.dataset.count) || 0;
-        const duration = 1200;
-        const startTime = performance.now();
+    let animateCountUp = (element) => {
+        let target = parseInt(element.dataset.count) || 0;
+        let duration = 1200;
+        let startTime = performance.now();
 
-        const animate = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+        let animate = (currentTime) => {
+            let elapsed = currentTime - startTime;
+            let progress = Math.min(elapsed / duration, 1);
             // Easing function (easeOutQuad)
-            const eased = 1 - (1 - progress) * (1 - progress);
-            const current = Math.floor(target * eased);
+            let eased = 1 - (1 - progress) * (1 - progress);
+            let current = Math.floor(target * eased);
             
             element.textContent = current;
 
@@ -34,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // تشغيل Count-up عند ظهور الإحصائيات
-    const statsObserver = new IntersectionObserver((entries) => {
+    let statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const value = entry.target;
+                let value = entry.target;
                 if (!value.dataset.animated) {
                     value.dataset.animated = 'true';
                     animateCountUp(value);
@@ -49,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statValues.forEach(value => statsObserver.observe(value));
 
-    // ============================================
+   
     // 2. زر "Find New Partners"
-    // ============================================
-    const findPartnersBtn = document.getElementById('findPartnersBtn');
+   
+    let findPartnersBtn = document.getElementById('findPartnersBtn');
 
     if (findPartnersBtn) {
         findPartnersBtn.addEventListener('click', () => {
@@ -63,15 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
+    
     // 3. أزرار "View Profile" للموصى بهم
-    // ============================================
-    const viewPartnerBtns = document.querySelectorAll('.view-partner-btn');
+   
+    let viewPartnerBtns = document.querySelectorAll('.view-partner-btn');
 
     viewPartnerBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const partner = btn.dataset.partner;
+            let partner = btn.dataset.partner;
             showNotification(`Loading ${partner.replace(/-/g, ' ')}...`, 'info');
 
             setTimeout(() => {
@@ -80,24 +76,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+   
     // 4. النقر على Recommended Card
-    // ============================================
-    const recommendedCards = document.querySelectorAll('.recommended-card');
+  
+    let recommendedCards = document.querySelectorAll('.recommended-card');
 
     recommendedCards.forEach(card => {
         card.style.cursor = 'pointer';
         card.addEventListener('click', (e) => {
             if (e.target.classList.contains('view-partner-btn')) return;
-            const btn = card.querySelector('.view-partner-btn');
+            let btn = card.querySelector('.view-partner-btn');
             if (btn) btn.click();
         });
     });
 
-    // ============================================
+   
     // 5. النقر على طلب (Request Item)
-    // ============================================
-    const requestItems = document.querySelectorAll('.request-item');
+   
+    let requestItems = document.querySelectorAll('.request-item');
 
     requestItems.forEach(item => {
         item.style.cursor = 'pointer';
@@ -109,14 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
-    // 6. دالة التنبيهات
-    // ============================================
+
+  
+   
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">

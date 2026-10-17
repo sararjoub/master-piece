@@ -1,13 +1,9 @@
-/* ============================================
-   ===== REQUEST SENT PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. زر "View My Requests"
-    // ============================================
-    const viewRequestsBtn = document.getElementById('viewRequestsBtn');
+    let viewRequestsBtn = document.getElementById('viewRequestsBtn');
 
     if (viewRequestsBtn) {
         viewRequestsBtn.addEventListener('click', () => {
@@ -19,10 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 2. زر "Back to Home"
-    // ============================================
-    const backHomeBtn = document.getElementById('backHomeBtn');
+    let backHomeBtn = document.getElementById('backHomeBtn');
 
     if (backHomeBtn) {
         backHomeBtn.addEventListener('click', () => {
@@ -34,10 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 3. تأثير عند النقر على Timeline
-    // ============================================
-    const timelineSteps = document.querySelectorAll('.timeline-step');
+    let timelineSteps = document.querySelectorAll('.timeline-step');
 
     timelineSteps.forEach(step => {
         step.addEventListener('click', () => {
@@ -50,14 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         step.style.cursor = 'pointer';
     });
 
-    // ============================================
-    // 4. دالة التنبيهات
-    // ============================================
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">

@@ -1,29 +1,21 @@
-/* ============================================
-   ===== CATEGORY PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. عناصر الصفحة
-    // ============================================
-    const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const skillCards = document.querySelectorAll('.skill-card');
-    const skillsCount = document.getElementById('skillsCount');
-    const emptyState = document.getElementById('emptyState');
-    const skillsGrid = document.getElementById('skillsGrid');
+    let searchInput = document.getElementById('searchInput');
+    let searchBtn = document.getElementById('searchBtn');
+    let filterButtons = document.querySelectorAll('.filter-btn');
+    let skillCards = document.querySelectorAll('.skill-card');
+    let skillsCount = document.getElementById('skillsCount');
+    let emptyState = document.getElementById('emptyState');
+    let skillsGrid = document.getElementById('skillsGrid');
 
-    // ============================================
     // 2. حالة الفلاتر
-    // ============================================
     let currentFilter = 'all';
     let currentSearch = '';
 
-    // ============================================
     // 3. تفعيل الفلاتر
-    // ============================================
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             // إزالة الحالة النشطة من جميع الأزرار
@@ -37,9 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 4. البحث
-    // ============================================
     if (searchBtn) {
         searchBtn.addEventListener('click', () => {
             currentSearch = searchInput.value.trim().toLowerCase();
@@ -63,22 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 5. تطبيق الفلاتر والبحث
-    // ============================================
     function applyFilters() {
         let visibleCount = 0;
 
         skillCards.forEach(card => {
-            const level = card.dataset.level;
-            const title = card.querySelector('.skill-title').textContent.toLowerCase();
-            const description = card.querySelector('.skill-description').textContent.toLowerCase();
+            let level = card.dataset.level;
+            let title = card.querySelector('.skill-title').textContent.toLowerCase();
+            let description = card.querySelector('.skill-description').textContent.toLowerCase();
 
             // التحقق من الفلتر
-            const matchesFilter = currentFilter === 'all' || level === currentFilter;
+            let matchesFilter = currentFilter === 'all' || level === currentFilter;
 
             // التحقق من البحث
-            const matchesSearch = !currentSearch || 
+            let matchesSearch = !currentSearch || 
                 title.includes(currentSearch) || 
                 description.includes(currentSearch);
 
@@ -106,28 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
     // 6. النقر على بطاقة المهارة
-    // ============================================
     skillCards.forEach(card => {
         card.addEventListener('click', (e) => {
             // إذا كان النقر على الزر، لا تفعل شيئاً هنا (الزر له معالج خاص)
             if (e.target.classList.contains('skill-btn')) return;
 
-            const skill = card.querySelector('.skill-btn').dataset.skill;
+            let skill = card.querySelector('.skill-btn').dataset.skill;
             navigateToSkill(skill);
         });
     });
 
-    // ============================================
     // 7. النقر على زر "View Skill"
-    // ============================================
-    const skillButtons = document.querySelectorAll('.skill-btn');
+    let skillButtons = document.querySelectorAll('.skill-btn');
     skillButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const card = btn.closest('.skill-card');
-        const isPremium = card.dataset.premium === 'true';
+        let card = btn.closest('.skill-card');
+        let isPremium = card.dataset.premium === 'true';
 
         if (isPremium) {
             // عرض Modal "Upgrade"
@@ -137,14 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const skill = btn.dataset.skill;
+        let skill = btn.dataset.skill;
         navigateToSkill(skill);
     });
     });
 
-    // ============================================
     // 8. الانتقال إلى صفحة تفاصيل المهارة
-    // ============================================
     function navigateToSkill(skillSlug) {
         // ✅ لاحقاً: سيتم تمرير ID المهارة من الـ Backend
         // حالياً: ننتقل إلى صفحة تفاصيل ثابتة
@@ -155,14 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800);
     }
 
-    // ============================================
-    // 9. دالة عرض التنبيهات
-    // ============================================
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -181,10 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    // ============================================
     // 10. تأثير عند التمرير (Scroll Reveal)
-    // ============================================
-    const observer = new IntersectionObserver((entries) => {
+    let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');

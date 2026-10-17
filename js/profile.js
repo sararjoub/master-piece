@@ -1,12 +1,8 @@
-/* ============================================
-   ===== PROFILE PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. زر "Edit Profile"
-    // ============================================
     const editProfileBtn = document.getElementById('editProfileBtn');
 
     if (editProfileBtn) {
@@ -18,9 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 2. أزرار "Edit" لكل قسم
-    // ============================================
     const blockEditBtns = document.querySelectorAll('.block-edit-btn');
 
     blockEditBtns.forEach(btn => {
@@ -36,9 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 3. Count-up Animation للأرقام في Stats
-    // ============================================
     const statNumbers = document.querySelectorAll('.stat-number');
 
     const animateCountUp = (element, target) => {
@@ -80,9 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statNumbers.forEach(el => statsObserver.observe(el));
 
-    // ============================================
     // 4. التأثير عند Hover على Reviews
-    // ============================================
     const reviewItems = document.querySelectorAll('.review-item');
 
     reviewItems.forEach(item => {
@@ -100,9 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
-    // 5. دالة التنبيهات
-    // ============================================
+    
     function showNotification(message, type = 'info') {
         const oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();

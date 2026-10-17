@@ -1,6 +1,4 @@
-/* ============================================
-   ===== REQUEST SENT PAGE =====
-   ============================================ */
+
 
 .sent-section {
     padding: 60px 0 80px;
@@ -11,7 +9,7 @@
     justify-content: center;
 }
 
-/* ===== Card ===== */
+/*  Card  */
 .sent-card {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -23,9 +21,7 @@
     margin: 0 auto;
 }
 
-/* ============================================
-   ===== Success Icon =====
-   ============================================ */
+/*  Success Icon  */
 .success-icon-wrapper {
     position: relative;
     width: 100px;
@@ -76,7 +72,7 @@
     }
 }
 
-/* ===== Success Pulse (حلقة متوسعة) ===== */
+/* Success Pulse (حلقة متوسعة) */
 .success-pulse {
     position: absolute;
     inset: 0;
@@ -101,9 +97,7 @@
     }
 }
 
-/* ============================================
-   ===== Title & Description =====
-   ============================================ */
+/*  Title & Description  */
 .sent-title {
     font-size: 32px;
     font-family: var(--font-display);
@@ -124,9 +118,7 @@
     font-weight: 600;
 }
 
-/* ============================================
-   ===== Timeline =====
-   ============================================ */
+/* Timeline  */
 .timeline {
     display: flex;
     align-items: flex-start;
@@ -195,7 +187,7 @@
     font-weight: 600;
 }
 
-/* ===== Timeline Line ===== */
+/*  Timeline Line  */
 .timeline-line {
     flex: 1;
     height: 2px;
@@ -204,9 +196,7 @@
     border-radius: var(--radius-full);
 }
 
-/* ============================================
-   ===== Summary =====
-   ============================================ */
+/* Summary  */
 .sent-summary {
     background-color: var(--bg-light);
     border-radius: var(--radius-lg);
@@ -236,9 +226,7 @@
     text-align: right;
 }
 
-/* ============================================
-   ===== Actions =====
-   ============================================ */
+/* Actions */
 .sent-actions {
     display: flex;
     gap: 12px;
@@ -246,9 +234,7 @@
     flex-wrap: wrap;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 768px) {
     .sent-section {
         padding: 40px 0 60px;

@@ -1,13 +1,10 @@
-/* ============================================
-   ===== PARTNER PROFILE PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. زر "Send Exchange Request"
-    // ============================================
-    const sendRequestBtn = document.getElementById('sendRequestBtn');
+
+    let sendRequestBtn = document.getElementById('sendRequestBtn');
 
     if (sendRequestBtn) {
         sendRequestBtn.addEventListener('click', () => {
@@ -20,14 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
-    // 2. دالة التنبيهات
-    // ============================================
+    
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">

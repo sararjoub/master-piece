@@ -1,12 +1,8 @@
-/* ============================================
-   ===== MY SKILLS PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. نظام الـ Tabs
-    // ============================================
     const tabs = document.querySelectorAll('.skills-tab');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -26,9 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 2. Modal - إضافة مهارة جديدة
-    // ============================================
     const addSkillBtn = document.getElementById('addSkillBtn');
     const addTeachSkill = document.getElementById('addTeachSkill');
     const addLearnSkill = document.getElementById('addLearnSkill');
@@ -85,9 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ============================================
     // 3. إضافة مهارة جديدة
-    // ============================================
     if (confirmAdd) {
         confirmAdd.addEventListener('click', () => {
             const category = document.getElementById('modalCategory').value;
@@ -162,9 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 4. حذف بطاقة
-    // ============================================
     function attachCardActions(card) {
         const deleteBtn = card.querySelector('.delete-btn');
         const editBtn = card.querySelector('.edit-btn');
@@ -204,9 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         attachCardActions(card);
     });
 
-    // ============================================
     // 5. تحديث العدادات
-    // ============================================
     function updateCounts() {
         const teachCount = document.querySelectorAll('#teachGrid .my-skill-card').length;
         const learnCount = document.querySelectorAll('#learnGrid .my-skill-card').length;
@@ -218,9 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (learnCountEl) learnCountEl.textContent = learnCount;
     }
 
-    // ============================================
     // 6. اسم التصنيف بالعربي/الإنجليزية
-    // ============================================
     function getCategoryName(key) {
         const names = {
             'technology': 'Technology',
@@ -233,18 +219,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return names[key] || key;
     }
 
-    // ============================================
     // 7. حماية XSS
-    // ============================================
     function escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
 
-    // ============================================
-    // 8. دالة التنبيهات
-    // ============================================
+
     function showNotification(message, type = 'info') {
         const oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
@@ -265,10 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => notification.remove(), 300);
         }, 2200);
     }
-
-    // ============================================
     // 9. تحديث العدادات عند التحميل
-    // ============================================
     updateCounts();
 
 });

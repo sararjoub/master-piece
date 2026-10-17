@@ -1,6 +1,3 @@
-/* ============================================
-   ===== PARTNER PROFILE PAGE =====
-   ============================================ */
 
 .profile-section {
     padding: 40px 0 80px;
@@ -8,7 +5,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ===== Breadcrumb ===== */
+/*  Breadcrumb  */
 .breadcrumb {
     display: flex;
     align-items: center;
@@ -31,9 +28,7 @@
 .breadcrumb .separator { color: var(--text-lighter); }
 .breadcrumb .current { color: var(--primary-dark); font-weight: 500; }
 
-/* ============================================
-   ===== Profile Header Card =====
-   ============================================ */
+/*  Profile Header Card  */
 .profile-header-card {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -47,7 +42,7 @@
     margin-bottom: 32px;
 }
 
-/* ===== Avatar ===== */
+/* Avatar */
 .profile-avatar {
     width: 120px;
     height: 120px;
@@ -80,7 +75,7 @@
     100% { transform: scale(1.15); opacity: 0; }
 }
 
-/* ===== Info ===== */
+/*  Info */
 .profile-info {
     min-width: 0;
 }
@@ -136,7 +131,7 @@
     50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.05); }
 }
 
-/* ===== Illustration ===== */
+/* Illustration  */
 .profile-illustration {
     width: 200px;
     height: 140px;
@@ -161,9 +156,7 @@
     50% { transform: translateY(-6px); }
 }
 
-/* ============================================
-   ===== Main Grid =====
-   ============================================ */
+/*  Main Grid  */
 .profile-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -185,7 +178,7 @@
     top: 100px;
 }
 
-/* ===== Profile Block ===== */
+/* Profile Block */
 .profile-block {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -210,7 +203,7 @@
     line-height: 1.7;
 }
 
-/* ===== Skill Tags ===== */
+/* Skill Tags  */
 .skill-tags {
     display: flex;
     gap: 8px;
@@ -246,7 +239,7 @@
     color: var(--text-white);
 }
 
-/* ===== Experience List ===== */
+/*  Experience List  */
 .experience-list {
     display: flex;
     flex-direction: column;
@@ -278,7 +271,7 @@
     color: var(--text-dark);
 }
 
-/* ===== Availability ===== */
+/* Availability  */
 .availability-text {
     font-size: 14px;
     color: var(--text-medium);
@@ -288,14 +281,12 @@
     border-left: 3px solid var(--primary);
 }
 
-/* ===== Button Full ===== */
+/* Button Full  */
 .btn-full {
     width: 100%;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 992px) {
     .profile-header-card {
         grid-template-columns: auto 1fr;

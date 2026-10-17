@@ -1,8 +1,5 @@
-/* ============================================
-   ===== LOGIN PAGE - خاص بصفحة الدخول =====
-   ============================================ */
 
-/* ===== الحاوية الرئيسية ===== */
+/* الكونتينر الرئيسي */
 .auth-section {
     min-height: calc(100vh - 76px);
     display: flex;
@@ -21,7 +18,7 @@
     align-items: center;
 }
 
-/* ===== الجانب الأيسر: النموذج ===== */
+/* الجهة اليمين*/
 .auth-form-wrapper {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -61,7 +58,7 @@
     color: var(--text-light);
 }
 
-/* ===== النموذج ===== */
+
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -103,7 +100,7 @@
     background-color: var(--primary-bg);
 }
 
-/* ===== Remember Me + Forgot Password ===== */
+/*  Remember Me + Forgot Password  */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -142,14 +139,14 @@
     text-decoration: underline;
 }
 
-/* ===== زر تسجيل الدخول ===== */
+/*  زر تسجيل الدخول */
 .btn-full {
     width: 100%;
     margin-top: 8px;
     margin-bottom: 20px;
 }
 
-/* ===== الفاصل ===== */
+/* الفاصل */
 .divider {
     display: flex;
     align-items: center;
@@ -167,7 +164,7 @@
     background-color: var(--border-light);
 }
 
-/* ===== أزرار التواصل الاجتماعي ===== */
+/*  أزرار التواصل الاجتماعي */
 .social-login {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -202,7 +199,7 @@
     font-size: 16px;
 }
 
-/* ===== رابط التسجيل ===== */
+/*  رابط التسجيل  */
 .auth-switch {
     text-align: center;
     font-size: 14px;
@@ -218,9 +215,7 @@
     text-decoration: underline;
 }
 
-/* ============================================
-   ===== الجانب الأيمن: الرسم التوضيحي =====
-   ============================================ */
+/* الجهة اليسار*/
 .auth-illustration {
     padding: 40px;
     display: flex;
@@ -291,9 +286,7 @@
     flex-shrink: 0;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/* RESPONSIVE  */
 @media (max-width: 992px) {
     .auth-container {
         grid-template-columns: 1fr;
@@ -339,9 +332,7 @@
     }
 }
 
-/* ============================================
-   ===== ADMIN ACCESS LINK =====
-   ============================================ */
+/*  ADMIN ACCESS LINK */
 .admin-access-wrapper {
     display: flex;
     align-items: center;
@@ -391,7 +382,7 @@
     transform: scale(1.2);
 }
 
-/* ===== Responsive ===== */
+/*  Responsive  */
 @media (max-width: 480px) {
     .admin-access-wrapper {
         flex-direction: column;

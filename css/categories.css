@@ -1,6 +1,4 @@
-/* ============================================
-   ===== CATEGORIES PAGE =====
-   ============================================ */
+
 
 .categories-section {
     padding: 60px 0 80px;
@@ -8,7 +6,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ===== Header ===== */
+/*  Header  */
 .categories-header {
     text-align: center;
     margin-bottom: 32px;
@@ -39,7 +37,7 @@
     margin: 0 auto;
 }
 
-/* ===== Search ===== */
+/*  Search  */
 .categories-search {
     max-width: 500px;
     margin: 0 auto 40px;
@@ -64,16 +62,14 @@
     transform: scale(1.02);
 }
 
-/* ============================================
-   ===== Categories Grid =====
-   ============================================ */
+/*  Categories Grid  */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-/* ===== Category Card ===== */
+/*  Category Card  */
 .category-card {
     background-color: var(--bg-white);
     border: 2px solid var(--border-light);
@@ -116,7 +112,7 @@
     transform: scaleX(1);
 }
 
-/* ===== Category Icon ===== */
+/*  Category Icon  */
 .category-icon {
     width: 64px;
     height: 64px;
@@ -163,7 +159,7 @@
     color: #b91c1c;
 }
 
-/* ===== Category Text ===== */
+/*  Category Text  */
 .category-name {
     font-size: 20px;
     font-family: var(--font-body);
@@ -192,7 +188,7 @@
     margin-top: 4px;
 }
 
-/* ===== Arrow ===== */
+/*  Arrow  */
 .category-arrow {
     position: absolute;
     top: 28px;
@@ -210,9 +206,7 @@
     transform: translateX(0);
 }
 
-/* ============================================
-   ===== Empty State =====
-   ============================================ */
+/*  Empty State */
 .empty-state {
     text-align: center;
     padding: 80px 24px;
@@ -239,9 +233,7 @@
     color: var(--text-light);
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/* RESPONSIVE  */
 @media (max-width: 992px) {
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);

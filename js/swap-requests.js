@@ -1,18 +1,14 @@
-/* ============================================
-   ===== SWAP REQUESTS PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. نظام الـ Tabs
-    // ============================================
-    const tabs = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
+    let tabs = document.querySelectorAll('.tab');
+    let tabContents = document.querySelectorAll('.tab-content');
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            const targetTab = tab.dataset.tab;
+            let targetTab = tab.dataset.tab;
 
             // إزالة active من كل الـ tabs
             tabs.forEach(t => t.classList.remove('active'));
@@ -22,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tabContents.forEach(content => content.classList.remove('active'));
 
             // إظهار المحتوى المطلوب
-            const targetContent = document.getElementById(`${targetTab}-content`);
+            let targetContent = document.getElementById(`${targetTab}-content`);
             if (targetContent) {
                 targetContent.classList.add('active');
             }
@@ -32,12 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 2. الفلاتر والبحث
-    // ============================================
-    const filterChips = document.querySelectorAll('.filter-chip');
-    const searchInput = document.getElementById('searchInput');
-    const emptyState = document.getElementById('emptyState');
+    let filterChips = document.querySelectorAll('.filter-chip');
+    let searchInput = document.getElementById('searchInput');
+    let emptyState = document.getElementById('emptyState');
 
     let currentFilter = 'all';
     let currentSearch = '';
@@ -58,25 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 3. تطبيق الفلاتر
-    // ============================================
     function applyFilters() {
-        const activeContent = document.querySelector('.tab-content.active');
+        let activeContent = document.querySelector('.tab-content.active');
         if (!activeContent) return;
 
-        const cards = activeContent.querySelectorAll('.request-card');
+        let cards = activeContent.querySelectorAll('.request-card');
         let visibleCount = 0;
 
         cards.forEach(card => {
-            const status = card.dataset.status || '';
-            const userName = card.querySelector('.request-user-info strong')?.textContent.toLowerCase() || '';
+            let status = card.dataset.status || '';
+            let userName = card.querySelector('.request-user-info strong')?.textContent.toLowerCase() || '';
 
             // التحقق من الفلتر
-            const matchesFilter = currentFilter === 'all' || status === currentFilter;
+            let matchesFilter = currentFilter === 'all' || status === currentFilter;
 
             // التحقق من البحث
-            const matchesSearch = !currentSearch || userName.includes(currentSearch);
+            let matchesSearch = !currentSearch || userName.includes(currentSearch);
 
             if (matchesFilter && matchesSearch) {
                 card.style.display = 'flex';
@@ -98,20 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
     // 4. أزرار Accept / Reject
-    // ============================================
-    const acceptButtons = document.querySelectorAll('.accept-btn');
-    const rejectButtons = document.querySelectorAll('.reject-btn');
+    let acceptButtons = document.querySelectorAll('.accept-btn');
+    let rejectButtons = document.querySelectorAll('.reject-btn');
 
     acceptButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const card = btn.closest('.request-card');
-            const userName = card.querySelector('.request-user-info strong')?.textContent || 'this user';
+            let card = btn.closest('.request-card');
+            let userName = card.querySelector('.request-user-info strong')?.textContent || 'this user';
 
             // تحديث الحالة في الواجهة
-            const badge = card.querySelector('.badge');
+            let badge = card.querySelector('.badge');
             if (badge) {
                 badge.className = 'badge badge-success';
                 badge.textContent = 'Accepted';
@@ -119,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.dataset.status = 'accepted';
 
             // تغيير الأزرار
-            const actions = card.querySelector('.request-actions');
+            let actions = card.querySelector('.request-actions');
             actions.innerHTML = `
                 <button class="btn btn-primary btn-sm message-btn">
                     💬 Open Chat
@@ -136,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rejectButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const card = btn.closest('.request-card');
+            let card = btn.closest('.request-card');
 
             if (confirm('Are you sure you want to decline this request?')) {
                 // إخفاء البطاقة بحركة
@@ -154,15 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 5. زر Cancel Request (Outgoing)
-    // ============================================
-    const cancelButtons = document.querySelectorAll('.cancel-request-btn');
+    let cancelButtons = document.querySelectorAll('.cancel-request-btn');
 
     cancelButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const card = btn.closest('.request-card');
+            let card = btn.closest('.request-card');
 
             if (confirm('Are you sure you want to cancel this request?')) {
                 card.style.transition = 'opacity 0.3s, transform 0.3s';
@@ -179,11 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 6. أزرار Message
-    // ============================================
     function attachMessageButton() {
-        const messageButtons = document.querySelectorAll('.message-btn');
+        let messageButtons = document.querySelectorAll('.message-btn');
         messageButtons.forEach(btn => {
             if (!btn.dataset.bound) {
                 btn.dataset.bound = 'true';
@@ -200,10 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     attachMessageButton();
 
-    // ============================================
+
     // 7. زر "New Request"
-    // ============================================
-    const findPartnersBtn = document.getElementById('findPartnersBtn');
+    let findPartnersBtn = document.getElementById('findPartnersBtn');
 
     if (findPartnersBtn) {
         findPartnersBtn.addEventListener('click', () => {
@@ -211,13 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 8. تقييم النجوم (Completed Tab)
-    // ============================================
-    const reviewStarsInput = document.querySelectorAll('.review-stars-input');
+    let reviewStarsInput = document.querySelectorAll('.review-stars-input');
 
     reviewStarsInput.forEach(container => {
-        const stars = container.querySelectorAll('span');
+        let stars = container.querySelectorAll('span');
 
         stars.forEach((star, index) => {
             star.style.cursor = 'pointer';
@@ -241,14 +224,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
-    // 9. دالة التنبيهات
-    // ============================================
+    
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">

@@ -1,15 +1,13 @@
-/* ============================================
-   ===== SCROLL REVEAL ANIMATIONS =====
-   ============================================ */
+/*  scroll revel animations  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
+    let observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -18,18 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal');
+    let revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
 });
 
-/* ============================================
-   ===== NAVBAR AUTHED - User Menu =====
-   ============================================ */
+/* NAVBAR AUTHED - User Menu  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const avatarBtn = document.getElementById('avatarBtn');
-    const userDropdown = document.getElementById('userDropdown');
-    const userMenu = document.getElementById('userMenu');
+    let avatarBtn = document.getElementById('avatarBtn');
+    let userDropdown = document.getElementById('userDropdown');
+    let userMenu = document.getElementById('userMenu');
 
     // فتح/إغلاق القائمة المنسدلة
     if (avatarBtn && userDropdown) {
@@ -54,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // زر تسجيل الخروج
-    const logoutBtn = document.getElementById('logoutBtn');
+    let logoutBtn = document.getElementById('logoutBtn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
             if (confirm('Are you sure you want to logout?')) {
@@ -68,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // أيقونة الإشعارات
-    const notificationsBtn = document.getElementById('notificationsBtn');
+    let notificationsBtn = document.getElementById('notificationsBtn');
     if (notificationsBtn) {
         notificationsBtn.addEventListener('click', () => {
             showNotification('You have 3 new notifications', 'info');
@@ -76,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // أيقونة الرسائل
-    const messagesBtn = document.getElementById('messagesBtn');
+    let messagesBtn = document.getElementById('messagesBtn');
     if (messagesBtn) {
         messagesBtn.addEventListener('click', () => {
             showNotification('Opening messages...', 'info');
@@ -88,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // دالة التنبيهات (إذا لم تكن معرّفة في مكان آخر)
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -108,3 +104,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 });
+
+
