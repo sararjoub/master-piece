@@ -1,10 +1,4 @@
-/* ============================================
-   ===== AI ASSISTANT PAGE =====
-   ============================================ */
 
-/* ============================================
-   ===== AI HERO SECTION =====
-   ============================================ */
 .ai-hero {
     position: relative;
     padding: 80px 0 100px;
@@ -116,7 +110,7 @@
     justify-content: center;
 }
 
-/* ===== AI Orb (الكرات المتحركة) ===== */
+/*  AI Orb (الكرات المتحركة)  */
 .ai-hero-visual {
     display: flex;
     align-items: center;
@@ -183,7 +177,7 @@
     50% { transform: scale(1.15) rotate(10deg); }
 }
 
-/* ===== Orb Rings ===== */
+/*Orb Rings */
 .ai-orb-ring {
     position: absolute;
     border-radius: 50%;
@@ -242,9 +236,7 @@
     box-shadow: 0 0 12px rgba(139, 124, 246, 0.8);
 }
 
-/* ============================================
-   ===== AI SECTION HEADER =====
-   ============================================ */
+/* AI SECTION HEADER  */
 .ai-section-header {
     text-align: center;
     margin-bottom: 48px;
@@ -278,9 +270,7 @@
     margin: 0 auto;
 }
 
-/* ============================================
-   ===== QUICK ACTIONS =====
-   ============================================ */
+/* QUICK ACTIONS  */
 .ai-quick-actions {
     padding: 80px 0;
     background-color: var(--bg-white);
@@ -378,9 +368,7 @@
     transform: translateX(4px);
 }
 
-/* ============================================
-   ===== AI CHAT SECTION =====
-   ============================================ */
+/*  AI CHAT SECTION */
 .ai-chat-section {
     padding: 80px 0;
     background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-white) 100%);
@@ -410,7 +398,7 @@
     background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
 }
 
-/* ===== AI Message ===== */
+/*  AI Message  */
 .ai-message {
     display: flex;
     gap: 12px;
@@ -529,7 +517,7 @@
     padding: 0 4px;
 }
 
-/* ===== Typing Indicator ===== */
+/* Typing Indicator  */
 .ai-typing {
     display: flex;
     gap: 12px;
@@ -579,7 +567,7 @@
     }
 }
 
-/* ===== Quick Suggestions ===== */
+/*  Quick Suggestions  */
 .ai-quick-suggestions {
     display: flex;
     gap: 8px;
@@ -610,7 +598,7 @@
     box-shadow: 0 4px 12px rgba(139, 124, 246, 0.25);
 }
 
-/* ===== Chat Input ===== */
+/*  Chat Input  */
 .ai-chat-input-wrapper {
     display: flex;
     align-items: center;
@@ -682,9 +670,7 @@
     box-shadow: 0 6px 18px rgba(139, 124, 246, 0.5);
 }
 
-/* ============================================
-   ===== AI INSIGHTS SECTION =====
-   ============================================ */
+/*  AI INSIGHTS SECTION  */
 .ai-insights-section {
     padding: 80px 0;
     background-color: var(--bg-white);
@@ -828,9 +814,7 @@
     color: var(--primary);
 }
 
-/* ============================================
-   ===== AI SUGGESTIONS SECTION =====
-   ============================================ */
+/* AI SUGGESTIONS SECTION  */
 .ai-suggestions-section {
     padding: 80px 0;
     background-color: var(--bg-page);
@@ -894,9 +878,7 @@
     font-weight: 600;
 }
 
-/* ============================================
-   ===== PREMIUM CTA SECTION =====
-   ============================================ */
+/* PREMIUM CTA SECTION  */
 .ai-premium-cta {
     padding: 0 0 80px;
     background-color: var(--bg-page);
@@ -961,9 +943,7 @@
     z-index: 1;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 992px) {
     .ai-hero .container {
         grid-template-columns: 1fr;

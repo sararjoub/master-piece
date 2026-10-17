@@ -1,6 +1,4 @@
-/* ============================================
-   ===== ZOOM MEETING PAGE =====
-   ============================================ */
+
 
 .zoom-section {
     padding: 40px 0 80px;
@@ -8,7 +6,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ===== Header ===== */
+/*  Header  */
 .zoom-header {
     display: flex;
     justify-content: space-between;
@@ -43,7 +41,7 @@
     color: var(--text-medium);
 }
 
-/* ===== Status Badge ===== */
+/*  Status Badge  */
 .zoom-status-badge {
     display: inline-flex;
     align-items: center;
@@ -83,7 +81,7 @@
     50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
 }
 
-/* ===== Partner Card ===== */
+/*  Partner Card  */
 .zoom-partner-card {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -137,7 +135,7 @@
     font-weight: 500;
 }
 
-/* ===== Meeting Container ===== */
+/*  Meeting Container  */
 .zoom-meeting-container {
     background-color: var(--bg-white);
     border: 1px solid var(--border-light);
@@ -189,7 +187,7 @@
     margin-top: 16px;
 }
 
-/* ===== Meeting Controls ===== */
+/*  Meeting Controls  */
 .zoom-controls {
     display: flex;
     justify-content: center;
@@ -244,7 +242,7 @@
     color: var(--danger);
 }
 
-/* ===== Responsive ===== */
+/*  Responsive  */
 @media (max-width: 768px) {
     .zoom-partner-card {
         grid-template-columns: 1fr;

@@ -1,25 +1,18 @@
-/* ============================================
-   ===== AI ASSISTANT PAGE - JavaScript =====
-   ===== أنيميشن + تفاعل فقط =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. عناصر الصفحة
-    // ============================================
-    const chatMessages = document.getElementById('aiChatMessages');
-    const chatInput = document.getElementById('aiChatInput');
-    const sendBtn = document.getElementById('aiSendBtn');
-    const typingIndicator = document.getElementById('aiTyping');
-    const quickSuggestions = document.getElementById('aiQuickSuggestions');
-    const startChatBtn = document.getElementById('startChatBtn');
-    const suggestionChips = document.querySelectorAll('.ai-suggestion-chip');
-    const actionCards = document.querySelectorAll('.ai-action-card');
+    let chatMessages = document.getElementById('aiChatMessages');
+    let chatInput = document.getElementById('aiChatInput');
+    let sendBtn = document.getElementById('aiSendBtn');
+    let typingIndicator = document.getElementById('aiTyping');
+    let quickSuggestions = document.getElementById('aiQuickSuggestions');
+    let startChatBtn = document.getElementById('startChatBtn');
+    let suggestionChips = document.querySelectorAll('.ai-suggestion-chip');
+    let actionCards = document.querySelectorAll('.ai-action-card');
 
-    // ============================================
     // 2. Scroll للأسفل
-    // ============================================
     function scrollToBottom() {
         if (chatMessages) {
             setTimeout(() => {
@@ -28,32 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
     // 3. الحصول على الوقت الحالي
-    // ============================================
     function getCurrentTime() {
-        const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const period = hours >= 12 ? 'PM' : 'AM';
-        const displayHours = hours % 12 || 12;
+        let now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes().toString().padStart(2, '0');
+        let period = hours >= 12 ? 'PM' : 'AM';
+        let displayHours = hours % 12 || 12;
         return `${displayHours}:${minutes} ${period}`;
     }
 
-    // ============================================
     // 4. حماية XSS
-    // ============================================
     function escapeHtml(text) {
-        const div = document.createElement('div');
+        let div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
 
-    // ============================================
     // 5. إضافة رسالة المستخدم
-    // ============================================
     function addUserMessage(text) {
-        const message = document.createElement('div');
+        let message = document.createElement('div');
         message.className = 'ai-message ai-message-sent';
         message.innerHTML = `
             <div class="ai-message-content">
@@ -67,11 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollToBottom();
     }
 
-    // ============================================
     // 6. إضافة رد AI
-    // ============================================
     function addAIMessage(text) {
-        const message = document.createElement('div');
+        let message = document.createElement('div');
         message.className = 'ai-message ai-message-received';
         message.innerHTML = `
             <div class="ai-message-avatar"><span>✨</span></div>
@@ -86,9 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollToBottom();
     }
 
-    // ============================================
     // 7. محاكاة رد AI (Placeholder)
-    // ============================================
     function simulateAIReply(userMessage) {
         // إظهار مؤشر الكتابة
         if (typingIndicator) {
@@ -99,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // توليد رد مناسب
         let replyText = '';
 
-        const lowerMsg = userMessage.toLowerCase();
+        let lowerMsg = userMessage.toLowerCase();
 
         if (lowerMsg.includes('career') || lowerMsg.includes('path')) {
             replyText = `Based on your profile, I recommend the <strong>Full Stack Web Developer</strong> path! 🎯<br><br>You already have skills in:<br>• HTML & CSS<br>• JavaScript basics<br><br>Next steps:<br>1. Master <strong>React</strong><br>2. Learn <strong>Node.js</strong><br>3. Build a full project`;
@@ -120,11 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1800);
     }
 
-    // ============================================
     // 8. إرسال رسالة
-    // ============================================
     function sendMessage() {
-        const text = chatInput.value.trim();
+        let text = chatInput.value.trim();
         if (!text) return;
 
         addUserMessage(text);
@@ -134,9 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         simulateAIReply(text);
     }
 
-    // ============================================
     // 9. ربط الأزرار
-    // ============================================
     if (sendBtn) {
         sendBtn.addEventListener('click', sendMessage);
     }
@@ -150,9 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 10. زر "Start Chatting"
-    // ============================================
     if (startChatBtn) {
         startChatBtn.addEventListener('click', () => {
             document.getElementById('ai-chat').scrollIntoView({ 
@@ -166,12 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 11. Quick Suggestions
-    // ============================================
     suggestionChips.forEach(chip => {
         chip.addEventListener('click', () => {
-            const suggestion = chip.dataset.suggestion;
+            let suggestion = chip.dataset.suggestion;
             if (suggestion) {
                 // إضافة الرسالة
                 addUserMessage(suggestion);
@@ -188,21 +163,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 12. Action Cards (فتح Modal أو التنقل)
-    // ============================================
     actionCards.forEach(card => {
         card.addEventListener('click', () => {
-            const action = card.dataset.action;
+            let action = card.dataset.action;
 
-            const actionMessages = {
+            let actionMessages = {
                 'career': 'Show me the best career path for me',
                 'partner': 'Find me the best skill partners',
                 'skills': 'What skills should I learn next?',
                 'progress': 'Analyze my learning progress'
             };
 
-            const message = actionMessages[action];
+            let message = actionMessages[action];
             if (message) {
                 // Scroll للـ Chat
                 document.getElementById('ai-chat').scrollIntoView({ 
@@ -224,16 +197,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 13. Insights Bars Animation
-    // ============================================
-    const insightFills = document.querySelectorAll('.ai-insight-fill');
+    let insightFills = document.querySelectorAll('.ai-insight-fill');
 
-    const insightsObserver = new IntersectionObserver((entries) => {
+    let insightsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const fill = entry.target;
-                const targetWidth = fill.dataset.width;
+                let fill = entry.target;
+                let targetWidth = fill.dataset.width;
                 setTimeout(() => {
                     fill.style.width = targetWidth;
                 }, 200);
@@ -244,9 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     insightFills.forEach(fill => insightsObserver.observe(fill));
 
-    // ============================================
     // 14. Scroll للأسفل عند التحميل
-    // ============================================
+    
     scrollToBottom();
 
 });

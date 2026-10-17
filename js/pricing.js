@@ -1,29 +1,23 @@
-/* ============================================
-   ===== PRICING PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. عناصر الصفحة
-    // ============================================
-    const billingButtons = document.querySelectorAll('.billing-btn');
-    const priceAmounts = document.querySelectorAll('.price-amount');
-    const planButtons = document.querySelectorAll('.plan-btn[data-plan]');
-    const upgradeModal = document.getElementById('upgradeModal');
-    const cancelUpgrade = document.getElementById('cancelUpgrade');
-    const confirmUpgrade = document.getElementById('confirmUpgrade');
-    const startTrialBtn = document.getElementById('startTrialBtn');
+    let billingButtons = document.querySelectorAll('.billing-btn');
+    let priceAmounts = document.querySelectorAll('.price-amount');
+    let planButtons = document.querySelectorAll('.plan-btn[data-plan]');
+    let upgradeModal = document.getElementById('upgradeModal');
+    let cancelUpgrade = document.getElementById('cancelUpgrade');
+    let confirmUpgrade = document.getElementById('confirmUpgrade');
+    let startTrialBtn = document.getElementById('startTrialBtn');
 
     let currentBilling = 'monthly';
     let selectedPlan = null;
 
-    // ============================================
     // 2. Billing Toggle (Monthly / Yearly)
-    // ============================================
     billingButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const billing = btn.dataset.billing;
+            let billing = btn.dataset.billing;
             if (billing === currentBilling) return;
 
             currentBilling = billing;
@@ -34,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // تحديث الأسعار
             priceAmounts.forEach(price => {
-                const newValue = price.dataset[billing];
+                let newValue = price.dataset[billing];
                 // تأثير الأنيميشن
                 price.style.transform = 'scale(1.2)';
                 price.style.color = 'var(--primary)';
@@ -55,20 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 3. Plan Selection (فتح Modal)
-    // ============================================
     planButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const plan = btn.dataset.plan;
+            let plan = btn.dataset.plan;
             selectedPlan = plan;
 
-            const planNames = {
+            let planNames = {
                 'plus': 'Plus',
                 'pro': 'Pro'
             };
 
-            const planPrices = {
+            let planPrices = {
                 'plus': { monthly: '$9/month', yearly: '$7/month' },
                 'pro': { monthly: '$19/month', yearly: '$15/month' }
             };
@@ -87,9 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 4. زر "Start Free Trial"
-    // ============================================
     if (startTrialBtn) {
         startTrialBtn.addEventListener('click', () => {
             // نفتح Modal Plus (الأكثر شيوعاً)
@@ -104,9 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 5. إغلاق Modal
-    // ============================================
     function closeModal() {
         upgradeModal.classList.add('hidden');
         document.body.style.overflow = '';
@@ -127,12 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ============================================
     // 6. تأكيد الترقية
-    // ============================================
     if (confirmUpgrade) {
         confirmUpgrade.addEventListener('click', () => {
-            const originalText = confirmUpgrade.textContent;
+            let originalText = confirmUpgrade.textContent;
             confirmUpgrade.textContent = 'Processing...';
             confirmUpgrade.disabled = true;
             confirmUpgrade.style.opacity = '0.7';
@@ -149,11 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     confirmUpgrade.style.opacity = '1';
 
                     // تحديث حالة الـ Free Plan
-                    const freeBtn = document.querySelector('.plan-btn[data-plan="free"]');
+                    let freeBtn = document.querySelector('.plan-btn[data-plan="free"]');
                     if (freeBtn) freeBtn.textContent = 'Current Plan';
 
                     // تغيير الزر المختار
-                    const selectedBtn = document.querySelector(`.plan-btn[data-plan="${selectedPlan}"]`);
+                    let selectedBtn = document.querySelector(`.plan-btn[data-plan="${selectedPlan}"]`);
                     if (selectedBtn) {
                         selectedBtn.textContent = '✓ Current Plan';
                         selectedBtn.disabled = true;
@@ -164,21 +150,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 7. تأثير Hover على البطاقات
-    // ============================================
-    const pricingCards = document.querySelectorAll('.pricing-card');
+    let pricingCards = document.querySelectorAll('.pricing-card');
     pricingCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
-            const icon = card.querySelector('.plan-icon');
+            let icon = card.querySelector('.plan-icon');
             if (icon) icon.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
         });
     });
 
-    // ============================================
+    
     // 8. تأثير النقر على FAQ
-    // ============================================
-    const faqItems = document.querySelectorAll('.faq-item');
+    let faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         item.addEventListener('toggle', () => {
             if (item.open) {
@@ -190,14 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
-    // 9. دالة التنبيهات
-    // ============================================
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">

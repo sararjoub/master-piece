@@ -1,6 +1,4 @@
-/* ============================================
-   ===== NOTIFICATIONS PAGE =====
-   ============================================ */
+
 
 .notifications-section {
     padding: 40px 0 80px;
@@ -8,9 +6,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ============================================
-   ===== Header =====
-   ============================================ */
+/*  Header  */
 .notifications-header {
     display: flex;
     justify-content: space-between;
@@ -33,9 +29,7 @@
     color: var(--text-medium);
 }
 
-/* ============================================
-   ===== Tabs =====
-   ============================================ */
+/* Tabs  */
 .notif-tabs {
     display: flex;
     gap: 8px;
@@ -102,18 +96,14 @@
     color: var(--text-white);
 }
 
-/* ============================================
-   ===== Notifications List =====
-   ============================================ */
+/* Notifications List  */
 .notifications-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-/* ============================================
-   ===== Notification Item =====
-   ============================================ */
+/*  Notification Item  */
 .notification-item {
     display: flex;
     gap: 16px;
@@ -137,7 +127,7 @@
     border-left: 3px solid var(--primary);
 }
 
-/* ===== Notification Icon ===== */
+/*  Notification Icon  */
 .notif-icon {
     width: 48px;
     height: 48px;
@@ -194,7 +184,7 @@
     color: var(--text-medium);
 }
 
-/* ===== Notification Content ===== */
+/*  Notification Content  */
 .notif-content {
     flex: 1;
     min-width: 0;
@@ -234,7 +224,7 @@
     font-weight: 600;
 }
 
-/* ===== Notification Actions ===== */
+/*  Notification Actions */
 .notif-actions {
     display: flex;
     gap: 8px;
@@ -268,7 +258,7 @@
     color: var(--text-white);
 }
 
-/* ===== Unread Dot ===== */
+/*  Unread Dot */
 .notif-dot {
     position: absolute;
     top: 20px;
@@ -292,9 +282,7 @@
     }
 }
 
-/* ============================================
-   ===== Empty State =====
-   ============================================ */
+/*  Empty State  */
 .empty-state {
     text-align: center;
     padding: 80px 24px;
@@ -320,9 +308,7 @@
     color: var(--text-light);
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE  */
 @media (max-width: 768px) {
     .notifications-header {
         flex-direction: column;

@@ -1,28 +1,22 @@
-/* ============================================
-   ===== NOTIFICATIONS PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. عناصر الصفحة
-    // ============================================
-    const tabs = document.querySelectorAll('.notif-tab');
-    const notificationItems = document.querySelectorAll('.notification-item');
-    const markAllBtn = document.getElementById('markAllBtn');
-    const emptyState = document.getElementById('emptyState');
-    const navBadge = document.getElementById('navBadge');
+    let tabs = document.querySelectorAll('.notif-tab');
+    let notificationItems = document.querySelectorAll('.notification-item');
+    let markAllBtn = document.getElementById('markAllBtn');
+    let emptyState = document.getElementById('emptyState');
+    let navBadge = document.getElementById('navBadge');
 
     let currentTab = 'all';
 
-    // ============================================
     // 2. تحديث العدادات
-    // ============================================
     function updateCounts() {
-        const all = document.querySelectorAll('.notification-item').length;
-        const unread = document.querySelectorAll('.notification-item.unread').length;
-        const requests = document.querySelectorAll('.notification-item[data-type="requests"]').length;
-        const messages = document.querySelectorAll('.notification-item[data-type="messages"]').length;
+        let all = document.querySelectorAll('.notification-item').length;
+        let unread = document.querySelectorAll('.notification-item.unread').length;
+        let requests = document.querySelectorAll('.notification-item[data-type="requests"]').length;
+        let messages = document.querySelectorAll('.notification-item[data-type="messages"]').length;
 
         document.getElementById('countAll').textContent = all;
         document.getElementById('countUnread').textContent = unread;
@@ -40,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
     // 3. نظام الـ Tabs
-    // ============================================
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
@@ -56,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let visibleCount = 0;
 
         notificationItems.forEach(item => {
-            const type = item.dataset.type;
-            const isUnread = item.classList.contains('unread');
+            let type = item.dataset.type;
+            let isUnread = item.classList.contains('unread');
 
             let shouldShow = false;
 
@@ -96,12 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
     // 4. Mark All as Read
-    // ============================================
     if (markAllBtn) {
         markAllBtn.addEventListener('click', () => {
-            const unreadItems = document.querySelectorAll('.notification-item.unread');
+            let unreadItems = document.querySelectorAll('.notification-item.unread');
             
             if (unreadItems.length === 0) {
                 showNotification('All notifications are already read.', 'info');
@@ -111,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             unreadItems.forEach((item, index) => {
                 setTimeout(() => {
                     item.classList.remove('unread');
-                    const dot = item.querySelector('.notif-dot');
+                    let dot = item.querySelector('.notif-dot');
                     if (dot) {
                         dot.style.transition = 'all 0.4s ease';
                         dot.style.opacity = '0';
@@ -126,9 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 5. النقر على إشعار (تحديد كمقروء)
-    // ============================================
     notificationItems.forEach(item => {
         item.addEventListener('click', (e) => {
             // إذا كان النقر على زر أو رابط، لا نعالج
@@ -136,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (item.classList.contains('unread')) {
                 item.classList.remove('unread');
-                const dot = item.querySelector('.notif-dot');
+                let dot = item.querySelector('.notif-dot');
                 if (dot) {
                     dot.style.transition = 'all 0.4s ease';
                     dot.style.opacity = '0';
@@ -148,17 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 6. أزرار Accept / Decline داخل الإشعار
-    // ============================================
-    const acceptBtns = document.querySelectorAll('.notif-accept-btn');
-    const declineBtns = document.querySelectorAll('.notif-decline-btn');
+    let acceptBtns = document.querySelectorAll('.notif-accept-btn');
+    let declineBtns = document.querySelectorAll('.notif-decline-btn');
 
     acceptBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const item = btn.closest('.notification-item');
-            const name = item.querySelector('.notif-text strong')?.textContent || 'the user';
+            let item = btn.closest('.notification-item');
+            let name = item.querySelector('.notif-text strong')?.textContent || 'the user';
 
             // تحديث الإشعار
             item.classList.remove('unread');
@@ -167,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             item.querySelector('.notif-header strong').textContent = 'Request Accepted';
             item.querySelector('.notif-text').innerHTML = `You accepted <strong>${name}</strong>'s request. You can now start chatting!`;
             
-            const actions = item.querySelector('.notif-actions');
+            let actions = item.querySelector('.notif-actions');
             if (actions) {
                 actions.innerHTML = `
                     <a href="chat.html" class="btn btn-primary btn-sm">
@@ -176,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             }
 
-            const dot = item.querySelector('.notif-dot');
+            let dot = item.querySelector('.notif-dot');
             if (dot) dot.remove();
 
             updateCounts();
@@ -187,8 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
     declineBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const item = btn.closest('.notification-item');
-            const name = item.querySelector('.notif-text strong')?.textContent || 'the user';
+            let item = btn.closest('.notification-item');
+            let name = item.querySelector('.notif-text strong')?.textContent || 'the user';
 
             if (confirm(`Decline ${name}'s request?`)) {
                 item.style.transition = 'all 0.4s ease';
@@ -206,14 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
-    // 7. دالة التنبيهات
-    // ============================================
+    
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -230,9 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2200);
     }
 
-    // ============================================
     // 8. تحديث العدادات عند التحميل
-    // ============================================
     updateCounts();
 
 });

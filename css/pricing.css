@@ -1,6 +1,4 @@
-/* ============================================
-   ===== PRICING PAGE =====
-   ============================================ */
+
 
 .pricing-section {
     padding: 60px 0 80px;
@@ -8,9 +6,7 @@
     min-height: calc(100vh - 76px);
 }
 
-/* ============================================
-   ===== Header =====
-   ============================================ */
+/*  Header  */
 .pricing-header {
     text-align: center;
     margin-bottom: 48px;
@@ -44,7 +40,7 @@
     margin: 0 auto 32px;
 }
 
-/* ===== Billing Toggle ===== */
+/*  Billing Toggle  */
 .billing-toggle {
     display: inline-flex;
     gap: 4px;
@@ -96,9 +92,7 @@
     color: var(--text-white);
 }
 
-/* ============================================
-   ===== Pricing Grid =====
-   ============================================ */
+/* Pricing Grid */
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -107,9 +101,7 @@
     align-items: stretch;
 }
 
-/* ============================================
-   ===== Pricing Card =====
-   ============================================ */
+/*  Pricing Card  */
 .pricing-card {
     background-color: var(--bg-white);
     border: 2px solid var(--border-light);
@@ -130,7 +122,7 @@
     border-color: var(--primary-lighter);
 }
 
-/* ===== Popular Card ===== */
+/*  Popular Card  */
 .popular-card {
     border-color: var(--primary);
     background: linear-gradient(180deg, #ffffff 0%, var(--primary-bg-light) 100%);
@@ -167,7 +159,7 @@
     50% { transform: translateX(-50%) scale(1.05); }
 }
 
-/* ===== Plan Header ===== */
+/*  Plan Header  */
 .plan-header {
     text-align: center;
 }
@@ -218,7 +210,7 @@
     line-height: 1.5;
 }
 
-/* ===== Plan Price ===== */
+/*  Plan Price  */
 .plan-price {
     display: flex;
     align-items: baseline;
@@ -304,9 +296,7 @@
     cursor: not-allowed;
 }
 
-/* ============================================
-   ===== Comparison Table =====
-   ============================================ */
+/*  Comparison Table  */
 .comparison-section {
     margin-bottom: 80px;
 }
@@ -381,9 +371,7 @@
     text-align: center;
 }
 
-/* ============================================
-   ===== FAQ =====
-   ============================================ */
+/*  FAQ  */
 .faq-section {
     margin-bottom: 80px;
 }
@@ -460,9 +448,7 @@
     border-top: 1px solid var(--border-light);
 }
 
-/* ============================================
-   ===== CTA =====
-   ============================================ */
+/*  CTA   */
 .pricing-cta {
     text-align: center;
     padding: 48px 32px;
@@ -495,9 +481,7 @@
     color: var(--primary-dark);
 }
 
-/* ============================================
-   ===== Modal =====
-   ============================================ */
+/*  Modal */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -650,9 +634,7 @@
     justify-content: flex-end;
 }
 
-/* ============================================
-   ===== RESPONSIVE =====
-   ============================================ */
+/*  RESPONSIVE   */
 @media (max-width: 992px) {
     .pricing-grid {
         grid-template-columns: 1fr;

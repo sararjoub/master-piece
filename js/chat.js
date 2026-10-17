@@ -1,23 +1,17 @@
-/* ============================================
-   ===== CHAT PAGE - JavaScript =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
     // 1. عناصر الصفحة
-    // ============================================
-    const conversationItems = document.querySelectorAll('.conversation-item');
-    const chatMessages = document.getElementById('chatMessages');
-    const messageInput = document.getElementById('messageInput');
-    const sendBtn = document.getElementById('sendBtn');
-    const typingIndicator = document.getElementById('typingIndicator');
-    const chatSearchInput = document.getElementById('chatSearchInput');
-    const newChatBtn = document.getElementById('newChatBtn');
+    let conversationItems = document.querySelectorAll('.conversation-item');
+    let chatMessages = document.getElementById('chatMessages');
+    let messageInput = document.getElementById('messageInput');
+    let sendBtn = document.getElementById('sendBtn');
+    let typingIndicator = document.getElementById('typingIndicator');
+    let chatSearchInput = document.getElementById('chatSearchInput');
+    let newChatBtn = document.getElementById('newChatBtn');
 
-    // ============================================
     // 2. التبديل بين المحادثات
-    // ============================================
     conversationItems.forEach(item => {
         item.addEventListener('click', () => {
             // إزالة active من الجميع
@@ -25,21 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add('active');
 
             // تحديث رأس المحادثة
-            const name = item.querySelector('.conversation-top strong').textContent;
-            const avatar = item.querySelector('.conversation-avatar span').textContent;
-            const isOnline = item.querySelector('.online-dot') !== null;
+            let name = item.querySelector('.conversation-top strong').textContent;
+            let avatar = item.querySelector('.conversation-avatar span').textContent;
+            let isOnline = item.querySelector('.online-dot') !== null;
 
             updateChatHeader(name, avatar, isOnline);
 
             // إخفاء Unread Badge
-            const badge = item.querySelector('.unread-badge');
+            let badge = item.querySelector('.unread-badge');
             if (badge) badge.remove();
 
             // محاكاة تحميل الرسائل
             showNotification(`Opening chat with ${name}...`, 'info');
 
             // تأثير ظهور الرسائل
-            const messages = chatMessages.querySelectorAll('.message');
+            let messages = chatMessages.querySelectorAll('.message');
             messages.forEach((msg, index) => {
                 msg.style.opacity = '0';
                 msg.style.transform = 'translateY(10px)';
@@ -52,13 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
     // 3. تحديث رأس المحادثة
-    // ============================================
     function updateChatHeader(name, avatar, isOnline) {
-        const headerName = document.querySelector('.chat-header-info strong');
-        const headerAvatar = document.querySelector('.chat-header-avatar span:first-child');
-        const headerStatus = document.querySelector('.chat-status');
+        let headerName = document.querySelector('.chat-header-info strong');
+        let headerAvatar = document.querySelector('.chat-header-avatar span:first-child');
+        let headerStatus = document.querySelector('.chat-status');
 
         if (headerName) headerName.textContent = name;
         if (headerAvatar) headerAvatar.textContent = avatar;
@@ -74,15 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
     // 4. إرسال الرسائل
-    // ============================================
+
     function sendMessage() {
-        const text = messageInput.value.trim();
+        let text = messageInput.value.trim();
         if (!text) return;
 
         // إنشاء رسالة جديدة
-        const message = document.createElement('div');
+        let message = document.createElement('div');
         message.className = 'message sent animate-fade-rise';
         message.innerHTML = `
             <div class="message-content">
@@ -114,9 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 5. محاكاة الرد (Typing + Reply)
-    // ============================================
     function simulateReply() {
         // إظهار مؤشر الكتابة
         setTimeout(() => {
@@ -130,19 +119,19 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             if (typingIndicator) typingIndicator.classList.add('hidden');
 
-            const replies = [
+            let replies = [
                 "That sounds great! 👍",
                 "Sure, I'll let you know.",
                 "Perfect, see you then!",
                 "Thanks for the update!",
                 "I'll prepare some materials for our session."
             ];
-            const randomReply = replies[Math.floor(Math.random() * replies.length)];
+            let randomReply = replies[Math.floor(Math.random() * replies.length)];
 
-            const activeConv = document.querySelector('.conversation-item.active');
-            const avatar = activeConv ? activeConv.querySelector('.conversation-avatar span').textContent : 'LK';
+            let activeConv = document.querySelector('.conversation-item.active');
+            let avatar = activeConv ? activeConv.querySelector('.conversation-avatar span').textContent : 'LK';
 
-            const message = document.createElement('div');
+            let message = document.createElement('div');
             message.className = 'message received animate-fade-rise';
             message.innerHTML = `
                 <div class="message-avatar"><span>${avatar}</span></div>
@@ -157,9 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2500);
     }
 
-    // ============================================
     // 6. Scroll للأسفل
-    // ============================================
     function scrollToBottom() {
         if (chatMessages) {
             setTimeout(() => {
@@ -171,36 +158,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll عند فتح الصفحة
     scrollToBottom();
 
-    // ============================================
     // 7. الحصول على الوقت الحالي
-    // ============================================
     function getCurrentTime() {
-        const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const period = hours >= 12 ? 'PM' : 'AM';
-        const displayHours = hours % 12 || 12;
+        let now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes().toString().padStart(2, '0');
+        let period = hours >= 12 ? 'PM' : 'AM';
+        let displayHours = hours % 12 || 12;
         return `${displayHours}:${minutes} ${period}`;
     }
 
-    // ============================================
+    
     // 8. حماية من XSS
-    // ============================================
+    
     function escapeHtml(text) {
-        const div = document.createElement('div');
+        let div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
 
-    // ============================================
     // 9. بحث المحادثات
-    // ============================================
     if (chatSearchInput) {
         chatSearchInput.addEventListener('input', () => {
-            const query = chatSearchInput.value.toLowerCase().trim();
+            let query = chatSearchInput.value.toLowerCase().trim();
             conversationItems.forEach(item => {
-                const name = item.querySelector('.conversation-top strong').textContent.toLowerCase();
-                const preview = item.querySelector('.conversation-preview').textContent.toLowerCase();
+                let name = item.querySelector('.conversation-top strong').textContent.toLowerCase();
+                let preview = item.querySelector('.conversation-preview').textContent.toLowerCase();
                 
                 if (name.includes(query) || preview.includes(query)) {
                     item.style.display = 'flex';
@@ -211,9 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 10. زر "New Chat"
-    // ============================================
     if (newChatBtn) {
         newChatBtn.addEventListener('click', () => {
             showNotification('Opening new chat...', 'info');
@@ -223,25 +204,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
     // 11. أزرار رأس المحادثة
-    // ============================================
-    const headerIconBtns = document.querySelectorAll('.chat-header-actions .chat-icon-btn');
+    let headerIconBtns = document.querySelectorAll('.chat-header-actions .chat-icon-btn');
     headerIconBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const title = btn.getAttribute('title');
+            let title = btn.getAttribute('title');
             showNotification(`${title} coming soon...`, 'info');
         });
     });
 
-    // ============================================
     // 12. دالة التنبيهات
-    // ============================================
+
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -252,3 +230,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.body.appendChild(notification);
     
+    }
+});
