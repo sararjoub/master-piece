@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 showNotification('Account created successfully! Redirecting...', 'success');
                 setTimeout(() => {
-                    window.location.href = 'dashboard.html';
+                    window.location.href = 'profile-setup.html';
                 }, 1500);
             }, 1200);
         });

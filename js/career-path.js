@@ -128,5 +128,73 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => notification.remove(), 300);
         }, 2200);
     }
+        
+    // 7. منطق نافذة البحث عن شريك (Find Partner Modal)
+    
+    let partnerModal = document.getElementById('partnerModal');
+    let closePartnerModal = document.getElementById('closePartnerModal');
+    let modalSkillTitle = document.getElementById('modalSkillTitle');
+    let findPartnerBtns = document.querySelectorAll('.find-partner-btn');
+    let partnerTabs = document.querySelectorAll('.partner-tab');
+    let regularList = document.getElementById('regular-partners-list');
+    let expertList = document.getElementById('expert-partners-list');
+
+    // فتح النافذة عند الضغط على زر Find a Partner
+    findPartnerBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            let skillName = btn.dataset.skill;
+            if (modalSkillTitle) modalSkillTitle.textContent = skillName;
+            
+            // إعادة تعيين التبويبات للحالة الافتراضية (Regular)
+            partnerTabs.forEach(t => t.classList.remove('active'));
+            partnerTabs[0].classList.add('active');
+            regularList.classList.remove('hidden');
+            expertList.classList.add('hidden');
+
+            partnerModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // إغلاق النافذة
+    if (closePartnerModal) {
+        closePartnerModal.addEventListener('click', () => {
+            partnerModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+    }
+
+    if (partnerModal) {
+        partnerModal.addEventListener('click', (e) => {
+            if (e.target === partnerModal) {
+                partnerModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // التبديل بين تبويبات (Regular / Experts)
+    partnerTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            partnerTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            if (tab.dataset.tab === 'regular') {
+                regularList.classList.remove('hidden');
+                expertList.classList.add('hidden');
+            } else {
+                regularList.classList.add('hidden');
+                expertList.classList.remove('hidden');
+            }
+        });
+    });
+
+    // نافذة الترقية للـ Pro
+    window.showProUpgrade = () => {
+        if (confirm('This is a PRO Expert. You need to upgrade to PRO to book a live session.\n\nGo to Pricing page?')) {
+            window.location.href = 'pricing.html';
+        }
+    };
 
 });

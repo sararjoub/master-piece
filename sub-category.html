@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Skills - Skills Swap</title>
+
+    <!-- الملفات المشتركة -->
+    <link rel="stylesheet" href="../master-piece/css/shared.css">
+    <link rel="stylesheet" href="../master-piece/css/sub-category.css">
+</head>
+<body>
+
+    <!--  Navbar (مبسط) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="home.html" class="navbar-logo">
+                <span class="logo-icon-wrapper">
+                    <svg class="logo-svg-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text">Skills <span class="logo-accent">Swap</span></span>
+            </a>
+            <div class="navbar-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--  Main Section -->
+    <section class="sub-category-section">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb animate-fade-rise">
+                <a href="home.html">Home</a>
+                <span class="separator">/</span>
+                <a href="home.html#categorie">Categories</a>
+                <span class="separator">/</span>
+                <span class="current" id="breadcrumbCategory">Technology</span>
+            </div>
+
+            <!-- Header -->
+            <div class="sub-category-header animate-fade-rise-delay-1">
+                <div class="header-icon-wrapper">
+                    <span class="header-icon" id="subCategoryIcon">💻</span>
+                </div>
+                <h1 id="subCategoryTitle">Web Development</h1>
+                <p>Explore top skills to start your learning journey.</p>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-grid stagger-children" id="skillsGrid">
+                <!-- سيتم إضافة البطاقات هنا بواسطة JavaScript -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LOGIN REQUIRED MODAL  -->
+    <div class="login-required-modal hidden" id="loginRequiredModal">
+        <div class="login-modal-content">
+            <div class="login-modal-icon">🔒</div>
+            <h2>Login Required</h2>
+            <p>You need to login or create an account to start learning this skill.</p>
+            <div class="login-modal-actions">
+                <a href="login.html" class="btn btn-primary">Login</a>
+                <a href="signup.html" class="btn btn-outline">Sign Up</a>
+            </div>
+            <button class="login-modal-close" id="closeLoginModal">✕</button>
+        </div>
+    </div>
+
+    <script src="../master-piece/js/sub-category.js"></script>
+</body>
+</html>

@@ -14,30 +14,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. زر "Start Learning"
+        // 1. زر "Start Learning" يفتح نافذة الخيارات
     let startLearningBtn = document.getElementById('startLearningBtn');
+    let learningOptionsModal = document.getElementById('learningOptionsModal');
+    let closeLearningModal = document.getElementById('closeLearningModal');
 
-    if (startLearningBtn) {
+    if (startLearningBtn && learningOptionsModal) {
         startLearningBtn.addEventListener('click', () => {
-            showNotification('Enrolling you in Web Development...', 'info');
-            setTimeout(() => {
-                window.location.href = 'career-path.html';
-            }, 1000);
+            learningOptionsModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // منع التمرير
         });
     }
 
-    // 3. زر "Find Skill Partners"
-    let findPartnersBtn = document.getElementById('findPartnersBtn');
-
-    if (findPartnersBtn) {
-        findPartnersBtn.addEventListener('click', () => {
-            showNotification('Finding skill partners...', 'info');
-            setTimeout(() => {
-                window.location.href = 'skill-partners.html?skill=web-development';
-            }, 800);
+    // 2. إغلاق النافذة
+    if (closeLearningModal) {
+        closeLearningModal.addEventListener('click', () => {
+            learningOptionsModal.classList.add('hidden');
+            document.body.style.overflow = '';
         });
     }
 
+    // إغلاق عند النقر خارج النافذة
+    if (learningOptionsModal) {
+        learningOptionsModal.addEventListener('click', (e) => {
+            if (e.target === learningOptionsModal) {
+                learningOptionsModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // إغلاق بزر Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && learningOptionsModal && !learningOptionsModal.classList.contains('hidden')) {
+            learningOptionsModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    });
+    
+
+   
     // 4. النقر على "Related Skills"
     let relatedTags = document.querySelectorAll('.related-skill-tag');
 

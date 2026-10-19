@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Profile - Skills Swap</title>
+
+    <link rel="stylesheet" href="../master-piece/css/shared.css">
+    <link rel="stylesheet" href="../master-piece/css/profile-setup.css">
+</head>
+<body>
+
+    <!--  Header (Logo)  -->
+    <header class="setup-header">
+        <a href="home.html" class="navbar-logo">
+            <span class="logo-icon-wrapper">
+                <svg class="logo-svg-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span class="logo-text">Skills <span class="logo-accent">Swap</span></span>
+        </a>
+        
+    </header>
+
+    <!--  Main Section  -->
+    <section class="setup-section">
+        <div class="setup-container">
+            
+            <!-- Progress Steps -->
+            <div class="setup-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="progress-circle">1</div>
+                    <span class="progress-label">Personal Info</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="progress-circle">2</div>
+                    <span class="progress-label">Teach Skills</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="progress-circle">3</div>
+                    <span class="progress-label">Learn Skills</span>
+                </div>
+            </div>
+
+            <!-- Setup Card -->
+            <div class="setup-card">
+                
+                <!--  STEP 1: Personal Info  -->
+                <div class="setup-step active" id="step-1">
+                    <div class="step-header">
+                        <span class="step-tag">STEP 1 OF 3</span>
+                        <h1>Complete Your Profile</h1>
+                        <p>Let others know who you are.</p>
+                    </div>
+
+                    <form class="setup-form" id="step1Form">
+                      <!-- Avatar Upload -->
+                 <div class="avatar-upload-wrapper">
+                  <div class="avatar-preview" id="avatarPreview">
+                            <span class="avatar-icon">👤</span>
+                       </div>
+    
+                <!-- حقل إخفاء لرفع الصورة -->
+                   <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+    
+           <!-- الزر الذي يفتح مستكشف الملفات -->
+                <button type="button" class="btn btn-outline btn-sm" id="uploadBtn">
+                    Upload Photo
+                </button>
+                </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-input" value="Ahmad Hassan" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Location</label>
+                                <input type="text" class="form-input" placeholder="e.g. Amman, Jordan">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Bio</label>
+                            <textarea class="form-textarea" rows="4" placeholder="Tell others about yourself, your interests, and what you're passionate about..."></textarea>
+                        </div>
+
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-primary btn-large" onclick="goToStep(2)">Next Step →</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!--  STEP 2: Teach Skills -->
+                <div class="setup-step" id="step-2">
+                    <div class="step-header">
+                        <span class="step-tag">STEP 2 OF 3</span>
+                        <h1>What Can You Teach?</h1>
+                        <p>Select skills you are good at and can teach others.</p>
+                    </div>
+
+                    <div class="skills-selector">
+                        <!-- Category 1 -->
+                        <div class="selector-category">
+                            <h4>Technology</h4>
+                            <div class="chips-container">
+                                <button class="skill-chip" data-skill="web-dev">Web Development</button>
+                                <button class="skill-chip" data-skill="ui-ux">UI/UX Design</button>
+                                <button class="skill-chip" data-skill="js">JavaScript</button>
+                                <button class="skill-chip" data-skill="react">React</button>
+                            </div>
+                        </div>
+                        <!-- Category 2 -->
+                        <div class="selector-category">
+                            <h4>Handmade</h4>
+                            <div class="chips-container">
+                                <button class="skill-chip" data-skill="graphic">Graphic Design</button>
+                                <button class="skill-chip" data-skill="photoshop">Photoshop</button>
+                                <button class="skill-chip" data-skill="painting">Painting</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-outline btn-large" onclick="goToStep(1)">← Back</button>
+                        <button type="button" class="btn btn-primary btn-large" onclick="goToStep(3)">Next Step →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Learn Skills  -->
+                <div class="setup-step" id="step-3">
+                    <div class="step-header">
+                        <span class="step-tag">STEP 3 OF 3</span>
+                        <h1>What Do You Want to Learn?</h1>
+                        <p>Select skills you are interested in learning.</p>
+                    </div>
+
+                    <div class="skills-selector">
+                        <!-- Category 1 -->
+                        <div class="selector-category">
+                            <h4>Technology</h4>
+                            <div class="chips-container">
+                                <button class="skill-chip" data-skill="python">Python</button>
+                                <button class="skill-chip" data-skill="data-science">Data Science</button>
+                                <button class="skill-chip" data-skill="mobile">Mobile Dev</button>
+                            </div>
+                        </div>
+                        <!-- Category 2 -->
+                        <div class="selector-category">
+                            <h4>Business</h4>
+                            <div class="chips-container">
+                                <button class="skill-chip" data-skill="marketing">Marketing</button>
+                                <button class="skill-chip" data-skill="management">Management</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-outline btn-large" onclick="goToStep(2)">← Back</button>
+                        <button type="button" class="btn btn-primary btn-large" onclick="finishSetup()">Finish Setup ✓</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="../master-piece/js/profile-setup.js"></script>
+</body>
+</html>

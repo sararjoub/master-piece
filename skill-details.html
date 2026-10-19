@@ -187,9 +187,7 @@
                         <button class="btn btn-primary btn-large" id="startLearningBtn">
                             Start Learning →
                         </button>
-                        <button class="btn btn-outline btn-large" id="findPartnersBtn">
-                            Find Skill Partners
-                        </button>
+                       
                     </div>
 
                     <!-- Related Skills -->
@@ -319,7 +317,54 @@
         <p>&copy; 2026 Skills Swap. All rights reserved.</p>
     </div>
 </footer>
+<!--  LEARNING OPTIONS MODAL -->
+<div class="learning-modal-overlay hidden" id="learningOptionsModal">
+    <div class="learning-modal-content">
+        
+        <!-- Header -->
+        <div class="learning-modal-header">
+            <div class="learning-modal-icon">🎯</h2>
+            <h2>How Do You Want to Learn?</h2>
+            <p>Choose your learning style to get started with this skill.</p>
+            <button class="learning-modal-close" id="closeLearningModal">✕</button>
+        </div>
 
+        <!-- Body (Options) -->
+        <div class="learning-modal-body">
+            
+            <!-- Option 1: Find Partners -->
+            <a href="skill-partners.html" class="learning-option-card">
+                <div class="option-icon-wrapper">
+                    <span class="option-icon">👥</span>
+                </div>
+                <div class="option-text">
+                    <h3>Random Skill Exchange</h3>
+                    <p>Find a partner who wants to swap skills with you casually.</p>
+                </div>
+                <div class="option-arrow">→</div>
+            </a>
+
+            <!-- Option 2: Career Path -->
+            <a href="career-path-setup.html" class="learning-option-card">
+                <div class="option-icon-wrapper">
+                    <span class="option-icon">🎓</span>
+                </div>
+                <div class="option-text">
+                    <h3>Structured Career Path</h3>
+                    <p>Get a personalized, step-by-step learning plan to master this skill.</p>
+                </div>
+                <div class="option-arrow">→</div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="learning-modal-footer">
+            <p>Not sure? <a href="pricing.html">Learn about our plans →</a></p>
+        </div>
+
+    </div>
+</div>
     <script src="../master-piece/js/animations.js"></script>
     <script src="../master-piece/js/details.js"></script>
 

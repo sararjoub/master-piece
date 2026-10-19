@@ -104,32 +104,32 @@
                 <div class="category-card">
                     <div class="cat-icon">🎓</div>
                     <h3>Education</h3>
-                    <span>12 Skills</span>
+                  
                 </div>
                 <div class="category-card active-card">
                     <div class="cat-icon">💻</div>
                     <h3>Technology</h3>
-                    <span>20 Skills</span>
+                  
                 </div>
                 <div class="category-card">
                     <div class="cat-icon">🎨</div>
                     <h3>Handmade</h3>
-                    <span>15 Skills</span>
+                   
                 </div>
                 <div class="category-card">
                     <div class="cat-icon">🎬</div>
                     <h3>Entertainment</h3>
-                    <span>10 Skills</span>
+                 
                 </div>
                 <div class="category-card">
                     <div class="cat-icon">💼</div>
                     <h3>Business</h3>
-                    <span>14 Skills</span>
+                  
                 </div>
                 <div class="category-card">
                     <div class="cat-icon">❤️</div>
                     <h3>Health & Fitness</h3>
-                    <span>8 Skills</span>
+                  
                 </div>
             </div>
         </div>
@@ -298,8 +298,147 @@
         <p>&copy; 2026 Skills Swap. All rights reserved.</p>
     </div>
 </footer>
+<!--  MAIN CATEGORY MODAL (SUB CATEGORIES) -->
+<div class="category-modal-overlay hidden" id="categoryModal">
+    <div class="category-modal">
+        
+        <!-- Header -->
+        <div class="category-modal-header">
+            <div class="category-modal-title-wrapper">
+                <div class="category-modal-icon" id="modalCategoryIcon">💻</div>
+                <div>
+                    <h2 id="modalCategoryTitle">Technology Skills</h2>
+                    <p>Choose a sub-category to explore skills</p>
+                </div>
+            </div>
+            <button class="category-modal-close" id="closeCategoryModal">✕</button>
+        </div>
 
-<script>src="../master-piece/js/animations.js"</script>
+        <!-- Body (Sub Categories) -->
+        <div class="category-modal-body">
+            
+            <!-- Education Sub Categories -->
+            <div class="sub-category-grid hidden" id="sub-education">
+                <a href="sub-category.html?cat=mathematics" class="sub-category-card">
+                    <span class="sub-category-icon">📐</span>
+                    <span class="sub-category-name">Mathematics</span>
+                </a>
+                <a href="sub-category.html?cat=physics" class="sub-category-card">
+                    <span class="sub-category-icon">⚛️</span>
+                    <span class="sub-category-name">Physics</span>
+                </a>
+                <a href="sub-category.html?cat=chemistry" class="sub-category-card">
+                    <span class="sub-category-icon">🧪</span>
+                    <span class="sub-category-name">Chemistry</span>
+                </a>
+                <a href="sub-category.html?cat=english" class="sub-category-card">
+                    <span class="sub-category-icon">🇬🇧</span>
+                    <span class="sub-category-name">English</span>
+                </a>
+                <a href="sub-category.html?cat=arabic" class="sub-category-card">
+                    <span class="sub-category-icon">📖</span>
+                    <span class="sub-category-name">Arabic Language</span>
+                </a>
+            </div>
+
+            <!-- Technology Sub Categories -->
+            <div class="sub-category-grid hidden" id="sub-technology">
+                <a href="sub-category.html?cat=web-development" class="sub-category-card">
+                    <span class="sub-category-icon">💻</span>
+                    <span class="sub-category-name">Web Development</span>
+                </a>
+                <a href="sub-category.html?cat=ui-ux" class="sub-category-card">
+                    <span class="sub-category-icon">🎨</span>
+                    <span class="sub-category-name">UI/UX Design</span>
+                </a>
+                <a href="sub-category.html?cat=mobile-development" class="sub-category-card">
+                    <span class="sub-category-icon">📱</span>
+                    <span class="sub-category-name">Mobile Development</span>
+                </a>
+                <a href="sub-category.html?cat=cybersecurity" class="sub-category-card">
+                    <span class="sub-category-icon">🛡️</span>
+                    <span class="sub-category-name">Cybersecurity</span>
+                </a>
+            </div>
+
+            <!-- Handmade Sub Categories -->
+            <div class="sub-category-grid hidden" id="sub-handmade">
+                <a href="sub-category.html?cat=painting" class="sub-category-card">
+                    <span class="sub-category-icon">🖌️</span>
+                    <span class="sub-category-name">Painting</span>
+                </a>
+                <a href="sub-category.html?cat=knitting" class="sub-category-card">
+                    <span class="sub-category-icon">🧶</span>
+                    <span class="sub-category-name">Knitting</span>
+                </a>
+                <a href="sub-category.html?cat=crafts" class="sub-category-card">
+                    <span class="sub-category-icon">✂️</span>
+                    <span class="sub-category-name">Crafts</span>
+                </a>
+                <a href="sub-category.html?cat=diy" class="sub-category-card">
+                    <span class="sub-category-icon">🔨</span>
+                    <span class="sub-category-name">DIY Projects</span>
+                </a>
+            </div>
+
+            <!-- Entertainment Sub Categories -->
+            <div class="sub-category-grid hidden" id="sub-entertainment">
+                <a href="sub-category.html?cat=music" class="sub-category-card">
+                    <span class="sub-category-icon">🎵</span>
+                    <span class="sub-category-name">Music</span>
+                </a>
+                <a href="sub-category.html?cat=video-editing" class="sub-category-card">
+                    <span class="sub-category-icon">🎬</span>
+                    <span class="sub-category-name">Video Editing</span>
+                </a>
+                <a href="sub-category.html?cat=photography" class="sub-category-card">
+                    <span class="sub-category-icon">📷</span>
+                    <span class="sub-category-name">Photography</span>
+                </a>
+            </div>
+
+            <!-- Business Sub Categories -->
+            <div class="sub-category-grid hidden" id="sub-business">
+                <a href="sub-category.html?cat=marketing" class="sub-category-card">
+                    <span class="sub-category-icon">📈</span>
+                    <span class="sub-category-name">Marketing</span>
+                </a>
+                <a href="sub-category.html?cat=management" class="sub-category-card">
+                    <span class="sub-category-icon">💼</span>
+                    <span class="sub-category-name">Management</span>
+                </a>
+                <a href="sub-category.html?cat=sales" class="sub-category-card">
+                    <span class="sub-category-icon">🤝</span>
+                    <span class="sub-category-name">Sales</span>
+                </a>
+                <a href="sub-category.html?cat=entrepreneurship" class="sub-category-card">
+                    <span class="sub-category-icon">🚀</span>
+                    <span class="sub-category-name">Entrepreneurship</span>
+                </a>
+            </div>
+
+            <!-- Health & Fitness Sub Categories -->
+            <div class="sub-category-grid hidden" id="sub-health">
+                <a href="sub-category.html?cat=yoga" class="sub-category-card">
+                    <span class="sub-category-icon">🧘</span>
+                    <span class="sub-category-name">Yoga</span>
+                </a>
+                <a href="sub-category.html?cat=nutrition" class="sub-category-card">
+                    <span class="sub-category-icon">🥗</span>
+                    <span class="sub-category-name">Nutrition</span>
+                </a>
+                <a href="sub-category.html?cat=personal-training" class="sub-category-card">
+                    <span class="sub-category-icon">💪</span>
+                    <span class="sub-category-name">Personal Training</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="../master-piece/js/script.js"></script>
 
 </body>
 </html>

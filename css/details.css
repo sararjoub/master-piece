@@ -368,3 +368,178 @@
 .premium-lock-banner .btn {
     flex-shrink: 0;
 }
+
+/* LEARNING OPTIONS MODAL */
+
+.learning-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(30, 27, 75, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.learning-modal-overlay.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.learning-modal-content {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.learning-modal-header {
+    text-align: center;
+    padding: 32px 24px 24px;
+    background: linear-gradient(135deg, var(--primary-bg-light) 0%, #ffffff 100%);
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+}
+
+.learning-modal-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.learning-modal-header h2 {
+    font-size: 24px;
+    font-family: var(--font-display);
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.learning-modal-header p {
+    font-size: 14px;
+    color: var(--text-medium);
+}
+
+.learning-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.learning-modal-close:hover {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+    transform: rotate(90deg);
+}
+
+.learning-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Option Cards */
+.learning-option-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.learning-option-card:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-bg-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 124, 246, 0.15);
+}
+
+.option-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.option-text {
+    flex: 1;
+}
+
+.option-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.option-text p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.option-arrow {
+    font-size: 24px;
+    color: var(--primary);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.learning-option-card:hover .option-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.learning-modal-footer {
+    text-align: center;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-light);
+    background-color: var(--bg-light);
+}
+
+.learning-modal-footer p {
+    font-size: 12px;
+    color: var(--text-medium);
+    margin: 0;
+}
+
+.learning-modal-footer a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.learning-modal-footer a:hover {
+    text-decoration: underline;
+}

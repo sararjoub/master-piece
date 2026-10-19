@@ -181,34 +181,37 @@
                         </div>
                     </div>
 
-                    <!-- Milestone 4: In Progress -->
-                    <div class="milestone in-progress" data-status="in-progress">
-                        <div class="milestone-marker">
-                            <span class="milestone-pulse"></span>
-                        </div>
-                        <div class="milestone-content">
-                            <div class="milestone-header">
-                                <h3>Git &amp; GitHub</h3>
-                                <span class="badge badge-warning">In Progress</span>
-                            </div>
-                            <p class="milestone-description">
-                                Master version control and collaboration with Git and GitHub.
-                            </p>
-                            <div class="milestone-meta">
-                                <span class="milestone-meta-item">⏱️ 2 weeks</span>
-                                <span class="milestone-meta-item">🎓 Beginner</span>
-                                <span class="milestone-meta-item">📊 60% complete</span>
-                            </div>
-                            <div class="milestone-progress">
-                                <div class="milestone-progress-fill" style="width: 60%;"></div>
-                            </div>
-                            <div class="milestone-actions">
-                                <button class="btn btn-primary btn-sm continue-btn" data-skill="git-github">
-                                    Continue Learning →
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Milestone 4: not started-->
+                    <div class="milestone not-started" data-status="not-started">
+    <div class="milestone-marker">
+        <!-- أيقونة بداية بدلاً من النبض -->
+        <span class="milestone-start-icon">▶</span>
+    </div>
+    <div class="milestone-content">
+        <div class="milestone-header">
+            <h3>Git & GitHub</h3>
+            <span class="badge badge-primary">Ready to Start</span> <!-- البادج الجديد -->
+        </div>
+        <p class="milestone-description">
+            Learn the building blocks of web pages: tags, elements, and structure.
+        </p>
+        
+        <!-- الأزرار -->
+        <div class="milestone-actions">
+            <!-- زر بدء التعلم 
+            <button class="btn btn-primary btn-sm start-learning-btn">
+                Start Learning →
+                   
+            </button>-->
+            <!-- زر البحث عن شريك (الذي أضفناه) -->
+            <button class="btn btn-outline btn-sm find-partner-btn" data-skill="HTML Fundamentals" style="margin-left: 10px;">
+                <!--👥 Find a Partner -->
+                Start Learning →
+
+            </button>
+        </div>
+    </div>
+</div>
 
                     <!-- Milestone 5: Locked -->
                     <div class="milestone locked" data-status="locked">
@@ -421,7 +424,81 @@
         <p>&copy; 2026 Skills Swap. All rights reserved.</p>
     </div>
 </footer>
+<!--   FIND PARTNER MODAL -->
+<div class="partner-modal-overlay hidden" id="partnerModal">
+    <div class="partner-modal-content">
+        
+        <!-- Header -->
+        <div class="partner-modal-header">
+            <div class="partner-modal-title">
+                <span class="partner-modal-icon">👥</span>
+                <div>
+                    <h2 id="modalSkillTitle">Git & GitHub</h2>
+                    <p>Choose a partner to learn with</p>
+                </div>
+            </div>
+            <button class="partner-modal-close" id="closePartnerModal">✕</button>
+        </div>
 
+        <!-- Tabs -->
+        <div class="partner-modal-tabs">
+            <button class="partner-tab active" data-tab="regular">Regular Partners</button>
+            <button class="partner-tab" data-tab="experts">
+                Experts <span class="pro-badge">PRO</span>
+            </button>
+        </div>
+
+        <!-- Body -->
+        <div class="partner-modal-body">
+            
+            <!-- Tab 1: Regular Partners -->
+            <div class="partner-list active" id="regular-partners-list">
+                <div class="partner-item">
+                    <div class="partner-avatar">LK</div>
+                    <div class="partner-info">
+                        <h4>Lana Khalid</h4>
+                        <p>Teaches: Git & GitHub | Wants: UI/UX</p>
+                    </div>
+                    <a href="partner-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                </div>
+                <div class="partner-item">
+                    <div class="partner-avatar">OS</div>
+                    <div class="partner-info">
+                        <h4>Omar Sami</h4>
+                        <p>Teaches: Git & GitHub | Wants: Graphic Design</p>
+                    </div>
+                   <a href="partner-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Tab 2: Experts (Pro) -->
+            <div class="partner-list hidden" id="expert-partners-list">
+                <div class="partner-item expert-item">
+                    <div class="partner-avatar expert-avatar">AH</div>
+                    <div class="partner-info">
+                        <h4>Ahmad Hassan <span class="verified-badge">✓ Expert</span></h4>
+                        <p>10+ Years Experience | ⭐ 4.9 (120 reviews)</p>
+                    </div>
+                    <!-- هذا الزر يفتح نافذة الترقية بدلاً من الشات -->
+                    <button class="btn btn-primary btn-sm" onclick="showProUpgrade()">
+                        Book Session
+                    </button>
+                </div>
+                <div class="partner-item expert-item">
+                    <div class="partner-avatar expert-avatar">NK</div>
+                    <div class="partner-info">
+                        <h4>Noor Khaled <span class="verified-badge">✓ Expert</span></h4>
+                        <p>8+ Years Experience | ⭐ 4.8 (85 reviews)</p>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="showProUpgrade()">
+                        Book Session
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
     <script src="../master-piece/js/animations.js"></script>
     <script src="../master-piece/js/career-path.js"></script>
 
