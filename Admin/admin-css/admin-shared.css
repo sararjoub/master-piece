@@ -3,9 +3,7 @@
    ===== أنماط مشتركة لكل صفحات الأدمن =====
    ============================================================ */
 
-/* ============================================
-   ===== 1. ADMIN LAYOUT (Sidebar + Topbar + Main) =====
-   ============================================ */
+/*  1. ADMIN LAYOUT (Sidebar + Topbar + Main)  */
 
 .admin-layout {
     display: grid;
@@ -14,9 +12,7 @@
     background-color: var(--bg-page);
 }
 
-/* ============================================
-   ===== 2. ADMIN SIDEBAR =====
-   ============================================ */
+/*  2. ADMIN SIDEBAR  */
 .admin-sidebar {
  background-color: #c0abe7;
     color: var(--text-white);
@@ -94,10 +90,7 @@
 */
 
 
-/* ============================================
-   ===== ADMIN SIDEBAR LOGO - UNIFIED =====
-   ===== نفس تصميم User لكن بألوان Admin =====
-   ============================================ */
+/*  ADMIN SIDEBAR LOGO - Admin  */
 
 .admin-sidebar-logo {
     display: flex;
@@ -181,7 +174,7 @@
     text-transform: uppercase;
 }
 
-/* ===== Hover ===== */
+/* Hover  */
 .admin-sidebar-logo:hover .logo-icon {
     background: rgba(255, 255, 255, 0.3);
     border-color: rgba(255, 255, 255, 0.5);
@@ -340,7 +333,8 @@
 }
 
 .admin-sidebar-logout:hover {
-    background-color: rgba(239, 68, 68, 0.25);
+  
+    background-color: rgba(151, 42, 153, 0.1);
     color: var(--text-white);
     transform: translateX(4px);
 }

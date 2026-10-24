@@ -143,5 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModalFn();
         }
     });
+  
 });
 
