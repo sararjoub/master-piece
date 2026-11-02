@@ -279,15 +279,29 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Skill Name</label>
-                    <input 
-                        type="text" 
-                        class="form-input" 
-                        id="modalSkillName"
-                        placeholder="e.g. Python, Guitar, Cooking..."
-                    >
-                </div>
-
+    <label class="form-label">Skill Name</label>
+    
+    <!-- Custom Dropdown Container -->
+    <div class="custom-select-wrapper" id="customSkillWrapper">
+        <!-- الحقل الذي يظهر للمستخدم -->
+        <div class="custom-select-trigger" id="skillSelectTrigger">
+            <span id="skillSelectedText">Select a skill...</span>
+            <span class="custom-select-arrow">▼</span>
+        </div>
+        
+        <!-- القائمة المنسدلة -->
+        <div class="custom-select-options hidden" id="skillOptions">
+            <!-- حقل البحث -->
+            <div class="custom-search-box">
+                <input type="text" id="skillSearchInput" placeholder="🔍 Search skills...">
+            </div>
+            <!-- الخيارات ستُضاف هنا بواسطة JavaScript -->
+            <div class="custom-options-list" id="skillOptionsList">
+                <!-- سيتم توليد الخيارات هنا -->
+            </div>
+        </div>
+    </div>
+</div>
                 <div class="form-group">
                     <label class="form-label">Level</label>
                     <select class="form-input" id="modalLevel">

@@ -97,78 +97,72 @@
                     </form>
                 </div>
 
-                <!--  STEP 2: Teach Skills -->
-                <div class="setup-step" id="step-2">
-                    <div class="step-header">
-                        <span class="step-tag">STEP 2 OF 3</span>
-                        <h1>What Can You Teach?</h1>
-                        <p>Select skills you are good at and can teach others.</p>
-                    </div>
+        
+             <!--  STEP 2: Teach Skills -->
+<div class="setup-step" id="step-2">
+    <div class="step-header">
+        <span class="step-tag">STEP 2 OF 3</span>
+        <h1>What Can You Teach?</h1>
+        <p>Search and select the skills you are good at and can teach others.</p>
+    </div>
 
-                    <div class="skills-selector">
-                        <!-- Category 1 -->
-                        <div class="selector-category">
-                            <h4>Technology</h4>
-                            <div class="chips-container">
-                                <button class="skill-chip" data-skill="web-dev">Web Development</button>
-                                <button class="skill-chip" data-skill="ui-ux">UI/UX Design</button>
-                                <button class="skill-chip" data-skill="js">JavaScript</button>
-                                <button class="skill-chip" data-skill="react">React</button>
-                            </div>
-                        </div>
-                        <!-- Category 2 -->
-                        <div class="selector-category">
-                            <h4>Handmade</h4>
-                            <div class="chips-container">
-                                <button class="skill-chip" data-skill="graphic">Graphic Design</button>
-                                <button class="skill-chip" data-skill="photoshop">Photoshop</button>
-                                <button class="skill-chip" data-skill="painting">Painting</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="step-actions">
-                        <button type="button" class="btn btn-outline btn-large" onclick="goToStep(1)">← Back</button>
-                        <button type="button" class="btn btn-primary btn-large" onclick="goToStep(3)">Next Step →</button>
-                    </div>
-                </div>
-
-                <!-- STEP 3: Learn Skills  -->
-                <div class="setup-step" id="step-3">
-                    <div class="step-header">
-                        <span class="step-tag">STEP 3 OF 3</span>
-                        <h1>What Do You Want to Learn?</h1>
-                        <p>Select skills you are interested in learning.</p>
-                    </div>
-
-                    <div class="skills-selector">
-                        <!-- Category 1 -->
-                        <div class="selector-category">
-                            <h4>Technology</h4>
-                            <div class="chips-container">
-                                <button class="skill-chip" data-skill="python">Python</button>
-                                <button class="skill-chip" data-skill="data-science">Data Science</button>
-                                <button class="skill-chip" data-skill="mobile">Mobile Dev</button>
-                            </div>
-                        </div>
-                        <!-- Category 2 -->
-                        <div class="selector-category">
-                            <h4>Business</h4>
-                            <div class="chips-container">
-                                <button class="skill-chip" data-skill="marketing">Marketing</button>
-                                <button class="skill-chip" data-skill="management">Management</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="step-actions">
-                        <button type="button" class="btn btn-outline btn-large" onclick="goToStep(2)">← Back</button>
-                        <button type="button" class="btn btn-primary btn-large" onclick="finishSetup()">Finish Setup ✓</button>
-                    </div>
-                </div>
-
-            </div>
+    <div class="skills-selector">
+        <!-- Smart Search Dropdown -->
+        <div class="search-skill-wrapper">
+            <input 
+                type="text" 
+                class="form-input" 
+                id="teachSkillSearch" 
+                placeholder="🔍 Search for a skill (e.g. Web Development)..."
+                autocomplete="off"
+            >
+            <div class="search-results hidden" id="teachSearchResults"></div>
         </div>
+
+        <!-- Selected Skills -->
+        <div class="selected-skills" id="selectedTeachSkills">
+            <!-- المهارات المختارة ستظهر هنا -->
+        </div>
+    </div>
+
+    <div class="step-actions">
+        <button type="button" class="btn btn-outline btn-large" onclick="goToStep(1)">← Back</button>
+        <button type="button" class="btn btn-primary btn-large" onclick="goToStep(3)">Next Step →</button>
+    </div>
+</div>
+
+<!-- STEP 3: Learn Skills -->
+<div class="setup-step" id="step-3">
+    <div class="step-header">
+        <span class="step-tag">STEP 3 OF 3</span>
+        <h1>What Do You Want to Learn?</h1>
+        <p>Search and select the skills you are interested in learning.</p>
+    </div>
+
+    <div class="skills-selector">
+        <!-- Smart Search Dropdown -->
+        <div class="search-skill-wrapper">
+            <input 
+                type="text" 
+                class="form-input" 
+                id="learnSkillSearch" 
+                placeholder="🔍 Search for a skill (e.g. Python)..."
+                autocomplete="off"
+            >
+            <div class="search-results hidden" id="learnSearchResults"></div>
+        </div>
+
+        <!-- Selected Skills -->
+        <div class="selected-skills" id="selectedLearnSkills">
+            <!-- المهارات المختارة ستظهر هنا -->
+        </div>
+    </div>
+
+    <div class="step-actions">
+        <button type="button" class="btn btn-outline btn-large" onclick="goToStep(2)">← Back</button>
+        <button type="button" class="btn btn-primary btn-large" onclick="finishSetup()">Finish Setup ✓</button>
+    </div>
+</div>
     </section>
 
     <script src="js/profile-setup.js"></script>

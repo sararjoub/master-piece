@@ -1,39 +1,61 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. نظام الـ Tabs
-    const tabs = document.querySelectorAll('.skills-tab');
-    const tabContents = document.querySelectorAll('.tab-content');
+    // ============================================
+    // 1. قائمة المهارات (Mock Data)
+    // ============================================
+    const allSkills = [
+        "Web Development", "HTML5", "CSS3", "JavaScript", "React.js", "Node.js",
+        "Python", "Django", "SQL", "MongoDB", "Git & GitHub", "UI/UX Design",
+        "Figma", "Data Science", "Machine Learning", "Mobile Development",
+        "Flutter", "React Native", "Cybersecurity", "Ethical Hacking",
+        "Mathematics", "Physics", "Chemistry", "Biology", "English Language",
+        "Arabic Language", "French Language", "IELTS", "TOEFL", "History",
+        "Geography", "Painting", "Drawing", "Knitting", "Crochet", "Sewing",
+        "DIY Projects", "Photography", "Videography", "Video Editing",
+        "Music Production", "Guitar", "Piano", "Singing", "Acting",
+        "Digital Marketing", "Social Media Marketing", "SEO", "Copywriting",
+        "Sales", "Project Management", "Entrepreneurship", "Finance",
+        "Accounting", "Excel", "Yoga", "Pilates", "Personal Training",
+        "Nutrition", "Weightlifting", "Meditation", "Public Speaking"
+    ];
+
+    let selectedSkillName = ''; // المتغير الذي سيحفظ المهارة
+
+    // ============================================
+    // 2. نظام التبويبات (Tabs)
+    // ============================================
+    let tabs = document.querySelectorAll('.skills-tab');
+    let tabContents = document.querySelectorAll('.tab-content');
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            const targetTab = tab.dataset.tab;
+            let targetTab = tab.dataset.tab;
 
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
 
             tabContents.forEach(content => content.classList.remove('active'));
 
-            const targetContent = document.getElementById(`${targetTab}-content`);
+            let targetContent = document.getElementById(`${targetTab}-content`);
             if (targetContent) {
                 targetContent.classList.add('active');
             }
         });
     });
 
-    // 2. Modal - إضافة مهارة جديدة
-    const addSkillBtn = document.getElementById('addSkillBtn');
-    const addTeachSkill = document.getElementById('addTeachSkill');
-    const addLearnSkill = document.getElementById('addLearnSkill');
-    const modal = document.getElementById('addSkillModal');
-    const closeModal = document.getElementById('closeModal');
-    const cancelAdd = document.getElementById('cancelAdd');
-    const confirmAdd = document.getElementById('confirmAdd');
+    // ============================================
+    // 3. نافذة إضافة المهارة (Modal)
+    // ============================================
+    let addSkillBtn = document.getElementById('addSkillBtn');
+    let addTeachSkill = document.getElementById('addTeachSkill');
+    let addLearnSkill = document.getElementById('addLearnSkill');
+    let modal = document.getElementById('addSkillModal');
+    let closeModal = document.getElementById('closeModal');
+    let cancelAdd = document.getElementById('cancelAdd');
+    let confirmAdd = document.getElementById('confirmAdd');
 
     let currentSkillType = 'teach'; // teach or learn
 
-    // فتح Modal
     function openModal(type = 'teach') {
         currentSkillType = type;
         if (modal) {
@@ -42,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // إغلاق Modal
     function closeModalFn() {
         if (modal) {
             modal.classList.add('hidden');
@@ -53,9 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetModalFields() {
         document.getElementById('modalCategory').value = '';
-        document.getElementById('modalSkillName').value = '';
         document.getElementById('modalLevel').value = 'beginner';
         document.getElementById('modalExperience').value = '';
+        
+        // إعادة تعيين القائمة المنسدلة
+        let selectedText = document.getElementById('skillSelectedText');
+        if (selectedText) {
+            selectedText.textContent = 'Select a skill...';
+            selectedText.style.color = '#999';
+        }
+        let searchInput = document.getElementById('skillSearchInput');
+        if (searchInput) searchInput.value = '';
+        
+        selectedSkillName = ''; // مسح المهارة المختارة
     }
 
     // ربط الأزرار
@@ -79,44 +110,121 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. إضافة مهارة جديدة
+    // ============================================
+    // 4. منطق القائمة المنسدلة المخصصة (Custom Dropdown)
+    // ============================================
+    const trigger = document.getElementById('skillSelectTrigger');
+    const optionsBox = document.getElementById('skillOptions');
+    const optionsList = document.getElementById('skillOptionsList');
+    const searchInput = document.getElementById('skillSearchInput');
+    const selectedText = document.getElementById('skillSelectedText');
+
+    function renderOptions(filterText = '') {
+        if (!optionsList) return;
+        optionsList.innerHTML = '';
+        
+        const filtered = allSkills.filter(skill => 
+            skill.toLowerCase().includes(filterText.toLowerCase())
+        );
+
+        if (filtered.length === 0) {
+            optionsList.innerHTML = '<div style="padding: 12px; text-align: center; color: #999;">No skills found</div>';
+            return;
+        }
+
+        filtered.forEach(skill => {
+            const item = document.createElement('div');
+            item.className = 'custom-option-item';
+            if (skill === selectedSkillName) item.classList.add('selected');
+            item.textContent = skill;
+            
+            item.addEventListener('click', () => {
+                selectedSkillName = skill;
+                if (selectedText) {
+                    selectedText.textContent = skill;
+                    selectedText.style.color = 'var(--text-dark)';
+                }
+                optionsBox.classList.add('hidden');
+                trigger.classList.remove('active');
+                if (searchInput) searchInput.value = ''; 
+            });
+            
+            optionsList.appendChild(item);
+        });
+    }
+
+    if (trigger) {
+        // فتح/إغلاق القائمة
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = optionsBox.classList.contains('hidden');
+            
+            if (isHidden) {
+                optionsBox.classList.remove('hidden');
+                trigger.classList.add('active');
+                renderOptions(); // عرض كل الخيارات
+                if (searchInput) searchInput.focus();
+            } else {
+                optionsBox.classList.add('hidden');
+                trigger.classList.remove('active');
+            }
+        });
+
+        // البحث داخل القائمة
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                renderOptions(e.target.value);
+            });
+        }
+
+        // إغلاق عند النقر خارجها
+        document.addEventListener('click', (e) => {
+            if (!trigger.contains(e.target) && !optionsBox.contains(e.target)) {
+                optionsBox.classList.add('hidden');
+                trigger.classList.remove('active');
+            }
+        });
+    }
+
+    // ============================================
+    // 5. إضافة مهارة جديدة (Confirm Add)
+    // ============================================
     if (confirmAdd) {
         confirmAdd.addEventListener('click', () => {
-            const category = document.getElementById('modalCategory').value;
-            const skillName = document.getElementById('modalSkillName').value.trim();
-            const level = document.getElementById('modalLevel').value;
-            const experience = document.getElementById('modalExperience').value.trim();
+            let category = document.getElementById('modalCategory').value;
+            let skillName = selectedSkillName; 
+            let level = document.getElementById('modalLevel').value;
+            let experience = document.getElementById('modalExperience').value.trim();
 
-            // التحقق
             if (!category) {
                 showNotification('Please select a category.', 'error');
                 return;
             }
 
             if (!skillName) {
-                showNotification('Please enter a skill name.', 'error');
+                showNotification('Please select a skill from the list.', 'error');
                 return;
             }
 
             // تحديد الشبكة المستهدفة
-            const targetGrid = currentSkillType === 'teach' 
+            let targetGrid = currentSkillType === 'teach' 
                 ? document.getElementById('teachGrid')
                 : document.getElementById('learnGrid');
 
-            // تحديد الـ Badge حسب المستوى
-            const badgeClasses = {
+            // تحديد الـ Badge
+            let badgeClasses = {
                 'beginner': 'badge-primary',
                 'intermediate': 'badge-info',
                 'advanced': 'badge-warning'
             };
-            const badgeLabels = {
+            let badgeLabels = {
                 'beginner': 'Beginner',
                 'intermediate': 'Intermediate',
                 'advanced': 'Advanced'
             };
 
-            // إنشاء البطاقة الجديدة
-            const newCard = document.createElement('div');
+            // إنشاء البطاقة
+            let newCard = document.createElement('div');
             newCard.className = 'my-skill-card animate-scale-in' + (currentSkillType === 'learn' ? ' learn-card' : '');
             newCard.innerHTML = `
                 <div class="skill-card-header">
@@ -136,34 +244,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            // إضافة البطاقة قبل زر "Add Skill"
-            const addCard = targetGrid.querySelector('.add-skill-card');
+            // إضافة البطاقة
+            let addCard = targetGrid.querySelector('.add-skill-card');
             targetGrid.insertBefore(newCard, addCard);
 
-            // ربط الأزرار الجديدة
             attachCardActions(newCard);
-
-            // تحديث العداد
             updateCounts();
-
-            // إغلاق Modal
             closeModalFn();
-
-            // إشعار
             showNotification(`Skill "${skillName}" added successfully!`, 'success');
         });
     }
 
-    // 4. حذف بطاقة
+    // ============================================
+    // 6. حذف وتعديل البطاقة
+    // ============================================
     function attachCardActions(card) {
-        const deleteBtn = card.querySelector('.delete-btn');
-        const editBtn = card.querySelector('.edit-btn');
+        let deleteBtn = card.querySelector('.delete-btn');
+        let editBtn = card.querySelector('.edit-btn');
 
         if (deleteBtn && !deleteBtn.dataset.bound) {
             deleteBtn.dataset.bound = 'true';
             deleteBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const skillName = card.querySelector('.skill-card-title').textContent;
+                let skillName = card.querySelector('.skill-card-title').textContent;
                 
                 if (confirm(`Remove "${skillName}"?`)) {
                     card.style.transition = 'all 0.4s ease';
@@ -183,32 +286,35 @@ document.addEventListener('DOMContentLoaded', () => {
             editBtn.dataset.bound = 'true';
             editBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const skillName = card.querySelector('.skill-card-title').textContent;
+                let skillName = card.querySelector('.skill-card-title').textContent;
                 showNotification(`Editing "${skillName}"...`, 'info');
             });
         }
     }
 
-    // ربط الأزرار لكل البطاقات الحالية
     document.querySelectorAll('.my-skill-card').forEach(card => {
         attachCardActions(card);
     });
 
-    // 5. تحديث العدادات
+    // ============================================
+    // 7. تحديث العدادات
+    // ============================================
     function updateCounts() {
-        const teachCount = document.querySelectorAll('#teachGrid .my-skill-card').length;
-        const learnCount = document.querySelectorAll('#learnGrid .my-skill-card').length;
+        let teachCount = document.querySelectorAll('#teachGrid .my-skill-card').length;
+        let learnCount = document.querySelectorAll('#learnGrid .my-skill-card').length;
 
-        const teachCountEl = document.getElementById('teachCount');
-        const learnCountEl = document.getElementById('learnCount');
+        let teachCountEl = document.getElementById('teachCount');
+        let learnCountEl = document.getElementById('learnCount');
 
         if (teachCountEl) teachCountEl.textContent = teachCount;
         if (learnCountEl) learnCountEl.textContent = learnCount;
     }
 
-    // 6. اسم التصنيف بالعربي/الإنجليزية
+    // ============================================
+    // 8. دوال مساعدة
+    // ============================================
     function getCategoryName(key) {
-        const names = {
+        let names = {
             'technology': 'Technology',
             'education': 'Education',
             'handmade': 'Handmade',
@@ -219,19 +325,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return names[key] || key;
     }
 
-    // 7. حماية XSS
     function escapeHtml(text) {
-        const div = document.createElement('div');
+        let div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
 
-
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">
@@ -247,7 +351,10 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => notification.remove(), 300);
         }, 2200);
     }
+
+    // ============================================
     // 9. تحديث العدادات عند التحميل
+    // ============================================
     updateCounts();
 
 });

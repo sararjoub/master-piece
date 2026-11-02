@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,38 @@
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../admin-css/admin-shared.css">
 </head>
+
 <body>
 
-    <!-- ============================================
-         ADMIN LAYOUT
-         ============================================ -->
+    <!--    ADMIN LAYOUT -->
     <div class="admin-layout">
 
         <!-- ===== Sidebar Overlay (Mobile) ===== -->
         <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
 
-        <!-- ============================================
-             SIDEBAR
-             ============================================ -->
+        <!--  SIDEBAR-->
         <aside class="admin-sidebar" id="adminSidebar">
 
             <!-- Logo -->
             <a href="dashboard.html" class="admin-sidebar-logo">
                 <span class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </span>
-     <div class="logo-text">
-        <span class="logo-main">
-            Skills <span class="logo-swap">Swap</span>
-        </span>
-        <span class="logo-subtitle">Admin Panel</span>
-    </div>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-main">
+                        Skills <span class="logo-swap">Swap</span>
+                    </span>
+                    <span class="logo-subtitle">Admin Panel</span>
+                </div>
             </a>
 
             <!-- Navigation -->
@@ -102,9 +104,7 @@
 
         </aside>
 
-        <!-- ============================================
-             MAIN AREA
-             ============================================ -->
+        <!--  MAIN AREa -->
         <main class="admin-main">
 
             <!-- ===== Topbar ===== -->
@@ -251,12 +251,8 @@
                         <div class="admin-search-bar">
                             <div class="admin-search-input-wrapper">
                                 <span class="search-icon">🔍</span>
-                                <input 
-                                    type="text" 
-                                    class="admin-search-input"
-                                    placeholder="Search by name or email..."
-                                    id="usersSearchInput"
-                                >
+                                <input type="text" class="admin-search-input" placeholder="Search by name or email..."
+                                    id="usersSearchInput">
                             </div>
                         </div>
                     </div>
@@ -300,13 +296,16 @@
                                         <td><strong>8</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn" title="View">👁️</a>
+                                                <a href="user-details.html" class="admin-table-action-btn"
+                                                    title="View">👁️</a>
                                                 <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                <button 
-                                                    class="admin-table-action-btn danger" 
-                                                    title="Delete"
-                                                    data-confirm-danger="Delete Ahmad Ali? This cannot be undone."
-                                                >🗑️</button>
+                                                 <button class="admin-table-action-btn make-expert-btn" 
+                                                       data-name="Ahmad Ali" 
+                                                           data-email="ahmad@skills.com" 
+                                                               title="Make Expert" 
+                                                               style="color: #f59e0b;">⭐</button>
+                                                <button class="admin-table-action-btn danger" title="Delete"
+                                                    data-confirm-danger="Delete Ahmad Ali? This cannot be undone.">🗑️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -329,13 +328,16 @@
                                         <td><strong>5</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn" title="View">👁️</a>
+                                                <a href="user-details.html" class="admin-table-action-btn"
+                                                    title="View">👁️</a>
                                                 <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                <button 
-                                                    class="admin-table-action-btn danger" 
-                                                    title="Delete"
-                                                    data-confirm-danger="Delete Sara Khaled?"
-                                                >🗑️</button>
+                                                     <button class="admin-table-action-btn make-expert-btn" 
+                                                                  data-name="Sara Khaled" 
+                                                                        data-email="sara@skills.com" 
+                                                                                title="Make Expert" 
+                                                                                style="color: #f59e0b;">⭐</button>
+                                                <button class="admin-table-action-btn danger" title="Delete"
+                                                    data-confirm-danger="Delete Sara Khaled?">🗑️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -358,13 +360,17 @@
                                         <td><strong>12</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn" title="View">👁️</a>
+                                                <a href="user-details.html" class="admin-table-action-btn"
+                                                    title="View">👁️</a>
                                                 <button class="admin-table-action-btn" title="Unban">🔓</button>
-                                                <button 
-                                                    class="admin-table-action-btn danger" 
-                                                    title="Delete"
-                                                    data-confirm-danger="Delete Omar Mahmoud?"
-                                                >🗑️</button>
+                                                 <!-- زر توثيق كخبير -->
+                                                 <button class="admin-table-action-btn make-expert-btn" 
+                                                           data-name="Omar Mahmoud" 
+                                                             data-email="omar@skills.com" 
+                                                                     title="Make Expert" 
+                                                                     style="color: #f59e0b;">⭐</button>
+                                                <button class="admin-table-action-btn danger" title="Delete"
+                                                    data-confirm-danger="Delete Omar Mahmoud?">🗑️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -387,13 +393,17 @@
                                         <td><strong>7</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn" title="View">👁️</a>
+                                                <a href="user-details.html" class="admin-table-action-btn"
+                                                    title="View">👁️</a>
                                                 <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                <button 
-                                                    class="admin-table-action-btn danger" 
-                                                    title="Delete"
-                                                    data-confirm-danger="Delete Lana Omar?"
-                                                >🗑️</button>
+                                                 <!-- زر توثيق كخبير -->
+                                                       <button class="admin-table-action-btn make-expert-btn" 
+                                                                            data-name="Lana Omar" 
+                                                                               data-email="lana@skills.com" 
+                                                                                    title="Make Expert" 
+                                                                                    style="color: #f59e0b;">⭐</button>
+                                                <button class="admin-table-action-btn danger" title="Delete"
+                                                    data-confirm-danger="Delete Lana Omar?">🗑️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -416,13 +426,17 @@
                                         <td><strong>3</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn" title="View">👁️</a>
+                                                <a href="user-details.html" class="admin-table-action-btn"
+                                                    title="View">👁️</a>
                                                 <button class="admin-table-action-btn" title="Approve">✅</button>
-                                                <button 
-                                                    class="admin-table-action-btn danger" 
-                                                    title="Delete"
-                                                    data-confirm-danger="Delete Jana Khaled?"
-                                                >🗑️</button>
+                                                 <!-- زر توثيق كخبير -->
+                                                   <button class="admin-table-action-btn make-expert-btn" 
+                                                                   data-name="Jana Khaled" 
+                                                                        data-email="jana@skills.com" 
+                                                                              title="Make Expert" 
+                                                                              style="color: #f59e0b;">⭐</button>
+                                                <button class="admin-table-action-btn danger" title="Delete"
+                                                    data-confirm-danger="Delete Jana Khaled?">🗑️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -445,13 +459,16 @@
                                         <td><strong>6</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn" title="View">👁️</a>
+                                                <a href="user-details.html" class="admin-table-action-btn"
+                                                    title="View">👁️</a>
                                                 <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                <button 
-                                                    class="admin-table-action-btn danger" 
-                                                    title="Delete"
-                                                    data-confirm-danger="Delete Noor Ali?"
-                                                >🗑️</button>
+                                                 <!-- زر توثيق كخبير -->
+                                                        <button class="admin-table-action-btn make-expert-btn" 
+                                                                    data-name="Noor Ali" 
+                                                                    data-email="noor@skills.com" 
+                                                                          title="Make Expert" 
+                                                                           style="color: #f59e0b;">⭐</button>                                                <button class="admin-table-action-btn danger" title="Delete"
+                                                    data-confirm-danger="Delete Noor Ali?">🗑️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -474,7 +491,8 @@
                                         <td><strong>0</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <button class="admin-table-action-btn" title="View" disabled>👁️</button>
+                                                <button class="admin-table-action-btn" title="View"
+                                                    disabled>👁️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -497,13 +515,17 @@
                                         <td><strong>9</strong> skills</td>
                                         <td>
                                             <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn" title="View">👁️</a>
+                                                <a href="user-details.html" class="admin-table-action-btn"
+                                                    title="View">👁️</a>
                                                 <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                <button 
-                                                    class="admin-table-action-btn danger" 
-                                                    title="Delete"
-                                                    data-confirm-danger="Delete Yousef Sami?"
-                                                >🗑️</button>
+                                                 <!-- زر توثيق كخبير -->
+                                                   <button class="admin-table-action-btn make-expert-btn" 
+                                                                data-name="Yousef Sami" 
+                                                                      data-email="yousef@skills.com" 
+                                                                              title="Make Expert" 
+                                                                             style="color: #f59e0b;">⭐</button>
+                                                <button class="admin-table-action-btn danger" title="Delete"
+                                                    data-confirm-danger="Delete Yousef Sami?">🗑️</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -524,7 +546,8 @@
                     <!-- Card Footer with Pagination -->
                     <div class="admin-card-footer">
                         <div class="admin-table-info">
-                            Showing <strong id="showingFrom">1</strong>–<strong id="showingTo">8</strong> of <strong id="totalUsers">250</strong> users
+                            Showing <strong id="showingFrom">1</strong>–<strong id="showingTo">8</strong> of <strong
+                                id="totalUsers">250</strong> users
                         </div>
 
                         <div class="admin-pagination">
@@ -566,10 +589,40 @@
             </button>
         </div>
     </div>
+        <!-- ============================================
+     MAKE EXPERT MODAL (AI Recommendation)
+     ============================================ -->
+<div class="modal-overlay hidden" id="expertModal">
+    <div class="modal" style="max-width: 500px;">
+        <div class="modal-header" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-bottom: none;">
+            <h2 style="color: #b45309;">⭐ Approve as Expert</h2>
+            <button class="modal-close" id="closeExpertModal">✕</button>
+        </div>
+        <div class="modal-body" style="padding-top: 10px;">
+            <p style="margin-bottom: 20px;">You are about to grant <strong id="expertUserName">User</strong> the "Expert" badge.</p>
+            
+            <!-- AI Recommendation Box -->
+            <div style="background: #f8f9ff; padding: 16px; border-radius: 12px; border: 1px solid #e0e7ff; margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="font-size: 20px;">🤖</span>
+                    <strong style="color: var(--primary-dark); font-size: 14px;">AI Recommendation</strong>
+                </div>
+                <p style="font-size: 13px; color: var(--text-medium); margin: 0; line-height: 1.5;">
+                    This user has a <strong>4.9 rating</strong> (120 reviews), <strong>5+ years</strong> of experience, and a <strong>100% response rate</strong>. AI recommends approval.
+                </p>
+            </div>
 
-    <!-- ===== Scripts ===== -->
+            <p style="font-size: 13px; color: var(--text-light);">As an admin, you have the final decision.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="admin-btn admin-btn-outline" id="cancelExpert">Cancel</button>
+            <button class="admin-btn admin-btn-primary" id="confirmExpert" style="background: #f59e0b; border-color: #f59e0b;">Approve as Expert ✓</button>
+        </div>
+    </div>
+</div>
     <script src="../admin-js/admin-shared.js"></script>
     <script src="../admin-js/admin-users.js"></script>
 
 </body>
+
 </html>

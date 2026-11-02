@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Subscriptions - Skills Swap Admin</title>
+
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-shared.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+        <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+
+        <!-- ===== Sidebar ===== -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <a href="dashboard.html" class="admin-sidebar-logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <div class="logo-text">
+                    <span class="logo-main">Skills <span class="logo-swap">Swap</span></span>
+                    <span class="logo-subtitle">Admin Panel</span>
+                </div>
+            </a>
+
+            <nav class="admin-sidebar-nav">
+                <span class="admin-sidebar-label">Main</span>
+                <a href="dashboard.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Dashboard</span></a>
+                <a href="manage-users.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Users</span><span class="admin-sidebar-badge">250</span></a>
+                <a href="manage-skills.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Skills</span></a>
+                <a href="manage-categories.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Categories</span></a>
+                <span class="admin-sidebar-label">Content</span>
+                <a href="manage-courses.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Courses</span></a>
+                <a href="manage-career-paths.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Career Paths</span></a>
+                <a href="manage-reviews.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Reviews</span></a>
+                <a href="manage-requests.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Requests</span></a>
+                <span class="admin-sidebar-label">System</span>
+                <!-- رابط الصفحة الجديدة -->
+                <a href="manage-subscriptions.html" class="admin-sidebar-link active"><span class="admin-sidebar-text">Subscriptions</span></a>
+                <a href="reports.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Reports</span></a>
+                <a href="settings.html" class="admin-sidebar-link"><span class="admin-sidebar-text">Settings</span></a>
+            </nav>
+
+            <div class="admin-sidebar-divider"></div>
+            <button class="admin-sidebar-logout" id="adminLogout"><span class="admin-sidebar-text">Logout</span></button>
+        </aside>
+
+        <!-- ===== Main Content ===== -->
+        <main class="admin-main">
+            <header class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
+                    <h1 class="admin-page-title">Manage Subscriptions</h1>
+                </div>
+                <div class="admin-topbar-right">
+                    <div class="admin-user-menu" id="adminUserMenu">
+                        <button class="admin-user-btn" id="adminUserBtn">
+                            <span class="admin-user-avatar">A</span>
+                            <span class="admin-user-name">Admin</span>
+                            <span class="admin-user-arrow">▼</span>
+                        </button>
+                        <div class="admin-dropdown" id="adminDropdown">
+                            <div class="admin-dropdown-header">
+                                <span class="admin-user-avatar">A</span>
+                                <div><strong>Admin User</strong><span>admin@skills.com</span></div>
+                            </div>
+                            <div class="admin-dropdown-divider"></div>
+                            <button class="admin-dropdown-item admin-dropdown-logout"><span class="admin-dropdown-icon">🚪</span> Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="admin-page-header admin-fade-rise">
+                    <div class="admin-page-header-left">
+                        <h1>Pro Subscriptions</h1>
+                        <p>Manage users who upgraded to Pro plan.</p>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="admin-stats-grid admin-stagger">
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-warning">⭐</div>
+                            <span class="admin-stat-trend positive">↑ 12%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="45">0</div>
+                            <div class="admin-stat-label">Active Pro Users</div>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon admin-stat-icon-success">💰</div>
+                            <span class="admin-stat-trend positive">↑ 25%</span>
+                        </div>
+                        <div class="admin-stat-info">
+                            <div class="admin-stat-value" data-count="855">0</div>
+                            <div class="admin-stat-label">Monthly Revenue ($)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="admin-card admin-fade-rise-2">
+                    <div class="admin-card-header">
+                        <h3 class="admin-card-title">Active Subscriptions</h3>
+                    </div>
+                    <div class="admin-card-body admin-card-body-flush">
+                        <div class="admin-table-wrapper">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Plan</th>
+                                        <th>Start Date</th>
+                                        <th>Next Billing</th>
+                                        <th>Status</th>
+                                        <th class="admin-actions-col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">AH</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Ahmad Hassan</div>
+                                                    <div class="admin-table-user-email">ahmad@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="admin-badge admin-badge-warning">Pro</span></td>
+                                        <td>Oct 15, 2026</td>
+                                        <td>Nov 15, 2026</td>
+                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Cancel">✕</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="admin-table-user">
+                                                <div class="admin-table-avatar">LK</div>
+                                                <div class="admin-table-user-info">
+                                                    <div class="admin-table-user-name">Lana Khalid</div>
+                                                    <div class="admin-table-user-email">lana@skills.com</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="admin-badge admin-badge-warning">Pro</span></td>
+                                        <td>Oct 20, 2026</td>
+                                        <td>Nov 20, 2026</td>
+                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
+                                        <td>
+                                            <div class="admin-table-actions">
+                                                <button class="admin-table-action-btn" title="View">👁️</button>
+                                                <button class="admin-table-action-btn danger" title="Cancel">✕</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../admin-js/admin-shared.js"></script>
+</body>
+</html>
