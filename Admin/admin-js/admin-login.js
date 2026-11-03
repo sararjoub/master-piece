@@ -1,47 +1,42 @@
-/* ============================================
-   ===== ADMIN LOGIN PAGE - JavaScript =====
-   ===== أنيميشن + تفاعل فقط =====
-   ============================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
+  
     // 1. عناصر الصفحة
-    // ============================================
-    const loginForm = document.getElementById('adminLoginForm');
-    const emailInput = document.getElementById('adminEmail');
-    const passwordInput = document.getElementById('adminPassword');
-    const togglePassword = document.getElementById('toggleAdminPassword');
-    const loginBtn = document.getElementById('adminLoginBtn');
+   
+    let loginForm = document.getElementById('adminLoginForm');
+    let emailInput = document.getElementById('adminEmail');
+    let passwordInput = document.getElementById('adminPassword');
+    let togglePassword = document.getElementById('toggleAdminPassword');
+    let loginBtn = document.getElementById('adminLoginBtn');
 
-    // ============================================
+  
     // 2. إظهار/إخفاء كلمة المرور
-    // ============================================
+   
     if (togglePassword && passwordInput) {
         togglePassword.addEventListener('click', () => {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
             togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
         });
     }
-
-    // ============================================
+ 
     // 3. التحقق من صحة البريد
-    // ============================================
+    
     function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    // ============================================
     // 4. إرسال النموذج
-    // ============================================
+   
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const email = emailInput.value.trim();
-            const password = passwordInput.value;
+            let email = emailInput.value.trim();
+            let password = passwordInput.value;
 
             // التحقق
             if (!email || !password) {
@@ -60,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // تأثير التحميل
-            const btnText = loginBtn.querySelector('span:first-child');
-            const originalText = btnText.textContent;
+            let btnText = loginBtn.querySelector('span:first-child');
+            let originalText = btnText.textContent;
             btnText.textContent = 'Logging in...';
             loginBtn.disabled = true;
             loginBtn.style.opacity = '0.7';
@@ -81,10 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
+    // 
     // 5. تأثير عند التركيز
-    // ============================================
-    const inputs = document.querySelectorAll('.admin-form-input');
+    // 
+    let inputs = document.querySelectorAll('.admin-form-input');
     inputs.forEach(input => {
         input.addEventListener('focus', () => {
             input.parentElement.style.transform = 'scale(1.01)';
@@ -96,14 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+    // 
     // 6. دالة التنبيهات
-    // ============================================
+    // 
     function showNotification(message, type = 'info') {
-        const oldNotification = document.querySelector('.notification');
+        let oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.innerHTML = `
             <span class="notification-icon">

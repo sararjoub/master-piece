@@ -8,6 +8,7 @@
     <!-- الملفات المشتركة -->
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../admin-css/admin-shared.css">
+    <link rel="stylesheet" href="../admin-css/admin-dashbord.css">
 </head>
 <body>
 
@@ -49,7 +50,7 @@
 
                 <a href="manage-users.html" class="admin-sidebar-link">
                     <span class="admin-sidebar-text">Users</span>
-                    <span class="admin-sidebar-badge">250</span>
+                    
                 </a>
 
                 <a href="manage-skills.html" class="admin-sidebar-link">
@@ -109,10 +110,7 @@
                     <h1 class="admin-page-title">Dashboard</h1>
                 </div>
 
-                <div class="admin-topbar-search">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Search users, skills, requests...">
-                </div>
+               
 
                 <div class="admin-topbar-right">
 
@@ -181,143 +179,259 @@
                     </div>
                 </div>
 
-                <!--  Stat Cards  -->
-                <div class="admin-stats-grid admin-stagger">
+              
+<!-- Stat Cards -->
+<div class="admin-stats-grid admin-stagger">
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-primary">👥</div>
-                            <span class="admin-stat-trend positive">↑ 12%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="250">0</div>
-                            <div class="admin-stat-label">Total Users</div>
-                        </div>
-                    </div>
+    <!-- Total Users -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-primary">
+                👥
+            </div>
+        </div>
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-success">🎯</div>
-                            <span class="admin-stat-trend positive">↑ 8%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="48">0</div>
-                            <div class="admin-stat-label">Total Skills</div>
-                        </div>
-                    </div>
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Total Users</div>
+        </div>
+    </div>
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-warning">📋</div>
-                            <span class="admin-stat-trend neutral">→ 0%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="120">0</div>
-                            <div class="admin-stat-label">Pending Requests</div>
-                        </div>
-                    </div>
+    <!-- Total Skills -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-success">
+                🎯
+            </div>
+        </div>
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-danger">🔄</div>
-                            <span class="admin-stat-trend positive">↑ 5%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="35">0</div>
-                            <div class="admin-stat-label">Active Swaps</div>
-                        </div>
-                    </div>
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Total Skills</div>
+        </div>
+    </div>
 
-                </div>
+    <!-- Pending Requests -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-warning">
+                📋
+            </div>
+        </div>
+
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Pending Requests</div>
+        </div>
+    </div>
+
+    <!-- Active Swaps -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-danger">
+                🔄
+            </div>
+        </div>
+
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Active Swaps</div>
+        </div>
+    </div>
+
+</div>
 
                 <!-- Two-Column Grid  -->
                 <div class="admin-dashboard-grid">
 
-                    <!--  Recent Users  -->
-                    <div class="admin-card admin-fade-rise-2">
-                        <div class="admin-card-header">
-                            <div>
-                                <h3 class="admin-card-title">Recent Users</h3>
-                                <p class="admin-card-subtitle">Latest registered members</p>
+                  <!-- Recent Users -->
+<div class="admin-card dashboard-users-card admin-fade-rise-2">
+
+    <div class="admin-card-header dashboard-users-header">
+        <div>
+            <h3 class="admin-card-title">Recent Users</h3>
+            <p class="admin-card-subtitle">
+                Latest registered members
+            </p>
+        </div>
+
+        <a href="manage-users.html"
+           class="admin-btn admin-btn-outline admin-btn-sm">
+            View All →
+        </a>
+    </div>
+
+    <!-- Search Toolbar -->
+    <div class="dashboard-users-toolbar">
+
+        <div class="dashboard-users-search">
+            <svg viewBox="0 0 24 24"
+                 width="18"
+                 height="18"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+
+                           <input
+                           type="search"
+                                 id="dashboardUserSearch"
+                                     placeholder="Search recent users..."
+                                      aria-label="Search recent users"
+                                        autocomplete="off">
+                                     </div>
+
+        <span class="dashboard-users-count"
+              id="dashboardUsersCount"
+              aria-live="polite">
+            4 users
+        </span>
+
+    </div>
+
+    <!-- Users Table -->
+    <div class="admin-card-body admin-card-body-flush">
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table dashboard-users-table"
+                   id="dashboardUsersTable">
+
+                <thead>
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Joined</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr data-user-row>
+                        <td>
+                            <div class="admin-table-user">
+                                <div class="admin-table-avatar">AA</div>
+
+                                <div class="admin-table-user-info">
+                                    <div class="admin-table-user-name">
+                                        Ahmad Ali
+                                    </div>
+                                    <div class="admin-table-user-email">
+                                        ahmad@skills.com
+                                    </div>
+                                </div>
                             </div>
-                            <a href="manage-users.html" class="admin-btn admin-btn-outline admin-btn-sm">
-                                View All →
-                            </a>
-                        </div>
+                        </td>
 
-                        <div class="admin-card-body admin-card-body-flush">
-                            <div class="admin-table-wrapper">
-                                <table class="admin-table">
-                                    <thead>
-                                        <tr>
-                                            <th>User</th>
-                                            <th>Status</th>
-                                            <th>Joined</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                        <td>
+                            <span class="admin-badge admin-badge-success">
+                                Active
+                            </span>
+                        </td>
 
-                                        <tr>
-                                            <td>
-                                                <div class="admin-table-user">
-                                                    <div class="admin-table-avatar">AA</div>
-                                                    <div class="admin-table-user-info">
-                                                        <div class="admin-table-user-name">Ahmad Ali</div>
-                                                        <div class="admin-table-user-email">ahmad@skills.com</div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="admin-badge admin-badge-success">Active</span></td>
-                                            <td>2 hours ago</td>
-                                        </tr>
+                        <td>2 hours ago</td>
+                    </tr>
 
-                                        <tr>
-                                            <td>
-                                                <div class="admin-table-user">
-                                                    <div class="admin-table-avatar">OM</div>
-                                                    <div class="admin-table-user-info">
-                                                        <div class="admin-table-user-name">Omar Mahmoud</div>
-                                                        <div class="admin-table-user-email">omar@skills.com</div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="admin-badge admin-badge-success">Active</span></td>
-                                            <td>5 hours ago</td>
-                                        </tr>
+                    <tr data-user-row>
+                        <td>
+                            <div class="admin-table-user">
+                                <div class="admin-table-avatar">OM</div>
 
-                                        <tr>
-                                            <td>
-                                                <div class="admin-table-user">
-                                                    <div class="admin-table-avatar">LA</div>
-                                                    <div class="admin-table-user-info">
-                                                        <div class="admin-table-user-name">Lana Ali</div>
-                                                        <div class="admin-table-user-email">lana@skills.com</div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="admin-badge admin-badge-warning">Pending</span></td>
-                                            <td>1 day ago</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="admin-table-user">
-                                                    <div class="admin-table-avatar">JK</div>
-                                                    <div class="admin-table-user-info">
-                                                        <div class="admin-table-user-name">Jana Khaled</div>
-                                                        <div class="admin-table-user-email">jana@skills.com</div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="admin-badge admin-badge-success">Active</span></td>
-                                            <td>2 days ago</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                                <div class="admin-table-user-info">
+                                    <div class="admin-table-user-name">
+                                        Omar Mahmoud
+                                    </div>
+                                    <div class="admin-table-user-email">
+                                        omar@skills.com
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </td>
+
+                        <td>
+                            <span class="admin-badge admin-badge-success">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>5 hours ago</td>
+                    </tr>
+
+                    <tr data-user-row>
+                        <td>
+                            <div class="admin-table-user">
+                                <div class="admin-table-avatar">LA</div>
+
+                                <div class="admin-table-user-info">
+                                    <div class="admin-table-user-name">
+                                        Lana Ali
+                                    </div>
+                                    <div class="admin-table-user-email">
+                                        lana@skills.com
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="admin-badge admin-badge-warning">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>1 day ago</td>
+                    </tr>
+
+                    <tr data-user-row>
+                        <td>
+                            <div class="admin-table-user">
+                                <div class="admin-table-avatar">JK</div>
+
+                                <div class="admin-table-user-info">
+                                    <div class="admin-table-user-name">
+                                        Jana Khaled
+                                    </div>
+                                    <div class="admin-table-user-email">
+                                        jana@skills.com
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="admin-badge admin-badge-success">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>2 days ago</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- Empty Search State -->
+        <div class="dashboard-users-empty"
+             id="dashboardUsersEmpty"
+             hidden>
+
+            <div class="dashboard-empty-icon">⌕</div>
+
+            <h4>No users found</h4>
+
+            <p>
+                Try searching with a different name,
+                email, or status.
+            </p>
+
+        </div>
+    </div>
+
+</div>
 
                     <!--  Recent Activity  -->
                     <div class="admin-card admin-fade-rise-3">
@@ -430,6 +544,7 @@
     </div>
 
     <script src="../admin-js/admin-shared.js"></script>
+    <script src= "../admin-js/admin-dashbord.js" ></script>
 
 </body>
 </html>

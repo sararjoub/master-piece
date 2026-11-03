@@ -1,0 +1,203 @@
+
+/* Dashboard Only - Skills Swap */
+
+.admin-dashboard-grid {
+    align-items: start;
+}
+
+.admin-dashboard-grid > .admin-card {
+    min-width: 0;
+}
+
+/* Recent Users Card */
+.dashboard-users-card {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.dashboard-users-header {
+    padding: 22px 24px;
+}
+
+/* Search Toolbar */
+.dashboard-users-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.dashboard-users-search {
+    position: relative;
+    flex: 1;
+    max-width: 460px;
+}
+
+.dashboard-users-search svg {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    pointer-events: none;
+}
+
+.dashboard-users-search input {
+    width: 100%;
+    height: 44px;
+    padding: 10px 16px 10px 44px;
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+}
+
+.dashboard-users-search input:focus {
+    outline: none;
+    background: var(--bg-white);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.dashboard-users-search input::placeholder {
+    color: var(--text-light);
+}
+
+.dashboard-users-count {
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Users Table */
+.dashboard-users-table {
+    min-width: 500px;
+}
+
+.dashboard-users-table th {
+    padding: 15px 20px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-users-table td {
+    padding: 15px 20px;
+}
+
+.dashboard-users-table tbody tr:hover {
+    background: var(--primary-bg-light);
+}
+
+/* Empty State */
+.dashboard-users-empty {
+    text-align: center;
+    padding: 36px 20px;
+}
+
+.dashboard-users-empty[hidden] {
+    display: none;
+}
+
+.dashboard-empty-icon {
+    font-size: 38px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.dashboard-users-empty h4 {
+    color: var(--text-dark);
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.dashboard-users-empty p {
+    color: var(--text-light);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Subtle Dashboard Improvements */
+.admin-stat-card {
+    border-radius: 16px;
+}
+
+.admin-dashboard-grid .admin-card {
+    border-radius: 16px;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-users-header {
+        padding: 18px 16px;
+    }
+
+    .dashboard-users-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
+    .dashboard-users-search {
+        max-width: none;
+    }
+
+    .dashboard-users-count {
+        text-align: right;
+    }
+}
+
+
+/* Dashboard Layout Fix */
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.admin-stats-grid > .admin-stat-card {
+    min-width: 0;
+    height: auto;
+}
+
+.admin-dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.admin-dashboard-grid > .admin-card {
+    min-width: 0;
+}
+
+@media (max-width: 1200px) {
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .admin-dashboard-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-stats-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

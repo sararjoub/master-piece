@@ -1,19 +1,15 @@
-/* ============================================================
-   ===== SKILLS SWAP - ADMIN SHARED JAVASCRIPT =====
-   ===== منطق مشترك لكل صفحات الأدمن =====
-   ===== JavaScript للأنيميشن والتفاعل فقط =====
-   ============================================================ */
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
+    // 
     // 1. تفعيل الرابط النشط في Sidebar
-    // ============================================
-    const currentPage = window.location.pathname.split('/').pop() || 'dashboard.html';
-    const sidebarLinks = document.querySelectorAll('.admin-sidebar-link');
+    // 
+    let currentPage = window.location.pathname.split('/').pop() || 'dashboard.html';
+    let sidebarLinks = document.querySelectorAll('.admin-sidebar-link');
 
     sidebarLinks.forEach(link => {
-        const href = link.getAttribute('href');
+        let href = link.getAttribute('href');
         if (href && href.includes(currentPage)) {
             link.classList.add('active');
         } else {
@@ -21,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ============================================
+    // 
     // 2. Sidebar Toggle (للشاشات الصغيرة)
-    // ============================================
-    const sidebarToggle = document.getElementById('adminSidebarToggle');
-    const sidebar = document.getElementById('adminSidebar');
-    const overlay = document.getElementById('adminSidebarOverlay');
+    // 
+    let sidebarToggle = document.getElementById('adminSidebarToggle');
+    let sidebar = document.getElementById('adminSidebar');
+    let overlay = document.getElementById('adminSidebarOverlay');
 
     if (sidebarToggle && sidebar) {
         sidebarToggle.addEventListener('click', () => {
@@ -42,12 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
+    // 
     // 3. Admin Dropdown (User Menu)
-    // ============================================
-    const adminUserBtn = document.getElementById('adminUserBtn');
-    const adminDropdown = document.getElementById('adminDropdown');
-    const adminUserMenu = document.getElementById('adminUserMenu');
+    // 
+    let adminUserBtn = document.getElementById('adminUserBtn');
+    let adminDropdown = document.getElementById('adminDropdown');
+    let adminUserMenu = document.getElementById('adminUserMenu');
 
     if (adminUserBtn && adminDropdown) {
         adminUserBtn.addEventListener('click', (e) => {
@@ -73,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
+    // 
     // 4. Logout
-    // ============================================
-    const logoutBtns = document.querySelectorAll('#adminLogout, .admin-dropdown-logout');
+    // 
+    let logoutBtns = document.querySelectorAll('#adminLogout, .admin-dropdown-logout');
 
     logoutBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -90,33 +86,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+    // 
     // 5. Notifications Button
-    // ============================================
-    const adminNotificationsBtn = document.getElementById('adminNotificationsBtn');
+    // 
+    let adminNotificationsBtn = document.getElementById('adminNotificationsBtn');
     if (adminNotificationsBtn) {
         adminNotificationsBtn.addEventListener('click', () => {
             showAdminNotification('You have 5 new notifications', 'info');
         });
     }
 
-    // ============================================
+    // 
     // 6. Count-up Animation للأرقام
-    // ============================================
-    const statValues = document.querySelectorAll('.admin-stat-value[data-count]');
+    // 
+    let statValues = document.querySelectorAll('.admin-stat-value[data-count]');
 
-    const animateCountUp = (element) => {
-        const target = parseInt(element.dataset.count) || 0;
-        const duration = 1200;
-        const startTime = performance.now();
-        const startValue = 0;
+    let animateCountUp = (element) => {
+        let target = parseInt(element.dataset.count) || 0;
+        let duration = 1200;
+        let startTime = performance.now();
+        let startValue = 0;
 
-        const animate = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+        let animate = (currentTime) => {
+            let elapsed = currentTime - startTime;
+            let progress = Math.min(elapsed / duration, 1);
             // Easing Function
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(startValue + (target - startValue) * eased);
+            let eased = 1 - Math.pow(1 - progress, 3);
+            let current = Math.floor(startValue + (target - startValue) * eased);
 
             element.textContent = current.toLocaleString();
 
@@ -131,10 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // مراقبة البطاقات عند الظهور
-    const statsObserver = new IntersectionObserver((entries) => {
+    let statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const el = entry.target;
+                let el = entry.target;
                 if (!el.dataset.animated) {
                     el.dataset.animated = 'true';
                     animateCountUp(el);
@@ -146,19 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statValues.forEach(el => statsObserver.observe(el));
 
-    // ============================================
+    // 
     // 7. Search Bar (Filter داخل الصفحة)
-    // ============================================
-    const searchInputs = document.querySelectorAll('[data-admin-search]');
+    // 
+    let searchInputs = document.querySelectorAll('[data-admin-search]');
 
     searchInputs.forEach(input => {
         input.addEventListener('input', () => {
-            const query = input.value.trim().toLowerCase();
-            const targetSelector = input.dataset.adminSearch;
-            const items = document.querySelectorAll(targetSelector);
+            let query = input.value.trim().toLowerCase();
+            let targetSelector = input.dataset.adminSearch;
+            let items = document.querySelectorAll(targetSelector);
 
             items.forEach(item => {
-                const text = item.textContent.toLowerCase();
+                let text = item.textContent.toLowerCase();
                 if (text.includes(query)) {
                     item.style.display = '';
                 } else {
@@ -168,23 +164,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+    // 
     // 8. Filter Buttons
-    // ============================================
-    const filterBtns = document.querySelectorAll('.admin-filter-btn');
+    // 
+    let filterBtns = document.querySelectorAll('.admin-filter-btn');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const group = btn.parentElement;
+            let group = btn.parentElement;
             group.querySelectorAll('.admin-filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         });
     });
 
-    // ============================================
+    // 
     // 9. Table Row Click (فتح التفاصيل)
-    // ============================================
-    const tableRows = document.querySelectorAll('.admin-table tbody tr[data-href]');
+    // 
+    let tableRows = document.querySelectorAll('.admin-table tbody tr[data-href]');
     tableRows.forEach(row => {
         row.style.cursor = 'pointer';
         row.addEventListener('click', (e) => {
@@ -194,18 +190,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+    // 
     // 10. Danger Actions (Delete, Block)
-    // ============================================
-    const dangerBtns = document.querySelectorAll('[data-confirm-danger]');
+    // 
+    let dangerBtns = document.querySelectorAll('[data-confirm-danger]');
 
     dangerBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const message = btn.dataset.confirmDanger || 'Are you sure?';
+            let message = btn.dataset.confirmDanger || 'Are you sure?';
             if (confirm(message)) {
                 // ✅ لاحقاً: سيتم إرسال الطلب للـ Backend
-                const row = btn.closest('tr') || btn.closest('.admin-card');
+                let row = btn.closest('tr') || btn.closest('.admin-card');
                 if (row) {
                     row.style.transition = 'all 0.4s ease';
                     row.style.opacity = '0';
@@ -217,32 +213,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+    // 
     // 11. Toggle Switches
-    // ============================================
-    const switches = document.querySelectorAll('.admin-switch input');
+    // 
+    let switches = document.querySelectorAll('.admin-switch input');
     switches.forEach(sw => {
         sw.addEventListener('change', () => {
-            const label = sw.dataset.label || 'Setting';
-            const status = sw.checked ? 'enabled' : 'disabled';
+            let label = sw.dataset.label || 'Setting';
+            let status = sw.checked ? 'enabled' : 'disabled';
             showAdminNotification(`${label} ${status}.`, 'info');
         });
     });
 
-    // ============================================
+    // 
     // 12. Ripple Effect على الأزرار
-    // ============================================
-    const rippleButtons = document.querySelectorAll('.admin-btn, .admin-sidebar-link, .admin-table-action-btn');
+    // 
+    let rippleButtons = document.querySelectorAll('.admin-btn, .admin-sidebar-link, .admin-table-action-btn');
 
     rippleButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
+            let ripple = document.createElement('span');
             ripple.className = 'admin-ripple';
             
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
+            let rect = this.getBoundingClientRect();
+            let size = Math.max(rect.width, rect.height);
+            let x = e.clientX - rect.left - size / 2;
+            let y = e.clientY - rect.top - size / 2;
 
             ripple.style.cssText = `
                 position: absolute;
@@ -268,14 +264,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+    // 
     // 13. دالة التنبيهات
-    // ============================================
+    // 
     window.showAdminNotification = function(message, type = 'info') {
-        const oldNotification = document.querySelector('.admin-notification-toast');
+        let oldNotification = document.querySelector('.admin-notification-toast');
         if (oldNotification) oldNotification.remove();
 
-        const notification = document.createElement('div');
+        let notification = document.createElement('div');
         notification.className = `admin-notification-toast admin-notification-${type}`;
         notification.innerHTML = `
             <span class="admin-notification-icon">
@@ -293,16 +289,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // مرادف سهل
-    const showAdminNotification = window.showAdminNotification;
+    let showAdminNotification = window.showAdminNotification;
 
-    // ============================================
+    // 
     // 14. Keyboard Shortcuts
-    // ============================================
+    // 
     document.addEventListener('keydown', (e) => {
         // "/" للبحث
         if (e.key === '/' && !isInputFocused()) {
             e.preventDefault();
-            const searchInput = document.querySelector('[data-admin-search]') || 
+            let searchInput = document.querySelector('[data-admin-search]') || 
                                 document.querySelector('.admin-search-input') ||
                                 document.querySelector('.admin-topbar-search input');
             if (searchInput) searchInput.focus();
@@ -316,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function isInputFocused() {
-        const active = document.activeElement;
+        let active = document.activeElement;
         return active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT');
     }
 

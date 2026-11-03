@@ -1,7 +1,7 @@
-/* ============================================================
+/* ================
    ===== SKILLS SWAP - ADMIN SHARED STYLES =====
    ===== أنماط مشتركة لكل صفحات الأدمن =====
-   ============================================================ */
+   ================ */
 
 /*  1. ADMIN LAYOUT (Sidebar + Topbar + Main)  */
 
@@ -339,9 +339,9 @@
     transform: translateX(4px);
 }
 
-/* ============================================
+/* 
    ===== 3. ADMIN MAIN AREA =====
-   ============================================ */
+    */
 .admin-main {
     grid-column: 2;
     display: flex;
@@ -349,9 +349,9 @@
     min-height: 100vh;
 }
 
-/* ============================================
+/* 
    ===== 4. ADMIN TOPBAR =====
-   ============================================ */
+    */
 .admin-topbar {
     background-color: var(--bg-white);
     padding: 16px 32px;
@@ -655,9 +655,9 @@
     color: var(--danger);
 }
 
-/* ============================================
+/* 
    ===== 5. ADMIN CONTENT AREA =====
-   ============================================ */
+    */
 .admin-content {
     flex: 1;
     padding: 32px;
@@ -695,9 +695,9 @@
     flex-wrap: wrap;
 }
 
-/* ============================================
+/* 
    ===== 6. ADMIN STAT CARDS =====
-   ============================================ */
+    */
 .admin-stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -830,9 +830,9 @@
     color: var(--text-light);
 }
 
-/* ============================================
+/* 
    ===== 7. ADMIN CARDS (Generic) =====
-   ============================================ */
+    */
 .admin-card {
     background-color: var(--bg-white);
     border-radius: var(--radius-xl);
@@ -885,9 +885,9 @@
     padding: 0;
 }
 
-/* ============================================
+/* 
    ===== 8. ADMIN TABLES =====
-   ============================================ */
+    */
 .admin-table-wrapper {
     overflow-x: auto;
     border-radius: var(--radius-lg);
@@ -1014,9 +1014,9 @@
     color: var(--danger);
 }
 
-/* ============================================
+/* 
    ===== 9. ADMIN BADGES =====
-   ============================================ */
+    */
 .admin-badge {
     display: inline-flex;
     align-items: center;
@@ -1061,9 +1061,9 @@
     color: var(--text-light);
 }
 
-/* ============================================
+/* 
    ===== 10. ADMIN BUTTONS =====
-   ============================================ */
+    */
 .admin-btn {
     display: inline-flex;
     align-items: center;
@@ -1143,9 +1143,9 @@
     width: 100%;
 }
 
-/* ============================================
+/* 
    ===== 11. ADMIN SEARCH BAR =====
-   ============================================ */
+    */
 .admin-search-bar {
     display: flex;
     gap: 12px;
@@ -1191,9 +1191,9 @@
     color: var(--text-lighter);
 }
 
-/* ============================================
+/* 
    ===== 12. ADMIN FILTERS =====
-   ============================================ */
+    */
 .admin-filters {
     display: flex;
     gap: 8px;
@@ -1225,9 +1225,9 @@
     box-shadow: 0 4px 12px rgba(139, 124, 246, 0.25);
 }
 
-/* ============================================
+/* 
    ===== 13. ADMIN ANIMATIONS =====
-   ============================================ */
+    */
 
 /* Fade Rise */
 @keyframes adminFadeRise {
@@ -1295,9 +1295,9 @@
 .admin-sidebar-nav .admin-sidebar-link:nth-child(8) { animation-delay: 0.45s; }
 .admin-sidebar-nav .admin-sidebar-link:nth-child(9) { animation-delay: 0.5s; }
 
-/* ============================================
+/* 
    ===== 14. ADMIN RESPONSIVE =====
-   ============================================ */
+    */
 @media (max-width: 1200px) {
     .admin-stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1388,9 +1388,9 @@
 
 
 
-    /* ============================================
+    /* 
    ===== ADMIN RIPPLE ANIMATION =====
-   ============================================ */
+    */
 @keyframes adminRippleAnim {
     to {
         transform: scale(4);
@@ -1398,9 +1398,9 @@
     }
 }
 
-/* ============================================
+/* 
    ===== ADMIN NOTIFICATION TOAST =====
-   ============================================ */
+    */
 .admin-notification-toast {
     position: fixed;
     top: 24px;
@@ -1475,9 +1475,9 @@
     }
 }
 
-/* ============================================
+/* 
    ===== SIDEBAR OVERLAY (Mobile) =====
-   ============================================ */
+    */
 .admin-sidebar-overlay {
     position: fixed;
     inset: 0;
@@ -1494,9 +1494,9 @@
     visibility: visible;
 }
 
-/* ============================================
+/* 
    ===== SWITCH TOGGLE =====
-   ============================================ */
+    */
 .admin-switch {
     position: relative;
     display: inline-block;
@@ -1545,9 +1545,9 @@
 }
 
 
-/* ============================================
+/* 
    ===== DASHBOARD SPECIFIC =====
-   ============================================ */
+    */
 
 /* ===== Two-Column Grid ===== */
 .admin-dashboard-grid {
@@ -1697,9 +1697,9 @@
 }
 
 
-/* ============================================
+/* 
    ===== MANAGE USERS PAGE =====
-   ============================================ */
+    */
 
 /* ===== Card Header with Filters ===== */
 .admin-card-header-filters {
@@ -1955,9 +1955,9 @@
     }
 }
 
-/* ============================================
+/* 
    ===== REVIEWS TABLE SPECIFIC =====
-   ============================================ */
+    */
 
 /* ===== Stars Display ===== */
 .review-stars-display {
@@ -1995,9 +1995,9 @@
 }
 
 
-/* ============================================
+/* 
    ===== REQUESTS TABLE SPECIFIC =====
-   ============================================ */
+    */
 
 /* ===== Request Skills Cell ===== */
 .request-skills-cell {

@@ -1,628 +1,533 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users - Skills Swap Admin</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <!-- الملفات المشتركة -->
-    <link rel="stylesheet" href="../../css/shared.css">
+    <title>Manage Users | Skills Swap Admin</title>
+
+    <!-- Existing shared CSS -->
+     <link rel="stylesheet" href="../../css/shared.css">
+
     <link rel="stylesheet" href="../admin-css/admin-shared.css">
+
+    <!-- Manage Users page CSS -->
+    <link rel="stylesheet" href="../admin-css/admin-mange-users.css">
 </head>
 
 <body>
 
-    <!--    ADMIN LAYOUT -->
-    <div class="admin-layout">
+<div class="admin-layout">
 
-        <!-- ===== Sidebar Overlay (Mobile) ===== -->
-        <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+    <!-- Sidebar Overlay -->
+    <div class="admin-sidebar-overlay"
+         id="adminSidebarOverlay"></div>
 
-        <!--  SIDEBAR-->
-        <aside class="admin-sidebar" id="adminSidebar">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
 
-            <!-- Logo -->
-            <a href="dashboard.html" class="admin-sidebar-logo">
-                <span class="logo-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+        <a href="dashboard.html" class="admin-sidebar-logo">
+            <span class="logo-icon">⇄</span>
+
+            <div class="logo-text">
+                <span class="logo-main">
+                    Skills <span class="logo-swap">Swap</span>
                 </span>
-                <div class="logo-text">
-                    <span class="logo-main">
-                        Skills <span class="logo-swap">Swap</span>
-                    </span>
-                    <span class="logo-subtitle">Admin Panel</span>
-                </div>
+                <span class="logo-subtitle">Admin Panel</span>
+            </div>
+        </a>
+
+        <nav class="admin-sidebar-nav">
+
+            <span class="admin-sidebar-label">MAIN</span>
+
+            <a href="dashboard.html" class="admin-sidebar-link">
+                Dashboard
             </a>
 
-            <!-- Navigation -->
-            <nav class="admin-sidebar-nav">
+            <a href="manage-users.html"
+               class="admin-sidebar-link active"
+               aria-current="page">
+                Users
+            </a>
 
-                <span class="admin-sidebar-label">Main</span>
+            <a href="manage-skills.html" class="admin-sidebar-link">
+                Skills
+            </a>
 
-                <a href="dashboard.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Dashboard</span>
-                </a>
+            <a href="manage-categories.html" class="admin-sidebar-link">
+                Categories
+            </a>
 
-                <a href="manage-users.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Users</span>
-                    <span class="admin-sidebar-badge">250</span>
-                </a>
+            <span class="admin-sidebar-label">CONTENT</span>
 
-                <a href="manage-skills.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Skills</span>
-                </a>
+            <a href="manage-career-paths.html"
+               class="admin-sidebar-link">
+                Career Paths
+            </a>
 
-                <a href="manage-categories.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Categories</span>
-                </a>
+            <a href="manage-reviews.html" class="admin-sidebar-link">
+                Reviews
+            </a>
 
-                <span class="admin-sidebar-label">Content</span>
+            <a href="manage-requests.html"
+               class="admin-sidebar-link">
+                Requests
+            </a>
 
-                <a href="manage-courses.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Courses</span>
-                </a>
+            <span class="admin-sidebar-label">SYSTEM</span>
 
-                <a href="manage-career-paths.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Career Paths</span>
-                </a>
+            <a href="reports.html" class="admin-sidebar-link">
+                Reports
+            </a>
 
-                <a href="manage-reviews.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Reviews</span>
-                </a>
+            <a href="settings.html" class="admin-sidebar-link">
+                Settings
+            </a>
 
-                <a href="manage-requests.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Requests</span>
-                </a>
+        </nav>
 
-                <span class="admin-sidebar-label">System</span>
+        <div class="admin-sidebar-divider"></div>
 
-                <a href="reports.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Reports</span>
-                </a>
+        <button type="button"
+                class="admin-sidebar-logout"
+                id="adminLogout">
+            Logout
+        </button>
 
-                <a href="settings.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Settings</span>
-                </a>
+    </aside>
 
-            </nav>
+    <!-- MAIN -->
+    <main class="admin-main">
 
-            <!-- Logout -->
-            <div class="admin-sidebar-divider"></div>
-            <button class="admin-sidebar-logout" id="adminLogout">
-                <span class="admin-sidebar-text">Logout</span>
-            </button>
+        <!-- TOPBAR -->
+        <header class="admin-topbar">
 
-        </aside>
+            <div class="admin-topbar-left">
 
-        <!--  MAIN AREa -->
-        <main class="admin-main">
+                <button type="button"
+                        class="admin-sidebar-toggle"
+                        id="adminSidebarToggle"
+                        aria-label="Toggle sidebar">
+                    ☰
+                </button>
 
-            <!-- ===== Topbar ===== -->
-            <header class="admin-topbar">
+                <h1 class="admin-page-title">
+                    Manage Users
+                </h1>
 
-                <div class="admin-topbar-left">
-                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
-                    <h1 class="admin-page-title">Manage Users</h1>
-                </div>
+            </div>
 
-                <div class="admin-topbar-search">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Search users, skills, requests...">
-                </div>
+            <div class="admin-topbar-right">
 
-                <div class="admin-topbar-right">
+                <button type="button"
+                        class="admin-icon-btn"
+                        id="adminNotificationsBtn"
+                        aria-label="Notifications">
+                    🔔
+                </button>
 
-                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
-                        🔔
-                        <span class="admin-notification-badge">5</span>
+                <div class="admin-user-menu" id="adminUserMenu">
+
+                    <button type="button"
+                            class="admin-user-btn"
+                            id="adminUserBtn">
+                        <span class="admin-user-avatar">A</span>
+                        <span class="admin-user-name">Admin</span>
+                        <span class="admin-user-arrow">▼</span>
                     </button>
 
-                    <div class="admin-user-menu" id="adminUserMenu">
-                        <button class="admin-user-btn" id="adminUserBtn">
-                            <span class="admin-user-avatar">A</span>
-                            <span class="admin-user-name">Admin</span>
-                            <span class="admin-user-arrow">▼</span>
-                        </button>
+                    <div class="admin-dropdown" id="adminDropdown">
 
-                        <div class="admin-dropdown" id="adminDropdown">
-                            <div class="admin-dropdown-header">
-                                <span class="admin-user-avatar">A</span>
-                                <div>
-                                    <strong>Admin User</strong>
-                                    <span>admin@skills.com</span>
-                                </div>
-                            </div>
-
-                            <div class="admin-dropdown-divider"></div>
-
-                            <a href="settings.html" class="admin-dropdown-item">
-                                <span class="admin-dropdown-icon">⚙️</span>
-                                Settings
-                            </a>
-
-                            <a href="reports.html" class="admin-dropdown-item">
-                                <span class="admin-dropdown-icon">📈</span>
-                                Reports
-                            </a>
-
-                            <div class="admin-dropdown-divider"></div>
-
-                            <button class="admin-dropdown-item admin-dropdown-logout">
-                                <span class="admin-dropdown-icon">🚪</span>
-                                Logout
-                            </button>
+                        <div class="admin-dropdown-header">
+                            <strong>Admin User</strong>
                         </div>
-                    </div>
 
-                </div>
+                        <div class="admin-dropdown-divider"></div>
 
-            </header>
-
-            <!-- ===== Content ===== -->
-            <div class="admin-content">
-
-                <!-- ===== Page Header ===== -->
-                <div class="admin-page-header admin-fade-rise">
-                    <div class="admin-page-header-left">
-                        <h1>Manage Users</h1>
-                        <p>View, edit, and manage all platform users.</p>
-                    </div>
-                    <div class="admin-page-header-actions">
-                        <button class="admin-btn admin-btn-outline" id="exportUsersBtn">
-                            ⬇️ Export CSV
-                        </button>
-                        <a href="user-details.html" class="admin-btn admin-btn-primary">
-                            + Add New User
+                        <a href="settings.html"
+                           class="admin-dropdown-item">
+                            Settings
                         </a>
-                    </div>
-                </div>
 
-                <!-- ===== Stat Cards ===== -->
-                <div class="admin-stats-grid admin-stagger">
+                        <button type="button"
+                                class="admin-dropdown-item admin-dropdown-logout">
+                            Logout
+                        </button>
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-primary">👥</div>
-                            <span class="admin-stat-trend positive">↑ 12%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="250">0</div>
-                            <div class="admin-stat-label">Total Users</div>
-                        </div>
-                    </div>
-
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-success">✅</div>
-                            <span class="admin-stat-trend positive">↑ 8%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="230">0</div>
-                            <div class="admin-stat-label">Active Users</div>
-                        </div>
-                    </div>
-
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-danger">🚫</div>
-                            <span class="admin-stat-trend negative">↓ 2%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="15">0</div>
-                            <div class="admin-stat-label">Banned Users</div>
-                        </div>
-                    </div>
-
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-warning">⏳</div>
-                            <span class="admin-stat-trend neutral">→ 0%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="5">0</div>
-                            <div class="admin-stat-label">Pending</div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- ===== Users Table Card ===== -->
-                <div class="admin-card admin-fade-rise-2">
-
-                    <!-- Card Header -->
-                    <div class="admin-card-header admin-card-header-filters">
-                        <div class="admin-filters">
-                            <button class="admin-filter-btn active" data-filter="all">All</button>
-                            <button class="admin-filter-btn" data-filter="active">Active</button>
-                            <button class="admin-filter-btn" data-filter="banned">Banned</button>
-                            <button class="admin-filter-btn" data-filter="pending">Pending</button>
-                        </div>
-
-                        <div class="admin-search-bar">
-                            <div class="admin-search-input-wrapper">
-                                <span class="search-icon">🔍</span>
-                                <input type="text" class="admin-search-input" placeholder="Search by name or email..."
-                                    id="usersSearchInput">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Table -->
-                    <div class="admin-card-body admin-card-body-flush">
-                        <div class="admin-table-wrapper">
-                            <table class="admin-table" id="usersTable">
-                                <thead>
-                                    <tr>
-                                        <th class="admin-checkbox-col">
-                                            <input type="checkbox" id="selectAllUsers">
-                                        </th>
-                                        <th>User</th>
-                                        <th>Role</th>
-                                        <th>Status</th>
-                                        <th>Joined</th>
-                                        <th>Skills</th>
-                                        <th class="admin-actions-col">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="usersTableBody">
-
-                                    <!-- User 1 -->
-                                    <tr data-status="active" data-search="ahmad ali ahmad@skills.com">
-                                        <td>
-                                            <input type="checkbox" class="user-checkbox">
-                                        </td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">AA</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Ahmad Ali</div>
-                                                    <div class="admin-table-user-email">ahmad@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-primary">User</span></td>
-                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
-                                        <td>2 hours ago</td>
-                                        <td><strong>8</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn"
-                                                    title="View">👁️</a>
-                                                <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                 <button class="admin-table-action-btn make-expert-btn" 
-                                                       data-name="Ahmad Ali" 
-                                                           data-email="ahmad@skills.com" 
-                                                               title="Make Expert" 
-                                                               style="color: #f59e0b;">⭐</button>
-                                                <button class="admin-table-action-btn danger" title="Delete"
-                                                    data-confirm-danger="Delete Ahmad Ali? This cannot be undone.">🗑️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User 2 -->
-                                    <tr data-status="active" data-search="sara khaled sara@skills.com">
-                                        <td><input type="checkbox" class="user-checkbox"></td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">SK</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Sara Khaled</div>
-                                                    <div class="admin-table-user-email">sara@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-primary">User</span></td>
-                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
-                                        <td>1 day ago</td>
-                                        <td><strong>5</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn"
-                                                    title="View">👁️</a>
-                                                <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                     <button class="admin-table-action-btn make-expert-btn" 
-                                                                  data-name="Sara Khaled" 
-                                                                        data-email="sara@skills.com" 
-                                                                                title="Make Expert" 
-                                                                                style="color: #f59e0b;">⭐</button>
-                                                <button class="admin-table-action-btn danger" title="Delete"
-                                                    data-confirm-danger="Delete Sara Khaled?">🗑️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User 3 - Banned -->
-                                    <tr data-status="banned" data-search="omar mahmoud omar@skills.com">
-                                        <td><input type="checkbox" class="user-checkbox"></td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">OM</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Omar Mahmoud</div>
-                                                    <div class="admin-table-user-email">omar@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-primary">User</span></td>
-                                        <td><span class="admin-badge admin-badge-danger">● Banned</span></td>
-                                        <td>3 days ago</td>
-                                        <td><strong>12</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn"
-                                                    title="View">👁️</a>
-                                                <button class="admin-table-action-btn" title="Unban">🔓</button>
-                                                 <!-- زر توثيق كخبير -->
-                                                 <button class="admin-table-action-btn make-expert-btn" 
-                                                           data-name="Omar Mahmoud" 
-                                                             data-email="omar@skills.com" 
-                                                                     title="Make Expert" 
-                                                                     style="color: #f59e0b;">⭐</button>
-                                                <button class="admin-table-action-btn danger" title="Delete"
-                                                    data-confirm-danger="Delete Omar Mahmoud?">🗑️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User 4 -->
-                                    <tr data-status="active" data-search="lana omar lana@skills.com">
-                                        <td><input type="checkbox" class="user-checkbox"></td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">LO</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Lana Omar</div>
-                                                    <div class="admin-table-user-email">lana@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-primary">User</span></td>
-                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
-                                        <td>4 days ago</td>
-                                        <td><strong>7</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn"
-                                                    title="View">👁️</a>
-                                                <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                 <!-- زر توثيق كخبير -->
-                                                       <button class="admin-table-action-btn make-expert-btn" 
-                                                                            data-name="Lana Omar" 
-                                                                               data-email="lana@skills.com" 
-                                                                                    title="Make Expert" 
-                                                                                    style="color: #f59e0b;">⭐</button>
-                                                <button class="admin-table-action-btn danger" title="Delete"
-                                                    data-confirm-danger="Delete Lana Omar?">🗑️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User 5 - Pending -->
-                                    <tr data-status="pending" data-search="jana khaled jana@skills.com">
-                                        <td><input type="checkbox" class="user-checkbox"></td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">JK</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Jana Khaled</div>
-                                                    <div class="admin-table-user-email">jana@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-primary">User</span></td>
-                                        <td><span class="admin-badge admin-badge-warning">● Pending</span></td>
-                                        <td>5 days ago</td>
-                                        <td><strong>3</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn"
-                                                    title="View">👁️</a>
-                                                <button class="admin-table-action-btn" title="Approve">✅</button>
-                                                 <!-- زر توثيق كخبير -->
-                                                   <button class="admin-table-action-btn make-expert-btn" 
-                                                                   data-name="Jana Khaled" 
-                                                                        data-email="jana@skills.com" 
-                                                                              title="Make Expert" 
-                                                                              style="color: #f59e0b;">⭐</button>
-                                                <button class="admin-table-action-btn danger" title="Delete"
-                                                    data-confirm-danger="Delete Jana Khaled?">🗑️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User 6 -->
-                                    <tr data-status="active" data-search="noor ali noor@skills.com">
-                                        <td><input type="checkbox" class="user-checkbox"></td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">NA</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Noor Ali</div>
-                                                    <div class="admin-table-user-email">noor@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-primary">User</span></td>
-                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
-                                        <td>1 week ago</td>
-                                        <td><strong>6</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn"
-                                                    title="View">👁️</a>
-                                                <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                 <!-- زر توثيق كخبير -->
-                                                        <button class="admin-table-action-btn make-expert-btn" 
-                                                                    data-name="Noor Ali" 
-                                                                    data-email="noor@skills.com" 
-                                                                          title="Make Expert" 
-                                                                           style="color: #f59e0b;">⭐</button>                                                <button class="admin-table-action-btn danger" title="Delete"
-                                                    data-confirm-danger="Delete Noor Ali?">🗑️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User 7 - Admin -->
-                                    <tr data-status="active" data-search="admin skills admin@skills.com">
-                                        <td><input type="checkbox" class="user-checkbox"></td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">AD</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Admin</div>
-                                                    <div class="admin-table-user-email">admin@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-warning">Admin</span></td>
-                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
-                                        <td>1 month ago</td>
-                                        <td><strong>0</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <button class="admin-table-action-btn" title="View"
-                                                    disabled>👁️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User 8 -->
-                                    <tr data-status="active" data-search="yousef sami yousef@skills.com">
-                                        <td><input type="checkbox" class="user-checkbox"></td>
-                                        <td>
-                                            <div class="admin-table-user">
-                                                <div class="admin-table-avatar">YS</div>
-                                                <div class="admin-table-user-info">
-                                                    <div class="admin-table-user-name">Yousef Sami</div>
-                                                    <div class="admin-table-user-email">yousef@skills.com</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="admin-badge admin-badge-primary">User</span></td>
-                                        <td><span class="admin-badge admin-badge-success">● Active</span></td>
-                                        <td>2 weeks ago</td>
-                                        <td><strong>9</strong> skills</td>
-                                        <td>
-                                            <div class="admin-table-actions">
-                                                <a href="user-details.html" class="admin-table-action-btn"
-                                                    title="View">👁️</a>
-                                                <button class="admin-table-action-btn" title="Edit">✏️</button>
-                                                 <!-- زر توثيق كخبير -->
-                                                   <button class="admin-table-action-btn make-expert-btn" 
-                                                                data-name="Yousef Sami" 
-                                                                      data-email="yousef@skills.com" 
-                                                                              title="Make Expert" 
-                                                                             style="color: #f59e0b;">⭐</button>
-                                                <button class="admin-table-action-btn danger" title="Delete"
-                                                    data-confirm-danger="Delete Yousef Sami?">🗑️</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Empty State -->
-                        <div class="admin-empty-state hidden" id="usersEmptyState">
-                            <div class="admin-empty-icon">🔍</div>
-                            <h3>No users found</h3>
-                            <p>Try adjusting your filters or search.</p>
-                        </div>
-
-                    </div>
-
-                    <!-- Card Footer with Pagination -->
-                    <div class="admin-card-footer">
-                        <div class="admin-table-info">
-                            Showing <strong id="showingFrom">1</strong>–<strong id="showingTo">8</strong> of <strong
-                                id="totalUsers">250</strong> users
-                        </div>
-
-                        <div class="admin-pagination">
-                            <button class="admin-page-btn" disabled>←</button>
-                            <button class="admin-page-btn active">1</button>
-                            <button class="admin-page-btn">2</button>
-                            <button class="admin-page-btn">3</button>
-                            <span class="admin-page-dots">...</span>
-                            <button class="admin-page-btn">31</button>
-                            <button class="admin-page-btn">→</button>
-                        </div>
                     </div>
 
                 </div>
 
             </div>
 
-        </main>
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <div class="admin-content manage-users-page">
+
+            <!-- HEADER -->
+            <section class="users-page-heading">
+
+                <div>
+                    
+
+                    <h2>Platform Members</h2>
+
+                    <p>
+                        Review registered users, monitor verification,
+                        and manage account access securely.
+                    </p>
+                </div>
+
+                <button type="button"
+                        class="admin-btn admin-btn-outline"
+                        id="exportUsersBtn">
+                    Export CSV
+                </button>
+
+            </section>
+
+            <!-- STATISTICS -->
+            <section class="users-stats-grid">
+
+                <div class="users-stat-card">
+                    <span class="users-stat-icon purple">👥</span>
+                    <div>
+                        <span class="users-stat-label">
+                            Total Users
+                        </span>
+                        <strong id="statTotal">—</strong>
+                    </div>
+                </div>
+
+                <div class="users-stat-card">
+                    <span class="users-stat-icon green">✓</span>
+                    <div>
+                        <span class="users-stat-label">
+                            Verified Emails
+                        </span>
+                        <strong id="statVerified">—</strong>
+                    </div>
+                </div>
+
+                <div class="users-stat-card">
+                    <span class="users-stat-icon red">⊘</span>
+                    <div>
+                        <span class="users-stat-label">
+                            Suspended Accounts
+                        </span>
+                        <strong id="statSuspended">—</strong>
+                    </div>
+                </div>
+
+                <div class="users-stat-card">
+                    <span class="users-stat-icon gold">★</span>
+                    <div>
+                        <span class="users-stat-label">
+                            Verified Experts
+                        </span>
+                        <strong id="statExperts">—</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- USERS DIRECTORY -->
+            <section class="users-directory">
+
+                <div class="users-directory-heading">
+
+                    <div>
+                        <h3>Users Directory</h3>
+                        <p>
+                            View and manage registered platform members.
+                        </p>
+                    </div>
+
+                    <span class="users-demo-label">
+                        Demo Data
+                    </span>
+
+                </div>
+
+                <!-- SEARCH AND FILTER -->
+                <div class="users-toolbar">
+
+                    <div class="users-search-field">
+                        <span aria-hidden="true">⌕</span>
+
+                        <input type="search"
+                               id="usersSearchInput"
+                               placeholder="Search by name or email..."
+                               aria-label="Search users">
+                    </div>
+
+                    <div class="users-filter-group">
+
+                        <button type="button"
+                                class="users-filter active"
+                                data-filter="all">
+                            All Users
+                        </button>
+
+                        <button type="button"
+                                class="users-filter"
+                                data-filter="active">
+                            Active
+                        </button>
+
+                        <button type="button"
+                                class="users-filter"
+                                data-filter="suspended">
+                            Suspended
+                        </button>
+
+                        <button type="button"
+                                class="users-filter"
+                                data-filter="unverified">
+                            Unverified
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- TABLE -->
+                <div class="users-table-scroll">
+
+                    <table class="users-table" id="usersTable">
+
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Role</th>
+                                <th>Email Verification</th>
+                                <th>Account Status</th>
+                                <th>Joined</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="usersTableBody">
+                            <!-- JavaScript will render users -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- EMPTY STATE -->
+                <div class="users-empty-state"
+                     id="usersEmptyState"
+                     hidden>
+
+                    <div>⌕</div>
+
+                    <h3>No users found</h3>
+
+                    <p>
+                        Try adjusting your search or filters.
+                    </p>
+
+                </div>
+
+                <!-- PAGINATION -->
+                <div class="users-table-footer">
+
+                    <span id="usersShowingText">
+                        Showing 0 users
+                    </span>
+
+                    <div class="users-pagination">
+
+                        <button type="button"
+                                id="prevUsersPage"
+                                aria-label="Previous page">
+                            ←
+                        </button>
+
+                        <span id="usersPageInfo">
+                            Page 1 of 1
+                        </span>
+
+                        <button type="button"
+                                id="nextUsersPage"
+                                aria-label="Next page">
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- USER DETAILS MODAL -->
+<div class="users-modal-overlay"
+     id="userDetailsModal"
+     hidden>
+
+    <div class="users-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="userDetailsTitle">
+
+        <div class="users-modal-header">
+
+            <h2 id="userDetailsTitle">User Details</h2>
+
+            <button type="button"
+                    id="closeUserDetails"
+                    aria-label="Close user details">
+                ×
+            </button>
+
+        </div>
+
+        <div id="userDetailsContent"></div>
+
+        <div class="users-modal-actions">
+            <button type="button"
+                    class="admin-btn admin-btn-outline"
+                    id="doneUserDetails">
+                Close
+            </button>
+        </div>
 
     </div>
 
-    <!-- ===== Bulk Actions Bar (يظهر عند التحديد) ===== -->
-    <div class="admin-bulk-bar hidden" id="bulkActionsBar">
-        <div class="admin-bulk-info">
-            <strong id="selectedCount">0</strong> users selected
+</div>
+
+<!-- SUSPEND ACCOUNT MODAL -->
+<div class="users-modal-overlay"
+     id="suspendUserModal"
+     hidden>
+
+    <div class="users-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="suspendModalTitle">
+
+        <div class="users-modal-header">
+
+            <h2 id="suspendModalTitle">
+                Suspend Account
+            </h2>
+
+            <button type="button"
+                    id="closeSuspendModal"
+                    aria-label="Close suspension dialog">
+                ×
+            </button>
+
         </div>
-        <div class="admin-bulk-actions">
-            <button class="admin-btn admin-btn-success admin-btn-sm" id="bulkActivate">
-                ✅ Activate
-            </button>
-            <button class="admin-btn admin-btn-outline admin-btn-sm" id="bulkBan">
-                🚫 Ban
-            </button>
-            <button class="admin-btn admin-btn-danger admin-btn-sm" id="bulkDelete">
-                🗑️ Delete
-            </button>
-            <button class="admin-btn admin-btn-outline admin-btn-sm" id="bulkCancel">
+
+        <p>
+            Suspending this account will prevent the user
+            from signing in while the suspension is active.
+        </p>
+
+        <label for="suspensionReason"
+               class="users-field-label">
+            Reason for suspension
+        </label>
+
+        <textarea id="suspensionReason"
+                  class="users-reason-input"
+                  rows="4"
+                  maxlength="500"
+                  placeholder="Explain why this account is being suspended..."
+                  required></textarea>
+
+        <p class="users-field-error"
+           id="suspensionReasonError"
+           hidden>
+            Please provide a reason for suspension.
+        </p>
+
+        <div class="users-modal-actions">
+
+            <button type="button"
+                    class="admin-btn admin-btn-outline"
+                    id="cancelSuspend">
                 Cancel
             </button>
-        </div>
-    </div>
-        <!-- ============================================
-     MAKE EXPERT MODAL (AI Recommendation)
-     ============================================ -->
-<div class="modal-overlay hidden" id="expertModal">
-    <div class="modal" style="max-width: 500px;">
-        <div class="modal-header" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-bottom: none;">
-            <h2 style="color: #b45309;">⭐ Approve as Expert</h2>
-            <button class="modal-close" id="closeExpertModal">✕</button>
-        </div>
-        <div class="modal-body" style="padding-top: 10px;">
-            <p style="margin-bottom: 20px;">You are about to grant <strong id="expertUserName">User</strong> the "Expert" badge.</p>
-            
-            <!-- AI Recommendation Box -->
-            <div style="background: #f8f9ff; padding: 16px; border-radius: 12px; border: 1px solid #e0e7ff; margin-bottom: 20px;">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <span style="font-size: 20px;">🤖</span>
-                    <strong style="color: var(--primary-dark); font-size: 14px;">AI Recommendation</strong>
-                </div>
-                <p style="font-size: 13px; color: var(--text-medium); margin: 0; line-height: 1.5;">
-                    This user has a <strong>4.9 rating</strong> (120 reviews), <strong>5+ years</strong> of experience, and a <strong>100% response rate</strong>. AI recommends approval.
-                </p>
-            </div>
 
-            <p style="font-size: 13px; color: var(--text-light);">As an admin, you have the final decision.</p>
+            <button type="button"
+                    class="admin-btn admin-btn-danger"
+                    id="confirmSuspend">
+                Suspend Account
+            </button>
+
         </div>
-        <div class="modal-footer">
-            <button class="admin-btn admin-btn-outline" id="cancelExpert">Cancel</button>
-            <button class="admin-btn admin-btn-primary" id="confirmExpert" style="background: #f59e0b; border-color: #f59e0b;">Approve as Expert ✓</button>
-        </div>
+
     </div>
+
 </div>
-    <script src="../admin-js/admin-shared.js"></script>
-    <script src="../admin-js/admin-users.js"></script>
+
+<!-- REACTIVATE ACCOUNT MODAL -->
+<div class="users-modal-overlay"
+     id="reactivateUserModal"
+     hidden>
+
+    <div class="users-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="reactivateModalTitle">
+
+        <div class="users-modal-header">
+
+            <h2 id="reactivateModalTitle">
+                Reactivate Account
+            </h2>
+
+            <button type="button"
+                    id="closeReactivateModal"
+                    aria-label="Close reactivation dialog">
+                ×
+            </button>
+
+        </div>
+
+        <p>
+            Are you sure you want to reactivate
+            <strong id="reactivateUserName"></strong>?
+        </p>
+
+        <div class="users-modal-actions">
+
+            <button type="button"
+                    class="admin-btn admin-btn-outline"
+                    id="cancelReactivate">
+                Cancel
+            </button>
+
+            <button type="button"
+                    class="admin-btn admin-btn-primary"
+                    id="confirmReactivate">
+                Reactivate Account
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SHARED JAVASCRIPT -->
+<script src="../admin-js/admin-shared.js"></script>
+
+<!-- PAGE JAVASCRIPT -->
+<script src="../admin-js/admin-users.js"></script>
 
 </body>
-
 </html>
