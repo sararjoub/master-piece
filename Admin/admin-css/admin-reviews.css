@@ -1,0 +1,137 @@
+
+/* ==========================================
+   SKILLS SWAP - MANAGE REVIEWS
+   Sidebar Only + Search Left / Filters Right
+========================================== */
+
+/* Main Layout */
+.admin-main {
+    min-width: 0;
+}
+
+/* ==========================================
+   REVIEWS TOOLBAR
+========================================== */
+
+.reviews-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   SEARCH - LEFT
+========================================== */
+
+.reviews-toolbar .reviews-search {
+    order: 0;
+    flex: 0 1 475px;
+    width: 475px;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.reviews-toolbar .reviews-search
+.admin-search-input-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reviews-toolbar .reviews-search
+.admin-search-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   FILTERS - RIGHT
+========================================== */
+
+.reviews-toolbar .reviews-filters {
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* ==========================================
+   SIDEBAR ONLY - MOBILE TOOLBAR
+========================================== */
+
+.dashboard-mobile-toolbar {
+    display: none;
+}
+
+@media (max-width: 992px) {
+
+    .dashboard-mobile-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .dashboard-mobile-toolbar
+    .admin-sidebar-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--border-light, #e8e5f0);
+        border-radius: 11px;
+        background: var(--bg-white, #fff);
+        color: var(--text-dark, #29204f);
+        cursor: pointer;
+    }
+
+    .dashboard-mobile-toolbar span {
+        font-family: var(--font-body, inherit);
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text-dark, #29204f);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE REVIEWS TOOLBAR
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .reviews-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .reviews-toolbar .reviews-search {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .reviews-toolbar .reviews-filters {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .reviews-toolbar {
+        gap: 14px;
+    }
+
+    .reviews-toolbar .reviews-filters {
+        gap: 8px;
+    }
+}

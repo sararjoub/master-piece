@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 1. عناصر الصفحة
     // ============================================
-    const searchInput = document.getElementById('coursesSearchInput');
-    const filterBtns = document.querySelectorAll('.admin-filter-btn');
-    const tableRows = document.querySelectorAll('#coursesTableBody tr');
-    const emptyState = document.getElementById('coursesEmptyState');
-    const tableWrapper = document.querySelector('.admin-table-wrapper');
+    let searchInput = document.getElementById('coursesSearchInput');
+    let filterBtns = document.querySelectorAll('.admin-filter-btn');
+    let tableRows = document.querySelectorAll('#coursesTableBody tr');
+    let emptyState = document.getElementById('coursesEmptyState');
+    let tableWrapper = document.querySelector('.admin-table-wrapper');
 
     let currentFilter = 'all';
     let currentSearch = '';
@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let visibleCount = 0;
 
         tableRows.forEach(row => {
-            const status = row.dataset.status;
-            const searchText = (row.dataset.search || '').toLowerCase();
+            let status = row.dataset.status;
+            let searchText = (row.dataset.search || '').toLowerCase();
 
-            const matchesFilter = currentFilter === 'all' || status === currentFilter;
-            const matchesSearch = !currentSearch || searchText.includes(currentSearch);
+            let matchesFilter = currentFilter === 'all' || status === currentFilter;
+            let matchesSearch = !currentSearch || searchText.includes(currentSearch);
 
             if (matchesFilter && matchesSearch) {
                 row.style.display = '';
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tableWrapper) tableWrapper.style.display = '';
         }
 
-        const selectAll = document.getElementById('selectAllCourses');
+        let selectAll = document.getElementById('selectAllCourses');
         if (selectAll) selectAll.checked = false;
         updateBulkBar();
     }
@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 5. Select All + Individual Selection
     // ============================================
-    const selectAllCheckbox = document.getElementById('selectAllCourses');
-    const courseCheckboxes = document.querySelectorAll('.course-checkbox');
+    let selectAllCheckbox = document.getElementById('selectAllCourses');
+    let courseCheckboxes = document.querySelectorAll('.course-checkbox');
 
     if (selectAllCheckbox) {
         selectAllCheckbox.addEventListener('change', () => {
             courseCheckboxes.forEach(cb => {
-                const row = cb.closest('tr');
+                let row = cb.closest('tr');
                 if (row && row.style.display !== 'none') {
                     cb.checked = selectAllCheckbox.checked;
                     row.classList.toggle('selected', selectAllCheckbox.checked);
@@ -94,16 +94,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     courseCheckboxes.forEach(cb => {
         cb.addEventListener('change', () => {
-            const row = cb.closest('tr');
+            let row = cb.closest('tr');
             if (row) {
                 row.classList.toggle('selected', cb.checked);
             }
             updateBulkBar();
 
-            const visibleCheckboxes = Array.from(courseCheckboxes).filter(c => 
+            let visibleCheckboxes = Array.from(courseCheckboxes).filter(c => 
                 c.closest('tr') && c.closest('tr').style.display !== 'none'
             );
-            const allChecked = visibleCheckboxes.length > 0 && 
+            let allChecked = visibleCheckboxes.length > 0 && 
                               visibleCheckboxes.every(c => c.checked);
             if (selectAllCheckbox) selectAllCheckbox.checked = allChecked;
         });
@@ -112,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 6. Bulk Actions Bar
     // ============================================
-    const bulkBar = document.getElementById('bulkActionsBar');
-    const selectedCountEl = document.getElementById('selectedCount');
+    let bulkBar = document.getElementById('bulkActionsBar');
+    let selectedCountEl = document.getElementById('selectedCount');
 
     function updateBulkBar() {
-        const selected = document.querySelectorAll('.course-checkbox:checked');
-        const count = selected.length;
+        let selected = document.querySelectorAll('.course-checkbox:checked');
+        let count = selected.length;
 
         if (selectedCountEl) selectedCountEl.textContent = count;
 
@@ -135,12 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 7. Bulk Cancel
     // ============================================
-    const bulkCancel = document.getElementById('bulkCancel');
+    let bulkCancel = document.getElementById('bulkCancel');
     if (bulkCancel) {
         bulkCancel.addEventListener('click', () => {
             courseCheckboxes.forEach(cb => {
                 cb.checked = false;
-                const row = cb.closest('tr');
+                let row = cb.closest('tr');
                 if (row) row.classList.remove('selected');
             });
             if (selectAllCheckbox) selectAllCheckbox.checked = false;
@@ -151,9 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 8. Bulk Actions
     // ============================================
-    const bulkPublish = document.getElementById('bulkPublish');
-    const bulkDraft = document.getElementById('bulkDraft');
-    const bulkDelete = document.getElementById('bulkDelete');
+    let bulkPublish = document.getElementById('bulkPublish');
+    let bulkDraft = document.getElementById('bulkDraft');
+    let bulkDelete = document.getElementById('bulkDelete');
 
     function getSelectedRows() {
         return Array.from(document.querySelectorAll('.course-checkbox:checked'))
@@ -162,11 +162,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkPublish) {
         bulkPublish.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             rows.forEach((row, index) => {
                 setTimeout(() => {
                     row.dataset.status = 'published';
-                    const badge = row.querySelector('td:nth-child(6) .admin-badge');
+                    let badge = row.querySelector('td:nth-child(6) .admin-badge');
                     if (badge) {
                         badge.className = 'admin-badge admin-badge-success';
                         badge.textContent = '● Published';
@@ -180,11 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkDraft) {
         bulkDraft.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             rows.forEach((row, index) => {
                 setTimeout(() => {
                     row.dataset.status = 'draft';
-                    const badge = row.querySelector('td:nth-child(6) .admin-badge');
+                    let badge = row.querySelector('td:nth-child(6) .admin-badge');
                     if (badge) {
                         badge.className = 'admin-badge admin-badge-gray';
                         badge.textContent = '● Draft';
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkDelete) {
         bulkDelete.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             if (!confirm(`Delete ${rows.length} selected courses? This cannot be undone.`)) return;
 
             rows.forEach((row, index) => {
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearSelection() {
         courseCheckboxes.forEach(cb => {
             cb.checked = false;
-            const row = cb.closest('tr');
+            let row = cb.closest('tr');
             if (row) row.classList.remove('selected');
         });
         if (selectAllCheckbox) selectAllCheckbox.checked = false;
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 9. Add Course Button
     // ============================================
-    const addCourseBtn = document.getElementById('addCourseBtn');
+    let addCourseBtn = document.getElementById('addCourseBtn');
     if (addCourseBtn) {
         addCourseBtn.addEventListener('click', () => {
             showAdminNotification('Opening course editor... (Coming soon)', 'info');
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 10. Export CSV
     // ============================================
-    const exportBtn = document.getElementById('exportCoursesBtn');
+    let exportBtn = document.getElementById('exportCoursesBtn');
     if (exportBtn) {
         exportBtn.addEventListener('click', () => {
             showAdminNotification('Exporting courses to CSV... (Coming soon)', 'info');
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // 11. Pagination
     // ============================================
-    const pageBtns = document.querySelectorAll('.admin-page-btn:not(:disabled)');
+    let pageBtns = document.querySelectorAll('.admin-page-btn:not(:disabled)');
     pageBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             if (btn.classList.contains('active') || 

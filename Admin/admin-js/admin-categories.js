@@ -1,174 +1,677 @@
-/* ============================================
-   ===== MANAGE CATEGORIES PAGE - JavaScript =====
-   ===== أنيميشن + تفاعل فقط =====
-   ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
-    // 1. عناصر الصفحة
-    // ============================================
-    const addCategoryBtn = document.getElementById('addCategoryBtn');
-    const addCategoryCard = document.getElementById('addCategoryCard');
-    const addCategoryModal = document.getElementById('addCategoryModal');
-    const closeCategoryModal = document.getElementById('closeCategoryModal');
-    const cancelCategory = document.getElementById('cancelCategory');
-    const confirmCategory = document.getElementById('confirmCategory');
-    const categoryName = document.getElementById('categoryName');
-    const categoryIcon = document.getElementById('categoryIcon');
-    const categoryDescription = document.getElementById('categoryDescription');
-    const categoriesGrid = document.querySelector('.categories-grid');
 
-    // ============================================
-    // 2. فتح Modal
-    // ============================================
-    function openModal() {
-        if (addCategoryModal) {
-            addCategoryModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            // مسح الحقول
-            categoryName.value = '';
-            categoryIcon.value = '';
-            categoryDescription.value = '';
-            // تركيز على الاسم
-            setTimeout(() => categoryName.focus(), 100);
-        }
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    "use strict";
 
-    if (addCategoryBtn) addCategoryBtn.addEventListener('click', openModal);
-    if (addCategoryCard) addCategoryCard.addEventListener('click', openModal);
+    let $ = id => document.getElementById(id);
 
-    // ============================================
-    // 3. إغلاق Modal
-    // ============================================
-    function closeModal() {
-        if (addCategoryModal) {
-            addCategoryModal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-    }
-
-    if (closeCategoryModal) closeCategoryModal.addEventListener('click', closeModal);
-    if (cancelCategory) cancelCategory.addEventListener('click', closeModal);
-
-    if (addCategoryModal) {
-        addCategoryModal.addEventListener('click', (e) => {
-            if (e.target === addCategoryModal) closeModal();
-        });
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && addCategoryModal && !addCategoryModal.classList.contains('hidden')) {
-            closeModal();
-        }
-    });
-
-    // ============================================
-    // 4. إضافة تصنيف جديد
-    // ============================================
-    if (confirmCategory) {
-        confirmCategory.addEventListener('click', () => {
-            const name = categoryName.value.trim();
-            const icon = categoryIcon.value.trim() || '📁';
-            const description = categoryDescription.value.trim() || 'No description provided';
-
-            // التحقق
-            if (!name) {
-                showAdminNotification('Please enter a category name.', 'error');
-                categoryName.focus();
-                return;
-            }
-
-            // إنشاء البطاقة الجديدة
-            const newCard = document.createElement('div');
-            newCard.className = 'category-card animate-scale-in';
-            newCard.innerHTML = `
-                <div class="category-card-header">
-                    <div class="category-card-icon" style="background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 100%); color: #4a3ce0;">
-                        ${icon}
-                    </div>
-                    <div class="category-card-actions">
-                        <button class="admin-table-action-btn" title="Edit">✏️</button>
-                        <button 
-                            class="admin-table-action-btn danger" 
-                            title="Delete"
-                            data-confirm-danger="Delete ${name} category?"
-                        >🗑️</button>
-                    </div>
-                </div>
-                <h3 class="category-card-title">${escapeHtml(name)}</h3>
-                <p class="category-card-desc">${escapeHtml(description)}</p>
-                <div class="category-card-footer">
-                    <div class="category-card-stats">
-                        <span class="category-stat"><strong>0</strong> Skills</span>
-                        <span class="category-stat"><strong>0</strong> Users</span>
-                    </div>
-                    <span class="admin-badge admin-badge-success">Active</span>
-                </div>
-            `;
-
-            // إضافة البطاقة قبل زر "Add New Category"
-            const addCard = document.querySelector('.category-card-add');
-            categoriesGrid.insertBefore(newCard, addCard);
-
-            // ربط الأزرار الجديدة
-            attachCardActions(newCard);
-
-            // إغلاق Modal
-            closeModal();
-
-            // إشعار
-            showAdminNotification(`Category "${name}" added successfully!`, 'success');
-        });
-    }
-
-    // ============================================
-    // 5. ربط أزرار البطاقة (Edit / Delete)
-    // ============================================
-    function attachCardActions(card) {
-        const editBtn = card.querySelector('[title="Edit"]');
-        const deleteBtn = card.querySelector('.danger');
-
-        if (editBtn && !editBtn.dataset.bound) {
-            editBtn.dataset.bound = 'true';
-            editBtn.addEventListener('click', () => {
-                const name = card.querySelector('.category-card-title').textContent;
-                showAdminNotification(`Editing "${name}"... (Coming soon)`, 'info');
-            });
-        }
-
-        if (deleteBtn && !deleteBtn.dataset.bound) {
-            deleteBtn.dataset.bound = 'true';
-            deleteBtn.addEventListener('click', () => {
-                const name = card.querySelector('.category-card-title').textContent;
-                const message = deleteBtn.dataset.confirmDanger || `Delete "${name}"?`;
-
-                if (confirm(message)) {
-                    card.style.transition = 'all 0.4s ease';
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.8) translateY(-20px)';
-
-                    setTimeout(() => {
-                        card.remove();
-                        showAdminNotification(`Category "${name}" deleted.`, 'info');
-                    }, 400);
+    // 1. Default Categories and Demo Subcategories
+    let categories = [
+        {
+            id: 1,
+            name: "Technology",
+            icon: "💻",
+            description: "Programming, design, and IT skills",
+            protected: true,
+            subcategories: [
+                {
+                    id: 101,
+                    name: "Web Development",
+                    description: "Websites and web applications"
+                },
+                {
+                    id: 102,
+                    name: "Programming",
+                    description: "Programming languages and fundamentals"
+                },
+                {
+                    id: 103,
+                    name: "Cybersecurity",
+                    description: "Security skills"
                 }
-            });
+            ]
+        },
+        {
+            id: 2,
+            name: "Education",
+            icon: "🎓",
+            description: "Academic and teaching skills",
+            protected: true,
+            subcategories: [
+                {
+                    id: 201,
+                    name: "Language Learning",
+                    description: "Languages and communication"
+                },
+                {
+                    id: 202,
+                    name: "Tutoring",
+                    description: "Academic support"
+                }
+            ]
+        },
+        {
+            id: 3,
+            name: "Handmade",
+            icon: "🎨",
+            description: "Crafts, arts, and DIY projects",
+            protected: true,
+            subcategories: [
+                {
+                    id: 301,
+                    name: "Crafts",
+                    description: "Creative handmade projects"
+                }
+            ]
+        },
+        {
+            id: 4,
+            name: "Entertainment",
+            icon: "🎬",
+            description: "Music, video, and performance",
+            protected: true,
+            subcategories: [
+                {
+                    id: 401,
+                    name: "Music",
+                    description: "Instruments and music skills"
+                }
+            ]
+        },
+        {
+            id: 5,
+            name: "Business",
+            icon: "💼",
+            description: "Marketing, management, and sales",
+            protected: true,
+            subcategories: [
+                {
+                    id: 501,
+                    name: "Marketing",
+                    description: "Digital and traditional marketing"
+                }
+            ]
+        },
+        {
+            id: 6,
+            name: "Health & Fitness",
+            icon: "❤️",
+            description: "Sports, nutrition, and wellness",
+            protected: true,
+            subcategories: [
+                {
+                    id: 601,
+                    name: "Fitness",
+                    description: "Movement and physical training"
+                }
+            ]
+        }
+    ];
+
+    // 2. State
+    let nextCategoryId = 7;
+    let nextSubcategoryId = 1000;
+
+    let editingCategoryId = null;
+    let activeCategoryId = null;
+    let editingSubcategoryId = null;
+    let returnToDetails = false;
+
+    let grid = $("categoriesGrid");
+
+    let modals = [
+        ...document.querySelectorAll(".modal-overlay")
+    ];
+
+    let palettes = [
+        "#dbe4ff",
+        "#d4e8ff",
+        "#fbe1f0",
+        "#fff0c2",
+        "#d4f9e8",
+        "#ffe0e0"
+    ];
+
+    // 3. Helpers
+    function categoryById(id) {
+        return categories.find(category => category.id === id);
+    }
+
+    function notify(message, type = "info") {
+        if (typeof window.showAdminNotification === "function") {
+            window.showAdminNotification(message, type);
+        } else {
+            alert(message);
         }
     }
 
-    // ربط كل البطاقات الحالية
-    document.querySelectorAll('.category-card:not(.category-card-add)').forEach(card => {
-        attachCardActions(card);
-    });
+    function element(tag, className, text) {
+        let node = document.createElement(tag);
 
-    // ============================================
-    // 6. Escape HTML (حماية)
-    // ============================================
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
+        if (className) {
+            node.className = className;
+        }
+
+        if (text !== undefined) {
+            node.textContent = text;
+        }
+
+        return node;
     }
 
+    function actionButton(label, title, handler, disabled = false) {
+        let button = element("button", "", label);
+
+        button.type = "button";
+        button.title = title;
+        button.setAttribute("aria-label", title);
+        button.disabled = disabled;
+
+        button.addEventListener("click", handler);
+
+        return button;
+    }
+
+    // 4. Modal Functions
+    function openModal(id) {
+        modals.forEach(modal => {
+            modal.classList.add("hidden");
+        });
+
+        let modal = $(id);
+
+        if (!modal) return;
+
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+
+        let first = modal.querySelector(
+            'input:not([readonly]), button'
+        );
+
+        if (first) {
+            first.focus();
+        }
+    }
+
+    function closeModal() {
+        modals.forEach(modal => {
+            modal.classList.add("hidden");
+        });
+
+        document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-close-modal]")
+        .forEach(button => {
+            button.addEventListener("click", closeModal);
+        });
+
+    modals.forEach(modal => {
+        modal.addEventListener("click", event => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    });
+
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            modals.some(modal => !modal.classList.contains("hidden"))
+        ) {
+            closeModal();
+        }
+    });
+
+    // 5. Render Category Cards
+    function renderCategories() {
+        grid.replaceChildren();
+
+        categories.forEach((category, index) => {
+            let card = element("article", "category-card");
+
+            let header = element(
+                "div",
+                "category-card-header"
+            );
+
+            let icon = element(
+                "div",
+                "category-card-icon",
+                category.icon
+            );
+
+            icon.style.background =
+                palettes[index % palettes.length];
+
+            let actions = element(
+                "div",
+                "category-card-actions"
+            );
+
+            actions.append(
+                actionButton(
+                    "👁️",
+                    "View " + category.name,
+                    () => showDetails(category.id)
+                ),
+
+                actionButton(
+                    "✏️",
+                    "Edit " + category.name,
+                    () => openCategoryForm(category.id)
+                ),
+
+                actionButton(
+                    "🗑️",
+                    category.protected
+                        ? "Default categories cannot be deleted"
+                        : "Delete " + category.name,
+                    () => deleteCategory(category.id),
+                    category.protected
+                )
+            );
+
+            header.append(icon, actions);
+
+            let footer = element(
+                "div",
+                "category-card-footer"
+            );
+
+            footer.append(
+                element(
+                    "small",
+                    "",
+                    `${category.subcategories.length} demo subcategories`
+                ),
+                element(
+                    "span",
+                    "admin-badge admin-badge-success",
+                    "Active"
+                )
+            );
+
+            let addSub = actionButton(
+                "+ Add Subcategory",
+                "Add subcategory to " + category.name,
+                () => openSubcategoryForm(category.id)
+            );
+
+            addSub.className = "category-card-subaction";
+
+            card.append(
+                header,
+                element(
+                    "h3",
+                    "category-card-title",
+                    category.name
+                ),
+                element(
+                    "p",
+                    "category-card-desc",
+                    category.description
+                ),
+                footer,
+                addSub
+            );
+
+            grid.append(card);
+        });
+
+        // Add New Category Card
+        let add = actionButton(
+            "+",
+            "Add New Category",
+            () => openCategoryForm()
+        );
+
+        add.className = "category-card category-card-add";
+
+        add.replaceChildren(
+            element("span", "category-add-icon", "+"),
+            element(
+                "span",
+                "category-add-text",
+                "Add New Category"
+            )
+        );
+
+        grid.append(add);
+    }
+
+    // 6. Add / Edit Category
+    function openCategoryForm(id = null) {
+        editingCategoryId = id;
+
+        let category =
+            id === null ? null : categoryById(id);
+
+        $("categoryModalTitle").textContent = category
+            ? "Edit Category"
+            : "Add New Category";
+
+        $("saveCategoryBtn").textContent = category
+            ? "Save Changes"
+            : "Add Category";
+
+        $("categoryName").value = category?.name || "";
+        $("categoryIcon").value = category?.icon || "";
+        $("categoryDescription").value =
+            category?.description || "";
+
+        openModal("categoryModal");
+    }
+
+    $("addCategoryBtn").addEventListener("click", () => {
+        openCategoryForm();
+    });
+
+    $("categoryForm").addEventListener("submit", event => {
+        event.preventDefault();
+
+        let name = $("categoryName").value.trim();
+
+        let icon =
+            $("categoryIcon").value.trim() || "📁";
+
+        let description =
+            $("categoryDescription").value.trim() ||
+            "No description provided";
+
+        if (!name) {
+            notify("Please enter a category name.", "error");
+            return;
+        }
+
+        let duplicate = categories.some(category =>
+            category.name.toLowerCase() === name.toLowerCase() &&
+            category.id !== editingCategoryId
+        );
+
+        if (duplicate) {
+            notify("This category already exists.", "error");
+            return;
+        }
+
+        if (editingCategoryId === null) {
+            categories.push({
+                id: nextCategoryId++,
+                name,
+                icon,
+                description,
+                protected: false,
+                subcategories: []
+            });
+        } else {
+            let category = categoryById(editingCategoryId);
+
+            if (!category) return;
+
+            Object.assign(category, {
+                name,
+                icon,
+                description
+            });
+        }
+
+        closeModal();
+        renderCategories();
+
+        notify(
+            "Demo category saved for this session.",
+            "success"
+        );
+    });
+
+    // 7. Delete Category
+    function deleteCategory(id) {
+        let category = categoryById(id);
+
+        if (!category) return;
+
+        if (category.protected) {
+            notify(
+                "Default categories cannot be deleted.",
+                "error"
+            );
+            return;
+        }
+
+        if (category.subcategories.length) {
+            notify(
+                "Remove or move its subcategories before deleting this category.",
+                "error"
+            );
+            return;
+        }
+
+        let confirmed = confirm(
+            `Delete "${category.name}" from the demo?`
+        );
+
+        if (!confirmed) return;
+
+        categories.splice(categories.indexOf(category), 1);
+
+        renderCategories();
+
+        notify("Demo category deleted.", "info");
+    }
+
+    // 8. View Category Details
+    function showDetails(id) {
+        let category = categoryById(id);
+
+        if (!category) return;
+
+        activeCategoryId = id;
+
+        $("detailsTitle").textContent = "Category Details";
+        $("detailsIcon").textContent = category.icon;
+        $("detailsName").textContent = category.name;
+        $("detailsDescription").textContent =
+            category.description;
+
+        renderSubcategories(category);
+
+        openModal("detailsModal");
+    }
+
+    // 9. Render Subcategories
+    function renderSubcategories(category) {
+        let list = $("subcategoriesList");
+
+        list.replaceChildren();
+
+        if (!category.subcategories.length) {
+            list.append(
+                element(
+                    "div",
+                    "subcategory-empty",
+                    "No subcategories yet. Add the first one."
+                )
+            );
+            return;
+        }
+
+        category.subcategories.forEach(subcategory => {
+            let row = element("div", "subcategory-row");
+
+            let info = element("div");
+
+            info.append(
+                element("strong", "", subcategory.name),
+                element(
+                    "p",
+                    "",
+                    subcategory.description || "No description"
+                )
+            );
+
+            let actions = element(
+                "div",
+                "subcategory-actions"
+            );
+
+            actions.append(
+                actionButton(
+                    "✏️",
+                    "Edit " + subcategory.name,
+                    () => openSubcategoryForm(
+                        category.id,
+                        subcategory.id
+                    )
+                ),
+
+                actionButton(
+                    "🗑️",
+                    "Delete " + subcategory.name,
+                    () => deleteSubcategory(
+                        category.id,
+                        subcategory.id
+                    )
+                )
+            );
+
+            row.append(info, actions);
+            list.append(row);
+        });
+    }
+
+    // 10. Add / Edit Subcategory
+    function openSubcategoryForm(categoryId, subId = null) {
+        let category = categoryById(categoryId);
+
+        if (!category) return;
+
+        activeCategoryId = categoryId;
+        editingSubcategoryId = subId;
+
+        let subcategory = category.subcategories.find(
+            sub => sub.id === subId
+        );
+
+        $("subcategoryModalTitle").textContent = subcategory
+            ? "Edit Subcategory"
+            : "Add Subcategory";
+
+        $("subcategoryParent").value = category.name;
+        $("subcategoryName").value =
+            subcategory?.name || "";
+
+        $("subcategoryDescription").value =
+            subcategory?.description || "";
+
+        returnToDetails = !$("detailsModal")
+            .classList.contains("hidden");
+
+        openModal("subcategoryModal");
+    }
+
+    $("addSubcategoryBtn").addEventListener("click", () => {
+        openSubcategoryForm(activeCategoryId);
+    });
+
+    $("subcategoryForm").addEventListener("submit", event => {
+        event.preventDefault();
+
+        let category = categoryById(activeCategoryId);
+
+        if (!category) return;
+
+        let name = $("subcategoryName").value.trim();
+
+        let description =
+            $("subcategoryDescription").value.trim();
+
+        if (!name) {
+            notify(
+                "Please enter a subcategory name.",
+                "error"
+            );
+            return;
+        }
+
+        let duplicate = category.subcategories.some(
+            sub =>
+                sub.name.toLowerCase() === name.toLowerCase() &&
+                sub.id !== editingSubcategoryId
+        );
+
+        if (duplicate) {
+            notify(
+                "This subcategory already exists in this category.",
+                "error"
+            );
+            return;
+        }
+
+        if (editingSubcategoryId === null) {
+            category.subcategories.push({
+                id: nextSubcategoryId++,
+                name,
+                description
+            });
+        } else {
+            let subcategory = category.subcategories.find(
+                sub => sub.id === editingSubcategoryId
+            );
+
+            if (!subcategory) return;
+
+            Object.assign(subcategory, {
+                name,
+                description
+            });
+        }
+
+        renderCategories();
+
+        if (returnToDetails) {
+            showDetails(category.id);
+        } else {
+            closeModal();
+        }
+
+        notify(
+            "Demo subcategory saved for this session.",
+            "success"
+        );
+    });
+
+    // 11. Delete Subcategory
+    function deleteSubcategory(categoryId, subId) {
+        let category = categoryById(categoryId);
+
+        if (!category) return;
+
+        let subcategory = category.subcategories.find(
+            sub => sub.id === subId
+        );
+
+        if (!subcategory) return;
+
+        let confirmed = confirm(
+            `Delete "${subcategory.name}"? ` +
+            "In the real system, linked skills must be checked first."
+        );
+
+        if (!confirmed) return;
+
+        category.subcategories.splice(
+            category.subcategories.indexOf(subcategory),
+            1
+        );
+
+        renderCategories();
+        renderSubcategories(category);
+
+        notify("Demo subcategory deleted.", "info");
+    }
+
+    // 12. Initial Render
+    renderCategories();
 });

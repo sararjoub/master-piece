@@ -1,15 +1,11 @@
-/* ============================================
-   ===== MANAGE CAREER PATHS - JavaScript =====
-   ===== أنيميشن + تفاعل فقط =====
-   ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const searchInput = document.getElementById('pathsSearchInput');
-    const filterBtns = document.querySelectorAll('.admin-filter-btn');
-    const tableRows = document.querySelectorAll('#pathsTableBody tr');
-    const emptyState = document.getElementById('pathsEmptyState');
-    const tableWrapper = document.querySelector('.admin-table-wrapper');
+    let searchInput = document.getElementById('pathsSearchInput');
+    let filterBtns = document.querySelectorAll('.admin-filter-btn');
+    let tableRows = document.querySelectorAll('#pathsTableBody tr');
+    let emptyState = document.getElementById('pathsEmptyState');
+    let tableWrapper = document.querySelector('.admin-table-wrapper');
 
     let currentFilter = 'all';
     let currentSearch = '';
@@ -18,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let visibleCount = 0;
 
         tableRows.forEach(row => {
-            const status = row.dataset.status;
-            const searchText = (row.dataset.search || '').toLowerCase();
+            let status = row.dataset.status;
+            let searchText = (row.dataset.search || '').toLowerCase();
 
-            const matchesFilter = currentFilter === 'all' || status === currentFilter;
-            const matchesSearch = !currentSearch || searchText.includes(currentSearch);
+            let matchesFilter = currentFilter === 'all' || status === currentFilter;
+            let matchesSearch = !currentSearch || searchText.includes(currentSearch);
 
             if (matchesFilter && matchesSearch) {
                 row.style.display = '';
@@ -40,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tableWrapper) tableWrapper.style.display = '';
         }
 
-        const selectAll = document.getElementById('selectAllPaths');
+        let selectAll = document.getElementById('selectAllPaths');
         if (selectAll) selectAll.checked = false;
         updateBulkBar();
     }
@@ -61,13 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const selectAllCheckbox = document.getElementById('selectAllPaths');
-    const pathCheckboxes = document.querySelectorAll('.path-checkbox');
+    let selectAllCheckbox = document.getElementById('selectAllPaths');
+    let pathCheckboxes = document.querySelectorAll('.path-checkbox');
 
     if (selectAllCheckbox) {
         selectAllCheckbox.addEventListener('change', () => {
             pathCheckboxes.forEach(cb => {
-                const row = cb.closest('tr');
+                let row = cb.closest('tr');
                 if (row && row.style.display !== 'none') {
                     cb.checked = selectAllCheckbox.checked;
                     row.classList.toggle('selected', selectAllCheckbox.checked);
@@ -79,25 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pathCheckboxes.forEach(cb => {
         cb.addEventListener('change', () => {
-            const row = cb.closest('tr');
+            let row = cb.closest('tr');
             if (row) row.classList.toggle('selected', cb.checked);
             updateBulkBar();
 
-            const visibleCheckboxes = Array.from(pathCheckboxes).filter(c => 
+            let visibleCheckboxes = Array.from(pathCheckboxes).filter(c => 
                 c.closest('tr') && c.closest('tr').style.display !== 'none'
             );
-            const allChecked = visibleCheckboxes.length > 0 && 
+            let allChecked = visibleCheckboxes.length > 0 && 
                               visibleCheckboxes.every(c => c.checked);
             if (selectAllCheckbox) selectAllCheckbox.checked = allChecked;
         });
     });
 
-    const bulkBar = document.getElementById('bulkActionsBar');
-    const selectedCountEl = document.getElementById('selectedCount');
+    let bulkBar = document.getElementById('bulkActionsBar');
+    let selectedCountEl = document.getElementById('selectedCount');
 
     function updateBulkBar() {
-        const selected = document.querySelectorAll('.path-checkbox:checked');
-        const count = selected.length;
+        let selected = document.querySelectorAll('.path-checkbox:checked');
+        let count = selected.length;
 
         if (selectedCountEl) selectedCountEl.textContent = count;
 
@@ -112,12 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const bulkCancel = document.getElementById('bulkCancel');
+    let bulkCancel = document.getElementById('bulkCancel');
     if (bulkCancel) {
         bulkCancel.addEventListener('click', () => {
             pathCheckboxes.forEach(cb => {
                 cb.checked = false;
-                const row = cb.closest('tr');
+                let row = cb.closest('tr');
                 if (row) row.classList.remove('selected');
             });
             if (selectAllCheckbox) selectAllCheckbox.checked = false;
@@ -125,9 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const bulkActivate = document.getElementById('bulkActivate');
-    const bulkDraft = document.getElementById('bulkDraft');
-    const bulkDelete = document.getElementById('bulkDelete');
+    let bulkActivate = document.getElementById('bulkActivate');
+    let bulkDraft = document.getElementById('bulkDraft');
+    let bulkDelete = document.getElementById('bulkDelete');
 
     function getSelectedRows() {
         return Array.from(document.querySelectorAll('.path-checkbox:checked'))
@@ -136,11 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkActivate) {
         bulkActivate.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             rows.forEach((row, index) => {
                 setTimeout(() => {
                     row.dataset.status = 'active';
-                    const badge = row.querySelector('td:nth-child(6) .admin-badge');
+                    let badge = row.querySelector('td:nth-child(6) .admin-badge');
                     if (badge) {
                         badge.className = 'admin-badge admin-badge-success';
                         badge.textContent = '● Active';
@@ -154,11 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkDraft) {
         bulkDraft.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             rows.forEach((row, index) => {
                 setTimeout(() => {
                     row.dataset.status = 'draft';
-                    const badge = row.querySelector('td:nth-child(6) .admin-badge');
+                    let badge = row.querySelector('td:nth-child(6) .admin-badge');
                     if (badge) {
                         badge.className = 'admin-badge admin-badge-gray';
                         badge.textContent = '● Draft';
@@ -172,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkDelete) {
         bulkDelete.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             if (!confirm(`Delete ${rows.length} selected paths?`)) return;
 
             rows.forEach((row, index) => {
@@ -196,21 +192,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearSelection() {
         pathCheckboxes.forEach(cb => {
             cb.checked = false;
-            const row = cb.closest('tr');
+            let row = cb.closest('tr');
             if (row) row.classList.remove('selected');
         });
         if (selectAllCheckbox) selectAllCheckbox.checked = false;
         updateBulkBar();
     }
 
-    const addPathBtn = document.getElementById('addPathBtn');
+    let addPathBtn = document.getElementById('addPathBtn');
     if (addPathBtn) {
         addPathBtn.addEventListener('click', () => {
             showAdminNotification('Opening path editor... (Coming soon)', 'info');
         });
     }
 
-    const pageBtns = document.querySelectorAll('.admin-page-btn:not(:disabled)');
+    let pageBtns = document.querySelectorAll('.admin-page-btn:not(:disabled)');
     pageBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             if (btn.classList.contains('active') || 

@@ -1,29 +1,25 @@
-/* ============================================
-   ===== MANAGE REQUESTS PAGE - JavaScript =====
-   ===== أنيميشن + تفاعل فقط =====
-   ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const searchInput = document.getElementById('requestsSearchInput');
-    const filterBtns = document.querySelectorAll('.admin-filter-btn');
-    const tableRows = document.querySelectorAll('#requestsTableBody tr');
-    const emptyState = document.getElementById('requestsEmptyState');
-    const tableWrapper = document.querySelector('.admin-table-wrapper');
+    let searchInput = document.getElementById('requestsSearchInput');
+    let filterBtns = document.querySelectorAll('.admin-filter-btn');
+    let tableRows = document.querySelectorAll('#requestsTableBody tr');
+    let emptyState = document.getElementById('requestsEmptyState');
+    let tableWrapper = document.querySelector('.admin-table-wrapper');
 
     let currentFilter = 'all';
     let currentSearch = '';
 
-    // ============================================
+    // 
     // تطبيق الفلاتر
-    // ============================================
+    // 
     function applyFilters() {
         let visibleCount = 0;
 
         tableRows.forEach(row => {
-            const status = row.dataset.status;
-            const isFlagged = row.dataset.flagged === 'true';
-            const searchText = (row.dataset.search || '').toLowerCase();
+            let status = row.dataset.status;
+            let isFlagged = row.dataset.flagged === 'true';
+            let searchText = (row.dataset.search || '').toLowerCase();
 
             let matchesFilter = false;
 
@@ -38,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     matchesFilter = status === currentFilter;
             }
 
-            const matchesSearch = !currentSearch || searchText.includes(currentSearch);
+            let matchesSearch = !currentSearch || searchText.includes(currentSearch);
 
             if (matchesFilter && matchesSearch) {
                 row.style.display = '';
@@ -56,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tableWrapper) tableWrapper.style.display = '';
         }
 
-        const selectAll = document.getElementById('selectAllRequests');
+        let selectAll = document.getElementById('selectAllRequests');
         if (selectAll) selectAll.checked = false;
         updateBulkBar();
     }
@@ -77,16 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
+    // 
     // Select All + Individual
-    // ============================================
-    const selectAllCheckbox = document.getElementById('selectAllRequests');
-    const requestCheckboxes = document.querySelectorAll('.request-checkbox');
+    // 
+    let selectAllCheckbox = document.getElementById('selectAllRequests');
+    let requestCheckboxes = document.querySelectorAll('.request-checkbox');
 
     if (selectAllCheckbox) {
         selectAllCheckbox.addEventListener('change', () => {
             requestCheckboxes.forEach(cb => {
-                const row = cb.closest('tr');
+                let row = cb.closest('tr');
                 if (row && row.style.display !== 'none') {
                     cb.checked = selectAllCheckbox.checked;
                     row.classList.toggle('selected', selectAllCheckbox.checked);
@@ -98,28 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestCheckboxes.forEach(cb => {
         cb.addEventListener('change', () => {
-            const row = cb.closest('tr');
+            let row = cb.closest('tr');
             if (row) row.classList.toggle('selected', cb.checked);
             updateBulkBar();
 
-            const visibleCheckboxes = Array.from(requestCheckboxes).filter(c => 
+            let visibleCheckboxes = Array.from(requestCheckboxes).filter(c => 
                 c.closest('tr') && c.closest('tr').style.display !== 'none'
             );
-            const allChecked = visibleCheckboxes.length > 0 && 
+            let allChecked = visibleCheckboxes.length > 0 && 
                               visibleCheckboxes.every(c => c.checked);
             if (selectAllCheckbox) selectAllCheckbox.checked = allChecked;
         });
     });
 
-    // ============================================
+    // 
     // Bulk Actions Bar
-    // ============================================
-    const bulkBar = document.getElementById('bulkActionsBar');
-    const selectedCountEl = document.getElementById('selectedCount');
+    // 
+    let bulkBar = document.getElementById('bulkActionsBar');
+    let selectedCountEl = document.getElementById('selectedCount');
 
     function updateBulkBar() {
-        const selected = document.querySelectorAll('.request-checkbox:checked');
-        const count = selected.length;
+        let selected = document.querySelectorAll('.request-checkbox:checked');
+        let count = selected.length;
 
         if (selectedCountEl) selectedCountEl.textContent = count;
 
@@ -134,15 +130,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ============================================
+    // 
     // Bulk Cancel
-    // ============================================
-    const bulkCancel = document.getElementById('bulkCancel');
+    // 
+    let bulkCancel = document.getElementById('bulkCancel');
     if (bulkCancel) {
         bulkCancel.addEventListener('click', () => {
             requestCheckboxes.forEach(cb => {
                 cb.checked = false;
-                const row = cb.closest('tr');
+                let row = cb.closest('tr');
                 if (row) row.classList.remove('selected');
             });
             if (selectAllCheckbox) selectAllCheckbox.checked = false;
@@ -150,11 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
+    // 
     // Bulk Actions
-    // ============================================
-    const bulkApprove = document.getElementById('bulkApprove');
-    const bulkDelete = document.getElementById('bulkDelete');
+    // 
+    let bulkApprove = document.getElementById('bulkApprove');
+    let bulkDelete = document.getElementById('bulkDelete');
 
     function getSelectedRows() {
         return Array.from(document.querySelectorAll('.request-checkbox:checked'))
@@ -163,12 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkApprove) {
         bulkApprove.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             rows.forEach((row, index) => {
                 setTimeout(() => {
                     row.dataset.status = 'accepted';
                     delete row.dataset.flagged;
-                    const badge = row.querySelector('td:nth-child(6) .admin-badge');
+                    let badge = row.querySelector('td:nth-child(6) .admin-badge');
                     if (badge) {
                         badge.className = 'admin-badge admin-badge-success';
                         badge.textContent = '● Accepted';
@@ -182,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bulkDelete) {
         bulkDelete.addEventListener('click', () => {
-            const rows = getSelectedRows();
+            let rows = getSelectedRows();
             if (!confirm(`Delete ${rows.length} selected requests?`)) return;
 
             rows.forEach((row, index) => {
@@ -206,27 +202,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearSelection() {
         requestCheckboxes.forEach(cb => {
             cb.checked = false;
-            const row = cb.closest('tr');
+            let row = cb.closest('tr');
             if (row) row.classList.remove('selected');
         });
         if (selectAllCheckbox) selectAllCheckbox.checked = false;
         updateBulkBar();
     }
 
-    // ============================================
+    // 
     // Export CSV
-    // ============================================
-    const exportBtn = document.getElementById('exportRequestsBtn');
+    // 
+    let exportBtn = document.getElementById('exportRequestsBtn');
     if (exportBtn) {
         exportBtn.addEventListener('click', () => {
             showAdminNotification('Exporting requests to CSV... (Coming soon)', 'info');
         });
     }
 
-    // ============================================
+    // 
     // Pagination
-    // ============================================
-    const pageBtns = document.querySelectorAll('.admin-page-btn:not(:disabled)');
+    // 
+    let pageBtns = document.querySelectorAll('.admin-page-btn:not(:disabled)');
     pageBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             if (btn.classList.contains('active') || 

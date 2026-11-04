@@ -1,0 +1,541 @@
+
+/* ==========================================
+   SKILLS SWAP - MANAGE SKILLS
+   Sidebar Only Layout
+========================================== */
+
+.manage-skills-page {
+    min-width: 0;
+}
+
+.manage-skills-page .admin-page-header {
+    margin-bottom: 28px;
+}
+
+/* Sidebar Layout */
+.admin-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-sidebar-nav {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+/* Sidebar Profile */
+.dashboard-sidebar-footer {
+    margin-top: auto;
+    padding: 18px 16px 20px;
+    border-top: 1px solid rgba(65, 44, 108, 0.14);
+}
+
+.dashboard-sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 10px;
+    border-radius: 12px;
+}
+
+.dashboard-sidebar-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    color: #332657;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.dashboard-sidebar-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.dashboard-sidebar-profile-info strong {
+    color: #332657;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.dashboard-sidebar-profile-info span {
+    color: #63527f;
+    font-family: var(--font-body);
+    font-size: 11px;
+}
+
+/* Main Area */
+.admin-main {
+    min-width: 0;
+}
+
+/* Stats - Match Dashboard */
+.manage-skills-page .admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+    margin-bottom: 28px;
+}
+
+.manage-skills-page .admin-stat-card {
+    min-width: 0;
+    min-height: 190px;
+    height: auto;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.manage-skills-page .admin-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-lighter);
+}
+
+.manage-skills-page .admin-stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manage-skills-page .admin-stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.manage-skills-page .admin-stat-value {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.manage-skills-page .admin-stat-label {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Directory */
+.skills-directory-card {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.skills-directory-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.skills-demo-label {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: var(--primary-bg);
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.manage-skills-page .admin-card-header-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.manage-skills-page .admin-search-bar {
+    min-width: 220px;
+}
+
+.manage-skills-page .admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.manage-skills-page .admin-table {
+    min-width: 760px;
+}
+
+.manage-skills-page .admin-table tbody tr:hover {
+    background: var(--primary-bg-light);
+}
+
+.manage-skills-page .admin-table tbody tr.selected {
+    background: var(--primary-bg);
+}
+
+.manage-skills-page .admin-table-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Empty State */
+#skillsEmptyState[hidden] {
+    display: none !important;
+}
+
+/* Footer and Pagination */
+.skills-table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.skills-table-footer .admin-pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skills-table-footer .admin-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Mobile Toolbar */
+.dashboard-mobile-toolbar {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .manage-skills-page .admin-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-mobile-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .dashboard-mobile-toolbar span {
+        color: var(--text-dark);
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .dashboard-mobile-toolbar .admin-sidebar-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--border-light);
+        border-radius: 11px;
+        background: var(--bg-white);
+        color: var(--text-dark);
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .manage-skills-page .admin-page-header {
+        gap: 18px;
+    }
+
+    .manage-skills-page .admin-card-header-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .manage-skills-page .admin-search-bar {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .skills-table-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .manage-skills-page .admin-stats-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ==========================================
+   SKILLS DIRECTORY
+   MATCH MANAGE USERS DESIGN
+========================================== */
+
+/* Directory Header */
+.manage-skills-page .skills-directory-heading {
+    padding: 28px 32px 12px;
+    border-bottom: none;
+}
+
+.manage-skills-page .skills-directory-heading h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #211b4b;
+}
+
+.manage-skills-page .skills-directory-heading p {
+    margin: 0;
+    color: #85809d;
+    font-size: 14px;
+}
+
+/* Search + Filters Container */
+.manage-skills-page .skills-toolbar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    padding: 16px 32px 28px;
+    margin: 0;
+
+    background: #fff;
+    border: none;
+}
+
+/* Search Field */
+.manage-skills-page .skills-search-field {
+    order: 1;
+    position: relative;
+    flex: 0 1 475px;
+    width: 475px;
+    max-width: 100%;
+    min-width: 220px;
+    margin: 0;
+}
+
+.manage-skills-page .skills-search-field input {
+    display: block;
+    width: 100%;
+    height: 56px;
+    padding: 0 18px 0 54px;
+
+    background: #faf9fd;
+    border: 1px solid #e8e4f2;
+    border-radius: 13px;
+
+    box-shadow: none;
+    outline: none;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: #211b4b;
+
+    transition: border-color 0.2s ease;
+}
+
+.manage-skills-page .skills-search-field input:focus {
+    border-color: #8974ef;
+    box-shadow: none;
+    outline: none;
+}
+
+.manage-skills-page .skills-search-field input::placeholder {
+    color: #9994ae;
+}
+
+.manage-skills-page .skills-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 23px;
+    color: #a09ab9;
+    pointer-events: none;
+}
+
+/* Filters */
+.manage-skills-page .skills-filter-group {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+}
+
+/* Filter Buttons */
+.manage-skills-page .skills-filter-group .admin-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+    padding: 0 17px;
+
+    border: 1px solid #e8e4f2;
+    border-radius: 12px;
+
+    background: #fff;
+    color: #77718f;
+
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: none;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.manage-skills-page .skills-filter-group .admin-filter-btn:hover {
+    background: #f5f2ff;
+    color: #7561df;
+    border-color: #d8d0ff;
+}
+
+.manage-skills-page .skills-filter-group .admin-filter-btn.active {
+    background: #8570ee;
+    color: #fff;
+    border-color: #8570ee;
+    box-shadow: none;
+}
+
+/* Keep Table Header Consistent */
+.manage-skills-page .admin-table thead {
+    background: #f8f7fc;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .manage-skills-page .skills-toolbar {
+        gap: 18px;
+    }
+
+    .manage-skills-page .skills-search-field {
+        flex: 1 1 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .manage-skills-page .skills-directory-heading {
+        padding: 22px 20px 12px;
+    }
+
+    .manage-skills-page .skills-toolbar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 16px 20px 24px;
+    }
+
+    .manage-skills-page .skills-search-field {
+        flex: none;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .manage-skills-page .skills-filter-group {
+        justify-content: flex-start;
+    }
+}
+
+
+/* ==========================================
+   MATCH MANAGE USERS - EXACT CONTROL SIZES
+========================================== */
+
+/* Search and Filters Row */
+.manage-skills-page .skills-toolbar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px;
+    padding: 16px 32px 28px;
+}
+
+/* Search - Same Size as Users Page */
+.manage-skills-page .skills-search-field {
+    flex: 0 1 475px;
+    width: 475px;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.manage-skills-page .skills-search-field input {
+    height: 54px;
+    padding: 0 16px 0 48px;
+    font-size: 13px;
+    border-radius: 12px;
+}
+
+/* Filter Buttons - Same Size as Users Page */
+.manage-skills-page .skills-filter-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.manage-skills-page .skills-filter-group .admin-filter-btn {
+    min-height: 46px;
+    padding: 0 15px;
+    font-size: 12px;
+    border-radius: 11px;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .manage-skills-page .skills-toolbar {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .manage-skills-page .skills-toolbar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 16px 20px 24px;
+    }
+
+    .manage-skills-page .skills-search-field {
+        width: 100%;
+        flex: none;
+    }
+
+    .manage-skills-page .skills-filter-group {
+        justify-content: flex-start;
+    }
+}

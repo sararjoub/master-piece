@@ -1,0 +1,238 @@
+
+/* ==========================================
+   SKILLS SWAP - MANAGE REQUESTS
+========================================== */
+
+/* ==========================================
+   STAT CARDS - MATCH MANAGE USERS
+========================================== */
+
+.requests-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.requests-stats-grid .admin-stat-card {
+    min-width: 0;
+    min-height: 250px;
+    padding: 32px 34px;
+    border-radius: 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.requests-stats-grid .admin-stat-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.requests-stats-grid .admin-stat-value {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-dark, #29204f);
+}
+
+.requests-stats-grid .admin-stat-label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   SEARCH LEFT - FILTERS RIGHT
+========================================== */
+
+.requests-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.requests-toolbar .requests-search {
+    order: 0;
+    flex: 0 1 475px;
+    width: 475px;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.requests-toolbar .requests-search
+.admin-search-input-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.requests-toolbar .requests-search
+.admin-search-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.requests-toolbar .requests-filters {
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+    .requests-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1100px) {
+    .requests-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .requests-toolbar .requests-search {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .requests-toolbar .requests-filters {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .requests-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .requests-stats-grid .admin-stat-card {
+        min-height: 200px;
+        padding: 24px;
+    }
+
+    .requests-toolbar .requests-filters {
+        gap: 8px;
+    }
+}
+
+
+/* ==========================================
+   REQUESTS STAT CARDS - COMPACT DESIGN
+========================================== */
+
+.requests-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Card Size */
+.requests-stats-grid .admin-stat-card {
+    height: 215px;
+    min-height: 215px;
+    padding: 26px 30px;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 22px;
+
+    box-sizing: border-box;
+}
+
+/* Card Header */
+.requests-stats-grid .admin-stat-header {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+/* Smaller Icon Container */
+.requests-stats-grid .admin-stat-icon {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    min-height: 54px;
+
+    font-size: 23px;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card Content */
+.requests-stats-grid .admin-stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dash Instead of Numbers */
+.requests-stats-grid .admin-stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Card Label */
+.requests-stats-grid .admin-stat-label {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+    .requests-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .requests-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .requests-stats-grid .admin-stat-card {
+        height: 195px;
+        min-height: 195px;
+        padding: 24px;
+        gap: 18px;
+    }
+
+    .requests-stats-grid .admin-stat-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+        font-size: 21px;
+    }
+}

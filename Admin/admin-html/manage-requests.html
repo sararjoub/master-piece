@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="../../css/shared.css">
     <link rel="stylesheet" href="../admin-css/admin-shared.css">
+     <link rel="stylesheet" href="../admin-css/admin-requests.css">
+</head>
 </head>
 <body>
 
@@ -75,49 +77,7 @@
 
         <main class="admin-main">
 
-            <header class="admin-topbar">
-                <div class="admin-topbar-left">
-                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
-                    <h1 class="admin-page-title">Manage Requests</h1>
-                </div>
-                <div class="admin-topbar-search">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Search requests...">
-                </div>
-                <div class="admin-topbar-right">
-                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
-                        🔔
-                        <span class="admin-notification-badge">5</span>
-                    </button>
-                    <div class="admin-user-menu" id="adminUserMenu">
-                        <button class="admin-user-btn" id="adminUserBtn">
-                            <span class="admin-user-avatar">A</span>
-                            <span class="admin-user-name">Admin</span>
-                            <span class="admin-user-arrow">▼</span>
-                        </button>
-                        <div class="admin-dropdown" id="adminDropdown">
-                            <div class="admin-dropdown-header">
-                                <span class="admin-user-avatar">A</span>
-                                <div>
-                                    <strong>Admin User</strong>
-                                    <span>admin@skills.com</span>
-                                </div>
-                            </div>
-                            <div class="admin-dropdown-divider"></div>
-                            <a href="settings.html" class="admin-dropdown-item">
-                                <span class="admin-dropdown-icon">⚙️</span>
-                                Settings
-                            </a>
-                            <div class="admin-dropdown-divider"></div>
-                            <button class="admin-dropdown-item admin-dropdown-logout">
-                                <span class="admin-dropdown-icon">🚪</span>
-                                Logout
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
+           
             <div class="admin-content">
 
                 <div class="admin-page-header admin-fade-rise">
@@ -133,76 +93,129 @@
                 </div>
 
                 <!-- ===== Stat Cards ===== -->
-                <div class="admin-stats-grid admin-stagger">
+               
+<!-- ===== Stat Cards ===== -->
+<div class="admin-stats-grid admin-stagger requests-stats-grid">
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-primary">🔄</div>
-                            <span class="admin-stat-trend positive">↑ 12%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="486">0</div>
-                            <div class="admin-stat-label">Total Requests</div>
-                        </div>
-                    </div>
+    <!-- Total Requests -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-primary">
+                🔄
+            </div>
+        </div>
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-warning">⏳</div>
-                            <span class="admin-stat-trend neutral">→ 0%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="120">0</div>
-                            <div class="admin-stat-label">Pending</div>
-                        </div>
-                    </div>
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Total Requests</div>
+        </div>
+    </div>
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-success">✅</div>
-                            <span class="admin-stat-trend positive">↑ 18%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="310">0</div>
-                            <div class="admin-stat-label">Accepted</div>
-                        </div>
-                    </div>
+    <!-- Pending Requests -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-warning">
+                ⏳
+            </div>
+        </div>
 
-                    <div class="admin-stat-card">
-                        <div class="admin-stat-header">
-                            <div class="admin-stat-icon admin-stat-icon-danger">❌</div>
-                            <span class="admin-stat-trend negative">↓ 3%</span>
-                        </div>
-                        <div class="admin-stat-info">
-                            <div class="admin-stat-value" data-count="56">0</div>
-                            <div class="admin-stat-label">Declined</div>
-                        </div>
-                    </div>
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Pending</div>
+        </div>
+    </div>
 
-                </div>
+    <!-- Accepted Requests -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-success">
+                ✅
+            </div>
+        </div>
+
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Accepted</div>
+        </div>
+    </div>
+
+    <!-- Declined Requests -->
+    <div class="admin-stat-card">
+        <div class="admin-stat-header">
+            <div class="admin-stat-icon admin-stat-icon-danger">
+                ❌
+            </div>
+        </div>
+
+        <div class="admin-stat-info">
+            <div class="admin-stat-value">—</div>
+            <div class="admin-stat-label">Declined</div>
+        </div>
+    </div>
+
+</div>
 
                 <!-- ===== Requests Table Card ===== -->
                 <div class="admin-card admin-fade-rise-2">
 
-                    <div class="admin-card-header admin-card-header-filters">
-                        <div class="admin-filters">
-                            <button class="admin-filter-btn active" data-filter="all">All</button>
-                            <button class="admin-filter-btn" data-filter="pending">Pending</button>
-                            <button class="admin-filter-btn" data-filter="accepted">Accepted</button>
-                            <button class="admin-filter-btn" data-filter="declined">Declined</button>
-                            <button class="admin-filter-btn" data-filter="flagged">Flagged</button>
-                        </div>
-                        <div class="admin-search-bar">
-                            <div class="admin-search-input-wrapper">
-                                <span class="search-icon">🔍</span>
-                                <input 
-                                    type="text" 
-                                    class="admin-search-input"
-                                    placeholder="Search by user or skill..."
-                                    id="requestsSearchInput"
-                                >
-                            </div>
-                        </div>
+                    
+<!-- Requests Search & Filters -->
+<div class="admin-card-header admin-card-header-filters requests-toolbar">
+
+    <!-- Search - LEFT -->
+    <div class="admin-search-bar requests-search">
+        <div class="admin-search-input-wrapper">
+
+            <span class="search-icon">🔍</span>
+
+            <input
+                type="text"
+                class="admin-search-input"
+                placeholder="Search by user or skill..."
+                id="requestsSearchInput"
+                aria-label="Search requests"
+            >
+
+        </div>
+    </div>
+
+    <!-- Filters - RIGHT -->
+    <div class="admin-filters requests-filters">
+
+        <button type="button"
+                class="admin-filter-btn active"
+                data-filter="all">
+            All
+        </button>
+
+        <button type="button"
+                class="admin-filter-btn"
+                data-filter="pending">
+            Pending
+        </button>
+
+        <button type="button"
+                class="admin-filter-btn"
+                data-filter="accepted">
+            Accepted
+        </button>
+
+        <button type="button"
+                class="admin-filter-btn"
+                data-filter="declined">
+            Declined
+        </button>
+
+        <button type="button"
+                class="admin-filter-btn"
+                data-filter="flagged">
+            Flagged
+        </button>
+
+    </div>
+
+</div>
+
                     </div>
 
                     <div class="admin-card-body admin-card-body-flush">

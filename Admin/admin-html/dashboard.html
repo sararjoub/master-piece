@@ -18,147 +18,138 @@
         <!-- ===== Sidebar Overlay (Mobile) ===== -->
         <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
 
-        <!--SIDEBAR -->
-        <aside class="admin-sidebar" id="adminSidebar">
+       
+<!-- SIDEBAR -->
+<aside class="admin-sidebar" id="adminSidebar">
 
-            <!-- Logo -->
-           <a href="dashboard.html" class="admin-sidebar-logo">
-    <span class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 10L3 14L7 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17 6L21 10L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 10H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </span>
-    <div class="logo-text">
-        <span class="logo-main">
-            Skills <span class="logo-swap">Swap</span>
+    <!-- Logo -->
+    <a href="dashboard.html" class="admin-sidebar-logo">
+        <span class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10L3 14L7 18"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M3 14H15"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"/>
+                <path d="M17 6L21 10L17 14"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M21 10H9"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"/>
+            </svg>
         </span>
-        <span class="logo-subtitle">Admin Panel</span>
+
+        <div class="logo-text">
+            <span class="logo-main">
+                Skills <span class="logo-swap">Swap</span>
+            </span>
+            <span class="logo-subtitle">Admin Panel</span>
+        </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="admin-sidebar-nav">
+
+        <span class="admin-sidebar-label">Main</span>
+
+        <a href="dashboard.html"
+           class="admin-sidebar-link active"
+           aria-current="page">
+            <span class="admin-sidebar-text">Dashboard</span>
+        </a>
+
+        <a href="manage-users.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Users</span>
+        </a>
+
+        <a href="manage-skills.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Skills</span>
+        </a>
+
+        <a href="manage-categories.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Categories</span>
+        </a>
+
+        <span class="admin-sidebar-label">Content</span>
+
+        <a href="manage-courses.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Courses</span>
+        </a>
+
+        <a href="manage-career-paths.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Career Paths</span>
+        </a>
+
+        <a href="manage-reviews.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Reviews</span>
+        </a>
+
+        <a href="manage-requests.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Requests</span>
+        </a>
+
+        <span class="admin-sidebar-label">System</span>
+
+        <a href="reports.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Reports</span>
+        </a>
+
+        <a href="settings.html" class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Settings</span>
+        </a>
+
+        <a href="notifications.html"
+           class="admin-sidebar-link">
+            <span class="admin-sidebar-text">Notifications</span>
+        </a>
+
+    </nav>
+
+    <!-- Admin Profile & Logout -->
+    <div class="dashboard-sidebar-footer">
+
+        <div class="dashboard-sidebar-profile">
+            <span class="dashboard-sidebar-avatar">A</span>
+
+            <div class="dashboard-sidebar-profile-info">
+                <strong>Admin</strong>
+                <span>Administrator</span>
+            </div>
+        </div>
+
+        <div class="admin-sidebar-divider"></div>
+
+        <button type="button"
+                class="admin-sidebar-logout"
+                id="adminLogout">
+            <span class="admin-sidebar-text">Logout</span>
+        </button>
+
     </div>
-</a>
 
-            <!-- Navigation -->
-            <nav class="admin-sidebar-nav">
+</aside>
 
-                <span class="admin-sidebar-label">Main</span>
-
-                <a href="dashboard.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Dashboard</span>
-                </a>
-
-                <a href="manage-users.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Users</span>
-                    
-                </a>
-
-                <a href="manage-skills.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Skills</span>
-                </a>
-
-                <a href="manage-categories.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Categories</span>
-                </a>
-
-                <span class="admin-sidebar-label">Content</span>
-
-                <a href="manage-courses.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Courses</span>
-                </a>
-
-                <a href="manage-career-paths.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Career Paths</span>
-                </a>
-
-                <a href="manage-reviews.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Reviews</span>
-                </a>
-
-                <a href="manage-requests.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Requests</span>
-                </a>
-
-                <span class="admin-sidebar-label">System</span>
-
-                <a href="reports.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Reports</span>
-                </a>
-
-                <a href="settings.html" class="admin-sidebar-link">
-                    <span class="admin-sidebar-text">Settings</span>
-                </a>
-
-            </nav>
-
-            <!-- Logout -->
-            <div class="admin-sidebar-divider"></div>
-            <button class="admin-sidebar-logout" id="adminLogout">
-                <span class="admin-sidebar-text">Logout</span>
-            </button>
-
-        </aside>
 
         <!--    MAIN AREA -->
         <main class="admin-main">
 
             <!--  Topbar -->
-            <header class="admin-topbar">
-
-                <div class="admin-topbar-left">
-                    <button class="admin-sidebar-toggle" id="adminSidebarToggle">☰</button>
-                    <h1 class="admin-page-title">Dashboard</h1>
-                </div>
-
-               
-
-                <div class="admin-topbar-right">
-
-                    <button class="admin-icon-btn" id="adminNotificationsBtn" title="Notifications">
-                        🔔
-                        <span class="admin-notification-badge">5</span>
-                    </button>
-
-                    <div class="admin-user-menu" id="adminUserMenu">
-                        <button class="admin-user-btn" id="adminUserBtn">
-                            <span class="admin-user-avatar">A</span>
-                            <span class="admin-user-name">Admin</span>
-                            <span class="admin-user-arrow">▼</span>
-                        </button>
-
-                        <div class="admin-dropdown" id="adminDropdown">
-                            <div class="admin-dropdown-header">
-                                <span class="admin-user-avatar">A</span>
-                                <div>
-                                    <strong>Admin User</strong>
-                                    <span>admin@skills.com</span>
-                                </div>
-                            </div>
-
-                            <div class="admin-dropdown-divider"></div>
-
-                            <a href="settings.html" class="admin-dropdown-item">
-                                <span class="admin-dropdown-icon">⚙️</span>
-                                Settings
-                            </a>
-
-                            <a href="reports.html" class="admin-dropdown-item">
-                                <span class="admin-dropdown-icon">📈</span>
-                                Reports
-                            </a>
-
-                            <div class="admin-dropdown-divider"></div>
-
-                            <button class="admin-dropdown-item admin-dropdown-logout">
-                                <span class="admin-dropdown-icon">🚪</span>
-                                Logout
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-            </header>
+            <div class="dashboard-mobile-toolbar">
+    <button type="button"
+            class="admin-sidebar-toggle"
+            id="adminSidebarToggle"
+            aria-label="Open navigation menu"
+            aria-controls="adminSidebar"
+            aria-expanded="false">
+        ☰
+    </button>
+    <span>Admin Panel</span>
+</div>
 
             <!--  Content = -->
             <div class="admin-content">
